@@ -14,6 +14,7 @@
 		A8471B961BE09595009E5A30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8471B951BE09595009E5A30 /* Assets.xcassets */; };
 		A8471B991BE09595009E5A30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8471B971BE09595009E5A30 /* LaunchScreen.storyboard */; };
 		A8471BA41BE09595009E5A30 /* NearHoneyTipUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8471BA31BE09595009E5A30 /* NearHoneyTipUITests.m */; };
+		CE5868E21BE0978300D6AEBC /* 눈.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE5868E11BE0978300D6AEBC /* 눈.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		A8471B9F1BE09595009E5A30 /* NearHoneyTipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearHoneyTipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8471BA31BE09595009E5A30 /* NearHoneyTipUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearHoneyTipUITests.m; sourceTree = "<group>"; };
 		A8471BA51BE09595009E5A30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE5868E11BE0978300D6AEBC /* 눈.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "눈.jpeg"; path = "../눈.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		A8471B881BE09595009E5A30 /* NearHoneyTip */ = {
 			isa = PBXGroup;
 			children = (
+				CE5868E11BE0978300D6AEBC /* 눈.jpeg */,
 				A8471B8C1BE09595009E5A30 /* AppDelegate.h */,
 				A8471B8D1BE09595009E5A30 /* AppDelegate.m */,
 				A8471B8F1BE09595009E5A30 /* ViewController.h */,
@@ -196,6 +199,7 @@
 				A8471B991BE09595009E5A30 /* LaunchScreen.storyboard in Resources */,
 				A8471B961BE09595009E5A30 /* Assets.xcassets in Resources */,
 				A8471B941BE09595009E5A30 /* Main.storyboard in Resources */,
+				CE5868E21BE0978300D6AEBC /* 눈.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +408,7 @@
 				A8471BAA1BE09595009E5A30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8471BAB1BE09595009E5A30 /* Build configuration list for PBXNativeTarget "NearHoneyTipUITests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +417,7 @@
 				A8471BAD1BE09595009E5A30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F0B4C2B1BE098C7007A2E36 /* signin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F0B4C2A1BE098C7007A2E36 /* signin.jpg */; };
 		A8471B8B1BE09595009E5A30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8471B8A1BE09595009E5A30 /* main.m */; };
 		A8471B8E1BE09595009E5A30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8471B8D1BE09595009E5A30 /* AppDelegate.m */; };
 		A8471B911BE09595009E5A30 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8471B901BE09595009E5A30 /* ViewController.m */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F0B4C2A1BE098C7007A2E36 /* signin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = signin.jpg; sourceTree = "<group>"; };
 		A8471B861BE09595009E5A30 /* NearHoneyTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearHoneyTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8471B8A1BE09595009E5A30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8471B8C1BE09595009E5A30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		A8471B881BE09595009E5A30 /* NearHoneyTip */ = {
 			isa = PBXGroup;
 			children = (
+				6F0B4C2A1BE098C7007A2E36 /* signin.jpg */,
 				CE5868E11BE0978300D6AEBC /* 눈.jpeg */,
 				A8471B8C1BE09595009E5A30 /* AppDelegate.h */,
 				A8471B8D1BE09595009E5A30 /* AppDelegate.m */,
@@ -200,6 +203,7 @@
 				A8471B961BE09595009E5A30 /* Assets.xcassets in Resources */,
 				A8471B941BE09595009E5A30 /* Main.storyboard in Resources */,
 				CE5868E21BE0978300D6AEBC /* 눈.jpeg in Resources */,
+				6F0B4C2B1BE098C7007A2E36 /* signin.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

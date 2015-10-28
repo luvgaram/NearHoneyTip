@@ -27,6 +27,7 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.18011165749999999" blue="0.74213606030000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>

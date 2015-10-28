@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,14 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="눈.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Y0z-2i-Kdl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="눈.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Y0z-2i-Kdl">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFU-Qn-9Yd">
-                                <rect key="frame" x="452" y="293" width="148" height="139"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFU-Qn-9Yd">
+                                <rect key="frame" x="0.0" y="567" width="100" height="100"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.24045738555441021" blue="0.84186131322065438" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -35,8 +38,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UFU-Qn-9Yd" secondAttribute="bottom" id="4zR-xb-0Y3"/>
                             <constraint firstItem="Y0z-2i-Kdl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="BRu-Qa-VWg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y0z-2i-Kdl" secondAttribute="trailing" constant="-20" id="Gwp-EQ-CUl"/>
+                            <constraint firstItem="UFU-Qn-9Yd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Yme-sR-N18"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Y0z-2i-Kdl" secondAttribute="bottom" constant="20" id="ZKw-Vr-VYP"/>
                             <constraint firstItem="Y0z-2i-Kdl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="jmh-tm-qdM"/>
                         </constraints>
@@ -44,6 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="333"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="9Gs-m1-IYG">
@@ -59,8 +65,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signin.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="W3E-Ha-IFB">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                             </imageView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

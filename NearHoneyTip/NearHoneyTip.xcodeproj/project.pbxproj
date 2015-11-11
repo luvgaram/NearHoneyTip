@@ -29,6 +29,7 @@
 		CE3356011BE9DF6D00B77DEC /* dump.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE3356001BE9DF6D00B77DEC /* dump.jpeg */; };
 		CEC8E9B31BECA7CF00582083 /* commentTint.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC8E9B11BECA7CF00582083 /* commentTint.png */; };
 		CEC8E9B41BECA7CF00582083 /* likeTint.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC8E9B21BECA7CF00582083 /* likeTint.png */; };
+		CEF05FFE1BF317FF0037E24A /* nht_icon_newPost.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		CE3356001BE9DF6D00B77DEC /* dump.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dump.jpeg; sourceTree = "<group>"; };
 		CEC8E9B11BECA7CF00582083 /* commentTint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentTint.png; sourceTree = "<group>"; };
 		CEC8E9B21BECA7CF00582083 /* likeTint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likeTint.png; sourceTree = "<group>"; };
+		CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nht_icon_newPost.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		CE3355ED1BE9D42100B77DEC /* img */ = {
 			isa = PBXGroup;
 			children = (
+				CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */,
 				CEC8E9B11BECA7CF00582083 /* commentTint.png */,
 				CEC8E9B21BECA7CF00582083 /* likeTint.png */,
 				CE3356001BE9DF6D00B77DEC /* dump.jpeg */,
@@ -299,6 +302,7 @@
 				CE3355F81BE9D45500B77DEC /* back.png in Resources */,
 				CE3355C81BE9CB9100B77DEC /* LaunchScreen.storyboard in Resources */,
 				CEC8E9B31BECA7CF00582083 /* commentTint.png in Resources */,
+				CEF05FFE1BF317FF0037E24A /* nht_icon_newPost.png in Resources */,
 				CE3355FB1BE9D45500B77DEC /* location.png in Resources */,
 				CE3355FD1BE9D45500B77DEC /* setting.png in Resources */,
 				CE3356011BE9DF6D00B77DEC /* dump.jpeg in Resources */,

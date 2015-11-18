@@ -17,11 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    NSURL *tipLoad = [NSURL URLWithString:@"http://54.64.250.239:3000/tip/all"];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSData *jsonData = [NSData dataWithContentsOfURL:tipLoad];
+    NSLog(@"%@", jsonData);
+    
+    NSError *error = nil;
+    
+    self.tips = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    
+    NSLog(@"%@",self.tips);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,15 +42,41 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 1;
+    return [self.tips count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
+    NSDictionary *tip = [self.tips objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = @"hello";
+    /* view tag number 
+        (assign it view-orderly: top to bottom, left to right)
+        0 - tipImage
+        1 - storeName
+        2 - tipDetails
+        3 - userProfileImg
+        4 - userNickname
+        5 - tipDate
+        6 - userBadge
+        7 - likeButton
+        8 - commentButton
+     */
+    
+    UIImageView *tipImage = (UIImageView *)[cell viewWithTag:0];
+    tipImage.image =[tip objectForKey:@"file.name"];
+    UILabel *storeName = (UILabel *)[cell viewWithTag:1];
+    storeName.text = [tip valueForKey:@"storename"];
+    UITextView *tipDetails = (UITextView *)[cell viewWithTag:2];
+    tipDetails.text = [tip valueForKey:@"tipdetail"];
+    UIImageView *userProfileImg = (UIImageView *)[cell viewWithTag:3];
+    //userProfileImg.image = [tip valueForKey: @"profilePhoto"];
+    UILabel *userNickname = (UILabel *)[cell viewWithTag:4];
+    userNickname.text = [tip valueForKey:@"nickname"];
+    UILabel *tipDate = (UILabel *)[cell viewWithTag:5];
+    tipDate.text = [tip valueForKey: @"date"];
+
     
     return cell;
 }

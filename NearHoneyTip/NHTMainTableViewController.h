@@ -10,4 +10,7 @@
 
 @interface NHTMainTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray *tips;
+
+
 @end

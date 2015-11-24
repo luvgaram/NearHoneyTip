@@ -62,9 +62,6 @@
                                                 <color key="titleColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
-                                            <connections>
-                                                <segue destination="jYt-6B-8sE" kind="push" animates="NO" id="fie-CY-vM1"/>
-                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starbucks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHJ-aa-NZz" userLabel="storeName">
                                             <rect key="frame" x="162" y="4" width="156" height="26"/>
@@ -183,6 +180,9 @@
                         </view>
                         <barButtonItem key="rightBarButtonItem" image="location.png" id="CS4-Cf-bt8">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="jYt-6B-8sE" kind="show" id="amQ-ad-HGa"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -206,7 +206,7 @@
         <!--NewHoneyTip-->
         <scene sceneID="vkZ-st-MiL">
             <objects>
-                <viewController id="jYt-6B-8sE" sceneMemberID="viewController">
+                <viewController id="jYt-6B-8sE" customClass="NHTViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="13Q-xF-9GR"/>
                         <viewControllerLayoutGuide type="bottom" id="yBZ-6L-sNl"/>
@@ -215,8 +215,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="상점명 : " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMy-Wz-lr9">
-                                <rect key="frame" x="-4" y="20" width="328" height="44"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="상점명 : " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMy-Wz-lr9">
+                                <rect key="frame" x="-4" y="64" width="328" height="44"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="VOI-j2-Iju"/>
@@ -225,7 +225,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="top" borderStyle="bezel" placeholder="HoneyTip 내용을 적어주세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccV-lg-Sr4">
-                                <rect key="frame" x="-4" y="65" width="328" height="460"/>
+                                <rect key="frame" x="-4" y="106" width="328" height="419"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="460" id="mOc-mK-Sft"/>
@@ -233,29 +233,51 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbD-uR-SQ5">
+                                <rect key="frame" x="89" y="156" width="143" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.7019608021" blue="0.25490197539999998" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="이미지를 골라 주세요!">
+                                    <color key="titleColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickImage:" destination="jYt-6B-8sE" eventType="touchUpInside" id="YPE-U0-8vu"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdO-HO-2oY">
+                                <rect key="frame" x="0.0" y="194" width="320" height="374"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eMy-Wz-lr9" firstAttribute="leading" secondItem="HgS-zb-28H" secondAttribute="leadingMargin" constant="-20" id="MMb-LI-4x6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eMy-Wz-lr9" secondAttribute="trailing" constant="-20" id="Mwz-k4-gEp"/>
+                            <constraint firstItem="NbD-uR-SQ5" firstAttribute="leading" secondItem="HgS-zb-28H" secondAttribute="leadingMargin" id="Zd5-Nf-XpR"/>
                             <constraint firstItem="ccV-lg-Sr4" firstAttribute="top" secondItem="eMy-Wz-lr9" secondAttribute="bottom" constant="1" id="clX-6Q-5b1"/>
                             <constraint firstItem="ccV-lg-Sr4" firstAttribute="leading" secondItem="HgS-zb-28H" secondAttribute="leadingMargin" constant="-20" id="dVh-Dp-QwX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ccV-lg-Sr4" secondAttribute="trailing" constant="-20" id="wIP-bh-w7n"/>
                             <constraint firstItem="eMy-Wz-lr9" firstAttribute="top" secondItem="13Q-xF-9GR" secondAttribute="bottom" id="yqz-eK-yFv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NbD-uR-SQ5" secondAttribute="trailing" id="yxb-2K-pm9"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="NewHoneyTip" id="cTi-cD-uv2">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="sm2-qg-rEo">
+                    <navigationItem key="navigationItem" title="NewHoneyTip" id="3o4-en-8un">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="z5G-5v-gzO">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="AOf-pN-QJR">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="NP2-kI-glt">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageView" destination="bdO-HO-2oY" id="Twe-Ir-Guf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfS-hf-a6i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

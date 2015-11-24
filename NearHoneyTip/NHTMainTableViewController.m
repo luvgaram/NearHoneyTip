@@ -65,15 +65,41 @@
      */
     
     UIImageView *tipImage = (UIImageView *)[cell viewWithTag:0];
-    tipImage.image =[tip objectForKey:@"file.name"];
+    NSArray *tipImageFile = [tip objectForKey:@"file"];
+    //NSLog(@"###STRing: %@",tipImageFile);
+    NSDictionary *tipImagePathDictionary = tipImageFile[0];
+    NSString *tipImagePathString = [tipImagePathDictionary objectForKey:@"path"];
+    NSUInteger pointOfPathStart = 5;
+    NSString *tipImagePath = [tipImagePathString substringFromIndex: pointOfPathStart];
+    NSString *tipImagePathWhole = @"http://54.64.250.239:3000/image/photo=";
+    tipImagePathWhole = [tipImagePathWhole stringByAppendingString:tipImagePath];
+    NSURL *tipImageLoadURL = [NSURL URLWithString:tipImagePathWhole];
+    NSError *errorTipImage = nil;
+    NSData *tipImageLoadData = [NSData dataWithContentsOfURL:tipImageLoadURL options:0 error: &errorTipImage];
+    UIImage *tipimageLoad = [UIImage imageWithData:tipImageLoadData];
+    tipImage.image = tipimageLoad;
+    
     UILabel *storeName = (UILabel *)[cell viewWithTag:1];
     storeName.text = [tip valueForKey:@"storename"];
+    
     UITextView *tipDetails = (UITextView *)[cell viewWithTag:2];
     tipDetails.text = [tip valueForKey:@"tipdetail"];
-    UIImageView *userProfileImg = (UIImageView *)[cell viewWithTag:3];
-    //userProfileImg.image = [tip valueForKey: @"profilePhoto"];
+    
+    UIImageView *userProfileImage = (UIImageView *)[cell viewWithTag:3];
+    NSString *userProfileImageString = [tip objectForKey:@"profilephoto"];
+    NSString *userProfileImagePath = [userProfileImageString substringFromIndex:pointOfPathStart];
+    NSString *userProflieImagePathWhole = @"http://54.64.250.239:3000/image/icon=";
+    userProflieImagePathWhole = [userProflieImagePathWhole stringByAppendingString:userProfileImagePath];
+    
+    NSURL *userProfileImageLoadURL = [NSURL URLWithString:userProflieImagePathWhole];
+    NSError *errorUserProfileImage = nil;
+    NSData *userProflieImageLoadData = [NSData dataWithContentsOfURL:userProfileImageLoadURL options:0 error: &errorUserProfileImage];
+    UIImage *userProfileImageLoad = [UIImage imageWithData:userProflieImageLoadData];
+    userProfileImage.image = userProfileImageLoad;
+    
     UILabel *userNickname = (UILabel *)[cell viewWithTag:4];
     userNickname.text = [tip valueForKey:@"nickname"];
+    
     UILabel *tipDate = (UILabel *)[cell viewWithTag:5];
     tipDate.text = [tip valueForKey: @"date"];
 

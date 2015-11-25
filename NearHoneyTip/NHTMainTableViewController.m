@@ -53,7 +53,7 @@
     
     /* view tag number 
         (assign it view-orderly: top to bottom, left to right)
-        0 - tipImage
+        100 - tipImage
         1 - storeName
         2 - tipDetails
         3 - userProfileImg
@@ -64,7 +64,7 @@
         8 - commentButton
      */
     
-    UIImageView *tipImage = (UIImageView *)[cell viewWithTag:0];
+    UIImageView *tipImage = (UIImageView *)[cell viewWithTag:100];
     NSArray *tipImageFile = [tip objectForKey:@"file"];
     //NSLog(@"###STRing: %@",tipImageFile);
     NSDictionary *tipImagePathDictionary = tipImageFile[0];
@@ -76,7 +76,7 @@
     NSURL *tipImageLoadURL = [NSURL URLWithString:tipImagePathWhole];
     NSError *errorTipImage = nil;
     NSData *tipImageLoadData = [NSData dataWithContentsOfURL:tipImageLoadURL options:0 error: &errorTipImage];
-    UIImage *tipimageLoad = [UIImage imageWithData:tipImageLoadData];
+    UIImage     *tipimageLoad = [UIImage imageWithData:tipImageLoadData];
     tipImage.image = tipimageLoad;
     
     UILabel *storeName = (UILabel *)[cell viewWithTag:1];
@@ -86,6 +86,7 @@
     tipDetails.text = [tip valueForKey:@"tipdetail"];
     
     UIImageView *userProfileImage = (UIImageView *)[cell viewWithTag:3];
+    userProfileImage.layer.cornerRadius = 16;
     NSString *userProfileImageString = [tip objectForKey:@"profilephoto"];
     NSString *userProfileImagePath = [userProfileImageString substringFromIndex:pointOfPathStart];
     NSString *userProflieImagePathWhole = @"http://54.64.250.239:3000/image/icon=";

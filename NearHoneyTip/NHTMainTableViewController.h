@@ -12,5 +12,4 @@
 
 @property (strong, nonatomic) NSArray *tips;
 
-
 @end

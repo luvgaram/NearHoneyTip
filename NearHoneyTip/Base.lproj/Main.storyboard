@@ -337,11 +337,13 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="qNe-2v-3Du">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="qNe-2v-3Du">
                                 <rect key="frame" x="135" y="66" width="50" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qNe-2v-3Du" secondAttribute="height" multiplier="1:1" id="Ate-Wu-bbY"/>
+                                    <constraint firstAttribute="height" constant="50" id="Teq-RA-zCc"/>
+                                    <constraint firstAttribute="width" constant="50" id="a2H-8I-T1r"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sadness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX7-qS-pyM" userLabel="nickName">
@@ -481,7 +483,7 @@ imgComment</string>
                         <outlet property="tipImage" destination="BFH-EB-tAe" id="9Q1-so-lxT"/>
                         <outlet property="userBadge" destination="7G9-P5-pMR" id="CcJ-oC-oJ1"/>
                         <outlet property="userNickname" destination="IX7-qS-pyM" id="wCb-Yt-Uqa"/>
-                        <outlet property="userProfileImg" destination="qNe-2v-3Du" id="k6c-6q-xxS"/>
+                        <outlet property="userProfileImage" destination="qNe-2v-3Du" id="2tN-sr-oRD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SlO-v6-Qum" userLabel="First Responder" sceneMemberID="firstResponder"/>

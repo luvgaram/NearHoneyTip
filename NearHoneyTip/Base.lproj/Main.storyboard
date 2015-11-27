@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMS-a5-r9b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMS-a5-r9b">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -215,7 +216,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="상점명 : " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMy-Wz-lr9">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="상점명 : " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMy-Wz-lr9">
                                 <rect key="frame" x="-4" y="64" width="328" height="44"/>
                                 <animations/>
                                 <constraints>
@@ -224,8 +225,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="top" borderStyle="bezel" placeholder="HoneyTip 내용을 적어주세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccV-lg-Sr4">
-                                <rect key="frame" x="-4" y="106" width="328" height="419"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="top" placeholder="HoneyTip 내용을 적어주세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccV-lg-Sr4">
+                                <rect key="frame" x="-4" y="106" width="328" height="87"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="460" id="mOc-mK-Sft"/>
@@ -234,9 +235,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbD-uR-SQ5">
-                                <rect key="frame" x="89" y="156" width="143" height="30"/>
+                                <rect key="frame" x="89" y="201" width="143" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.7019608021" blue="0.25490197539999998" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="yZ3-M7-ySp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="이미지를 골라 주세요!">
                                     <color key="titleColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="1" colorSpace="deviceRGB"/>
@@ -246,23 +250,24 @@
                                     <action selector="pickImage:" destination="jYt-6B-8sE" eventType="touchUpInside" id="YPE-U0-8vu"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdO-HO-2oY">
-                                <rect key="frame" x="0.0" y="194" width="320" height="374"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdO-HO-2oY">
+                                <rect key="frame" x="0.0" y="247" width="320" height="197"/>
                                 <animations/>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NbD-uR-SQ5" firstAttribute="top" secondItem="eMy-Wz-lr9" secondAttribute="bottom" constant="48" id="1hG-18-wJO"/>
                             <constraint firstItem="eMy-Wz-lr9" firstAttribute="leading" secondItem="HgS-zb-28H" secondAttribute="leadingMargin" constant="-20" id="MMb-LI-4x6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eMy-Wz-lr9" secondAttribute="trailing" constant="-20" id="Mwz-k4-gEp"/>
-                            <constraint firstItem="NbD-uR-SQ5" firstAttribute="leading" secondItem="HgS-zb-28H" secondAttribute="leadingMargin" id="Zd5-Nf-XpR"/>
+                            <constraint firstItem="NbD-uR-SQ5" firstAttribute="leading" secondItem="HgS-zb-28H" secondAttribute="leadingMargin" id="Qus-aD-Teg"/>
                             <constraint firstItem="ccV-lg-Sr4" firstAttribute="top" secondItem="eMy-Wz-lr9" secondAttribute="bottom" constant="1" id="clX-6Q-5b1"/>
                             <constraint firstItem="ccV-lg-Sr4" firstAttribute="leading" secondItem="HgS-zb-28H" secondAttribute="leadingMargin" constant="-20" id="dVh-Dp-QwX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NbD-uR-SQ5" secondAttribute="trailing" constant="68" id="lwF-xH-dge"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ccV-lg-Sr4" secondAttribute="trailing" constant="-20" id="wIP-bh-w7n"/>
+                            <constraint firstItem="bdO-HO-2oY" firstAttribute="top" secondItem="NbD-uR-SQ5" secondAttribute="bottom" constant="8" id="wYm-BH-i7q"/>
+                            <constraint firstItem="NbD-uR-SQ5" firstAttribute="top" secondItem="eMy-Wz-lr9" secondAttribute="bottomMargin" constant="360" id="wt9-RH-ziu"/>
                             <constraint firstItem="eMy-Wz-lr9" firstAttribute="top" secondItem="13Q-xF-9GR" secondAttribute="bottom" id="yqz-eK-yFv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NbD-uR-SQ5" secondAttribute="trailing" id="yxb-2K-pm9"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -272,12 +277,17 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="NP2-kI-glt">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveTip:" destination="jYt-6B-8sE" id="287-Ct-SVo"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="detail" destination="ccV-lg-Sr4" id="2qT-1Q-iHx"/>
                         <outlet property="imageView" destination="bdO-HO-2oY" id="Twe-Ir-Guf"/>
+                        <outlet property="storeName" destination="eMy-Wz-lr9" id="n0f-1x-V5h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfS-hf-a6i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -302,7 +312,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Dak-ZO-Urg">
-                                        <rect key="frame" x="0.0" y="28" width="344" height="100"/>
+                                        <rect key="frame" x="0.0" y="92" width="344" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dak-ZO-Urg" id="MqN-tz-NPG">
                                             <rect key="frame" x="0.0" y="0.0" width="344" height="99"/>
@@ -313,7 +323,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="gVt-7c-QIF">
-                                        <rect key="frame" x="0.0" y="128" width="344" height="100"/>
+                                        <rect key="frame" x="0.0" y="192" width="344" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gVt-7c-QIF" id="Nnf-P0-2r2">
                                             <rect key="frame" x="0.0" y="0.0" width="344" height="99"/>
@@ -324,7 +334,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="ZCw-CT-Z2E">
-                                        <rect key="frame" x="0.0" y="228" width="344" height="100"/>
+                                        <rect key="frame" x="0.0" y="292" width="344" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZCw-CT-Z2E" id="xUs-7i-4qg">
                                             <rect key="frame" x="0.0" y="0.0" width="344" height="99"/>

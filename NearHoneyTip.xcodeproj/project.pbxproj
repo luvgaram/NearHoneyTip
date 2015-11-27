@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A82A3D531C088FDE0057F048 /* NHTBasicModel.m */; };
 		A8935A711C01E48800E69F2F /* NHTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8935A701C01E48800E69F2F /* NHTViewController.m */; };
 		CE3355B71BE9CB9100B77DEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3355B61BE9CB9100B77DEC /* main.m */; };
 		CE3355BA1BE9CB9100B77DEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3355B91BE9CB9100B77DEC /* AppDelegate.m */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A82A3D521C088F930057F048 /* NHTBasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTBasicModel.h; sourceTree = "<group>"; };
+		A82A3D531C088FDE0057F048 /* NHTBasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTBasicModel.m; sourceTree = "<group>"; };
 		A8935A6F1C01E48800E69F2F /* NHTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTViewController.h; sourceTree = "<group>"; };
 		A8935A701C01E48800E69F2F /* NHTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTViewController.m; sourceTree = "<group>"; };
 		CE3355B21BE9CB9100B77DEC /* NearHoneyTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearHoneyTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +160,8 @@
 				CE3355ED1BE9D42100B77DEC /* img */,
 				CE3355C11BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld */,
 				CE3355B51BE9CB9100B77DEC /* Supporting Files */,
+				A82A3D521C088F930057F048 /* NHTBasicModel.h */,
+				A82A3D531C088FDE0057F048 /* NHTBasicModel.m */,
 			);
 			path = NearHoneyTip;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				CE3355B71BE9CB9100B77DEC /* main.m in Sources */,
 				CE69AAB71C05863400909DBD /* NHTTip.m in Sources */,
 				CE3355C31BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld in Sources */,
+				A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

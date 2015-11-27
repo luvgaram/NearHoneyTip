@@ -188,6 +188,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="9uD-ct-EWd" id="dtr-YL-LL9"/>
+                        <segue destination="FRF-8D-a5C" kind="push" identifier="showTipDetail" id="T9L-mc-5uJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aqx-ia-9a4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -283,10 +284,10 @@
             </objects>
             <point key="canvasLocation" x="1340" y="753"/>
         </scene>
-        <!--starbucks-->
+        <!--storeName-->
         <scene sceneID="QFv-ts-FhP">
             <objects>
-                <viewController id="FRF-8D-a5C" sceneMemberID="viewController">
+                <viewController id="FRF-8D-a5C" customClass="NHTDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ol3-f4-ypg"/>
                         <viewControllerLayoutGuide type="bottom" id="lRW-0R-2h9"/>
@@ -295,28 +296,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0k-AJ-niG" userLabel="bottom">
-                                <rect key="frame" x="-8" y="480" width="336" height="44"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="tva-xW-xZV"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="64x-dY-W69"/>
-                                    <barButtonItem image="Like Filled-50.png" width="44" id="m0k-4L-21a" userLabel="imglike"/>
-                                    <barButtonItem title="좋아요 3" width="83" id="78k-lu-ZoQ"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6Te-EG-9EJ"/>
-                                    <barButtonItem image="Speech Bubble Filled-50.png" width="44" id="8Va-Hh-1M4">
-                                        <string key="userLabel">
-imgComment</string>
-                                    </barButtonItem>
-                                    <barButtonItem title="댓글 2" width="61" id="ReF-mr-b76"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="u0o-yo-p9z"/>
-                                </items>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="barTintColor" red="0.90196078431372551" green="0.49411764705882355" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
-                            </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Lk-Q5-Q92" userLabel="listComment">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Lk-Q5-Q92" userLabel="listComment">
                                 <rect key="frame" x="-12" y="329" width="344" height="151"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -357,28 +337,28 @@ imgComment</string>
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="anomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="qNe-2v-3Du">
+                            <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="qNe-2v-3Du">
                                 <rect key="frame" x="135" y="66" width="50" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qNe-2v-3Du" secondAttribute="height" multiplier="1:1" id="Ate-Wu-bbY"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sadness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX7-qS-pyM" userLabel="nickName">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sadness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX7-qS-pyM" userLabel="nickName">
                                 <rect key="frame" x="131" y="117" width="59" height="18"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11월 4일 오후 4시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcF-KA-RC2" userLabel="tipNewTime">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11월 4일 오후 4시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcF-KA-RC2" userLabel="tipNewTime">
                                 <rect key="frame" x="119" y="136" width="82" height="14"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="badge1.png" translatesAutoresizingMaskIntoConstraints="NO" id="7G9-P5-pMR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge1.png" translatesAutoresizingMaskIntoConstraints="NO" id="7G9-P5-pMR">
                                 <rect key="frame" x="185" y="66" width="20" height="20"/>
                                 <animations/>
                                 <constraints>
@@ -387,7 +367,7 @@ imgComment</string>
                                     <constraint firstAttribute="width" constant="20" id="T4N-Ac-s3Y"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium a " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fw5-Ym-iwA" userLabel="tipDetails">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium a " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fw5-Ym-iwA" userLabel="tipDetails">
                                 <rect key="frame" x="10" y="298" width="300" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -404,7 +384,7 @@ imgComment</string>
                                     </mask>
                                 </variation>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dump.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="BFH-EB-tAe">
+                            <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dump.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="BFH-EB-tAe">
                                 <rect key="frame" x="23" y="152" width="274" height="145"/>
                                 <animations/>
                                 <constraints>
@@ -428,6 +408,27 @@ imgComment</string>
                                     </mask>
                                 </variation>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0k-AJ-niG" userLabel="bottom">
+                                <rect key="frame" x="-8" y="480" width="336" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="tva-xW-xZV"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="64x-dY-W69"/>
+                                    <barButtonItem image="Like Filled-50.png" width="44" id="m0k-4L-21a" userLabel="imglike"/>
+                                    <barButtonItem title="좋아요 3" width="83" id="78k-lu-ZoQ"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6Te-EG-9EJ"/>
+                                    <barButtonItem image="Speech Bubble Filled-50.png" width="44" id="8Va-Hh-1M4">
+                                        <string key="userLabel">
+imgComment</string>
+                                    </barButtonItem>
+                                    <barButtonItem title="댓글 2" width="61" id="ReF-mr-b76"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="u0o-yo-p9z"/>
+                                </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.90196078431372551" green="0.49411764705882355" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -462,15 +463,25 @@ imgComment</string>
                         </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="starbucks" id="Oe4-MW-xzW">
+                    <navigationItem key="navigationItem" title="storeName" id="Oe4-MW-xzW">
                         <barButtonItem key="rightBarButtonItem" image="more.png" id="pWp-1u-9OK">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="568"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="commentButton" destination="ReF-mr-b76" id="UF8-nV-rMh"/>
+                        <outlet property="likeButton" destination="78k-lu-ZoQ" id="mab-14-Ww3"/>
                         <outlet property="searchDisplayController" destination="sQ9-SK-eXl" id="Ict-AY-ZRT"/>
+                        <outlet property="storeName" destination="Oe4-MW-xzW" id="oCu-fc-Ap2"/>
+                        <outlet property="tipDate" destination="JcF-KA-RC2" id="jcZ-88-ooA"/>
+                        <outlet property="tipDetails" destination="Fw5-Ym-iwA" id="uIC-JX-GrD"/>
+                        <outlet property="tipImage" destination="BFH-EB-tAe" id="9Q1-so-lxT"/>
+                        <outlet property="userBadge" destination="7G9-P5-pMR" id="CcJ-oC-oJ1"/>
+                        <outlet property="userNickname" destination="IX7-qS-pyM" id="wCb-Yt-Uqa"/>
+                        <outlet property="userProfileImg" destination="qNe-2v-3Du" id="k6c-6q-xxS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SlO-v6-Qum" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -492,7 +503,7 @@ imgComment</string>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1741" y="78"/>
+            <point key="canvasLocation" x="1827" y="79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yGx-lY-bro">

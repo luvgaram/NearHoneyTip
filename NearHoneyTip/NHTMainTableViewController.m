@@ -7,6 +7,7 @@
 //
 
 #import "NHTMainTableViewController.h"
+#import "NHTDetailViewController.h"
 
 @interface NHTMainTableViewController ()
 
@@ -104,10 +105,35 @@
     UILabel *tipDate = (UILabel *)[cell viewWithTag:5];
     tipDate.text = [tip valueForKey: @"date"];
 
+    UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
     
+    cell.gestureRecognizers = [[NSArray alloc] initWithObjects:tapCellForTipDetail, nil];
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqual:@"showPlaylistDetail"]){
+        /*
+        NSDictionary *tappedCellData = (NSDictionary *)[sender tip];
+        
+        if([self.playlistImageViews containsObject:playlistImageView]){
+            NSUInteger index = [self.playlistImageViews indexOfObject:playlistImageView];
+            
+            NHTDetailViewController *playlistDetailController = (NHTDetailViewController *)segue.destinationViewController;
+            
+            playlistDetailController.playlist = [[Playlist alloc] initWithIndex:index];
+        }
+         */
+        
+    }
+}
+
+- (void) didTapCell:(UITapGestureRecognizer *) recognizer{
+    [self showTipDetail:recognizer];
+}
+- (IBAction)showTipDetail:(id)sender {
+    [self performSegueWithIdentifier:@"showTipDetail" sender:sender];
+}
 
 /*
 // Override to support conditional editing of the table view.

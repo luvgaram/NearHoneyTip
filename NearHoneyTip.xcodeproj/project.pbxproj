@@ -27,6 +27,8 @@
 		CE3355FE1BE9D45500B77DEC /* SLR Camera Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F51BE9D45500B77DEC /* SLR Camera Filled-50.png */; };
 		CE3355FF1BE9D45500B77DEC /* Speech Bubble Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F61BE9D45500B77DEC /* Speech Bubble Filled-50.png */; };
 		CE3356011BE9DF6D00B77DEC /* dump.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE3356001BE9DF6D00B77DEC /* dump.jpeg */; };
+		CE69AAB71C05863400909DBD /* NHTTip.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69AAB61C05863400909DBD /* NHTTip.m */; };
+		CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */; };
 		CE72A0A01BFC484700466A33 /* NHTMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE72A09F1BFC484700466A33 /* NHTMainTableViewController.m */; };
 		CEC8E9B31BECA7CF00582083 /* commentTint.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC8E9B11BECA7CF00582083 /* commentTint.png */; };
 		CEC8E9B41BECA7CF00582083 /* likeTint.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC8E9B21BECA7CF00582083 /* likeTint.png */; };
@@ -79,6 +81,10 @@
 		CE3355F51BE9D45500B77DEC /* SLR Camera Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SLR Camera Filled-50.png"; sourceTree = "<group>"; };
 		CE3355F61BE9D45500B77DEC /* Speech Bubble Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble Filled-50.png"; sourceTree = "<group>"; };
 		CE3356001BE9DF6D00B77DEC /* dump.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dump.jpeg; sourceTree = "<group>"; };
+		CE69AAB51C05863400909DBD /* NHTTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTTip.h; sourceTree = "<group>"; };
+		CE69AAB61C05863400909DBD /* NHTTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTTip.m; sourceTree = "<group>"; };
+		CE69AAB81C0586D600909DBD /* NHTDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTDetailViewController.h; sourceTree = "<group>"; };
+		CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTDetailViewController.m; sourceTree = "<group>"; };
 		CE72A09E1BFC484700466A33 /* NHTMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMainTableViewController.h; sourceTree = "<group>"; };
 		CE72A09F1BFC484700466A33 /* NHTMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMainTableViewController.m; sourceTree = "<group>"; };
 		CEC8E9B11BECA7CF00582083 /* commentTint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentTint.png; sourceTree = "<group>"; };
@@ -136,6 +142,10 @@
 			children = (
 				CE72A09E1BFC484700466A33 /* NHTMainTableViewController.h */,
 				CE72A09F1BFC484700466A33 /* NHTMainTableViewController.m */,
+				CE69AAB81C0586D600909DBD /* NHTDetailViewController.h */,
+				CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */,
+				CE69AAB51C05863400909DBD /* NHTTip.h */,
+				CE69AAB61C05863400909DBD /* NHTTip.m */,
 				CE3355B81BE9CB9100B77DEC /* AppDelegate.h */,
 				CE3355B91BE9CB9100B77DEC /* AppDelegate.m */,
 				A8935A6F1C01E48800E69F2F /* NHTViewController.h */,
@@ -345,7 +355,9 @@
 				A8935A711C01E48800E69F2F /* NHTViewController.m in Sources */,
 				CE72A0A01BFC484700466A33 /* NHTMainTableViewController.m in Sources */,
 				CE3355BA1BE9CB9100B77DEC /* AppDelegate.m in Sources */,
+				CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */,
 				CE3355B71BE9CB9100B77DEC /* main.m in Sources */,
+				CE69AAB71C05863400909DBD /* NHTTip.m in Sources */,
 				CE3355C31BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

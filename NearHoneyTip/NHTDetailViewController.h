@@ -10,7 +10,8 @@
 
 @interface NHTDetailViewController : UIViewController
 
-@property (strong, nonatomic) NSDictionary *selectedTip;
+@property (strong, nonatomic) UITableViewCell *selectedTip;
+//@property (strong, nonatomic) NSDictionary *selectedTip;
 
 /* view tag number
  (assign it view-orderly: top to bottom, left to right)
@@ -27,7 +28,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *storeName;
 @property (weak, nonatomic) IBOutlet UIImageView *tipImage;
 @property (weak, nonatomic) IBOutlet UITextView *tipDetails;
-@property (weak, nonatomic) IBOutlet UIImageView *userProfileImg;
+@property (weak, nonatomic) IBOutlet UIImageView *userProfileImage;
 @property (weak, nonatomic) IBOutlet UILabel *userNickname;
 @property (weak, nonatomic) IBOutlet UILabel *tipDate;
 @property (weak, nonatomic) IBOutlet UIImageView *userBadge;

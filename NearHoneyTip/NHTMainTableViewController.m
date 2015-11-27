@@ -92,12 +92,12 @@
     NSString *userProfileImagePath = [userProfileImageString substringFromIndex:pointOfPathStart];
     NSString *userProflieImagePathWhole = @"http://54.64.250.239:3000/image/icon=";
     userProflieImagePathWhole = [userProflieImagePathWhole stringByAppendingString:userProfileImagePath];
-    
     NSURL *userProfileImageLoadURL = [NSURL URLWithString:userProflieImagePathWhole];
     NSError *errorUserProfileImage = nil;
     NSData *userProflieImageLoadData = [NSData dataWithContentsOfURL:userProfileImageLoadURL options:0 error: &errorUserProfileImage];
     UIImage *userProfileImageLoad = [UIImage imageWithData:userProflieImageLoadData];
     userProfileImage.image = userProfileImageLoad;
+    
     
     UILabel *userNickname = (UILabel *)[cell viewWithTag:4];
     userNickname.text = [tip valueForKey:@"nickname"];
@@ -112,26 +112,39 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqual:@"showPlaylistDetail"]){
-        /*
-        NSDictionary *tappedCellData = (NSDictionary *)[sender tip];
+    NSLog(@"#####3-1%@", sender);
+    if([segue.identifier isEqual:@"showTipDetail"]){
         
+        NSLog(@"#####3-2%@", sender);
+        NSLog(@"####sender target? %@",[sender view]);
+        UITableViewCell *tipCell = [sender view];
+        
+        //NSLog(@"###storename? %@", [[tipCell viewWithTag:1] text]);
+        
+        //NSDictionary *tappedCellData = (NSDictionary *)[sender tip];
+        
+        /*
         if([self.playlistImageViews containsObject:playlistImageView]){
             NSUInteger index = [self.playlistImageViews indexOfObject:playlistImageView];
             
-            NHTDetailViewController *playlistDetailController = (NHTDetailViewController *)segue.destinationViewController;
-            
-            playlistDetailController.playlist = [[Playlist alloc] initWithIndex:index];
+        playlistDetailController.playlist = [[Playlist alloc] initWithIndex:index];
         }
          */
         
+        if(tipCell){
+        NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
+        tipDetailController.selectedTip = tipCell;
+
+        }
     }
 }
 
 - (void) didTapCell:(UITapGestureRecognizer *) recognizer{
+    NSLog(@"#####1%@", recognizer);
     [self showTipDetail:recognizer];
 }
 - (IBAction)showTipDetail:(id)sender {
+    NSLog(@"#####2%@", sender);
     [self performSegueWithIdentifier:@"showTipDetail" sender:sender];
 }
 

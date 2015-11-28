@@ -274,6 +274,9 @@
                     <navigationItem key="navigationItem" title="NewHoneyTip" id="3o4-en-8un">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="z5G-5v-gzO">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelWrite:" destination="jYt-6B-8sE" id="Szr-Bd-hD6"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="NP2-kI-glt">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>

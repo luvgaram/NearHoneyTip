@@ -16,7 +16,7 @@ UIImagePickerControllerDelegate>
 @property (strong, nonatomic) UIImage *chosenImage;
 
 - (IBAction)saveTip:(id)sender;
-
+- (IBAction)cancelWrite:(id)sender;
 - (IBAction) pickImage:(id)sender;
 
 

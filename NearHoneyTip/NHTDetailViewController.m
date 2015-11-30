@@ -29,7 +29,19 @@
      7 - likeButton
      8 - commentButton
      */
-
+    
+    if(self.selectedTip){
+        self.storeName.title = [[self.selectedTip viewWithTag:1] text];
+        self.tipImage.image = [[self.selectedTip viewWithTag: 100] image];
+        self.tipDetails.text = [[self.selectedTip viewWithTag:2] text];
+        self.userProfileImage.image = [[self.selectedTip viewWithTag: 3] image];
+        self.userProfileImage.layer.cornerRadius = 25;
+        self.userNickname.text = [[self.selectedTip viewWithTag:4] text];
+        self.tipDate.text = [[self.selectedTip viewWithTag:5] text];
+        //userBadge
+        //likeButton
+        //commentButton
+    }
     
     
     

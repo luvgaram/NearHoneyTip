@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NHTViewController : UIViewController <UINavigationControllerDelegate,
+@interface NHTWriteViewController : UIViewController <UINavigationControllerDelegate,
 UIImagePickerControllerDelegate>
+@property (strong, nonatomic) IBOutlet UITextField *storeName;
+@property (strong, nonatomic) IBOutlet UITextField *detail;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIImage *chosenImage;
 
-
-@property (strong, nonatomic) IBOutlet UIImageView* imageView;
-
+- (IBAction)saveTip:(id)sender;
+- (IBAction)cancelWrite:(id)sender;
 - (IBAction) pickImage:(id)sender;
 
 

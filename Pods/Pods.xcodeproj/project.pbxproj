@@ -7,71 +7,98 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F665C3DD2EC9E408C41DB2F0640D1BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FA9D6C62076D7840475E09238EED1E /* Foundation.framework */; };
-		1E4129F3FCE27637ED432DEA42004FBD /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
-		63661F33C581B2CD4AB3CCFF3962F19D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3C2F7A60189AA38D256A0120B8730 /* CoreGraphics.framework */; };
-		7408345087C01913720ECB6538239005 /* TWPhotoPickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD1896B9B8F49E0CB1D40336569DFD1 /* TWPhotoPickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		83D9BB3917F85E1671A1C278F3BB9857 /* TWPhotoCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C151A3B7EF546C460A943306F78B9137 /* TWPhotoCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		976ABE4A9EC9B66652C6B35AA516D277 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FA9D6C62076D7840475E09238EED1E /* Foundation.framework */; };
-		B72C32D2EB566FE33B91C0C26907AF13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F79ACD206D7284CF469DA6B24AFACE9 /* UIKit.framework */; };
-		BB061F0C87D4618047A6F224C2338DB4 /* TWImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5327145380AC200652DF6E62DF702C9A /* TWImageScrollView.m */; };
-		C3EF37FD85894E1FCB538C315759AC64 /* TWPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30911695525BA09D95D3B06CBA484967 /* TWPhotoPickerController.m */; };
-		D53F9323E44464183B4CC713C52B9940 /* TWPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3635BBF27F742E3475B97D6BE0D347E0 /* TWPhotoCollectionViewCell.m */; };
-		E16FB4D5F7898CB98E8EC33B536E6555 /* TWImageScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = B46B2B8602D3560FE43C68E076C80445 /* TWImageScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA08DA916294C7982ACE1CC2723194D3 /* TWPhotoPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CE29065D362D33FC8D700CA29E4DE3 /* TWPhotoPicker-dummy.m */; };
+		0E011DFFDD08CAFD3A1177E9602A3BFD /* TWPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D20E2C538A03AC94479510BAE38FF3 /* TWPhotoCollectionViewCell.m */; };
+		0E599320A255DA1DCADF167FA3D9E907 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FA9D6C62076D7840475E09238EED1E /* Foundation.framework */; };
+		21C3052C5373AE6691E40591EB6875AD /* ITRAirSideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E8741406C3E94B690B7E0C8BFD8744 /* ITRAirSideMenu-dummy.m */; };
+		29B673F7635931AD4958E7D17ADA450D /* TWPhotoCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EC2707A6998774CD7D64507D6A09C75 /* TWPhotoCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30FE076711010CC3CF58E247EF78B80E /* TWImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1588C0FD32D7254A78441D4DEF95B916 /* TWImageScrollView.m */; };
+		37292F3C3B335BC06FECFCB01F83D599 /* TWPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4849F089CE0D6DA9D2F0E99096299576 /* TWPhotoPickerController.m */; };
+		4F0428AB9A4A12BFA0EDC4D29DC3137A /* ITRAirSideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A2F4D0F5F69EF993BFCC02F2B8BD17B /* ITRAirSideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		515F2D4CB73A4E10C5367008F6E4345B /* TWPhotoPickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 457356ECD596BA1B836A212F10A3E842 /* TWPhotoPickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A418F762B1ACEEF78326AF52ACB3351 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FA9D6C62076D7840475E09238EED1E /* Foundation.framework */; };
+		636846D33DA4BC32C35C442CB24303CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F79ACD206D7284CF469DA6B24AFACE9 /* UIKit.framework */; };
+		6A7AB8C83F4282FC054BDE8F7037B340 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3C2F7A60189AA38D256A0120B8730 /* CoreGraphics.framework */; };
+		81F4C2361F1BFFFD4E80DA19A57C03E0 /* TWImageScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B0F64C9EA4788390D9636C1F92C722D /* TWImageScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95DE689562383052C0A5DA62D7EF8CB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F79ACD206D7284CF469DA6B24AFACE9 /* UIKit.framework */; };
+		C6F3EE15ADB291C32B9E6B9DFFD35A51 /* ITRAirSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 337836BAA977ECFCA0210882B66E0D39 /* ITRAirSideMenu.m */; };
+		C8D3E436BE67E1D1F3A923F74BE5BA3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FA9D6C62076D7840475E09238EED1E /* Foundation.framework */; };
+		E9710932C3E8C95C3C87D51EA9B137EC /* TWPhotoPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E62C65D662AF42FE4729C7FB8EFBADF5 /* TWPhotoPicker-dummy.m */; };
+		FF60C2B9C9FD7A12E5421E5A549CD345 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6B899C282CA6D3AF517099AAD06ACF66 /* PBXContainerItemProxy */ = {
+		6196DDB9C75F04724170BD819D5A345D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A4951E04F83E654C55810686711A987F;
+			remoteGlobalIDString = 0BE70E7E941E88046EA1199D8DF6287B;
 			remoteInfo = TWPhotoPicker;
+		};
+		A6B915EF841E635F0F38FBBDD19F8896 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31DC5C2F7F64F9E319BDA427EB46E5B5;
+			remoteInfo = ITRAirSideMenu;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B3E107CD09B580012C5248A6B443773 /* ITRAirSideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ITRAirSideMenu.xcconfig; sourceTree = "<group>"; };
 		10834806BD7B412BC24F347361FA2C8E /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		1588C0FD32D7254A78441D4DEF95B916 /* TWImageScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TWImageScrollView.m; path = InstagramPhotoPicker/TWImageScrollView.m; sourceTree = "<group>"; };
 		23B3C2F7A60189AA38D256A0120B8730 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		28DAB08AADD8D9B65870B8CF53FFBE6F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		30911695525BA09D95D3B06CBA484967 /* TWPhotoPickerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TWPhotoPickerController.m; path = InstagramPhotoPicker/TWPhotoPickerController.m; sourceTree = "<group>"; };
-		3635BBF27F742E3475B97D6BE0D347E0 /* TWPhotoCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TWPhotoCollectionViewCell.m; path = InstagramPhotoPicker/TWPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		337836BAA977ECFCA0210882B66E0D39 /* ITRAirSideMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ITRAirSideMenu.m; path = Classes/ITRAirSideMenu.m; sourceTree = "<group>"; };
 		37DB56D75062CC75FCB0966E1C6E8A8E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		381D4CE49F851E15441891EC94363A30 /* TWPhotoPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TWPhotoPicker-prefix.pch"; sourceTree = "<group>"; };
-		3FBB79291BB33EB81DFCE2686DFBDB9D /* libTWPhotoPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTWPhotoPicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B0F64C9EA4788390D9636C1F92C722D /* TWImageScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWImageScrollView.h; path = InstagramPhotoPicker/TWImageScrollView.h; sourceTree = "<group>"; };
+		4143CB55955EFDB0822F1D629C70B8D9 /* libTWPhotoPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTWPhotoPicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		457356ECD596BA1B836A212F10A3E842 /* TWPhotoPickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWPhotoPickerController.h; path = InstagramPhotoPicker/TWPhotoPickerController.h; sourceTree = "<group>"; };
+		4849F089CE0D6DA9D2F0E99096299576 /* TWPhotoPickerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TWPhotoPickerController.m; path = InstagramPhotoPicker/TWPhotoPickerController.m; sourceTree = "<group>"; };
 		4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		5327145380AC200652DF6E62DF702C9A /* TWImageScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TWImageScrollView.m; path = InstagramPhotoPicker/TWImageScrollView.m; sourceTree = "<group>"; };
-		63C377B3159253D11F0942AE39C51592 /* TWPhotoPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TWPhotoPicker.xcconfig; sourceTree = "<group>"; };
-		63CE29065D362D33FC8D700CA29E4DE3 /* TWPhotoPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TWPhotoPicker-dummy.m"; sourceTree = "<group>"; };
+		56B14846320B03F87945199484D00AB8 /* ITRAirSideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ITRAirSideMenu-prefix.pch"; sourceTree = "<group>"; };
+		5EC2707A6998774CD7D64507D6A09C75 /* TWPhotoCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWPhotoCollectionViewCell.h; path = InstagramPhotoPicker/TWPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		66E8741406C3E94B690B7E0C8BFD8744 /* ITRAirSideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ITRAirSideMenu-dummy.m"; sourceTree = "<group>"; };
 		6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		7F79ACD206D7284CF469DA6B24AFACE9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		8BC665424F017388FFB4C12A015E0932 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95FA9D6C62076D7840475E09238EED1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		9A2F4D0F5F69EF993BFCC02F2B8BD17B /* ITRAirSideMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ITRAirSideMenu.h; path = Classes/ITRAirSideMenu.h; sourceTree = "<group>"; };
 		A1A36D34413696BE466E2CA0AFF194DA /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		B46B2B8602D3560FE43C68E076C80445 /* TWImageScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWImageScrollView.h; path = InstagramPhotoPicker/TWImageScrollView.h; sourceTree = "<group>"; };
+		AAFAA0AC9C1D4D1270806BF829CC33C4 /* libITRAirSideMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libITRAirSideMenu.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3D20E2C538A03AC94479510BAE38FF3 /* TWPhotoCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TWPhotoCollectionViewCell.m; path = InstagramPhotoPicker/TWPhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C151A3B7EF546C460A943306F78B9137 /* TWPhotoCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWPhotoCollectionViewCell.h; path = InstagramPhotoPicker/TWPhotoCollectionViewCell.h; sourceTree = "<group>"; };
-		EFD1896B9B8F49E0CB1D40336569DFD1 /* TWPhotoPickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TWPhotoPickerController.h; path = InstagramPhotoPicker/TWPhotoPickerController.h; sourceTree = "<group>"; };
+		DB791CD6C26765849D7E123CABF92DFD /* TWPhotoPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TWPhotoPicker.xcconfig; sourceTree = "<group>"; };
+		E62C65D662AF42FE4729C7FB8EFBADF5 /* TWPhotoPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TWPhotoPicker-dummy.m"; sourceTree = "<group>"; };
+		F1B6C5C644CCF5CD1CFB1764E82F8B25 /* TWPhotoPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TWPhotoPicker-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7C5660B6E4CCF8EC6E2FD243DEBE8978 /* Frameworks */ = {
+		85BB3925B178BCBAC8D78140E8C22443 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F665C3DD2EC9E408C41DB2F0640D1BE /* Foundation.framework in Frameworks */,
+				5A418F762B1ACEEF78326AF52ACB3351 /* Foundation.framework in Frameworks */,
+				636846D33DA4BC32C35C442CB24303CC /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E55ACE5D62A6726965E4C59B877C4B75 /* Frameworks */ = {
+		A77C7ADC4B54A8840E09F87C5F8419ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63661F33C581B2CD4AB3CCFF3962F19D /* CoreGraphics.framework in Frameworks */,
-				976ABE4A9EC9B66652C6B35AA516D277 /* Foundation.framework in Frameworks */,
-				B72C32D2EB566FE33B91C0C26907AF13 /* UIKit.framework in Frameworks */,
+				0E599320A255DA1DCADF167FA3D9E907 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1DAA8A9DE115F36A0D341B7D498A1F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A7AB8C83F4282FC054BDE8F7037B340 /* CoreGraphics.framework in Frameworks */,
+				C8D3E436BE67E1D1F3A923F74BE5BA3B /* Foundation.framework in Frameworks */,
+				95DE689562383052C0A5DA62D7EF8CB4 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,29 +121,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		55D362C4F3E99DC9915328B83543D389 /* Support Files */ = {
+		286CB11F58CD78CEDD6A448859E91C2D /* TWPhotoPicker */ = {
 			isa = PBXGroup;
 			children = (
-				63C377B3159253D11F0942AE39C51592 /* TWPhotoPicker.xcconfig */,
-				63CE29065D362D33FC8D700CA29E4DE3 /* TWPhotoPicker-dummy.m */,
-				381D4CE49F851E15441891EC94363A30 /* TWPhotoPicker-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TWPhotoPicker";
-			sourceTree = "<group>";
-		};
-		5CA1802B300D5D341ABDF31EFC51A24D /* TWPhotoPicker */ = {
-			isa = PBXGroup;
-			children = (
-				B46B2B8602D3560FE43C68E076C80445 /* TWImageScrollView.h */,
-				5327145380AC200652DF6E62DF702C9A /* TWImageScrollView.m */,
-				C151A3B7EF546C460A943306F78B9137 /* TWPhotoCollectionViewCell.h */,
-				3635BBF27F742E3475B97D6BE0D347E0 /* TWPhotoCollectionViewCell.m */,
-				EFD1896B9B8F49E0CB1D40336569DFD1 /* TWPhotoPickerController.h */,
-				30911695525BA09D95D3B06CBA484967 /* TWPhotoPickerController.m */,
-				55D362C4F3E99DC9915328B83543D389 /* Support Files */,
+				3B0F64C9EA4788390D9636C1F92C722D /* TWImageScrollView.h */,
+				1588C0FD32D7254A78441D4DEF95B916 /* TWImageScrollView.m */,
+				5EC2707A6998774CD7D64507D6A09C75 /* TWPhotoCollectionViewCell.h */,
+				B3D20E2C538A03AC94479510BAE38FF3 /* TWPhotoCollectionViewCell.m */,
+				457356ECD596BA1B836A212F10A3E842 /* TWPhotoPickerController.h */,
+				4849F089CE0D6DA9D2F0E99096299576 /* TWPhotoPickerController.m */,
+				821196C7DD720513FE34322D22C4B973 /* Support Files */,
 			);
 			path = TWPhotoPicker;
+			sourceTree = "<group>";
+		};
+		341B88E6F64681FC27F9F35F464540CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				410A9100EB887097AFBF692A968DC4A2 /* ITRAirSideMenu */,
+				286CB11F58CD78CEDD6A448859E91C2D /* TWPhotoPicker */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		410A9100EB887097AFBF692A968DC4A2 /* ITRAirSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9A2F4D0F5F69EF993BFCC02F2B8BD17B /* ITRAirSideMenu.h */,
+				337836BAA977ECFCA0210882B66E0D39 /* ITRAirSideMenu.m */,
+				C87A637985661EBB1EA91A3F4D7B4FAE /* Support Files */,
+			);
+			path = ITRAirSideMenu;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -124,10 +159,21 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				E40A111D6796EB2D4527CAF8FBFC92AF /* Pods */,
-				E70546AAC46C411C2944C65C00068AE2 /* Products */,
+				341B88E6F64681FC27F9F35F464540CB /* Pods */,
+				EA0F7CE7BEB237DBCF691D9CD862F3B8 /* Products */,
 				037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		821196C7DD720513FE34322D22C4B973 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB791CD6C26765849D7E123CABF92DFD /* TWPhotoPicker.xcconfig */,
+				E62C65D662AF42FE4729C7FB8EFBADF5 /* TWPhotoPicker-dummy.m */,
+				F1B6C5C644CCF5CD1CFB1764E82F8B25 /* TWPhotoPicker-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TWPhotoPicker";
 			sourceTree = "<group>";
 		};
 		B3D1D13E0C6553800746CB8FD61CF946 /* Pods */ = {
@@ -145,6 +191,17 @@
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
+		C87A637985661EBB1EA91A3F4D7B4FAE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B3E107CD09B580012C5248A6B443773 /* ITRAirSideMenu.xcconfig */,
+				66E8741406C3E94B690B7E0C8BFD8744 /* ITRAirSideMenu-dummy.m */,
+				56B14846320B03F87945199484D00AB8 /* ITRAirSideMenu-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ITRAirSideMenu";
+			sourceTree = "<group>";
+		};
 		E35B3E289DB984DA75A774080D293670 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,19 +212,12 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		E40A111D6796EB2D4527CAF8FBFC92AF /* Pods */ = {
+		EA0F7CE7BEB237DBCF691D9CD862F3B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CA1802B300D5D341ABDF31EFC51A24D /* TWPhotoPicker */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		E70546AAC46C411C2944C65C00068AE2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				28DAB08AADD8D9B65870B8CF53FFBE6F /* libPods.a */,
-				3FBB79291BB33EB81DFCE2686DFBDB9D /* libTWPhotoPicker.a */,
+				AAFAA0AC9C1D4D1270806BF829CC33C4 /* libITRAirSideMenu.a */,
+				8BC665424F017388FFB4C12A015E0932 /* libPods.a */,
+				4143CB55955EFDB0822F1D629C70B8D9 /* libTWPhotoPicker.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,26 +225,34 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		720B0EA412ECDBA283C1BD55BAD12996 /* Headers */ = {
+		1D29CED55054172BDB161ED54ACE50A3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E16FB4D5F7898CB98E8EC33B536E6555 /* TWImageScrollView.h in Headers */,
-				83D9BB3917F85E1671A1C278F3BB9857 /* TWPhotoCollectionViewCell.h in Headers */,
-				7408345087C01913720ECB6538239005 /* TWPhotoPickerController.h in Headers */,
+				4F0428AB9A4A12BFA0EDC4D29DC3137A /* ITRAirSideMenu.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8595C23EC62133C7DC1F9C32E92172CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F4C2361F1BFFFD4E80DA19A57C03E0 /* TWImageScrollView.h in Headers */,
+				29B673F7635931AD4958E7D17ADA450D /* TWPhotoCollectionViewCell.h in Headers */,
+				515F2D4CB73A4E10C5367008F6E4345B /* TWPhotoPickerController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A4951E04F83E654C55810686711A987F /* TWPhotoPicker */ = {
+		0BE70E7E941E88046EA1199D8DF6287B /* TWPhotoPicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71D7A94DA0A8397D386D8FA699F93338 /* Build configuration list for PBXNativeTarget "TWPhotoPicker" */;
+			buildConfigurationList = 12DA079E489EE76C9B339A18F20E60AE /* Build configuration list for PBXNativeTarget "TWPhotoPicker" */;
 			buildPhases = (
-				16D4B18981BC4CEB0EC4786888146A94 /* Sources */,
-				E55ACE5D62A6726965E4C59B877C4B75 /* Frameworks */,
-				720B0EA412ECDBA283C1BD55BAD12996 /* Headers */,
+				6E6438148B02EF698F8AFF16DA8859DA /* Sources */,
+				F1DAA8A9DE115F36A0D341B7D498A1F4 /* Frameworks */,
+				8595C23EC62133C7DC1F9C32E92172CF /* Headers */,
 			);
 			buildRules = (
 			);
@@ -202,24 +260,42 @@
 			);
 			name = TWPhotoPicker;
 			productName = TWPhotoPicker;
-			productReference = 3FBB79291BB33EB81DFCE2686DFBDB9D /* libTWPhotoPicker.a */;
+			productReference = 4143CB55955EFDB0822F1D629C70B8D9 /* libTWPhotoPicker.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		E9C419EB2AF39C5BAAD4E69CA91B9B9E /* Pods */ = {
+		0CF0DCF0D40BDF953E5C89211D48C5C5 /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C51A53ED4E852EA5D810CD53A8713F63 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = 7D299285638BDE984A8AC33CEA831CC4 /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				08040D34CDCB3CC6754D42A9FA8BB805 /* Sources */,
-				7C5660B6E4CCF8EC6E2FD243DEBE8978 /* Frameworks */,
+				B1B4EC890A3BEB95A533582170E58A06 /* Sources */,
+				A77C7ADC4B54A8840E09F87C5F8419ED /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D14B1DD6AF33AB087883E933992FA127 /* PBXTargetDependency */,
+				78FA0A8DE90649136F797E742847C048 /* PBXTargetDependency */,
+				A207F3D1C2DB1496F6C94DF9064B99F5 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = 28DAB08AADD8D9B65870B8CF53FFBE6F /* libPods.a */;
+			productReference = 8BC665424F017388FFB4C12A015E0932 /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		31DC5C2F7F64F9E319BDA427EB46E5B5 /* ITRAirSideMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14B0BC6A910F3B758C9D14265E352FE1 /* Build configuration list for PBXNativeTarget "ITRAirSideMenu" */;
+			buildPhases = (
+				2112E105E44006B818B8206208EE3EC5 /* Sources */,
+				85BB3925B178BCBAC8D78140E8C22443 /* Frameworks */,
+				1D29CED55054172BDB161ED54ACE50A3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ITRAirSideMenu;
+			productName = ITRAirSideMenu;
+			productReference = AAFAA0AC9C1D4D1270806BF829CC33C4 /* libITRAirSideMenu.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -239,44 +315,60 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = E70546AAC46C411C2944C65C00068AE2 /* Products */;
+			productRefGroup = EA0F7CE7BEB237DBCF691D9CD862F3B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E9C419EB2AF39C5BAAD4E69CA91B9B9E /* Pods */,
-				A4951E04F83E654C55810686711A987F /* TWPhotoPicker */,
+				31DC5C2F7F64F9E319BDA427EB46E5B5 /* ITRAirSideMenu */,
+				0CF0DCF0D40BDF953E5C89211D48C5C5 /* Pods */,
+				0BE70E7E941E88046EA1199D8DF6287B /* TWPhotoPicker */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		08040D34CDCB3CC6754D42A9FA8BB805 /* Sources */ = {
+		2112E105E44006B818B8206208EE3EC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E4129F3FCE27637ED432DEA42004FBD /* Pods-dummy.m in Sources */,
+				21C3052C5373AE6691E40591EB6875AD /* ITRAirSideMenu-dummy.m in Sources */,
+				C6F3EE15ADB291C32B9E6B9DFFD35A51 /* ITRAirSideMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		16D4B18981BC4CEB0EC4786888146A94 /* Sources */ = {
+		6E6438148B02EF698F8AFF16DA8859DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB061F0C87D4618047A6F224C2338DB4 /* TWImageScrollView.m in Sources */,
-				D53F9323E44464183B4CC713C52B9940 /* TWPhotoCollectionViewCell.m in Sources */,
-				FA08DA916294C7982ACE1CC2723194D3 /* TWPhotoPicker-dummy.m in Sources */,
-				C3EF37FD85894E1FCB538C315759AC64 /* TWPhotoPickerController.m in Sources */,
+				30FE076711010CC3CF58E247EF78B80E /* TWImageScrollView.m in Sources */,
+				0E011DFFDD08CAFD3A1177E9602A3BFD /* TWPhotoCollectionViewCell.m in Sources */,
+				E9710932C3E8C95C3C87D51EA9B137EC /* TWPhotoPicker-dummy.m in Sources */,
+				37292F3C3B335BC06FECFCB01F83D599 /* TWPhotoPickerController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1B4EC890A3BEB95A533582170E58A06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF60C2B9C9FD7A12E5421E5A549CD345 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D14B1DD6AF33AB087883E933992FA127 /* PBXTargetDependency */ = {
+		78FA0A8DE90649136F797E742847C048 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ITRAirSideMenu;
+			target = 31DC5C2F7F64F9E319BDA427EB46E5B5 /* ITRAirSideMenu */;
+			targetProxy = A6B915EF841E635F0F38FBBDD19F8896 /* PBXContainerItemProxy */;
+		};
+		A207F3D1C2DB1496F6C94DF9064B99F5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TWPhotoPicker;
-			target = A4951E04F83E654C55810686711A987F /* TWPhotoPicker */;
-			targetProxy = 6B899C282CA6D3AF517099AAD06ACF66 /* PBXContainerItemProxy */;
+			target = 0BE70E7E941E88046EA1199D8DF6287B /* TWPhotoPicker */;
+			targetProxy = 6196DDB9C75F04724170BD819D5A345D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -315,25 +407,7 @@
 			};
 			name = Release;
 		};
-		05F2022FFA3E82E4B504EDF532EEF4AB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63C377B3159253D11F0942AE39C51592 /* TWPhotoPicker.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TWPhotoPicker/TWPhotoPicker-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		38A49643971F10622E491E4B8E3D11E4 /* Debug */ = {
+		5741D0EA2B142EA74E7FDD2480FEA2A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
 			buildSettings = {
@@ -350,14 +424,31 @@
 			};
 			name = Debug;
 		};
-		70685A33552468259D9970F884E93D5F /* Release */ = {
+		60A342D135AB373B080874F7214D089F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63C377B3159253D11F0942AE39C51592 /* TWPhotoPicker.xcconfig */;
+			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TWPhotoPicker/TWPhotoPicker-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		87FBD2239AFE380F8AF2D6D723554E8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B3E107CD09B580012C5248A6B443773 /* ITRAirSideMenu.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ITRAirSideMenu/ITRAirSideMenu-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -366,7 +457,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -407,26 +498,81 @@
 			};
 			name = Debug;
 		};
-		B98C1FDB02A4D6D742A3BAFF2A99460F /* Release */ = {
+		BAA430E8A6DBD1A057BC11C69C676F28 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
+			baseConfigurationReference = 0B3E107CD09B580012C5248A6B443773 /* ITRAirSideMenu.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ITRAirSideMenu/ITRAirSideMenu-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
+		CFCECC199A44D4D144B27FFD37F66D6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB791CD6C26765849D7E123CABF92DFD /* TWPhotoPicker.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TWPhotoPicker/TWPhotoPicker-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FA979B21A6A5F396DE274E72AE44C9E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB791CD6C26765849D7E123CABF92DFD /* TWPhotoPicker.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TWPhotoPicker/TWPhotoPicker-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		12DA079E489EE76C9B339A18F20E60AE /* Build configuration list for PBXNativeTarget "TWPhotoPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA979B21A6A5F396DE274E72AE44C9E7 /* Debug */,
+				CFCECC199A44D4D144B27FFD37F66D6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14B0BC6A910F3B758C9D14265E352FE1 /* Build configuration list for PBXNativeTarget "ITRAirSideMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87FBD2239AFE380F8AF2D6D723554E8C /* Debug */,
+				BAA430E8A6DBD1A057BC11C69C676F28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -436,20 +582,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71D7A94DA0A8397D386D8FA699F93338 /* Build configuration list for PBXNativeTarget "TWPhotoPicker" */ = {
+		7D299285638BDE984A8AC33CEA831CC4 /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				05F2022FFA3E82E4B504EDF532EEF4AB /* Debug */,
-				70685A33552468259D9970F884E93D5F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C51A53ED4E852EA5D810CD53A8713F63 /* Build configuration list for PBXNativeTarget "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				38A49643971F10622E491E4B8E3D11E4 /* Debug */,
-				B98C1FDB02A4D6D742A3BAFF2A99460F /* Release */,
+				5741D0EA2B142EA74E7FDD2480FEA2A9 /* Debug */,
+				60A342D135AB373B080874F7214D089F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,6 +8,7 @@
 
 #import "NHTMainTableViewController.h"
 #import "NHTDetailViewController.h"
+#import "NHTTipManager.h"
 
 @interface NHTMainTableViewController ()
 
@@ -17,17 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSURL *tipLoad = [NSURL URLWithString:@"http://54.64.250.239:3000/tip/all"];
-    
-    NSData *jsonData = [NSData dataWithContentsOfURL:tipLoad];
-    NSLog(@"%@", jsonData);
-    
-    NSError *error = nil;
-    
-    self.tips = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
-    
-    NSLog(@"%@",self.tips);
+    NSLog(@"hello");
+    self.Q1 = [[NHTTipManager alloc]init];
+    [self.Q1 tipsDidLoad];
+    NSLog(@"!!!%@", self.Q1);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,15 +36,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return [self.tips count];
+    NSLog(@"the number of cell : %d", [self.Q1 countOfTipCollection] );
+    return [self.Q1 countOfTipCollection];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
-    NSDictionary *tip = [self.tips objectAtIndex:indexPath.row];
+    NSLog(@"FOR CELL%@",[self.Q1 objectAtIndex:indexPath.row]);
+    //if([[[self.Q1 objectAtIndex:indexPath.row] class] isKindOfClass: [NSDictionary class]]){
+        NSDictionary *tip = [self.Q1 objectAtIndex:indexPath.row];
+        NSLog(@"###%@",tip);
+        
+    //};
     
     /* view tag number 
         (assign it view-orderly: top to bottom, left to right)
@@ -64,10 +63,11 @@
         7 - likeButton
         8 - commentButton
      */
+  
     
     UIImageView *tipImage = (UIImageView *)[cell viewWithTag:100];
     NSArray *tipImageFile = [tip objectForKey:@"file"];
-    //NSLog(@"###STRing: %@",tipImageFile);
+    NSLog(@"###STRing: %@",tipImageFile);
     NSDictionary *tipImagePathDictionary = tipImageFile[0];
     NSString *tipImagePathString = [tipImagePathDictionary objectForKey:@"path"];
     NSUInteger pointOfPathStart = 5;
@@ -108,6 +108,7 @@
     UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
     
     cell.gestureRecognizers = [[NSArray alloc] initWithObjects:tapCellForTipDetail, nil];
+    
     return cell;
 }
 
@@ -119,10 +120,7 @@
         NSLog(@"####sender target? %@",[sender view]);
         UITableViewCell *tipCell = [sender view];
         
-        //NSLog(@"###storename? %@", [[tipCell viewWithTag:1] text]);
-        
-        //NSDictionary *tappedCellData = (NSDictionary *)[sender tip];
-        
+               
         /*
         if([self.playlistImageViews containsObject:playlistImageView]){
             NSUInteger index = [self.playlistImageViews indexOfObject:playlistImageView];

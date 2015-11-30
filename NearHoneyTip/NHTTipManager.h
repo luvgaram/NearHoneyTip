@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+@class NHTTipCollection;
 
 @interface NHTTipManager : NSObject
+
+@property(strong, nonatomic) NHTTipCollection *tipCollection;
+
+-(id)init;
+-(void)tipsDidLoad;
+-(NSInteger)countOfTipCollection;
+-(NSObject*)objectAtIndex:(NSUInteger)index;
 
 @end

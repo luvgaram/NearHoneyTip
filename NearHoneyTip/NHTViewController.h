@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NHTViewController : UIViewController <UINavigationControllerDelegate,
+@interface NHTWriteViewController : UIViewController <UINavigationControllerDelegate,
 UIImagePickerControllerDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *storeName;
 @property (strong, nonatomic) IBOutlet UITextField *detail;

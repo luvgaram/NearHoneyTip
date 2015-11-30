@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class NHTTip;
+@class NHTTipManager;
 
 @interface NHTMainTableViewController : UITableViewController
 
-@property (strong, nonatomic) IBOutletCollection(NHTTip) NSArray *tips;
+@property (strong, nonatomic) NHTTipManager *Q1;
 
 @end

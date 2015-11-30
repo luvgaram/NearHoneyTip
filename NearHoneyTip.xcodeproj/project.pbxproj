@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F2DE7341C0C5F2F0016DB36 /* NHTSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2DE7331C0C5F2F0016DB36 /* NHTSideMenuController.m */; };
 		A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A82A3D531C088FDE0057F048 /* NHTBasicModel.m */; };
 		A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8935A701C01E48800E69F2F /* NHTWriteViewController.m */; };
 		BEB76CDE499F39F005B1B9C5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 382463056E0044DAA3DF9E33 /* libPods.a */; };
@@ -59,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		382463056E0044DAA3DF9E33 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F2DE7321C0C5F2F0016DB36 /* NHTSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTSideMenuController.h; sourceTree = "<group>"; };
+		6F2DE7331C0C5F2F0016DB36 /* NHTSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTSideMenuController.m; sourceTree = "<group>"; };
 		904A7464ED7B0C7A3B186D8E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A82A3D521C088F930057F048 /* NHTBasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTBasicModel.h; sourceTree = "<group>"; };
 		A82A3D531C088FDE0057F048 /* NHTBasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTBasicModel.m; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				CE3355B51BE9CB9100B77DEC /* Supporting Files */,
 				A82A3D521C088F930057F048 /* NHTBasicModel.h */,
 				A82A3D531C088FDE0057F048 /* NHTBasicModel.m */,
+				6F2DE7321C0C5F2F0016DB36 /* NHTSideMenuController.h */,
+				6F2DE7331C0C5F2F0016DB36 /* NHTSideMenuController.m */,
 			);
 			path = NearHoneyTip;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				CE8D538F1C0C37B4005F913E /* NHTTipManager.m in Sources */,
 				CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */,
 				CE3355B71BE9CB9100B77DEC /* main.m in Sources */,
+				6F2DE7341C0C5F2F0016DB36 /* NHTSideMenuController.m in Sources */,
 				CE69AAB71C05863400909DBD /* NHTTip.m in Sources */,
 				CE8D538E1C0C37B4005F913E /* NHTTipCollection.m in Sources */,
 				CE3355C31BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld in Sources */,

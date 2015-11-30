@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+@class NHTTip;
 
 @interface NHTTipCollection : NSObject
 
-@property (strong, nonatomic) NSMutableArray *tipCollection;
+@property(strong, nonatomic) NSMutableArray* tips;
+
+-(id)initWithJSONSerialization:(NSArray*)JSONs;
+-(NSInteger)countOfTips;
+-(NSObject*)objectAtIndex:(NSUInteger)index;
 @end

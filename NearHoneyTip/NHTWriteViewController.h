@@ -1,5 +1,5 @@
 //
-//  NHTWriteViewController.h
+//  NHTViewController.h
 //  NearHoneyTip
 //
 //  Created by Eunjoo Im on 2015. 11. 22..
@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UINavigationControllerDelegate,
+@interface NHTWriteViewController : UIViewController <UINavigationControllerDelegate,
 UIImagePickerControllerDelegate>
+@property (strong, nonatomic) IBOutlet UITextField *storeName;
+@property (strong, nonatomic) IBOutlet UITextField *detail;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIImage *chosenImage;
 
-
-@property (strong, nonatomic) IBOutlet UIImageView* imageView;
-
-- (IBAction) pickImage:(id)sender;
+- (IBAction)saveTip:(id)sender;
+- (IBAction)cancelWrite:(id)sender;
+//- (IBAction) pickImage:(id)sender;
 
 
 @end

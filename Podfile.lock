@@ -1,0 +1,10 @@
+PODS:
+  - TWPhotoPicker (1.0.0)
+
+DEPENDENCIES:
+  - TWPhotoPicker (~> 1.0.0)
+
+SPEC CHECKSUMS:
+  TWPhotoPicker: 5e9bcd6097e8602e8243d1bdd54a5cf1afbedcf2
+
+COCOAPODS: 0.39.0

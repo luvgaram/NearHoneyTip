@@ -6,7 +6,7 @@
 //  Copyright © 2015년 Mamamoo. All rights reserved.
 //
 
-#import "NHTViewController.h"
+#import "NHTWriteViewController.h"
 
 @interface NHTViewController ()
 

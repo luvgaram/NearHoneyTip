@@ -1,5 +1,5 @@
 //
-//  NHTWriteViewController.m
+//  NHTViewController.m
 //  NearHoneyTip
 //
 //  Created by Eunjoo Im on 2015. 11. 22..
@@ -7,31 +7,139 @@
 //
 
 #import "NHTWriteViewController.h"
+#import "TWPhotoPickerController.h"
 
 @interface NHTWriteViewController ()
 
 @end
 
+static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
+
 @implementation NHTWriteViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setPhotoPicker];
+    
+//    UILongPressGestureRecognizer *longPressGestureRecognize =
+//        [[UILongPressGestureRecognizer alloc]
+//         initWithTarget:self action:@selector
+//         (handleLongPressGesture:)];
+
+//    UILongPressGestureRecognizer *longPressGestureRecognize =
+//    [[UILongPressGestureRecognizer alloc]
+//     initWithTarget:self action:@selector(handleLongPressGesture:)];
+//    
+//    longPressGestureRecognize.allowableMovement = 20;
+//    longPressGestureRecognize.minimumPressDuration = 0.5f;
+//    
+//    [self.chosenImage addGesutreRecognize:longPressGestureRecognize];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setPhotoPicker {
+    // TWPhotoPicker
+    TWPhotoPickerController *photoPicker = [[TWPhotoPickerController alloc] init];
+    
+    photoPicker.cropBlock = ^(UIImage *image) {
+        //do something
+        self.imageView.image = image;
+        _chosenImage = image;
+    };
+    
+    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:photoPicker];
+    [navCon setNavigationBarHidden:YES];
+    
+    [self presentViewController:navCon animated:YES completion:NULL];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)saveTip:(id)sender {
+    NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"ib_addphoto"], 1.0);
+    
+    if (_chosenImage) {
+        data = UIImageJPEGRepresentation(_chosenImage, 1.0);
+        NSDictionary *tipDictionary = @{ @"storeName":_storeName.text,
+                                         @"detail":_detail.text,
+                                         @"imageData":data
+                                         };
+        [self postTip:tipDictionary];
+        NSLog(@"saving tip for %@", _storeName);
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        
+    } else {
+        NSLog(@"no image");
+    }
 }
-*/
+
+- (IBAction)cancelWrite:(id)sender {
+    NSLog(@"%@",self.navigationController.viewControllers);
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+
+- (void)postFormDataAtURL :(NSURL *)url postData:(NSData*)postData {
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    request.HTTPMethod = @"POST";
+    NSString* contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
+                                                                  delegate:self];
+    [connection start];
+    NSLog(@"connection end");
+}
+
+- (void) postTip:(NSDictionary *)tipDictionary {
+    
+    NSLog(@"start post");
+    
+    NSMutableData* body = [NSMutableData data];
+    NSData *data = tipDictionary[@"imageData"];
+    if (data) {
+        [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"upload\"; filename=\"%@.jpg\"\r\n", tipDictionary[@"storeName"]] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[NSData dataWithData:data]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"storename\"\r\n\r\n%@", tipDictionary[@"storeName"]] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"tipdetail\"\r\n\r\n%@", tipDictionary[@"detail"]] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [self postFormDataAtURL:[NSURL URLWithString:@"http://54.64.250.239:3000/tip"]
+                   postData:body
+               ];
+}
+
+// 예전 image picker
+//- (IBAction) pickImage:(id)sender{
+//    
+//    UIImagePickerController *pickerController = [[UIImagePickerController alloc]
+//                                                 init];
+//    pickerController.delegate = self;
+//    [self presentViewController:pickerController animated:YES completion:nil];
+//}
+//
+//#pragma mark -
+//#pragma mark UIImagePickerControllerDelegate
+//
+//- (void) imagePickerController:(UIImagePickerController *)picker
+//         didFinishPickingImage:(UIImage *)image
+//                   editingInfo:(NSDictionary *)editingInfo {
+//    c
+//    self.imageView.image = image;
+//    [self dismissModalViewControllerAnimated:YES];
+//}
+//
+//
+//- (void)didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//}
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "NHTDetailViewController.h"
-#import "NHTTip.h"
 
 @interface NHTDetailViewController ()
 
@@ -18,14 +17,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    /* view tag number
+     (assign it view-orderly: top to bottom, left to right)
+     100 - tipImage
+     1 - storeName
+     2 - tipDetails
+     3 - userProfileImg
+     4 - userNickname
+     5 - tipDate
+     6 - userBadge
+     7 - likeButton
+     8 - commentButton
+     */
+    
     if(self.selectedTip){
-        self.storeName.title = self.selectedTip.storeName;
-        self.tipImage.image = self.selectedTip.tipImage;
-        self.tipDetails.text = self.selectedTip.tipDetails;
-        self.userProfileImage.image = self.selectedTip.userProfileImg;
+        self.storeName.title = [[self.selectedTip viewWithTag:1] text];
+        self.tipImage.image = [[self.selectedTip viewWithTag: 100] image];
+        self.tipDetails.text = [[self.selectedTip viewWithTag:2] text];
+        self.userProfileImage.image = [[self.selectedTip viewWithTag: 3] image];
         self.userProfileImage.layer.cornerRadius = 25;
-        self.userNickname.text = self.selectedTip.userNickname;
-        self.tipDate.text = self.selectedTip.tipDate;
+        self.userNickname.text = [[self.selectedTip viewWithTag:4] text];
+        self.tipDate.text = [[self.selectedTip viewWithTag:5] text];
         //userBadge
         //likeButton
         //commentButton

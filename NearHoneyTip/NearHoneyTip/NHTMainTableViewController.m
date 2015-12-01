@@ -8,8 +8,6 @@
 
 #import "NHTMainTableViewController.h"
 #import "NHTDetailViewController.h"
-#import "NHTTipManager.h"
-#import "NHTMainTableCell.h"
 
 @interface NHTMainTableViewController ()
 
@@ -19,8 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.Q1 = [[NHTTipManager alloc]init];
-    [self.Q1 tipsDidLoad];
+    
+    NSURL *tipLoad = [NSURL URLWithString:@"http://54.64.250.239:3000/tip/all"];
+    
+    NSData *jsonData = [NSData dataWithContentsOfURL:tipLoad];
+    NSLog(@"%@", jsonData);
+    
+    NSError *error = nil;
+    
+    self.tips = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    
+    NSLog(@"%@",self.tips);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,24 +42,72 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"the number of cell : %ld", (long)[self.Q1 countOfTipCollection] );
-    return [self.Q1 countOfTipCollection];
+
+    return [self.tips count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    NHTMainTableCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
-    NSLog(@"FOR CELL%@",[self.Q1 objectAtIndex:indexPath.row]);
-    //if([[[self.Q1 objectAtIndex:indexPath.row] class] isKindOfClass: [NSDictionary class]]){
-        NSDictionary *tip = [self.Q1 objectAtIndex:indexPath.row];
-   
-    [cell setCellWithTip:tip];
-    //};
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
+    NSDictionary *tip = [self.tips objectAtIndex:indexPath.row];
+    
+    /* view tag number 
+        (assign it view-orderly: top to bottom, left to right)
+        100 - tipImage
+        1 - storeName
+        2 - tipDetails
+        3 - userProfileImg
+        4 - userNickname
+        5 - tipDate
+        6 - userBadge
+        7 - likeButton
+        8 - commentButton
+     */
+    
+    UIImageView *tipImage = (UIImageView *)[cell viewWithTag:100];
+    NSArray *tipImageFile = [tip objectForKey:@"file"];
+    //NSLog(@"###STRing: %@",tipImageFile);
+    NSDictionary *tipImagePathDictionary = tipImageFile[0];
+    NSString *tipImagePathString = [tipImagePathDictionary objectForKey:@"path"];
+    NSUInteger pointOfPathStart = 5;
+    NSString *tipImagePath = [tipImagePathString substringFromIndex: pointOfPathStart];
+    NSString *tipImagePathWhole = @"http://54.64.250.239:3000/image/photo=";
+    tipImagePathWhole = [tipImagePathWhole stringByAppendingString:tipImagePath];
+    NSURL *tipImageLoadURL = [NSURL URLWithString:tipImagePathWhole];
+    NSError *errorTipImage = nil;
+    NSData *tipImageLoadData = [NSData dataWithContentsOfURL:tipImageLoadURL options:0 error: &errorTipImage];
+    UIImage     *tipimageLoad = [UIImage imageWithData:tipImageLoadData];
+    tipImage.image = tipimageLoad;
+    
+    UILabel *storeName = (UILabel *)[cell viewWithTag:1];
+    storeName.text = [tip valueForKey:@"storename"];
+    
+    UITextView *tipDetails = (UITextView *)[cell viewWithTag:2];
+    tipDetails.text = [tip valueForKey:@"tipdetail"];
+    
+    UIImageView *userProfileImage = (UIImageView *)[cell viewWithTag:3];
+    userProfileImage.layer.cornerRadius = 16;
+    NSString *userProfileImageString = [tip objectForKey:@"profilephoto"];
+    NSString *userProfileImagePath = [userProfileImageString substringFromIndex:pointOfPathStart];
+    NSString *userProflieImagePathWhole = @"http://54.64.250.239:3000/image/icon=";
+    userProflieImagePathWhole = [userProflieImagePathWhole stringByAppendingString:userProfileImagePath];
+    NSURL *userProfileImageLoadURL = [NSURL URLWithString:userProflieImagePathWhole];
+    NSError *errorUserProfileImage = nil;
+    NSData *userProflieImageLoadData = [NSData dataWithContentsOfURL:userProfileImageLoadURL options:0 error: &errorUserProfileImage];
+    UIImage *userProfileImageLoad = [UIImage imageWithData:userProflieImageLoadData];
+    userProfileImage.image = userProfileImageLoad;
+    
+    
+    UILabel *userNickname = (UILabel *)[cell viewWithTag:4];
+    userNickname.text = [tip valueForKey:@"nickname"];
+    
+    UILabel *tipDate = (UILabel *)[cell viewWithTag:5];
+    tipDate.text = [tip valueForKey: @"date"];
+
     UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
     
     cell.gestureRecognizers = [[NSArray alloc] initWithObjects:tapCellForTipDetail, nil];
-   
     return cell;
 }
 
@@ -62,7 +117,11 @@
         
         NSLog(@"#####3-2%@", sender);
         NSLog(@"####sender target? %@",[sender view]);
-       NHTMainTableCell *tipCell = [sender view];
+        UITableViewCell *tipCell = [sender view];
+        
+        //NSLog(@"###storename? %@", [[tipCell viewWithTag:1] text]);
+        
+        //NSDictionary *tappedCellData = (NSDictionary *)[sender tip];
         
         /*
         if([self.playlistImageViews containsObject:playlistImageView]){
@@ -74,11 +133,8 @@
         
         if(tipCell){
         NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
-            if(tipCell.tip){
-                
-                NSLog(@"this is tip %@", tipCell.tip);
-        tipDetailController.selectedTip = tipCell.tip;
-            }
+        tipDetailController.selectedTip = tipCell;
+
         }
     }
 }

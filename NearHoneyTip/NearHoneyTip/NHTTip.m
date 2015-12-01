@@ -10,7 +10,4 @@
 
 @implementation NHTTip
 
-
-
-
 @end

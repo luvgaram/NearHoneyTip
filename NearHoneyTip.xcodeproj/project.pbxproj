@@ -32,6 +32,9 @@
 		CE69AAB71C05863400909DBD /* NHTTip.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69AAB61C05863400909DBD /* NHTTip.m */; };
 		CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */; };
 		CE72A0A01BFC484700466A33 /* NHTMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE72A09F1BFC484700466A33 /* NHTMainTableViewController.m */; };
+		CE8D538D1C0C37B4005F913E /* NHTMainTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D53881C0C37B4005F913E /* NHTMainTableCell.m */; };
+		CE8D538E1C0C37B4005F913E /* NHTTipCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D538A1C0C37B4005F913E /* NHTTipCollection.m */; };
+		CE8D538F1C0C37B4005F913E /* NHTTipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D538C1C0C37B4005F913E /* NHTTipManager.m */; };
 		CEC8E9B31BECA7CF00582083 /* commentTint.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC8E9B11BECA7CF00582083 /* commentTint.png */; };
 		CEC8E9B41BECA7CF00582083 /* likeTint.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC8E9B21BECA7CF00582083 /* likeTint.png */; };
 		CEF05FFE1BF317FF0037E24A /* nht_icon_newPost.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */; };
@@ -94,6 +97,12 @@
 		CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTDetailViewController.m; sourceTree = "<group>"; };
 		CE72A09E1BFC484700466A33 /* NHTMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMainTableViewController.h; sourceTree = "<group>"; };
 		CE72A09F1BFC484700466A33 /* NHTMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMainTableViewController.m; sourceTree = "<group>"; };
+		CE8D53871C0C37B4005F913E /* NHTMainTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMainTableCell.h; sourceTree = "<group>"; };
+		CE8D53881C0C37B4005F913E /* NHTMainTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMainTableCell.m; sourceTree = "<group>"; };
+		CE8D53891C0C37B4005F913E /* NHTTipCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTTipCollection.h; sourceTree = "<group>"; };
+		CE8D538A1C0C37B4005F913E /* NHTTipCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTTipCollection.m; sourceTree = "<group>"; };
+		CE8D538B1C0C37B4005F913E /* NHTTipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTTipManager.h; sourceTree = "<group>"; };
+		CE8D538C1C0C37B4005F913E /* NHTTipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTTipManager.m; sourceTree = "<group>"; };
 		CEC8E9B11BECA7CF00582083 /* commentTint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentTint.png; sourceTree = "<group>"; };
 		CEC8E9B21BECA7CF00582083 /* likeTint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likeTint.png; sourceTree = "<group>"; };
 		CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nht_icon_newPost.png; sourceTree = "<group>"; };
@@ -159,12 +168,18 @@
 		CE3355B41BE9CB9100B77DEC /* NearHoneyTip */ = {
 			isa = PBXGroup;
 			children = (
+				CE69AAB51C05863400909DBD /* NHTTip.h */,
+				CE69AAB61C05863400909DBD /* NHTTip.m */,
+				CE8D53891C0C37B4005F913E /* NHTTipCollection.h */,
+				CE8D538A1C0C37B4005F913E /* NHTTipCollection.m */,
+				CE8D538B1C0C37B4005F913E /* NHTTipManager.h */,
+				CE8D538C1C0C37B4005F913E /* NHTTipManager.m */,
 				CE72A09E1BFC484700466A33 /* NHTMainTableViewController.h */,
 				CE72A09F1BFC484700466A33 /* NHTMainTableViewController.m */,
 				CE69AAB81C0586D600909DBD /* NHTDetailViewController.h */,
 				CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */,
-				CE69AAB51C05863400909DBD /* NHTTip.h */,
-				CE69AAB61C05863400909DBD /* NHTTip.m */,
+				CE8D53871C0C37B4005F913E /* NHTMainTableCell.h */,
+				CE8D53881C0C37B4005F913E /* NHTMainTableCell.m */,
 				CE3355B81BE9CB9100B77DEC /* AppDelegate.h */,
 				CE3355B91BE9CB9100B77DEC /* AppDelegate.m */,
 				A8935A6F1C01E48800E69F2F /* NHTWriteViewController.h */,
@@ -435,11 +450,14 @@
 				A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */,
 				CE72A0A01BFC484700466A33 /* NHTMainTableViewController.m in Sources */,
 				CE3355BA1BE9CB9100B77DEC /* AppDelegate.m in Sources */,
+				CE8D538F1C0C37B4005F913E /* NHTTipManager.m in Sources */,
 				CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */,
 				CE3355B71BE9CB9100B77DEC /* main.m in Sources */,
 				CE69AAB71C05863400909DBD /* NHTTip.m in Sources */,
+				CE8D538E1C0C37B4005F913E /* NHTTipCollection.m in Sources */,
 				CE3355C31BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld in Sources */,
 				A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */,
+				CE8D538D1C0C37B4005F913E /* NHTMainTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

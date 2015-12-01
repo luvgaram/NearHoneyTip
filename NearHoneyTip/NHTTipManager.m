@@ -30,7 +30,7 @@
     NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
     
     for(int i = 0; i < [loadedTipsArray count] ; i++){
-        [self.tipCollection addTip: [loadedTipsArray objectAtIndex:i]];
+        [self.tipCollection addTip: [loadedTipsArray objectAtIndex:[loadedTipsArray count] - (i + 1)]];
     }
     
    // NSLog(@"%@",self.tipCollection);

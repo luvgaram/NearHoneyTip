@@ -1,0 +1,730 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F2DE7341C0C5F2F0016DB36 /* NHTSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2DE7331C0C5F2F0016DB36 /* NHTSideMenuController.m */; };
+		A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A82A3D531C088FDE0057F048 /* NHTBasicModel.m */; };
+		A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8935A701C01E48800E69F2F /* NHTWriteViewController.m */; };
+		BEB76CDE499F39F005B1B9C5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 382463056E0044DAA3DF9E33 /* libPods.a */; };
+		CE3355B71BE9CB9100B77DEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3355B61BE9CB9100B77DEC /* main.m */; };
+		CE3355BA1BE9CB9100B77DEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3355B91BE9CB9100B77DEC /* AppDelegate.m */; };
+		CE3355C01BE9CB9100B77DEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3355BE1BE9CB9100B77DEC /* Main.storyboard */; };
+		CE3355C31BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE3355C11BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld */; };
+		CE3355C51BE9CB9100B77DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3355C41BE9CB9100B77DEC /* Assets.xcassets */; };
+		CE3355C81BE9CB9100B77DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3355C61BE9CB9100B77DEC /* LaunchScreen.storyboard */; };
+		CE3355D31BE9CB9200B77DEC /* NearHoneyTipTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3355D21BE9CB9200B77DEC /* NearHoneyTipTests.m */; };
+		CE3355DE1BE9CB9200B77DEC /* NearHoneyTipUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3355DD1BE9CB9200B77DEC /* NearHoneyTipUITests.m */; };
+		CE3355EC1BE9CD3600B77DEC /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355EB1BE9CD3600B77DEC /* loading.png */; };
+		CE3355F71BE9D45500B77DEC /* anomy.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355EE1BE9D45500B77DEC /* anomy.png */; };
+		CE3355F81BE9D45500B77DEC /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355EF1BE9D45500B77DEC /* back.png */; };
+		CE3355F91BE9D45500B77DEC /* badge1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F01BE9D45500B77DEC /* badge1.png */; };
+		CE3355FA1BE9D45500B77DEC /* Like Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F11BE9D45500B77DEC /* Like Filled-50.png */; };
+		CE3355FB1BE9D45500B77DEC /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F21BE9D45500B77DEC /* location.png */; };
+		CE3355FC1BE9D45500B77DEC /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F31BE9D45500B77DEC /* more.png */; };
+		CE3355FD1BE9D45500B77DEC /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F41BE9D45500B77DEC /* setting.png */; };
+		CE3355FE1BE9D45500B77DEC /* SLR Camera Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F51BE9D45500B77DEC /* SLR Camera Filled-50.png */; };
+		CE3355FF1BE9D45500B77DEC /* Speech Bubble Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F61BE9D45500B77DEC /* Speech Bubble Filled-50.png */; };
+		CE3356011BE9DF6D00B77DEC /* dump.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE3356001BE9DF6D00B77DEC /* dump.jpeg */; };
+		CE69AAB71C05863400909DBD /* NHTTip.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69AAB61C05863400909DBD /* NHTTip.m */; };
+		CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */; };
+		CE72A0A01BFC484700466A33 /* NHTMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE72A09F1BFC484700466A33 /* NHTMainTableViewController.m */; };
+		CE8D538D1C0C37B4005F913E /* NHTMainTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D53881C0C37B4005F913E /* NHTMainTableCell.m */; };
+		CE8D538E1C0C37B4005F913E /* NHTTipCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D538A1C0C37B4005F913E /* NHTTipCollection.m */; };
+		CE8D538F1C0C37B4005F913E /* NHTTipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D538C1C0C37B4005F913E /* NHTTipManager.m */; };
+		CEC8E9B31BECA7CF00582083 /* commentTint.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC8E9B11BECA7CF00582083 /* commentTint.png */; };
+		CEC8E9B41BECA7CF00582083 /* likeTint.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC8E9B21BECA7CF00582083 /* likeTint.png */; };
+		CEF05FFE1BF317FF0037E24A /* nht_icon_newPost.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE3355CF1BE9CB9200B77DEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE3355AA1BE9CB9100B77DEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE3355B11BE9CB9100B77DEC;
+			remoteInfo = NearHoneyTip;
+		};
+		CE3355DA1BE9CB9200B77DEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE3355AA1BE9CB9100B77DEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE3355B11BE9CB9100B77DEC;
+			remoteInfo = NearHoneyTip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		382463056E0044DAA3DF9E33 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F2DE7321C0C5F2F0016DB36 /* NHTSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTSideMenuController.h; sourceTree = "<group>"; };
+		6F2DE7331C0C5F2F0016DB36 /* NHTSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTSideMenuController.m; sourceTree = "<group>"; };
+		904A7464ED7B0C7A3B186D8E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A82A3D521C088F930057F048 /* NHTBasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTBasicModel.h; sourceTree = "<group>"; };
+		A82A3D531C088FDE0057F048 /* NHTBasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTBasicModel.m; sourceTree = "<group>"; };
+		A8935A6F1C01E48800E69F2F /* NHTWriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTWriteViewController.h; sourceTree = "<group>"; };
+		A8935A701C01E48800E69F2F /* NHTWriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTWriteViewController.m; sourceTree = "<group>"; };
+		B25936F0EDCBDABE9ACBED38 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CE3355B21BE9CB9100B77DEC /* NearHoneyTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearHoneyTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE3355B61BE9CB9100B77DEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE3355B81BE9CB9100B77DEC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CE3355B91BE9CB9100B77DEC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CE3355BF1BE9CB9100B77DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE3355C21BE9CB9100B77DEC /* NearHoneyTip.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NearHoneyTip.xcdatamodel; sourceTree = "<group>"; };
+		CE3355C41BE9CB9100B77DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE3355C71BE9CB9100B77DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE3355C91BE9CB9200B77DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE3355CE1BE9CB9200B77DEC /* NearHoneyTipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearHoneyTipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE3355D21BE9CB9200B77DEC /* NearHoneyTipTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearHoneyTipTests.m; sourceTree = "<group>"; };
+		CE3355D41BE9CB9200B77DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE3355D91BE9CB9200B77DEC /* NearHoneyTipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearHoneyTipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE3355DD1BE9CB9200B77DEC /* NearHoneyTipUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NearHoneyTipUITests.m; sourceTree = "<group>"; };
+		CE3355DF1BE9CB9200B77DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE3355EB1BE9CD3600B77DEC /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		CE3355EE1BE9D45500B77DEC /* anomy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anomy.png; sourceTree = "<group>"; };
+		CE3355EF1BE9D45500B77DEC /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		CE3355F01BE9D45500B77DEC /* badge1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge1.png; sourceTree = "<group>"; };
+		CE3355F11BE9D45500B77DEC /* Like Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Like Filled-50.png"; sourceTree = "<group>"; };
+		CE3355F21BE9D45500B77DEC /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
+		CE3355F31BE9D45500B77DEC /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		CE3355F41BE9D45500B77DEC /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		CE3355F51BE9D45500B77DEC /* SLR Camera Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SLR Camera Filled-50.png"; sourceTree = "<group>"; };
+		CE3355F61BE9D45500B77DEC /* Speech Bubble Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble Filled-50.png"; sourceTree = "<group>"; };
+		CE3356001BE9DF6D00B77DEC /* dump.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dump.jpeg; sourceTree = "<group>"; };
+		CE69AAB51C05863400909DBD /* NHTTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTTip.h; sourceTree = "<group>"; };
+		CE69AAB61C05863400909DBD /* NHTTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTTip.m; sourceTree = "<group>"; };
+		CE69AAB81C0586D600909DBD /* NHTDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTDetailViewController.h; sourceTree = "<group>"; };
+		CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTDetailViewController.m; sourceTree = "<group>"; };
+		CE72A09E1BFC484700466A33 /* NHTMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMainTableViewController.h; sourceTree = "<group>"; };
+		CE72A09F1BFC484700466A33 /* NHTMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMainTableViewController.m; sourceTree = "<group>"; };
+		CE8D53871C0C37B4005F913E /* NHTMainTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMainTableCell.h; sourceTree = "<group>"; };
+		CE8D53881C0C37B4005F913E /* NHTMainTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMainTableCell.m; sourceTree = "<group>"; };
+		CE8D53891C0C37B4005F913E /* NHTTipCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTTipCollection.h; sourceTree = "<group>"; };
+		CE8D538A1C0C37B4005F913E /* NHTTipCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTTipCollection.m; sourceTree = "<group>"; };
+		CE8D538B1C0C37B4005F913E /* NHTTipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTTipManager.h; sourceTree = "<group>"; };
+		CE8D538C1C0C37B4005F913E /* NHTTipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTTipManager.m; sourceTree = "<group>"; };
+		CEC8E9B11BECA7CF00582083 /* commentTint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentTint.png; sourceTree = "<group>"; };
+		CEC8E9B21BECA7CF00582083 /* likeTint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likeTint.png; sourceTree = "<group>"; };
+		CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nht_icon_newPost.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE3355AF1BE9CB9100B77DEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEB76CDE499F39F005B1B9C5 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE3355CB1BE9CB9200B77DEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE3355D61BE9CB9200B77DEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D06D016EEBCA99A65439F50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B25936F0EDCBDABE9ACBED38 /* Pods.debug.xcconfig */,
+				904A7464ED7B0C7A3B186D8E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE3355A91BE9CB9100B77DEC = {
+			isa = PBXGroup;
+			children = (
+				CE3355B41BE9CB9100B77DEC /* NearHoneyTip */,
+				CE3355D11BE9CB9200B77DEC /* NearHoneyTipTests */,
+				CE3355DC1BE9CB9200B77DEC /* NearHoneyTipUITests */,
+				CE3355B31BE9CB9100B77DEC /* Products */,
+				4D06D016EEBCA99A65439F50 /* Pods */,
+				D1CEACB0E5C78E8C21BB3785 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CE3355B31BE9CB9100B77DEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE3355B21BE9CB9100B77DEC /* NearHoneyTip.app */,
+				CE3355CE1BE9CB9200B77DEC /* NearHoneyTipTests.xctest */,
+				CE3355D91BE9CB9200B77DEC /* NearHoneyTipUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE3355B41BE9CB9100B77DEC /* NearHoneyTip */ = {
+			isa = PBXGroup;
+			children = (
+				CE69AAB51C05863400909DBD /* NHTTip.h */,
+				CE69AAB61C05863400909DBD /* NHTTip.m */,
+				CE8D53891C0C37B4005F913E /* NHTTipCollection.h */,
+				CE8D538A1C0C37B4005F913E /* NHTTipCollection.m */,
+				CE8D538B1C0C37B4005F913E /* NHTTipManager.h */,
+				CE8D538C1C0C37B4005F913E /* NHTTipManager.m */,
+				CE72A09E1BFC484700466A33 /* NHTMainTableViewController.h */,
+				CE72A09F1BFC484700466A33 /* NHTMainTableViewController.m */,
+				CE69AAB81C0586D600909DBD /* NHTDetailViewController.h */,
+				CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */,
+				CE8D53871C0C37B4005F913E /* NHTMainTableCell.h */,
+				CE8D53881C0C37B4005F913E /* NHTMainTableCell.m */,
+				CE3355B81BE9CB9100B77DEC /* AppDelegate.h */,
+				CE3355B91BE9CB9100B77DEC /* AppDelegate.m */,
+				A8935A6F1C01E48800E69F2F /* NHTWriteViewController.h */,
+				A8935A701C01E48800E69F2F /* NHTWriteViewController.m */,
+				CE3355BE1BE9CB9100B77DEC /* Main.storyboard */,
+				CE3355C41BE9CB9100B77DEC /* Assets.xcassets */,
+				CE3355C61BE9CB9100B77DEC /* LaunchScreen.storyboard */,
+				CE3355C91BE9CB9200B77DEC /* Info.plist */,
+				CE3355ED1BE9D42100B77DEC /* img */,
+				CE3355C11BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld */,
+				CE3355B51BE9CB9100B77DEC /* Supporting Files */,
+				A82A3D521C088F930057F048 /* NHTBasicModel.h */,
+				A82A3D531C088FDE0057F048 /* NHTBasicModel.m */,
+				6F2DE7321C0C5F2F0016DB36 /* NHTSideMenuController.h */,
+				6F2DE7331C0C5F2F0016DB36 /* NHTSideMenuController.m */,
+			);
+			path = NearHoneyTip;
+			sourceTree = "<group>";
+		};
+		CE3355B51BE9CB9100B77DEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE3355B61BE9CB9100B77DEC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE3355D11BE9CB9200B77DEC /* NearHoneyTipTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE3355D21BE9CB9200B77DEC /* NearHoneyTipTests.m */,
+				CE3355D41BE9CB9200B77DEC /* Info.plist */,
+			);
+			path = NearHoneyTipTests;
+			sourceTree = "<group>";
+		};
+		CE3355DC1BE9CB9200B77DEC /* NearHoneyTipUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CE3355DD1BE9CB9200B77DEC /* NearHoneyTipUITests.m */,
+				CE3355DF1BE9CB9200B77DEC /* Info.plist */,
+			);
+			path = NearHoneyTipUITests;
+			sourceTree = "<group>";
+		};
+		CE3355ED1BE9D42100B77DEC /* img */ = {
+			isa = PBXGroup;
+			children = (
+				CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */,
+				CEC8E9B11BECA7CF00582083 /* commentTint.png */,
+				CEC8E9B21BECA7CF00582083 /* likeTint.png */,
+				CE3356001BE9DF6D00B77DEC /* dump.jpeg */,
+				CE3355EB1BE9CD3600B77DEC /* loading.png */,
+				CE3355EE1BE9D45500B77DEC /* anomy.png */,
+				CE3355EF1BE9D45500B77DEC /* back.png */,
+				CE3355F01BE9D45500B77DEC /* badge1.png */,
+				CE3355F11BE9D45500B77DEC /* Like Filled-50.png */,
+				CE3355F21BE9D45500B77DEC /* location.png */,
+				CE3355F31BE9D45500B77DEC /* more.png */,
+				CE3355F41BE9D45500B77DEC /* setting.png */,
+				CE3355F51BE9D45500B77DEC /* SLR Camera Filled-50.png */,
+				CE3355F61BE9D45500B77DEC /* Speech Bubble Filled-50.png */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
+		D1CEACB0E5C78E8C21BB3785 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				382463056E0044DAA3DF9E33 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE3355B11BE9CB9100B77DEC /* NearHoneyTip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE3355E21BE9CB9200B77DEC /* Build configuration list for PBXNativeTarget "NearHoneyTip" */;
+			buildPhases = (
+				CCFCBA816228F80ABDECE2D1 /* Check Pods Manifest.lock */,
+				CE3355AE1BE9CB9100B77DEC /* Sources */,
+				CE3355AF1BE9CB9100B77DEC /* Frameworks */,
+				CE3355B01BE9CB9100B77DEC /* Resources */,
+				4E6C80397D45884BE66C9070 /* Embed Pods Frameworks */,
+				2148B8AA6A13FE831AE9C13A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NearHoneyTip;
+			productName = NearHoneyTip;
+			productReference = CE3355B21BE9CB9100B77DEC /* NearHoneyTip.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE3355CD1BE9CB9200B77DEC /* NearHoneyTipTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE3355E51BE9CB9200B77DEC /* Build configuration list for PBXNativeTarget "NearHoneyTipTests" */;
+			buildPhases = (
+				CE3355CA1BE9CB9200B77DEC /* Sources */,
+				CE3355CB1BE9CB9200B77DEC /* Frameworks */,
+				CE3355CC1BE9CB9200B77DEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE3355D01BE9CB9200B77DEC /* PBXTargetDependency */,
+			);
+			name = NearHoneyTipTests;
+			productName = NearHoneyTipTests;
+			productReference = CE3355CE1BE9CB9200B77DEC /* NearHoneyTipTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CE3355D81BE9CB9200B77DEC /* NearHoneyTipUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE3355E81BE9CB9200B77DEC /* Build configuration list for PBXNativeTarget "NearHoneyTipUITests" */;
+			buildPhases = (
+				CE3355D51BE9CB9200B77DEC /* Sources */,
+				CE3355D61BE9CB9200B77DEC /* Frameworks */,
+				CE3355D71BE9CB9200B77DEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE3355DB1BE9CB9200B77DEC /* PBXTargetDependency */,
+			);
+			name = NearHoneyTipUITests;
+			productName = NearHoneyTipUITests;
+			productReference = CE3355D91BE9CB9200B77DEC /* NearHoneyTipUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE3355AA1BE9CB9100B77DEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Mamamoo;
+				TargetAttributes = {
+					CE3355B11BE9CB9100B77DEC = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					CE3355CD1BE9CB9200B77DEC = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = CE3355B11BE9CB9100B77DEC;
+					};
+					CE3355D81BE9CB9200B77DEC = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = CE3355B11BE9CB9100B77DEC;
+					};
+				};
+			};
+			buildConfigurationList = CE3355AD1BE9CB9100B77DEC /* Build configuration list for PBXProject "NearHoneyTip" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE3355A91BE9CB9100B77DEC;
+			productRefGroup = CE3355B31BE9CB9100B77DEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE3355B11BE9CB9100B77DEC /* NearHoneyTip */,
+				CE3355CD1BE9CB9200B77DEC /* NearHoneyTipTests */,
+				CE3355D81BE9CB9200B77DEC /* NearHoneyTipUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE3355B01BE9CB9100B77DEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE3355F71BE9D45500B77DEC /* anomy.png in Resources */,
+				CE3355FF1BE9D45500B77DEC /* Speech Bubble Filled-50.png in Resources */,
+				CE3355EC1BE9CD3600B77DEC /* loading.png in Resources */,
+				CE3355F81BE9D45500B77DEC /* back.png in Resources */,
+				CE3355C81BE9CB9100B77DEC /* LaunchScreen.storyboard in Resources */,
+				CEC8E9B31BECA7CF00582083 /* commentTint.png in Resources */,
+				CEF05FFE1BF317FF0037E24A /* nht_icon_newPost.png in Resources */,
+				CE3355FB1BE9D45500B77DEC /* location.png in Resources */,
+				CE3355FD1BE9D45500B77DEC /* setting.png in Resources */,
+				CE3356011BE9DF6D00B77DEC /* dump.jpeg in Resources */,
+				CE3355FA1BE9D45500B77DEC /* Like Filled-50.png in Resources */,
+				CE3355FE1BE9D45500B77DEC /* SLR Camera Filled-50.png in Resources */,
+				CE3355FC1BE9D45500B77DEC /* more.png in Resources */,
+				CE3355C51BE9CB9100B77DEC /* Assets.xcassets in Resources */,
+				CE3355F91BE9D45500B77DEC /* badge1.png in Resources */,
+				CE3355C01BE9CB9100B77DEC /* Main.storyboard in Resources */,
+				CEC8E9B41BECA7CF00582083 /* likeTint.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE3355CC1BE9CB9200B77DEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE3355D71BE9CB9200B77DEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2148B8AA6A13FE831AE9C13A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E6C80397D45884BE66C9070 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCFCBA816228F80ABDECE2D1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE3355AE1BE9CB9100B77DEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */,
+				CE72A0A01BFC484700466A33 /* NHTMainTableViewController.m in Sources */,
+				CE3355BA1BE9CB9100B77DEC /* AppDelegate.m in Sources */,
+				CE8D538F1C0C37B4005F913E /* NHTTipManager.m in Sources */,
+				CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */,
+				CE3355B71BE9CB9100B77DEC /* main.m in Sources */,
+				6F2DE7341C0C5F2F0016DB36 /* NHTSideMenuController.m in Sources */,
+				CE69AAB71C05863400909DBD /* NHTTip.m in Sources */,
+				CE8D538E1C0C37B4005F913E /* NHTTipCollection.m in Sources */,
+				CE3355C31BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld in Sources */,
+				A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */,
+				CE8D538D1C0C37B4005F913E /* NHTMainTableCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE3355CA1BE9CB9200B77DEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE3355D31BE9CB9200B77DEC /* NearHoneyTipTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE3355D51BE9CB9200B77DEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE3355DE1BE9CB9200B77DEC /* NearHoneyTipUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE3355D01BE9CB9200B77DEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE3355B11BE9CB9100B77DEC /* NearHoneyTip */;
+			targetProxy = CE3355CF1BE9CB9200B77DEC /* PBXContainerItemProxy */;
+		};
+		CE3355DB1BE9CB9200B77DEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE3355B11BE9CB9100B77DEC /* NearHoneyTip */;
+			targetProxy = CE3355DA1BE9CB9200B77DEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE3355BE1BE9CB9100B77DEC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE3355BF1BE9CB9100B77DEC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CE3355C61BE9CB9100B77DEC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE3355C71BE9CB9100B77DEC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE3355E01BE9CB9200B77DEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CE3355E11BE9CB9200B77DEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE3355E31BE9CB9200B77DEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B25936F0EDCBDABE9ACBED38 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NearHoneyTip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.nhnnext.NearHoneyTip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CE3355E41BE9CB9200B77DEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 904A7464ED7B0C7A3B186D8E /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NearHoneyTip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.nhnnext.NearHoneyTip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CE3355E61BE9CB9200B77DEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NearHoneyTipTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.nhnnext.NearHoneyTipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearHoneyTip.app/NearHoneyTip";
+			};
+			name = Debug;
+		};
+		CE3355E71BE9CB9200B77DEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NearHoneyTipTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.nhnnext.NearHoneyTipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearHoneyTip.app/NearHoneyTip";
+			};
+			name = Release;
+		};
+		CE3355E91BE9CB9200B77DEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NearHoneyTipUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.nhnnext.NearHoneyTipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NearHoneyTip;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CE3355EA1BE9CB9200B77DEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NearHoneyTipUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.nhnnext.NearHoneyTipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NearHoneyTip;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE3355AD1BE9CB9100B77DEC /* Build configuration list for PBXProject "NearHoneyTip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE3355E01BE9CB9200B77DEC /* Debug */,
+				CE3355E11BE9CB9200B77DEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE3355E21BE9CB9200B77DEC /* Build configuration list for PBXNativeTarget "NearHoneyTip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE3355E31BE9CB9200B77DEC /* Debug */,
+				CE3355E41BE9CB9200B77DEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE3355E51BE9CB9200B77DEC /* Build configuration list for PBXNativeTarget "NearHoneyTipTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE3355E61BE9CB9200B77DEC /* Debug */,
+				CE3355E71BE9CB9200B77DEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE3355E81BE9CB9200B77DEC /* Build configuration list for PBXNativeTarget "NearHoneyTipUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE3355E91BE9CB9200B77DEC /* Debug */,
+				CE3355EA1BE9CB9200B77DEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE3355C11BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE3355C21BE9CB9100B77DEC /* NearHoneyTip.xcdatamodel */,
+			);
+			currentVersion = CE3355C21BE9CB9100B77DEC /* NearHoneyTip.xcdatamodel */;
+			path = NearHoneyTip.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CE3355AA1BE9CB9100B77DEC /* Project object */;
+}

@@ -13,7 +13,8 @@
 
 @property(strong, nonatomic) NSMutableArray* tips;
 
--(id)initWithJSONSerialization:(NSArray*)JSONs;
+-(id) init;
+-(void) addTip: (NSDictionary*) tip;
 -(NSInteger)countOfTips;
 -(NSObject*)objectAtIndex:(NSUInteger)index;
 @end

@@ -14,7 +14,7 @@
     self = [super init];
     if(self){
         NSLog(@"i want to go");
-        self.tipCollection = [NHTTipCollection alloc];
+        self.tipCollection = [[NHTTipCollection alloc] init];
     }
     return self;
 }
@@ -27,11 +27,19 @@
     NSLog(@"%@", jsonData);
     
     NSError *error = nil;
+    NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
     
-    [self.tipCollection initWithJSONSerialization:[NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error]];
+    for(int i = 0; i < [loadedTipsArray count] ; i++){
+        [self.tipCollection addTip: [loadedTipsArray objectAtIndex:i]];
+    }
     
-    NSLog(@"%@",self.tipCollection);
+   // NSLog(@"%@",self.tipCollection);
 };
+/* 
+ //tipDidReload
+ 위와 같은 방식으로 loadedTipsArray를 만든다.
+ loadedTipsArray.count > tipcollection.count 일 경우 addtip
+*/
 
 -(NSInteger)countOfTipCollection{
     if(self.tipCollection){

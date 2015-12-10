@@ -10,4 +10,12 @@
 
 @interface NHTSideTableViewController : UITableViewController
 
+//@property (weak, nonatomic) IBOutlet UIImageView *userProfile;
+//@property (weak, nonatomic) IBOutlet UILabel *Nickname;
+
+
+- (IBAction)showAlarms:(UITapGestureRecognizer *)sender;
+- (IBAction)myTips:(UITapGestureRecognizer *)sender;
+- (IBAction)setProfile:(UITapGestureRecognizer *)sender;
+
 @end

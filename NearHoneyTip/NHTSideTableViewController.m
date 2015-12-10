@@ -29,11 +29,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+//- (IBAction)showMyTips:(UITapGestureRecognizer *)sender {
+//    [self performSegueWithIdentifier:@"showDetail"
+//                              sender:sender];
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -95,4 +101,12 @@
 }
 */
 
+- (IBAction)showAlarms:(UITapGestureRecognizer *)sender {
+}
+
+- (IBAction)myTips:(UITapGestureRecognizer *)sender {
+}
+
+- (IBAction)setProfile:(UITapGestureRecognizer *)sender {
+}
 @end

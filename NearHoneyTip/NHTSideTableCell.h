@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface NHTSideTableCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *userProfile;
+
+//@property (weak, nonatomic) IBOutlet UIImageView *userProfile;
+//@property (weak, nonatomic) IBOutlet UILabel *Nickname;
 
 @end

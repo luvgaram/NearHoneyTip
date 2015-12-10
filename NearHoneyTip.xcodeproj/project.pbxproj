@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F0480411C19C69B005C096C /* NHTSideTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0480401C19C69B005C096C /* NHTSideTableCell.m */; };
+		6F4793851C17B9E7002686D3 /* NHTMytipsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */; };
+		6FD0C06B1C1711AB0021FEB6 /* NHTMyTipsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */; };
+		6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C06D1C1711D80021FEB6 /* NHTAlarmsController.m */; };
+		6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0701C1712210021FEB6 /* NHTProfileController.m */; };
+		6FD0C0741C171B8F0021FEB6 /* NHTSideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */; };
 		A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A82A3D531C088FDE0057F048 /* NHTBasicModel.m */; };
 		A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8935A701C01E48800E69F2F /* NHTWriteViewController.m */; };
 		BEB76CDE499F39F005B1B9C5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 382463056E0044DAA3DF9E33 /* libPods.a */; };
@@ -59,6 +65,18 @@
 
 /* Begin PBXFileReference section */
 		382463056E0044DAA3DF9E33 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F04803F1C19C69B005C096C /* NHTSideTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTSideTableCell.h; sourceTree = "<group>"; };
+		6F0480401C19C69B005C096C /* NHTSideTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTSideTableCell.m; sourceTree = "<group>"; };
+		6F4793831C17B9E7002686D3 /* NHTMytipsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMytipsTableCell.h; sourceTree = "<group>"; };
+		6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMytipsTableCell.m; sourceTree = "<group>"; };
+		6FD0C0691C1711AB0021FEB6 /* NHTMyTipsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMyTipsController.h; sourceTree = "<group>"; };
+		6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMyTipsController.m; sourceTree = "<group>"; };
+		6FD0C06C1C1711D80021FEB6 /* NHTAlarmsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTAlarmsController.h; sourceTree = "<group>"; };
+		6FD0C06D1C1711D80021FEB6 /* NHTAlarmsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTAlarmsController.m; sourceTree = "<group>"; };
+		6FD0C06F1C1712210021FEB6 /* NHTProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTProfileController.h; sourceTree = "<group>"; };
+		6FD0C0701C1712210021FEB6 /* NHTProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTProfileController.m; sourceTree = "<group>"; };
+		6FD0C0721C171B8F0021FEB6 /* NHTSideTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTSideTableViewController.h; sourceTree = "<group>"; };
+		6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTSideTableViewController.m; sourceTree = "<group>"; };
 		904A7464ED7B0C7A3B186D8E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A82A3D521C088F930057F048 /* NHTBasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTBasicModel.h; sourceTree = "<group>"; };
 		A82A3D531C088FDE0057F048 /* NHTBasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTBasicModel.m; sourceTree = "<group>"; };
@@ -178,13 +196,23 @@
 				CE72A09F1BFC484700466A33 /* NHTMainTableViewController.m */,
 				CE69AAB81C0586D600909DBD /* NHTDetailViewController.h */,
 				CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */,
+				6FD0C0691C1711AB0021FEB6 /* NHTMyTipsController.h */,
+				6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */,
+				6FD0C06C1C1711D80021FEB6 /* NHTAlarmsController.h */,
+				6FD0C06D1C1711D80021FEB6 /* NHTAlarmsController.m */,
 				CE8D53871C0C37B4005F913E /* NHTMainTableCell.h */,
+				6F4793831C17B9E7002686D3 /* NHTMytipsTableCell.h */,
+				6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */,
 				CE8D53881C0C37B4005F913E /* NHTMainTableCell.m */,
 				CE3355B81BE9CB9100B77DEC /* AppDelegate.h */,
 				CE3355B91BE9CB9100B77DEC /* AppDelegate.m */,
 				A8935A6F1C01E48800E69F2F /* NHTWriteViewController.h */,
 				A8935A701C01E48800E69F2F /* NHTWriteViewController.m */,
 				CE3355BE1BE9CB9100B77DEC /* Main.storyboard */,
+				6FD0C0721C171B8F0021FEB6 /* NHTSideTableViewController.h */,
+				6F04803F1C19C69B005C096C /* NHTSideTableCell.h */,
+				6F0480401C19C69B005C096C /* NHTSideTableCell.m */,
+				6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */,
 				CE3355C41BE9CB9100B77DEC /* Assets.xcassets */,
 				CE3355C61BE9CB9100B77DEC /* LaunchScreen.storyboard */,
 				CE3355C91BE9CB9200B77DEC /* Info.plist */,
@@ -193,6 +221,8 @@
 				CE3355B51BE9CB9100B77DEC /* Supporting Files */,
 				A82A3D521C088F930057F048 /* NHTBasicModel.h */,
 				A82A3D531C088FDE0057F048 /* NHTBasicModel.m */,
+				6FD0C06F1C1712210021FEB6 /* NHTProfileController.h */,
+				6FD0C0701C1712210021FEB6 /* NHTProfileController.m */,
 			);
 			path = NearHoneyTip;
 			sourceTree = "<group>";
@@ -447,17 +477,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */,
 				A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */,
 				CE72A0A01BFC484700466A33 /* NHTMainTableViewController.m in Sources */,
+				6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */,
 				CE3355BA1BE9CB9100B77DEC /* AppDelegate.m in Sources */,
 				CE8D538F1C0C37B4005F913E /* NHTTipManager.m in Sources */,
 				CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */,
+				6F4793851C17B9E7002686D3 /* NHTMytipsTableCell.m in Sources */,
 				CE3355B71BE9CB9100B77DEC /* main.m in Sources */,
+				6FD0C06B1C1711AB0021FEB6 /* NHTMyTipsController.m in Sources */,
 				CE69AAB71C05863400909DBD /* NHTTip.m in Sources */,
 				CE8D538E1C0C37B4005F913E /* NHTTipCollection.m in Sources */,
 				CE3355C31BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld in Sources */,
+				6FD0C0741C171B8F0021FEB6 /* NHTSideTableViewController.m in Sources */,
 				A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */,
 				CE8D538D1C0C37B4005F913E /* NHTMainTableCell.m in Sources */,
+				6F0480411C19C69B005C096C /* NHTSideTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

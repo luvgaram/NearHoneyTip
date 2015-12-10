@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class NHTTip;
+
 
 @interface NHTMyTipsController : UITableViewController
+
+@property (strong, nonatomic) NHTTip *selectedTip;
+
+
 
 @end

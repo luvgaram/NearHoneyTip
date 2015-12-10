@@ -1,18 +1,18 @@
 //
-//  NHTSideMenuController.m
+//  NHTMyTipsController.m
 //  NearHoneyTip
 //
-//  Created by yunseo shin on 2015. 11. 30..
+//  Created by yunseo shin on 2015. 12. 8..
 //  Copyright © 2015년 Mamamoo. All rights reserved.
 //
 
-#import "NHTSideMenuController.h"
+#import "NHTMyTipsController.h"
 
-@interface NHTSideMenuController ()
+@interface NHTMyTipsController ()
 
 @end
 
-@implementation NHTSideMenuController
+@implementation NHTMyTipsController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ADSupport/ASIdentifierManager.h>
+
 @class NHTTipManager;
 
 @interface NHTMainTableViewController : UITableViewController
 
 @property (strong, nonatomic) NHTTipManager *Q1;
 
-@property (strong, nonatomic) NSString *sUDID;
 
-- (void)getAdvertisingIdentifier;
 @end

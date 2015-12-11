@@ -23,9 +23,9 @@
     NHTTip* tipNew = [[NHTTip alloc] init];
     
     tipNew.tipId = [tip objectForKey:@"_id"];
-    NSLog(@"!String: %@",tipNew.tipId);
+  //  NSLog(@"!String: %@",tipNew.tipId);
     NSArray *tipImageFile = [tip objectForKey:@"file"];
-    NSLog(@"###STRing: %@",tipImageFile);
+   // NSLog(@"###STRing: %@",tipImageFile);
     NSDictionary *tipImagePathDictionary = tipImageFile[0];
     NSString *tipImagePathString = [tipImagePathDictionary objectForKey:@"path"];
     NSUInteger pointOfPathStart = 5;
@@ -52,7 +52,7 @@
     tipNew.userNickname = [tip valueForKey:@"nickname"];
     tipNew.tipDate = [tip valueForKey: @"date"];
     
-    NSLog(@"THE added tip: %@", tipNew);
+   // NSLog(@"THE added tip: %@", tipNew);
     
     [self.tips addObject:tipNew];
 }

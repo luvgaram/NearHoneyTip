@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) NSString *sUDID;
 
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -23,6 +24,10 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+- (void)setUserDefault;
+- (void)getAdvertisingIdentifier;
+
 
 
 

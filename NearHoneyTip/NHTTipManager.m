@@ -24,7 +24,7 @@
     NSURL *tipLoad = [NSURL URLWithString:@"http://54.64.250.239:3000/tip/all"];
     
     NSData *jsonData = [NSData dataWithContentsOfURL:tipLoad];
-    NSLog(@"%@", jsonData);
+    //NSLog(@"%@", jsonData);
     
     NSError *error = nil;
     NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];

@@ -41,6 +41,14 @@
  loadedTipsArray.count > tipcollection.count 일 경우 addtip
 */
 
+/*
+-(BOOL)containsTip:(NSDictionary*)newTip{
+    NSString *newTipId = [newTip objectForKey:@"_id"];
+    return [self.tipCollection containsTip:newTipId];
+    
+}
+ */
+
 -(NSInteger)countOfTipCollection{
     if(self.tipCollection){
         return [self.tipCollection countOfTips];

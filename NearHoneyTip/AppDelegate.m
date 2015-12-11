@@ -16,13 +16,61 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     NSLog(@"hi!!!!: " );
-   
+    [self setUserDefault];
     return YES;
 }
 
-
+- (void)setUserDefault{
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *currentUidIdentifier = @"currentUser";
+    
+    if([preferences objectForKey:currentUidIdentifier] == nil) {
+        
+        [self getAdvertisingIdentifier];
+        [preferences setObject:self.sUDID forKey:currentUidIdentifier];
+    
+        
+        //post : {"uid" : "~~"}
+        const BOOL didSave = [preferences synchronize];
+        //get initialization
+        
+        //{nickname, profilephoto }
+        //const NSString *userNickname = {'nickname'};
+        NSString *currentUserNicknameIdentifier = @"currentUserNickname";
+        [preferences setObject:@"userNickname" forKey:currentUserNicknameIdentifier];
+        
+        //const NSString *userProfileImage = {'profilephoto'};
+        NSString *currentUserProfileImageIdentifier = @"currentUserProfileImage";
+        [preferences setObject:@"userProfileImage" forKey:currentUserProfileImageIdentifier];
+        
+        
+    } else  {
+        const NSString *uid = [preferences objectForKey:currentUidIdentifier];
+        //get user info : nickname => defaualt
+    }
+    
+    
+}
+-(void) getAdvertisingIdentifier {
+    NSLog(@"log1 " );
+    Class ASIdentifierManagerClass = NSClassFromString(@"ASIdentifierManager");
+    NSLog(@"log 1.25 : %@", ASIdentifierManagerClass);
+    id identity = [[ASIdentifierManagerClass alloc] init];
+    NSLog(@"log 1.5 : %@",identity);
+    if (ASIdentifierManagerClass) {
+        NSLog(@"log2 " );
+        id identifierManager = [ASIdentifierManagerClass sharedManager];
+        if ([ASIdentifierManagerClass instancesRespondToSelector:@selector(advertisingIdentifier)]) {
+            NSLog(@"log3 " );
+            id adID = [identifierManager performSelector:@selector(advertisingIdentifier)];
+            self.sUDID = [adID performSelector:@selector(UUIDString)]; // you can use this sUDID as an alternative to UDID
+            NSLog(@"log4 %@ ", self.sUDID );
+            
+        }
+    }
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

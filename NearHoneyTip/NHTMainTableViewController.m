@@ -21,6 +21,28 @@
     [super viewDidLoad];
     self.Q1 = [[NHTTipManager alloc]init];
     [self.Q1 tipsDidLoad];
+    
+    [self getAdvertisingIdentifier];
+    NSLog(@"uuid : %@", self.sUDID);
+}
+
+-(void) getAdvertisingIdentifier {
+    NSLog(@"log1 " );
+    Class ASIdentifierManagerClass = NSClassFromString(@"ASIdentifierManager");
+    NSLog(@"log 1.25 : %@", ASIdentifierManagerClass);
+    id identity = [[ASIdentifierManagerClass alloc] init];
+    NSLog(@"log 1.5 : %@",identity);
+    if (ASIdentifierManagerClass) {
+        NSLog(@"log2 " );
+        id identifierManager = [ASIdentifierManagerClass sharedManager];
+        if ([ASIdentifierManagerClass instancesRespondToSelector:@selector(advertisingIdentifier)]) {
+            NSLog(@"log3 " );
+            id adID = [identifierManager performSelector:@selector(advertisingIdentifier)];
+            self.sUDID = [adID performSelector:@selector(UUIDString)]; // you can use this sUDID as an alternative to UDID
+            NSLog(@"log4 %@ ", self.sUDID );
+            
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -600,6 +600,21 @@
 				INFOPLIST_FILE = NearHoneyTip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"ITRAirSideMenu\"",
+					"-l\"TWPhotoPicker\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"UIKit\"",
+					"-all_load",
+					"-framework",
+					"\"AdSupport\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nhnnext.NearHoneyTip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -613,6 +628,21 @@
 				INFOPLIST_FILE = NearHoneyTip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"ITRAirSideMenu\"",
+					"-l\"TWPhotoPicker\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"UIKit\"",
+					"-all_load",
+					"-framework",
+					"\"AdSupport\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nhnnext.NearHoneyTip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -21,6 +21,9 @@
 -(void) addTip: (NSDictionary*) tip{
     
     NHTTip* tipNew = [[NHTTip alloc] init];
+    
+    tipNew.tipId = [tip objectForKey:@"_id"];
+    NSLog(@"!String: %@",tipNew.tipId);
     NSArray *tipImageFile = [tip objectForKey:@"file"];
     NSLog(@"###STRing: %@",tipImageFile);
     NSDictionary *tipImagePathDictionary = tipImageFile[0];
@@ -54,6 +57,16 @@
     [self.tips addObject:tipNew];
 }
 
+/*
+-(BOOL)containsTip:(NSString*)newTipID{
+ 
+     //tips 안에 tip_id들과 비교합니다.
+     
+ 
+    //return [self.tips containsObject:<#(nonnull id)#>]
+    return YES;
+}
+*/
 
 -(NSInteger)countOfTips{
     if(self.tips){

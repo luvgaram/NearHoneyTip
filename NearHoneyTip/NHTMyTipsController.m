@@ -1,22 +1,29 @@
 //
-//  NHTSideMenuController.m
+//  NHTMyTipsController.m
 //  NearHoneyTip
 //
-//  Created by yunseo shin on 2015. 11. 30..
+//  Created by yunseo shin on 2015. 12. 8..
 //  Copyright © 2015년 Mamamoo. All rights reserved.
 //
 
-#import "NHTSideMenuController.h"
+#import "NHTMyTipsController.h"
+#import "NHTTip.h"
 
-@interface NHTSideMenuController ()
+@interface NHTMyTipsController ()
+
 
 @end
 
-@implementation NHTSideMenuController
+@implementation NHTMyTipsController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    
+//    if(self.selectedTip){
+//        self.userProfile.image = self.selectedTip.userProfileImg;
+//    }
+//    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,7 +40,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -41,15 +48,39 @@
     return 0;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
     
-    // Configure the cell...
+//    static NSString *CellIdentifier = @"Cell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    return cell;
-}
-*/
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"List" forIndexPath:indexPath];
+//
+//    UIImageView * userImage = (UIImage *)[cell viewWithTag:200];
+//
+//    
+//    // Configure the cell...
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }
+    
+   // Recipe *recipe = [recipes objectAtIndex:indexPath.row];
+    
+//    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
+//    recipeImageView.image = [UIImage imageNamed:recipe.imageFile];
+//    
+//    UILabel *userNickNameLabel = (UILabel *)[cell viewWithTag:101];
+//    recipeNameLabel.text = recipe.name;
+//    
+//    UILabel *recipeDetailLabel = (UILabel *)[cell viewWithTag:102];
+//    recipeDetailLabel.text = recipe.detail;
+//    
+//    return cell;
+    
+    
+//}
+
 
 /*
 // Override to support conditional editing of the table view.

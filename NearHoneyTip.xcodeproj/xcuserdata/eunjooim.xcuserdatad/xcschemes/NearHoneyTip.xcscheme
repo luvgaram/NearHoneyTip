@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A8471B851BE09595009E5A30"
+               BlueprintIdentifier = "CE3355B11BE9CB9100B77DEC"
                BuildableName = "NearHoneyTip.app"
                BlueprintName = "NearHoneyTip"
                ReferencedContainer = "container:NearHoneyTip.xcodeproj">
@@ -32,7 +32,17 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A8471B9E1BE09595009E5A30"
+               BlueprintIdentifier = "CE3355CD1BE9CB9200B77DEC"
+               BuildableName = "NearHoneyTipTests.xctest"
+               BlueprintName = "NearHoneyTipTests"
+               ReferencedContainer = "container:NearHoneyTip.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CE3355D81BE9CB9200B77DEC"
                BuildableName = "NearHoneyTipUITests.xctest"
                BlueprintName = "NearHoneyTipUITests"
                ReferencedContainer = "container:NearHoneyTip.xcodeproj">
@@ -42,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A8471B851BE09595009E5A30"
+            BlueprintIdentifier = "CE3355B11BE9CB9100B77DEC"
             BuildableName = "NearHoneyTip.app"
             BlueprintName = "NearHoneyTip"
             ReferencedContainer = "container:NearHoneyTip.xcodeproj">
@@ -65,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A8471B851BE09595009E5A30"
+            BlueprintIdentifier = "CE3355B11BE9CB9100B77DEC"
             BuildableName = "NearHoneyTip.app"
             BlueprintName = "NearHoneyTip"
             ReferencedContainer = "container:NearHoneyTip.xcodeproj">
@@ -84,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A8471B851BE09595009E5A30"
+            BlueprintIdentifier = "CE3355B11BE9CB9100B77DEC"
             BuildableName = "NearHoneyTip.app"
             BlueprintName = "NearHoneyTip"
             ReferencedContainer = "container:NearHoneyTip.xcodeproj">

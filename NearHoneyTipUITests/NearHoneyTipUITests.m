@@ -2,8 +2,8 @@
 //  NearHoneyTipUITests.m
 //  NearHoneyTipUITests
 //
-//  Created by Eunjoo Im on 2015. 10. 28..
-//  Copyright © 2015년 Mamamoo-iOS. All rights reserved.
+//  Created by Kate KyuWon on 11/4/15.
+//  Copyright © 2015 Mamamoo. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

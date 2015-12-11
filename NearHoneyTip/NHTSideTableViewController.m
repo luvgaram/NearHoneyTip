@@ -7,6 +7,8 @@
 //
 
 #import "NHTSideTableViewController.h"
+#import "NHTTip.h"
+
 
 @interface NHTSideTableViewController ()
 
@@ -17,11 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    if(self.selectedTip){
+        self.userProfile.image = self.selectedTip.userProfileImg;
+        self.userProfile.layer.cornerRadius = 25;
+        self.userNickname.text = self.selectedTip.userNickname;
+ 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,10 +38,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-//- (IBAction)showMyTips:(UITapGestureRecognizer *)sender {
-//    [self performSegueWithIdentifier:@"showDetail"
-//                              sender:sender];
 
 
 #pragma mark - Table view data source
@@ -44,18 +49,52 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    return 5;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+//        static NSString *CellIdentifier = @"Cell";
+
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userProfileCell", @"userNicknameCell", @"myTipCell", @"AlarmCell", @"setProfileCell" forIndexPath:indexPath];
+
+//    UITableViewCell *cell = [tableView registerClass:  forCellReuseIdentifier :@"userProfileCell" forIndexPath:indexPath];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userProfileCell" forIndexPath:indexPath];
+
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userNicknameCell" forIndexPath:indexPath];
+//    UITableViewCell *cell3 = [tableView dequeueReusableCellWithIdentifier:@"myTipCell" forIndexPath:indexPath];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AlarmCell" forIndexPath:indexPath];
+//    UITableViewCell *cell5 = [tableView dequeueReusableCellWithIdentifier:@"setProfileCell" forIndexPath:indexPath];
+//    
     
-    // Configure the cell...
+//    UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(userProfileCell:)];
+//    UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(AlarmCell:)];
     
-    return cell;
-}
-*/
+//    cell.gestureRecognizers = [[NSArray alloc] initWithObjects:tapCellForTipDetail, nil];
+//
+//    return cell;
+//}
+
+
+//- (void) didTapCell:(UITapGestureRecognizer *) recognizer{
+//    NSLog(@"#####1%@", recognizer);
+//    [self showTipDetail:recognizer];
+//}
+//- (IBAction)showTipDetail:(id)sender {
+//    NSLog(@"#####2%@", sender);
+//    [self performSegueWithIdentifier:@"showTipDetail" sender:sender];
+//}
+
+//- (void) didTapuserProfileCell:(UITapGestureRecognizer *) recognizer{
+//    NSLog(@"#####1%@", recognizer);
+//    [self showMyTips:recognizer];
+//
+//- (IBAction)showMyTips:(id)sender {
+//    [self performSegueWithIdentifier:@"showMyTips" sender:sender];
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -101,12 +140,18 @@
 }
 */
 
-- (IBAction)showAlarms:(UITapGestureRecognizer *)sender {
-}
+//- (IBAction)showAlarms:(UITapGestureRecognizer *)sender {
+//}
+//
+//- (IBAction)myTips:(UITapGestureRecognizer *)sender {
+//}
+//
+//- (IBAction)setProfile:(UITapGestureRecognizer *)sender {
+//    
+//
+//}
 
-- (IBAction)myTips:(UITapGestureRecognizer *)sender {
-}
 
-- (IBAction)setProfile:(UITapGestureRecognizer *)sender {
-}
+
+
 @end

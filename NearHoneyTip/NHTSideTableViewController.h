@@ -7,15 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+@class NHTTip;
 
 @interface NHTSideTableViewController : UITableViewController
 
-//@property (weak, nonatomic) IBOutlet UIImageView *userProfile;
-//@property (weak, nonatomic) IBOutlet UILabel *Nickname;
+@property (strong, nonatomic) NHTTip *selectedTip;
 
 
-- (IBAction)showAlarms:(UITapGestureRecognizer *)sender;
-- (IBAction)myTips:(UITapGestureRecognizer *)sender;
-- (IBAction)setProfile:(UITapGestureRecognizer *)sender;
+
+@property (weak, nonatomic) IBOutlet UIImageView *userProfile;
+@property (weak, nonatomic) IBOutlet UILabel *userNickname;
+
+
+//- (IBAction)showAlarms:(UITapGestureRecognizer *)sender;
+//- (IBAction)myTips:(UITapGestureRecognizer *)sender;
+//- (IBAction)setProfile:(UITapGestureRecognizer *)sender;
 
 @end

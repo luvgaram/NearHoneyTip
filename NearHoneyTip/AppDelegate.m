@@ -32,7 +32,7 @@
         
         [self getAdvertisingIdentifier];
         [preferences setObject:self.sUDID forKey:currentUidIdentifier];
-    
+        
         [self postUid: self.sUDID];
         const BOOL didSave = [preferences synchronize];
         //get initialization
@@ -49,7 +49,8 @@
         
     } else  {
         const NSString *uid = [preferences objectForKey:currentUidIdentifier];
-        //get user info : nickname => defaualt
+        
+        //        get user info : nickname => defaualt
     }
     
     
@@ -73,27 +74,51 @@
     }
 }
 
+- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    long code = [httpResponse statusCode];
+    NSLog(@"connection response: %ld", code);
+}
+
 - (void)postUid:(NSString*)postUid {
     
-    NSURL* postURL = [NSURL URLWithString:@"http://54.64.250.239:3000/user"];
+    // modified by ej
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:postURL];
-    request.HTTPMethod = @"POST";
+    //    NSURL* postURL = [NSURL URLWithString:@"http://54.64.250.239:3000/users"];
+    
+    //    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:postURL];
+    //    request.HTTPMethod = @"POST";
     //NSString* contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
     //[request addValue:contentType forHTTPHeaderField:@"Content-Type"];
     
-    NSString *postUidString = @"{ \"uid\": \"";
-    postUidString = [postUidString stringByAppendingString:postUid];
-    postUidString = [postUidString stringByAppendingString:@"\" }"];
-    NSLog(@"%@",postUidString);
-    NSData *postUidData = [postUidString dataUsingEncoding:NSUTF8StringEncoding];
+    //    NSString *postUidString = @"{ \"uid\": \"";
+    //    postUidString = [postUidString stringByAppendingString:postUid];
+    //    postUidString = [postUidString stringByAppendingString:@"\" }"];
+    //    NSLog(@"%@", postUidString);
+    //    NSData *postUidData = [postUidString dataUsingEncoding:NSUTF8StringEncoding];
     
-    if(postUidData){
+    NSDictionary* uidDictionary = @{@"uid" : postUid};
+    
+    NSData* jsondata = [NSJSONSerialization dataWithJSONObject:uidDictionary
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:nil];
+    
+    if (jsondata){
+        NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://54.64.250.239:3000/users"] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[jsondata length]] forHTTPHeaderField:@"Content-Length"];
+        [request setHTTPBody:jsondata];
+        
         NSLog(@"start posting uid");
-        [request setHTTPBody:postUidData];
+        //        [request setHTTPBody:postUidData];
         NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
                                                                       delegate:self];
         [connection start];
+        
+        NSURLResponse* response;
+        [self connection:connection didReceiveResponse:response];
         NSLog(@"connection end");
     }
 }

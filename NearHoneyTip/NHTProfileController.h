@@ -10,4 +10,7 @@
 
 @interface NHTProfileController : UIViewController
 
+
+- (IBAction)back:(id)sender;
+
 @end

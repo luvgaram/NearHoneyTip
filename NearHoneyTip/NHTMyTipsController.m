@@ -8,6 +8,9 @@
 
 #import "NHTMyTipsController.h"
 #import "NHTTip.h"
+#import "NHTDetailViewController.h"
+#import "NHTTipManager.h"
+#import "NHTMainTableCell.h"
 
 @interface NHTMyTipsController ()
 
@@ -18,8 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    
+    self.Q1 = [[NHTTipManager alloc]init];
+    [self.Q1 tipsDidLoad];
+
 //    if(self.selectedTip){
 //        self.userProfile.image = self.selectedTip.userProfileImg;
 //    }
@@ -44,17 +48,28 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.Q1 countOfTipCollection];
 }
 
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    
 //    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+//    NHTMainTableCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
+//    NSLog(@"FOR CELL%@",[self.Q1 objectAtIndex:indexPath.row]);
+//    //if([[[self.Q1 objectAtIndex:indexPath.row] class] isKindOfClass: [NSDictionary class]]){
+//    NSDictionary *tip = [self.Q1 objectAtIndex:indexPath.row];
+//    
+//    [cell setCellWithTip:tip];
+//    //};
+//    UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
+//    
+//    cell.gestureRecognizers = [[NSArray alloc] initWithObjects:tapCellForTipDetail, nil];
+//    
+//    return cell;
+//}
+
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"List" forIndexPath:indexPath];
 //
 //    UIImageView * userImage = (UIImage *)[cell viewWithTag:200];

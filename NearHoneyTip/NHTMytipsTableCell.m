@@ -7,8 +7,19 @@
 //
 
 #import "NHTMytipsTableCell.h"
+#import "NHTTip.h"
 
 @implementation NHTMytipsTableCell
+
+- (void)setCellWithTip:(NHTTip*)tip{
+    self.tip = tip;
+    self.tipImage.image = self.tip.tipImage;
+    self.tipDetails.text = self.tip.tipDetails;
+    self.userProfileImage.layer.cornerRadius = 16;
+    self.userProfileImage.image = self.tip.userProfileImg;
+    self.userNickname.text = self.tip.userNickname;
+}
+
 
 - (void)awakeFromNib {
     // Initialization code
@@ -21,3 +32,4 @@
 //}
 
 @end
+

@@ -19,8 +19,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *userNickname;
 
 
-//- (IBAction)showAlarms:(UITapGestureRecognizer *)sender;
-//- (IBAction)myTips:(UITapGestureRecognizer *)sender;
-//- (IBAction)setProfile:(UITapGestureRecognizer *)sender;
+- (IBAction)showMyTips:(id)sender;
+- (IBAction)showAlarm:(id)sender;
+
+- (IBAction)setProfile:(id)sender;
+
+
+
 
 @end

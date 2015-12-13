@@ -8,9 +8,14 @@
 
 #import "NHTSideTableViewController.h"
 #import "NHTTip.h"
+#import "NHTMyTipsController.h"
+#import "NHTAlarmsController.h"
+#import "NHTProfileController.h"
+
 
 
 @interface NHTSideTableViewController ()
+
 
 @end
 
@@ -40,17 +45,47 @@
 
 
 
+
+- (IBAction)showMyTips:(id)sender{
+    NHTMyTipsController * showMyTipsButton = [[NHTMyTipsController alloc]initWithNibName:nil bundle: nil];
+//    NHTMyTipsController *showMyTipsButton = (NHTMyTipsController *)[self.storyboard instantiateViewControllerWithIdentifier:@"myTips"];
+  
+    showMyTipsButton.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:showMyTipsButton animated:YES completion:nil];
+ //    NSLog(@"click the button well");
+    
+
+} 
+  
+- (IBAction)showAlarm:(id)sender{
+    NHTAlarmsController * showMyAlarmButton = [[NHTAlarmsController alloc]initWithNibName:nil bundle: nil];
+
+    showMyAlarmButton.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:showMyAlarmButton animated:YES completion:nil];
+
+}
+- (IBAction)setProfile:(id)sender{
+    NHTProfileController * setMyProfileButton = [[NHTProfileController alloc]initWithNibName:nil bundle: nil];
+    
+    setMyProfileButton.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:setMyProfileButton animated:YES completion:nil];
+
+}
+
+
+
+
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 5;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Incomplete implementation, return the number of sections
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete implementation, return the number of rows
+//    return 5;
+//}
 
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -139,19 +174,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-//- (IBAction)showAlarms:(UITapGestureRecognizer *)sender {
-//}
-//
-//- (IBAction)myTips:(UITapGestureRecognizer *)sender {
-//}
-//
-//- (IBAction)setProfile:(UITapGestureRecognizer *)sender {
-//    
-//
-//}
-
-
-
-
 @end

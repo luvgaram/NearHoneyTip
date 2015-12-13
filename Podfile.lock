@@ -1,0 +1,13 @@
+PODS:
+  - ITRAirSideMenu (1.0.2)
+  - TWPhotoPicker (1.0.0)
+
+DEPENDENCIES:
+  - ITRAirSideMenu (~> 1.0.0)
+  - TWPhotoPicker (~> 1.0.0)
+
+SPEC CHECKSUMS:
+  ITRAirSideMenu: fb6ae2819ebf9af0503c545d17badfbcdfc9584f
+  TWPhotoPicker: 5e9bcd6097e8602e8243d1bdd54a5cf1afbedcf2
+
+COCOAPODS: 0.39.0

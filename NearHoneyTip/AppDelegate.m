@@ -16,8 +16,111 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    NSLog(@"hi!!!!: " );
+    [self setUserDefault];
     return YES;
+}
+
+- (void)setUserDefault{
+    
+    NSLog(@"start set uuid");
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    //[preferences removeObjectForKey:@"currentUser"];
+    NSString *currentUidIdentifier = @"currentUser";
+    
+    if([preferences objectForKey:currentUidIdentifier] == nil) {
+        
+        [self getAdvertisingIdentifier];
+        [preferences setObject:self.sUDID forKey:currentUidIdentifier];
+        
+        [self postUid: self.sUDID];
+        const BOOL didSave = [preferences synchronize];
+        //get initialization
+        
+        //{nickname, profilephoto }
+        //const NSString *userNickname = {'nickname'};
+        NSString *currentUserNicknameIdentifier = @"currentUserNickname";
+        [preferences setObject:@"userNickname" forKey:currentUserNicknameIdentifier];
+        
+        //const NSString *userProfileImage = {'profilephoto'};
+        NSString *currentUserProfileImageIdentifier = @"currentUserProfileImage";
+        [preferences setObject:@"userProfileImage" forKey:currentUserProfileImageIdentifier];
+        
+        
+    } else  {
+        const NSString *uid = [preferences objectForKey:currentUidIdentifier];
+        
+        //        get user info : nickname => defaualt
+    }
+    
+    
+}
+-(void) getAdvertisingIdentifier {
+    NSLog(@"log1 " );
+    Class ASIdentifierManagerClass = NSClassFromString(@"ASIdentifierManager");
+    NSLog(@"log 1.25 : %@", ASIdentifierManagerClass);
+    id identity = [[ASIdentifierManagerClass alloc] init];
+    NSLog(@"log 1.5 : %@",identity);
+    if (ASIdentifierManagerClass) {
+        NSLog(@"log2 " );
+        id identifierManager = [ASIdentifierManagerClass sharedManager];
+        if ([ASIdentifierManagerClass instancesRespondToSelector:@selector(advertisingIdentifier)]) {
+            NSLog(@"log3 " );
+            id adID = [identifierManager performSelector:@selector(advertisingIdentifier)];
+            self.sUDID = [adID performSelector:@selector(UUIDString)]; // you can use this sUDID as an alternative to UDID
+            NSLog(@"log4 %@ ", self.sUDID );
+            
+        }
+    }
+}
+
+- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    long code = [httpResponse statusCode];
+    NSLog(@"connection response: %ld", code);
+}
+
+- (void)postUid:(NSString*)postUid {
+    
+    // modified by ej
+    
+    //    NSURL* postURL = [NSURL URLWithString:@"http://54.64.250.239:3000/users"];
+    
+    //    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:postURL];
+    //    request.HTTPMethod = @"POST";
+    //NSString* contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+    //[request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    
+    //    NSString *postUidString = @"{ \"uid\": \"";
+    //    postUidString = [postUidString stringByAppendingString:postUid];
+    //    postUidString = [postUidString stringByAppendingString:@"\" }"];
+    //    NSLog(@"%@", postUidString);
+    //    NSData *postUidData = [postUidString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSDictionary* uidDictionary = @{@"uid" : postUid};
+    
+    NSData* jsondata = [NSJSONSerialization dataWithJSONObject:uidDictionary
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:nil];
+    
+    if (jsondata){
+        NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://54.64.250.239:3000/users"] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[jsondata length]] forHTTPHeaderField:@"Content-Length"];
+        [request setHTTPBody:jsondata];
+        
+        NSLog(@"start posting uid");
+        //        [request setHTTPBody:postUidData];
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
+                                                                      delegate:self];
+        [connection start];
+        
+        NSURLResponse* response;
+        [self connection:connection didReceiveResponse:response];
+        NSLog(@"connection end");
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

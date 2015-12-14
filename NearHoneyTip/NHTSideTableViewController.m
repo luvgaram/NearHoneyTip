@@ -7,8 +7,15 @@
 //
 
 #import "NHTSideTableViewController.h"
+#import "NHTTip.h"
+#import "NHTMyTipsController.h"
+#import "NHTAlarmsController.h"
+#import "NHTProfileController.h"
+
+
 
 @interface NHTSideTableViewController ()
+
 
 @end
 
@@ -17,11 +24,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    if(self.selectedTip){
+        self.userProfile.image = self.selectedTip.userProfileImg;
+        self.userProfile.layer.cornerRadius = 25;
+        self.userNickname.text = self.selectedTip.userNickname;
+ 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,32 +44,92 @@
 }
 
 
-//- (IBAction)showMyTips:(UITapGestureRecognizer *)sender {
-//    [self performSegueWithIdentifier:@"showDetail"
-//                              sender:sender];
+
+
+- (IBAction)showMyTips:(id)sender{
+    NHTMyTipsController * showMyTipsButton = [[NHTMyTipsController alloc]initWithNibName:nil bundle: nil];
+//    NHTMyTipsController *showMyTipsButton = (NHTMyTipsController *)[self.storyboard instantiateViewControllerWithIdentifier:@"myTips"];
+  
+    showMyTipsButton.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:showMyTipsButton animated:YES completion:nil];
+ //    NSLog(@"click the button well");
+    
+
+} 
+  
+- (IBAction)showAlarm:(id)sender{
+    NHTAlarmsController * showMyAlarmButton = [[NHTAlarmsController alloc]initWithNibName:nil bundle: nil];
+
+    showMyAlarmButton.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:showMyAlarmButton animated:YES completion:nil];
+
+}
+- (IBAction)setProfile:(id)sender{
+    NHTProfileController * setMyProfileButton = [[NHTProfileController alloc]initWithNibName:nil bundle: nil];
+    
+    setMyProfileButton.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:setMyProfileButton animated:YES completion:nil];
+
+}
+
+
 
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 1;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Incomplete implementation, return the number of sections
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete implementation, return the number of rows
+//    return 5;
+//}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+//        static NSString *CellIdentifier = @"Cell";
+
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userProfileCell", @"userNicknameCell", @"myTipCell", @"AlarmCell", @"setProfileCell" forIndexPath:indexPath];
+
+//    UITableViewCell *cell = [tableView registerClass:  forCellReuseIdentifier :@"userProfileCell" forIndexPath:indexPath];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userProfileCell" forIndexPath:indexPath];
+
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userNicknameCell" forIndexPath:indexPath];
+//    UITableViewCell *cell3 = [tableView dequeueReusableCellWithIdentifier:@"myTipCell" forIndexPath:indexPath];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AlarmCell" forIndexPath:indexPath];
+//    UITableViewCell *cell5 = [tableView dequeueReusableCellWithIdentifier:@"setProfileCell" forIndexPath:indexPath];
+//    
     
-    // Configure the cell...
+//    UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(userProfileCell:)];
+//    UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(AlarmCell:)];
     
-    return cell;
-}
-*/
+//    cell.gestureRecognizers = [[NSArray alloc] initWithObjects:tapCellForTipDetail, nil];
+//
+//    return cell;
+//}
+
+
+//- (void) didTapCell:(UITapGestureRecognizer *) recognizer{
+//    NSLog(@"#####1%@", recognizer);
+//    [self showTipDetail:recognizer];
+//}
+//- (IBAction)showTipDetail:(id)sender {
+//    NSLog(@"#####2%@", sender);
+//    [self performSegueWithIdentifier:@"showTipDetail" sender:sender];
+//}
+
+//- (void) didTapuserProfileCell:(UITapGestureRecognizer *) recognizer{
+//    NSLog(@"#####1%@", recognizer);
+//    [self showMyTips:recognizer];
+//
+//- (IBAction)showMyTips:(id)sender {
+//    [self performSegueWithIdentifier:@"showMyTips" sender:sender];
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -100,13 +174,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)showAlarms:(UITapGestureRecognizer *)sender {
-}
-
-- (IBAction)myTips:(UITapGestureRecognizer *)sender {
-}
-
-- (IBAction)setProfile:(UITapGestureRecognizer *)sender {
-}
 @end

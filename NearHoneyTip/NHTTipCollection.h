@@ -17,4 +17,6 @@
 -(void) addTip: (NSDictionary*) tip;
 -(NSInteger)countOfTips;
 -(NSObject*)objectAtIndex:(NSUInteger)index;
+//-(BOOL)containsTip:(NSDictionary*)newTip;
+
 @end

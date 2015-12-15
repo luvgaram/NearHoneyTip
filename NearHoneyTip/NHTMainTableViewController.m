@@ -21,6 +21,7 @@
     [super viewDidLoad];
     self.Q1 = [[NHTTipManager alloc]init];
     [self.Q1 tipsDidLoad];
+    
 }
 
 - (void)didReceiveMemoryWarning {

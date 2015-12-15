@@ -25,36 +25,55 @@
     
     NSLog(@"start set uuid");
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    //[preferences removeObjectForKey:@"currentUser"];
-    NSString *currentUidIdentifier = @"currentUser";
+    //[preferences removeObjectForKey:@"UserDefault"];
+    NSString *uidIdentifier = @"UserDefault";
     
-    if([preferences objectForKey:currentUidIdentifier] == nil) {
+    if([preferences objectForKey:uidIdentifier] == nil) {
         
         [self getAdvertisingIdentifier];
-        [preferences setObject:self.sUDID forKey:currentUidIdentifier];
-        
+        [preferences setObject:self.sUDID forKey: uidIdentifier];
         [self postUid: self.sUDID];
         const BOOL didSave = [preferences synchronize];
+        NSLog(@"save result : %hhd", didSave);
+        
         //get initialization
+        NSString *getUserInitialization = @"http://54.64.250.239:3000/users/_id=";
+        getUserInitialization = [getUserInitialization stringByAppendingString:self.sUDID];
         
-        //{nickname, profilephoto }
-        //const NSString *userNickname = {'nickname'};
-        NSString *currentUserNicknameIdentifier = @"currentUserNickname";
-        [preferences setObject:@"userNickname" forKey:currentUserNicknameIdentifier];
+        //NSLog(@"^^^post url: %@",getUserInitialization);
+        NSURL *userInformationLoad = [NSURL URLWithString:getUserInitialization];
         
-        //const NSString *userProfileImage = {'profilephoto'};
-        NSString *currentUserProfileImageIdentifier = @"currentUserProfileImage";
-        [preferences setObject:@"userProfileImage" forKey:currentUserProfileImageIdentifier];
+        NSData *jsonData = [NSData dataWithContentsOfURL:userInformationLoad];
         
+        if(jsonData){
+            NSError *error = nil;
+            NSArray *loadedUserInformationArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+            NSDictionary *loadedUserInformationDictionary = loadedUserInformationArray[0];
+        
+            NSLog(@"###%@",loadedUserInformationDictionary);
+            const NSString *userNickname = [loadedUserInformationDictionary objectForKey: @"nickname"];
+            NSString *userNicknameIdentifier = @"userNickname";
+            [preferences setObject:@"userNickname" forKey:userNicknameIdentifier];
+            
+            const NSString *userProfileImagePath = [loadedUserInformationDictionary objectForKey: @"profilephoto"];
+            NSString *userProfileImageIdentifier = @"userProfileImagePath";
+            [preferences setObject:@"userProfileImagePaht" forKey:userProfileImageIdentifier];
+            [preferences synchronize];
+        }
         
     } else  {
-        const NSString *uid = [preferences objectForKey:currentUidIdentifier];
-        
-        //        get user info : nickname => defaualt
+        const NSString *uid = [preferences objectForKey:uidIdentifier];
+        //get user info : nickname => defaualt
+
     }
+    
+    NSLog(@"the result of user: %@", preferences);
+    NSLog(@"uuid: %@", [preferences objectForKey:uidIdentifier]);
     
     
 }
+
+
 -(void) getAdvertisingIdentifier {
     NSLog(@"log1 " );
     Class ASIdentifierManagerClass = NSClassFromString(@"ASIdentifierManager");

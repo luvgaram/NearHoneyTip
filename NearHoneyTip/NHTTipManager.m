@@ -60,6 +60,7 @@
         [self.tipCollection addTip: [loadedTipsArray objectAtIndex:[loadedTipsArray count] - (i + 1)]];
     }
     
+    NSLog(@"load end");
    // NSLog(@"%@",self.tipCollection);
 };
 /* 

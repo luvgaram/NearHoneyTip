@@ -24,6 +24,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+//deprecated -> ?
+-(IBAction)back:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+
 /*
 #pragma mark - Navigation
 

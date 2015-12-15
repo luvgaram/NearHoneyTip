@@ -19,12 +19,39 @@
     return self;
 }
 
+//-(void)mytipDidLoad{
+    //mytip URL
+    //NSURL *tipLoad2 = [NSURL URLWithString:@"http://54.64.250.239:3000/tip/uid=user1"];
+    
+    //NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    //    NSString *currentUidIdentifier = @"currentUser";
+    //NSString *uid = preferences objectForKey:currentUidIdentifier;
+    
+    //[NSMutableString *b = init @"http://54.64.250.239:3000/tip/uid="
+    //[b append uid]
+    //NSString *currentUserNicknameIdentifier = @"currentUserNickname";
+    //NSSting *nickname = [preferences setObject:@"userNickname" forKey:currentUserNicknameIdentifier];
+// NSString *currentUserProfileImageIdentifier = @"currentUserProfileImage";
+// NSString *profilePhoto = [preferences setObject:@"userProfileImage" forKey:currentUserProfileImageIdentifier];
+
+//NSStringMutable *url :@"http://54.64.250.239:3000/image/icon=";
+ //[url append  icon이라는 url은 자르고 뒤에 upload_ 이하를 붙임];
+// 결과값을 저장한 후 이미지 파일 가공 (사이즈, 동그랗게 함)
+// 뷰자리에 보내줌
+
+// NSURL *tipLoad3 = [NSURL URLWith];
+
+
+//}
+
 -(void)tipsDidLoad{
     NSLog(@"world");
     NSURL *tipLoad = [NSURL URLWithString:@"http://54.64.250.239:3000/tip/all"];
+
+     
     
     NSData *jsonData = [NSData dataWithContentsOfURL:tipLoad];
-    //NSLog(@"%@", jsonData);
+//    NSLog(@"%@", jsonData);
     
     NSError *error = nil;
     NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];

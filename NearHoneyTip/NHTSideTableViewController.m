@@ -44,7 +44,7 @@
 }
 
 
-
+/*
 
 - (IBAction)showMyTips:(id)sender{
     NHTMyTipsController * showMyTipsButton = [[NHTMyTipsController alloc]initWithNibName:nil bundle: nil];
@@ -71,6 +71,8 @@
     [self presentViewController:setMyProfileButton animated:YES completion:nil];
 
 }
+ 
+ */
 
 
 

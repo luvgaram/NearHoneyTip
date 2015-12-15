@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F4793851C17B9E7002686D3 /* NHTMytipsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */; };
+		6F5CA90C1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5CA90B1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m */; };
 		6FD0C06B1C1711AB0021FEB6 /* NHTMyTipsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */; };
 		6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C06D1C1711D80021FEB6 /* NHTAlarmsController.m */; };
 		6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0701C1712210021FEB6 /* NHTProfileController.m */; };
@@ -66,6 +67,8 @@
 		382463056E0044DAA3DF9E33 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F4793831C17B9E7002686D3 /* NHTMytipsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMytipsTableCell.h; sourceTree = "<group>"; };
 		6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMytipsTableCell.m; sourceTree = "<group>"; };
+		6F5CA90A1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTAlarmsTableCell.h; sourceTree = "<group>"; };
+		6F5CA90B1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTAlarmsTableCell.m; sourceTree = "<group>"; };
 		6FD0C0691C1711AB0021FEB6 /* NHTMyTipsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMyTipsController.h; sourceTree = "<group>"; };
 		6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMyTipsController.m; sourceTree = "<group>"; };
 		6FD0C06C1C1711D80021FEB6 /* NHTAlarmsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTAlarmsController.h; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */,
 				6FD0C0691C1711AB0021FEB6 /* NHTMyTipsController.h */,
 				6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */,
+				6F5CA90A1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.h */,
+				6F5CA90B1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m */,
 				6FD0C06C1C1711D80021FEB6 /* NHTAlarmsController.h */,
 				6FD0C06D1C1711D80021FEB6 /* NHTAlarmsController.m */,
 				CE8D53871C0C37B4005F913E /* NHTMainTableCell.h */,
@@ -477,6 +482,7 @@
 				CE72A0A01BFC484700466A33 /* NHTMainTableViewController.m in Sources */,
 				6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */,
 				CE3355BA1BE9CB9100B77DEC /* AppDelegate.m in Sources */,
+				6F5CA90C1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m in Sources */,
 				CE8D538F1C0C37B4005F913E /* NHTTipManager.m in Sources */,
 				CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */,
 				6F4793851C17B9E7002686D3 /* NHTMytipsTableCell.m in Sources */,

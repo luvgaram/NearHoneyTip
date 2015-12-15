@@ -20,9 +20,7 @@
 
 - (IBAction)showMyTips:(id)sender;
 - (IBAction)showAlarm:(id)sender;
-
 - (IBAction)setProfile:(id)sender;
-
 
 
 

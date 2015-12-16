@@ -8,6 +8,7 @@
 
 #import "NHTDetailViewController.h"
 #import "NHTTip.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface NHTDetailViewController ()
 
@@ -20,10 +21,25 @@
     
     if(self.selectedTip){
         self.storeName.title = self.selectedTip.storeName;
-        self.tipImage.image = self.selectedTip.tipImage;
+        
+        // modified by ej
+//        self.tipImage.image = self.selectedTip.tipImage;
+        
+        NSString *tipImagePathWhole = @"http://54.64.250.239:3000/image/photo=";
+        tipImagePathWhole = [tipImagePathWhole stringByAppendingString:self.selectedTip.tipImage];
+        [self.tipImage sd_setImageWithURL:[NSURL URLWithString:tipImagePathWhole]
+                         placeholderImage:[UIImage imageNamed:@"nht_logo.png"]];
+        
         self.tipDetails.text = self.selectedTip.tipDetails;
-        self.userProfileImage.image = self.selectedTip.userProfileImg;
+        
+//        self.userProfileImage.image = self.selectedTip.userProfileImg;
+        
         self.userProfileImage.layer.cornerRadius = 25;
+        NSString *tipIconPathWhole = @"http://54.64.250.239:3000/image/icon=";
+        tipIconPathWhole = [tipIconPathWhole stringByAppendingString:self.selectedTip.userProfileImg];
+        [self.userProfileImage sd_setImageWithURL:[NSURL URLWithString:tipIconPathWhole]
+                                 placeholderImage:[UIImage imageNamed:@"nht_logo.png"]];
+
         self.userNickname.text = self.selectedTip.userNickname;
         self.tipDate.text = self.selectedTip.tipDate;
         //userBadge

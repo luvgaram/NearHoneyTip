@@ -12,10 +12,10 @@
 @interface NHTTip : NSObject
 
 @property (strong, nonatomic) NSString *tipId;
-@property (strong, nonatomic) UIImage *tipImage;
+@property (strong, nonatomic) NSString *tipImage;
 @property (strong, nonatomic) NSString *storeName;
 @property (strong, nonatomic) NSString *tipDetails;
-@property (strong, nonatomic) UIImage *userProfileImg;
+@property (strong, nonatomic) NSString *userProfileImg;
 @property (strong, nonatomic) NSString *userNickname;
 @property (strong, nonatomic) NSString *tipDate;
 @property (strong, nonatomic) UIImage *userBadge;

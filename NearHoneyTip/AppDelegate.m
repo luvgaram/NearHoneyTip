@@ -16,7 +16,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSLog(@"hi!!!!: " );
+    //NSLog(@"hi!!!!: " );
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [self setUserDefault];
     return YES;
 }

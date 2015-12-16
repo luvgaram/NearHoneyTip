@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,25 +19,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading.png" translatesAutoresizingMaskIntoConstraints="NO" id="QDs-cK-gEN">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <animations/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nht_logo_eng.png" translatesAutoresizingMaskIntoConstraints="NO" id="aQG-En-3XV">
+                                <rect key="frame" x="210" y="310" width="180" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="T1g-Qh-X1u"/>
+                                    <constraint firstAttribute="width" constant="180" id="mzZ-eb-KTS"/>
+                                    <constraint firstAttribute="width" secondItem="aQG-En-3XV" secondAttribute="height" multiplier="3:1" id="wnp-il-OGT"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nht_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-zp-Ohv">
+                                <rect key="frame" x="210" y="120" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lQo-zp-Ohv" secondAttribute="height" multiplier="1:1" id="FcZ-Ym-ive"/>
+                                    <constraint firstAttribute="height" constant="180" id="JRl-dv-mtO"/>
+                                    <constraint firstAttribute="width" constant="180" id="gou-eq-rq7"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QDs-cK-gEN" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="BPu-7x-FcD"/>
-                            <constraint firstAttribute="trailing" secondItem="QDs-cK-gEN" secondAttribute="trailing" id="N9u-cC-lNZ"/>
-                            <constraint firstItem="QDs-cK-gEN" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NQh-4w-lQb"/>
-                            <constraint firstItem="QDs-cK-gEN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="cOM-o1-BNR"/>
-                            <constraint firstItem="QDs-cK-gEN" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="pD8-tZ-Nda"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="QDs-cK-gEN" secondAttribute="bottom" id="r3e-Yg-rjQ"/>
+                            <constraint firstItem="aQG-En-3XV" firstAttribute="leading" secondItem="lQo-zp-Ohv" secondAttribute="leading" id="Awn-tA-FxR"/>
+                            <constraint firstItem="lQo-zp-Ohv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BIj-t0-q3A"/>
+                            <constraint firstItem="lQo-zp-Ohv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="IMD-Tu-DpN"/>
+                            <constraint firstItem="aQG-En-3XV" firstAttribute="centerX" secondItem="lQo-zp-Ohv" secondAttribute="centerX" id="QMj-KZ-Pbt"/>
+                            <constraint firstItem="aQG-En-3XV" firstAttribute="trailing" secondItem="lQo-zp-Ohv" secondAttribute="trailing" id="XS9-U8-4AJ"/>
+                            <constraint firstItem="lQo-zp-Ohv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="bRh-5l-LSg"/>
+                            <constraint firstItem="aQG-En-3XV" firstAttribute="top" secondItem="lQo-zp-Ohv" secondAttribute="bottom" constant="10" id="igq-mh-slB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lQo-zp-Ohv" secondAttribute="trailing" constant="190" id="kJi-ry-UqN"/>
+                            <constraint firstItem="lQo-zp-Ohv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qBH-B7-YTn"/>
+                            <constraint firstItem="lQo-zp-Ohv" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="100" id="tfM-Ix-Iwi"/>
+                            <constraint firstItem="lQo-zp-Ohv" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="190" id="veU-he-Yyx"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="BPu-7x-FcD"/>
-                                <exclude reference="NQh-4w-lQb"/>
+                                <exclude reference="IMD-Tu-DpN"/>
+                                <exclude reference="bRh-5l-LSg"/>
+                                <exclude reference="kJi-ry-UqN"/>
+                                <exclude reference="qBH-B7-YTn"/>
+                                <exclude reference="veU-he-Yyx"/>
+                                <exclude reference="QMj-KZ-Pbt"/>
                             </mask>
                         </variation>
                     </view>
@@ -46,6 +68,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="loading.png" width="540" height="960"/>
+        <image name="nht_icon.png" width="60" height="60"/>
+        <image name="nht_logo_eng.png" width="240" height="105"/>
     </resources>
 </document>

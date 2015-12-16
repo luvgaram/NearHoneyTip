@@ -1,14 +1,14 @@
 //
-//  NHTSideTableCell.m
+//  NHTAlarmsTableCell.m
 //  NearHoneyTip
 //
-//  Created by yunseo shin on 2015. 12. 10..
+//  Created by yunseo shin on 2015. 12. 14..
 //  Copyright © 2015년 Mamamoo. All rights reserved.
 //
 
-#import "NHTSideTableCell.h"
+#import "NHTAlarmsTableCell.h"
 
-@implementation NHTSideTableCell
+@implementation NHTAlarmsTableCell
 
 - (void)awakeFromNib {
     // Initialization code

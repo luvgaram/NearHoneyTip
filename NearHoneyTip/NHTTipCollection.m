@@ -21,8 +21,11 @@
 -(void) addTip: (NSDictionary*) tip{
     
     NHTTip* tipNew = [[NHTTip alloc] init];
+    
+    tipNew.tipId = [tip objectForKey:@"_id"];
+  //  NSLog(@"!String: %@",tipNew.tipId);
     NSArray *tipImageFile = [tip objectForKey:@"file"];
-    NSLog(@"###STRing: %@",tipImageFile);
+   // NSLog(@"###STRing: %@",tipImageFile);
     NSDictionary *tipImagePathDictionary = tipImageFile[0];
     NSString *tipImagePathString = [tipImagePathDictionary objectForKey:@"path"];
     NSUInteger pointOfPathStart = 5;
@@ -49,11 +52,21 @@
     tipNew.userNickname = [tip valueForKey:@"nickname"];
     tipNew.tipDate = [tip valueForKey: @"date"];
     
-    NSLog(@"THE added tip: %@", tipNew);
+   // NSLog(@"THE added tip: %@", tipNew);
     
     [self.tips addObject:tipNew];
 }
 
+/*
+-(BOOL)containsTip:(NSString*)newTipID{
+ 
+     //tips 안에 tip_id들과 비교합니다.
+     
+ 
+    //return [self.tips containsObject:<#(nonnull id)#>]
+    return YES;
+}
+*/
 
 -(NSInteger)countOfTips{
     if(self.tips){

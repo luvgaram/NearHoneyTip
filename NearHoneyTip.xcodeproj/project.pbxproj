@@ -47,6 +47,7 @@
 		CEE450111C21066900C0F821 /* nht_logo_eng@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE450101C21066900C0F821 /* nht_logo_eng@2x.png */; };
 		CEE450131C21067700C0F821 /* nht_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE450121C21067700C0F821 /* nht_icon@2x.png */; };
 		CEE450151C21067B00C0F821 /* nht_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE450141C21067B00C0F821 /* nht_icon@3x.png */; };
+		CEE450171C21151400C0F821 /* nht_logoBig.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE450161C21151400C0F821 /* nht_logoBig.png */; };
 		CEF05FFE1BF317FF0037E24A /* nht_icon_newPost.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +132,7 @@
 		CEE450101C21066900C0F821 /* nht_logo_eng@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nht_logo_eng@2x.png"; sourceTree = "<group>"; };
 		CEE450121C21067700C0F821 /* nht_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nht_icon@2x.png"; sourceTree = "<group>"; };
 		CEE450141C21067B00C0F821 /* nht_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nht_icon@3x.png"; sourceTree = "<group>"; };
+		CEE450161C21151400C0F821 /* nht_logoBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nht_logoBig.png; sourceTree = "<group>"; };
 		CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nht_icon_newPost.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +205,7 @@
 				CE3355BE1BE9CB9100B77DEC /* Main.storyboard */,
 				CE3355C61BE9CB9100B77DEC /* LaunchScreen.storyboard */,
 				CE3355C41BE9CB9100B77DEC /* Assets.xcassets */,
+				CEE450161C21151400C0F821 /* nht_logoBig.png */,
 				CEE4500E1C20FFCE00C0F821 /* nht_logo_icon_480.png */,
 				CE3355C91BE9CB9200B77DEC /* Info.plist */,
 				CE3355ED1BE9D42100B77DEC /* img */,
@@ -448,6 +451,7 @@
 				CE3355FE1BE9D45500B77DEC /* SLR Camera Filled-50.png in Resources */,
 				CE3355FC1BE9D45500B77DEC /* more.png in Resources */,
 				CE3355C51BE9CB9100B77DEC /* Assets.xcassets in Resources */,
+				CEE450171C21151400C0F821 /* nht_logoBig.png in Resources */,
 				CE3355F91BE9D45500B77DEC /* badge1.png in Resources */,
 				CE3355C01BE9CB9100B77DEC /* Main.storyboard in Resources */,
 				CEC8E9B41BECA7CF00582083 /* likeTint.png in Resources */,

@@ -783,6 +783,7 @@ imgComment</string>
                                     <outlet property="StoreName" destination="8Wr-xF-grL" id="xb6-ed-veh"/>
                                     <outlet property="commentButton" destination="byS-Xy-wKC" id="VeD-V3-ePG"/>
                                     <outlet property="likeButton" destination="TUm-V3-7Me" id="wQO-gr-9Vd"/>
+                                    <outlet property="storeName" destination="8Wr-xF-grL" id="EPe-3a-xK8"/>
                                     <outlet property="tipDetails" destination="J38-3X-4My" id="IuA-95-adz"/>
                                     <outlet property="tipImage" destination="9X2-Tr-nCc" id="WNr-M2-FY4"/>
                                     <outlet property="tipNewTime" destination="4Ia-BT-0uU" id="N3B-dW-72B"/>

@@ -14,6 +14,7 @@
 		6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0701C1712210021FEB6 /* NHTProfileController.m */; };
 		6FD0C0741C171B8F0021FEB6 /* NHTSideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */; };
 		A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A82A3D531C088FDE0057F048 /* NHTBasicModel.m */; };
+		A8368B3F1C2140FE00B4D0F3 /* nht_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */; };
 		A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8935A701C01E48800E69F2F /* NHTWriteViewController.m */; };
 		BEB76CDE499F39F005B1B9C5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 382463056E0044DAA3DF9E33 /* libPods.a */; };
 		CE3355B71BE9CB9100B77DEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3355B61BE9CB9100B77DEC /* main.m */; };
@@ -85,6 +86,7 @@
 		904A7464ED7B0C7A3B186D8E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A82A3D521C088F930057F048 /* NHTBasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTBasicModel.h; sourceTree = "<group>"; };
 		A82A3D531C088FDE0057F048 /* NHTBasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTBasicModel.m; sourceTree = "<group>"; };
+		A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nht_logo.png; sourceTree = "<group>"; };
 		A8935A6F1C01E48800E69F2F /* NHTWriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTWriteViewController.h; sourceTree = "<group>"; };
 		A8935A701C01E48800E69F2F /* NHTWriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTWriteViewController.m; sourceTree = "<group>"; };
 		B25936F0EDCBDABE9ACBED38 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		CE3355ED1BE9D42100B77DEC /* img */ = {
 			isa = PBXGroup;
 			children = (
+				A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */,
 				CEE450101C21066900C0F821 /* nht_logo_eng@2x.png */,
 				CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */,
 				CEC8E9B11BECA7CF00582083 /* commentTint.png */,
@@ -439,6 +442,7 @@
 				CE3355F71BE9D45500B77DEC /* anomy.png in Resources */,
 				CE3355FF1BE9D45500B77DEC /* Speech Bubble Filled-50.png in Resources */,
 				CE3355EC1BE9CD3600B77DEC /* loading.png in Resources */,
+				A8368B3F1C2140FE00B4D0F3 /* nht_logo.png in Resources */,
 				CE3355F81BE9D45500B77DEC /* back.png in Resources */,
 				CE3355C81BE9CB9100B77DEC /* LaunchScreen.storyboard in Resources */,
 				CEC8E9B31BECA7CF00582083 /* commentTint.png in Resources */,

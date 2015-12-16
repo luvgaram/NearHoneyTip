@@ -336,7 +336,7 @@ imgComment</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="137" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpE-hT-31l" userLabel="mainViewTable">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="137" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpE-hT-31l" userLabel="mainViewTable">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -501,9 +501,20 @@ imgComment</string>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wpE-hT-31l" firstAttribute="top" secondItem="TMh-5T-qqI" secondAttribute="bottom" constant="-64" id="3iu-Mn-n3d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wpE-hT-31l" secondAttribute="trailing" constant="-20" id="4dg-Ie-IRk"/>
+                            <constraint firstItem="wpE-hT-31l" firstAttribute="centerX" secondItem="nd3-Ka-Wh2" secondAttribute="centerX" id="7km-Bm-e42"/>
                             <constraint firstItem="fcN-oo-zof" firstAttribute="trailing" secondItem="nd3-Ka-Wh2" secondAttribute="trailingMargin" id="TWk-dp-CJJ"/>
+                            <constraint firstItem="wpE-hT-31l" firstAttribute="leading" secondItem="nd3-Ka-Wh2" secondAttribute="leadingMargin" constant="-20" id="XV3-T8-KR4"/>
+                            <constraint firstItem="Ubm-el-eLI" firstAttribute="top" secondItem="wpE-hT-31l" secondAttribute="bottom" id="Y13-fd-vGC"/>
                             <constraint firstItem="Ubm-el-eLI" firstAttribute="top" secondItem="fcN-oo-zof" secondAttribute="bottom" constant="33" id="ZAY-MK-fov"/>
+                            <constraint firstItem="wpE-hT-31l" firstAttribute="centerY" secondItem="nd3-Ka-Wh2" secondAttribute="centerY" id="cqg-PG-GDV"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Y13-fd-vGC"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="5fB-2K-ivL">
                         <nil key="title"/>

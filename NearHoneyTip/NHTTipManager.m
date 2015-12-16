@@ -51,7 +51,7 @@
      
     
     NSData *jsonData = [NSData dataWithContentsOfURL:tipLoad];
-//    NSLog(@"%@", jsonData);
+    //NSLog(@"%@", jsonData);
     
     NSError *error = nil;
     NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];

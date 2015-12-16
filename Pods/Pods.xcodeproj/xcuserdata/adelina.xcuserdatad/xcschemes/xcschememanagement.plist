@@ -8,16 +8,27 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>TWPhotoPicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -33,6 +44,21 @@
 			<true/>
 		</dict>
 		<key>31DC5C2F7F64F9E319BDA427EB46E5B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3A30D0E56278BE5F648AA7AD564F6291</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8C0B8A7870FDEC2874D8FC1D19004988</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE30540F5590C34FDA9063F911CF0541</key>
 		<dict>
 			<key>primary</key>
 			<true/>

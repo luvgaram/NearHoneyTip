@@ -402,6 +402,7 @@
 				TargetAttributes = {
 					CE3355B11BE9CB9100B77DEC = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 39WT95YDMW;
 					};
 					CE3355CD1BE9CB9200B77DEC = {
 						CreatedOnToolsVersion = 7.1;
@@ -689,6 +690,8 @@
 			baseConfigurationReference = B25936F0EDCBDABE9ACBED38 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NearHoneyTip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -709,6 +712,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nhnnext.NearHoneyTip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -717,6 +721,8 @@
 			baseConfigurationReference = 904A7464ED7B0C7A3B186D8E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NearHoneyTip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -737,6 +743,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.nhnnext.NearHoneyTip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

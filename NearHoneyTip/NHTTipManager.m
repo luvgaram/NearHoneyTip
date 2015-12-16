@@ -19,7 +19,8 @@
     return self;
 }
 
-//-(void)mytipDidLoad{
+-(void)mytipsDidLoad{
+    
     //mytip URL
     //NSURL *tipLoad2 = [NSURL URLWithString:@"http://54.64.250.239:3000/tip/uid=user1"];
     
@@ -29,20 +30,28 @@
     
     //[NSMutableString *b = init @"http://54.64.250.239:3000/tip/uid="
     //[b append uid]
+    
     //NSString *currentUserNicknameIdentifier = @"currentUserNickname";
     //NSSting *nickname = [preferences setObject:@"userNickname" forKey:currentUserNicknameIdentifier];
-// NSString *currentUserProfileImageIdentifier = @"currentUserProfileImage";
-// NSString *profilePhoto = [preferences setObject:@"userProfileImage" forKey:currentUserProfileImageIdentifier];
-
-//NSStringMutable *url :@"http://54.64.250.239:3000/image/icon=";
- //[url append  icon이라는 url은 자르고 뒤에 upload_ 이하를 붙임];
-// 결과값을 저장한 후 이미지 파일 가공 (사이즈, 동그랗게 함)
-// 뷰자리에 보내줌
-
-// NSURL *tipLoad3 = [NSURL URLWith];
-
-
-//}
+    // NSString *currentUserProfileImageIdentifier = @"currentUserProfileImage";
+    // NSString *profilePhoto = [preferences setObject:@"userProfileImage" forKey:currentUserProfileImageIdentifier];
+    
+    //NSStringMutable *url :@"http://54.64.250.239:3000/image/icon=";
+    //[url append  icon이라는 url은 자르고 뒤에 upload_ 이하를 붙임];
+    // 결과값을 저장한 후 이미지 파일 가공 (사이즈, 동그랗게 함)
+    // 뷰자리에 보내줌
+    
+    // NSURL *tipLoad3 = [NSURL URLWith];
+    
+    NSURL *tipLoad = [NSURL URLWithString:@"http://54.64.250.239:3000/tip/all"];
+    NSData *jsonData = [NSData dataWithContentsOfURL:tipLoad];
+    NSError *error = nil;
+    NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    
+    for(int i = 0; i < [loadedTipsArray count] ; i++){
+        [self.tipCollection addTip: [loadedTipsArray objectAtIndex:[loadedTipsArray count] - (i + 1)]];
+    }
+}
 
 -(void)tipsDidLoad{
     NSLog(@"world");

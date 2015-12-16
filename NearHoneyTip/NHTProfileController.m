@@ -30,6 +30,29 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+//- (IBAction)saveTip:(id)sender {
+//    NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"ib_addphoto"], 1.0);
+//    
+//    if (_chosenImage) {
+//        data = UIImageJPEGRepresentation(_chosenImage, 1.0);
+//        NSDictionary *tipDictionary = @{ @"storeName":_storeName.text,
+//                                         @"detail":_detail.text,
+//                                         @"imageData":data
+//                                         };
+//        [self postTip:tipDictionary];
+//        NSLog(@"saving tip for %@", _storeName);
+//        [self.navigationController popToRootViewControllerAnimated:YES];
+//        
+//    } else {
+//        NSLog(@"no image");
+//    }
+//}
+
+- (IBAction)cancelWrite:(id)sender {
+    NSLog(@"%@",self.navigationController.viewControllers);
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 
 /*
 #pragma mark - Navigation

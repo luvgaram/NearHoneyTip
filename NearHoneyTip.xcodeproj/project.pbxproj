@@ -207,8 +207,6 @@
 				CE3355BE1BE9CB9100B77DEC /* Main.storyboard */,
 				CE3355C61BE9CB9100B77DEC /* LaunchScreen.storyboard */,
 				CE3355C41BE9CB9100B77DEC /* Assets.xcassets */,
-				CEE450161C21151400C0F821 /* nht_logoBig.png */,
-				CEE4500E1C20FFCE00C0F821 /* nht_logo_icon_480.png */,
 				CE3355C91BE9CB9200B77DEC /* Info.plist */,
 				CE3355ED1BE9D42100B77DEC /* img */,
 				CE3355C11BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld */,
@@ -250,6 +248,8 @@
 		CE3355ED1BE9D42100B77DEC /* img */ = {
 			isa = PBXGroup;
 			children = (
+				CEE4500E1C20FFCE00C0F821 /* nht_logo_icon_480.png */,
+				CEE450161C21151400C0F821 /* nht_logoBig.png */,
 				A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */,
 				CEE450101C21066900C0F821 /* nht_logo_eng@2x.png */,
 				CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */,

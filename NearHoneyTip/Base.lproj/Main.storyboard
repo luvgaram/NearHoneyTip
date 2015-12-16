@@ -638,13 +638,7 @@ imgComment</string>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="X47-g2-UYU">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="cancelWrite:" destination="jYt-6B-8sE" id="vDP-kl-AHT"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="JSU-Ua-Klx">
-                            <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="saveTip:" destination="jYt-6B-8sE" id="sUQ-mR-Te7"/>
+                                <action selector="cancelWrite:" destination="9WG-o3-XrT" id="qEl-2T-uns"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.Q1 = [[NHTTipManager alloc]init];
-    [self.Q1 tipsDidLoad];
+    [self.Q1 mytipsDidLoad];
     
 }
 

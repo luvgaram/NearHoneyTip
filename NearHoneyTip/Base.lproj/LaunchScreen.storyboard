@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -21,7 +21,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nht_logo_eng.png" translatesAutoresizingMaskIntoConstraints="NO" id="aQG-En-3XV">
                                 <rect key="frame" x="210" y="310" width="180" height="60"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="T1g-Qh-X1u"/>
                                     <constraint firstAttribute="width" constant="180" id="mzZ-eb-KTS"/>
@@ -30,7 +29,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nht_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-zp-Ohv">
                                 <rect key="frame" x="210" y="120" width="180" height="180"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lQo-zp-Ohv" secondAttribute="height" multiplier="1:1" id="FcZ-Ym-ive"/>
                                     <constraint firstAttribute="height" constant="180" id="JRl-dv-mtO"/>

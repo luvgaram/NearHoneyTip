@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,13 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nht_logo_eng.png" translatesAutoresizingMaskIntoConstraints="NO" id="aQG-En-3XV">
                                 <rect key="frame" x="210" y="310" width="180" height="60"/>
+=======
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PjQ-Uq-jBb">
+                                <rect key="frame" x="200" y="150" width="200" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nht_logoBig" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-zp-Ohv">
+                                        <rect key="frame" x="8" y="13" width="180" height="180"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="lQo-zp-Ohv" secondAttribute="height" multiplier="1:1" id="FcZ-Ym-ive"/>
+                                            <constraint firstAttribute="height" constant="180" id="JRl-dv-mtO"/>
+                                            <constraint firstAttribute="width" constant="180" id="gou-eq-rq7"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nht_logo_eng.png" translatesAutoresizingMaskIntoConstraints="NO" id="aQG-En-3XV">
+                                        <rect key="frame" x="10" y="211" width="180" height="60"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="T1g-Qh-X1u"/>
+                                            <constraint firstAttribute="width" constant="180" id="mzZ-eb-KTS"/>
+                                            <constraint firstAttribute="width" secondItem="aQG-En-3XV" secondAttribute="height" multiplier="3:1" id="wnp-il-OGT"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+>>>>>>> upstream/master
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="T1g-Qh-X1u"/>
-                                    <constraint firstAttribute="width" constant="180" id="mzZ-eb-KTS"/>
-                                    <constraint firstAttribute="width" secondItem="aQG-En-3XV" secondAttribute="height" multiplier="3:1" id="wnp-il-OGT"/>
+                                    <constraint firstAttribute="height" constant="300" id="9zH-h6-VZC"/>
+                                    <constraint firstItem="lQo-zp-Ohv" firstAttribute="leading" secondItem="PjQ-Uq-jBb" secondAttribute="leading" constant="9" id="D8u-Fd-edm"/>
+                                    <constraint firstItem="aQG-En-3XV" firstAttribute="centerY" secondItem="PjQ-Uq-jBb" secondAttribute="centerY" id="Vje-KT-gkd"/>
+                                    <constraint firstItem="aQG-En-3XV" firstAttribute="leading" secondItem="PjQ-Uq-jBb" secondAttribute="leading" constant="9" id="WdE-rw-Csd"/>
+                                    <constraint firstItem="aQG-En-3XV" firstAttribute="top" secondItem="lQo-zp-Ohv" secondAttribute="bottom" constant="10" id="Ym9-sE-3kv"/>
+                                    <constraint firstItem="lQo-zp-Ohv" firstAttribute="top" secondItem="PjQ-Uq-jBb" secondAttribute="top" constant="10" id="bUz-8P-Doq"/>
+                                    <constraint firstItem="lQo-zp-Ohv" firstAttribute="centerY" secondItem="PjQ-Uq-jBb" secondAttribute="centerY" id="nVG-nF-hph"/>
+                                    <constraint firstAttribute="width" constant="200" id="ytB-9c-nZl"/>
+                                    <constraint firstItem="aQG-En-3XV" firstAttribute="top" secondItem="lQo-zp-Ohv" secondAttribute="bottom" constant="18" id="ywT-2A-qye"/>
                                 </constraints>
+<<<<<<< HEAD
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nht_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-zp-Ohv">
                                 <rect key="frame" x="210" y="120" width="180" height="180"/>
@@ -35,31 +68,22 @@
                                     <constraint firstAttribute="width" constant="180" id="gou-eq-rq7"/>
                                 </constraints>
                             </imageView>
+=======
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="nVG-nF-hph"/>
+                                        <exclude reference="Vje-KT-gkd"/>
+                                        <exclude reference="Ym9-sE-3kv"/>
+                                    </mask>
+                                </variation>
+                            </view>
+>>>>>>> upstream/master
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aQG-En-3XV" firstAttribute="leading" secondItem="lQo-zp-Ohv" secondAttribute="leading" id="Awn-tA-FxR"/>
-                            <constraint firstItem="lQo-zp-Ohv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BIj-t0-q3A"/>
-                            <constraint firstItem="lQo-zp-Ohv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="IMD-Tu-DpN"/>
-                            <constraint firstItem="aQG-En-3XV" firstAttribute="centerX" secondItem="lQo-zp-Ohv" secondAttribute="centerX" id="QMj-KZ-Pbt"/>
-                            <constraint firstItem="aQG-En-3XV" firstAttribute="trailing" secondItem="lQo-zp-Ohv" secondAttribute="trailing" id="XS9-U8-4AJ"/>
-                            <constraint firstItem="lQo-zp-Ohv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="bRh-5l-LSg"/>
-                            <constraint firstItem="aQG-En-3XV" firstAttribute="top" secondItem="lQo-zp-Ohv" secondAttribute="bottom" constant="10" id="igq-mh-slB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lQo-zp-Ohv" secondAttribute="trailing" constant="190" id="kJi-ry-UqN"/>
-                            <constraint firstItem="lQo-zp-Ohv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qBH-B7-YTn"/>
-                            <constraint firstItem="lQo-zp-Ohv" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="100" id="tfM-Ix-Iwi"/>
-                            <constraint firstItem="lQo-zp-Ohv" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="190" id="veU-he-Yyx"/>
+                            <constraint firstItem="PjQ-Uq-jBb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0xx-KY-KMz"/>
+                            <constraint firstItem="PjQ-Uq-jBb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="brl-9o-JhZ"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="IMD-Tu-DpN"/>
-                                <exclude reference="bRh-5l-LSg"/>
-                                <exclude reference="kJi-ry-UqN"/>
-                                <exclude reference="qBH-B7-YTn"/>
-                                <exclude reference="veU-he-Yyx"/>
-                                <exclude reference="QMj-KZ-Pbt"/>
-                            </mask>
-                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -68,7 +92,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="nht_icon.png" width="60" height="60"/>
+        <image name="nht_logoBig" width="250" height="250"/>
         <image name="nht_logo_eng.png" width="240" height="105"/>
     </resources>
 </document>

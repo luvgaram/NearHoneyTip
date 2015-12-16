@@ -75,9 +75,9 @@
 
 
 -(void) getAdvertisingIdentifier {
-    NSLog(@"log1 " );
+   // NSLog(@"log1 " );
     Class ASIdentifierManagerClass = NSClassFromString(@"ASIdentifierManager");
-    NSLog(@"log 1.25 : %@", ASIdentifierManagerClass);
+   // NSLog(@"log 1.25 : %@", ASIdentifierManagerClass);
     id identity = [[ASIdentifierManagerClass alloc] init];
     NSLog(@"log 1.5 : %@",identity);
     if (ASIdentifierManagerClass) {

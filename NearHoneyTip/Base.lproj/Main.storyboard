@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfS-hf-a6i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="623"/>
+            <point key="canvasLocation" x="1828" y="659"/>
         </scene>
         <!--storeName-->
         <scene sceneID="QFv-ts-FhP">
@@ -283,7 +283,7 @@ imgComment</string>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1889" y="155"/>
+            <point key="canvasLocation" x="1865" y="-79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yGx-lY-bro">
@@ -656,7 +656,7 @@ imgComment</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Wl-DF-Fob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1307" y="649"/>
+            <point key="canvasLocation" x="1428" y="653"/>
         </scene>
         <!--My Tips Controller-->
         <scene sceneID="yEy-xo-aZC">
@@ -926,13 +926,13 @@ imgComment</string>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="vou-KQ-mjL">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="cancelWrite:" destination="jYt-6B-8sE" id="jNJ-5o-BRT"/>
+                                <action selector="cancelWrite:" destination="s0S-Ks-MFh" id="d0f-LK-NfA"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="Srz-mG-0Sv">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="saveTip:" destination="jYt-6B-8sE" id="bTx-qZ-WbN"/>
+                                <action selector="saveTip:" destination="s0S-Ks-MFh" id="wzw-5w-9eB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

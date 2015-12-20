@@ -17,25 +17,21 @@ static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
 
 @implementation NHTWriteViewController
 
+NSString *uid;
+NSString *nickname;
+NSString *profilephoto;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setPhotoPicker];
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *uidIdentifier = @"UserDefault";
     
-//    UILongPressGestureRecognizer *longPressGestureRecognize =
-//        [[UILongPressGestureRecognizer alloc]
-//         initWithTarget:self action:@selector
-//         (handleLongPressGesture:)];
-
-//    UILongPressGestureRecognizer *longPressGestureRecognize =
-//    [[UILongPressGestureRecognizer alloc]
-//     initWithTarget:self action:@selector(handleLongPressGesture:)];
-//    
-//    longPressGestureRecognize.allowableMovement = 20;
-//    longPressGestureRecognize.minimumPressDuration = 0.5f;
-//    
-//    [self.chosenImage addGesutreRecognize:longPressGestureRecognize];
+    if([preferences objectForKey:uidIdentifier] != nil) {
+        uid = [preferences objectForKey:uidIdentifier];
+        nickname = [preferences objectForKey:@"userNickname"];
+        profilephoto = [preferences objectForKey:@"userProfileImagePath"];
+    }
 }
 
 - (void)setPhotoPicker {
@@ -43,7 +39,6 @@ static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
     TWPhotoPickerController *photoPicker = [[TWPhotoPickerController alloc] init];
     
     photoPicker.cropBlock = ^(UIImage *image) {
-        //do something
         self.imageView.image = image;
         _chosenImage = image;
     };
@@ -59,12 +54,16 @@ static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
     
     if (_chosenImage) {
         data = UIImageJPEGRepresentation(_chosenImage, 1.0);
-        NSDictionary *tipDictionary = @{ @"storeName":_storeName.text,
-                                         @"detail":_detail.text,
-                                         @"imageData":data
-                                         };
+        NSDictionary *tipDictionary = @{
+                                        @"nickname":nickname,
+                                        @"profilephoto":profilephoto,
+                                        @"uid":uid,
+                                        @"storename":_storeName.text,
+                                        @"detail":_detail.text,
+                                        @"imageData":data
+                                        };
         [self postTip:tipDictionary];
-        NSLog(@"saving tip for %@", _storeName);
+        NSLog(@"saving tip for %@, uid: %@", _storeName.text, [tipDictionary objectForKey:(@"uid")]);
         [self.navigationController popToRootViewControllerAnimated:YES];
         
     } else {
@@ -88,6 +87,7 @@ static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
                                                                   delegate:self];
     [connection start];
+
     NSLog(@"connection end");
 }
 
@@ -99,47 +99,30 @@ static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
     NSData *data = tipDictionary[@"imageData"];
     if (data) {
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"upload\"; filename=\"%@.jpg\"\r\n", tipDictionary[@"storeName"]] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"upload\"; filename=\"%@.jpg\"\r\n", tipDictionary[@"storename"]] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[NSData dataWithData:data]];
         [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     }
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"storename\"\r\n\r\n%@", tipDictionary[@"storeName"]] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"storename\"\r\n\r\n%@", tipDictionary[@"storename"]] dataUsingEncoding:NSUTF8StringEncoding]];
     
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"tipdetail\"\r\n\r\n%@", tipDictionary[@"detail"]] dataUsingEncoding:NSUTF8StringEncoding]];
     
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"uid\"\r\n\r\n%@", tipDictionary[@"uid"]] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"nickname\"\r\n\r\n%@", tipDictionary[@"nickname"]] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"profilephoto\"\r\n\r\n%@", tipDictionary[@"profilephoto"]] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
     [self postFormDataAtURL:[NSURL URLWithString:@"http://54.64.250.239:3000/tip"]
-                   postData:body
-               ];
+                   postData:body];
 }
-
-// 예전 image picker
-//- (IBAction) pickImage:(id)sender{
-//    
-//    UIImagePickerController *pickerController = [[UIImagePickerController alloc]
-//                                                 init];
-//    pickerController.delegate = self;
-//    [self presentViewController:pickerController animated:YES completion:nil];
-//}
-//
-//#pragma mark -
-//#pragma mark UIImagePickerControllerDelegate
-//
-//- (void) imagePickerController:(UIImagePickerController *)picker
-//         didFinishPickingImage:(UIImage *)image
-//                   editingInfo:(NSDictionary *)editingInfo {
-//    c
-//    self.imageView.image = image;
-//    [self dismissModalViewControllerAnimated:YES];
-//}
-//
-//
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//}
 
 @end

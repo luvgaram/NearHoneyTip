@@ -43,8 +43,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)cancelWrite:(id)sender {
+    NSLog(@"%@",self.navigationController.viewControllers);
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 
+/*
 
 - (IBAction)showMyTips:(id)sender{
     NHTMyTipsController * showMyTipsButton = [[NHTMyTipsController alloc]initWithNibName:nil bundle: nil];
@@ -71,6 +76,8 @@
     [self presentViewController:setMyProfileButton animated:YES completion:nil];
 
 }
+ 
+ */
 
 
 

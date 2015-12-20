@@ -15,7 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImage;
 @property (weak, nonatomic) IBOutlet UIImageView *tipImage;
-@property (weak, nonatomic) IBOutlet UILabel *StoreName;
+@property (weak, nonatomic) IBOutlet UILabel *storeName;
 @property (weak, nonatomic) IBOutlet UITextView *tipDetails;
 @property (weak, nonatomic) IBOutlet UILabel *userNickname;
 

@@ -14,16 +14,13 @@
 @property (strong, nonatomic) NHTTip *selectedTip;
 
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *userProfile;
 @property (weak, nonatomic) IBOutlet UILabel *userNickname;
 
 
 - (IBAction)showMyTips:(id)sender;
 - (IBAction)showAlarm:(id)sender;
-
 - (IBAction)setProfile:(id)sender;
-
 
 
 

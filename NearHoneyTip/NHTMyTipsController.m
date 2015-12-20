@@ -8,6 +8,10 @@
 
 #import "NHTMyTipsController.h"
 #import "NHTTip.h"
+#import "NHTDetailViewController.h"
+#import "NHTTipManager.h"
+#import "NHTMainTableCell.h"
+#import "NHTMytipstableCell.h"
 
 @interface NHTMyTipsController ()
 
@@ -18,22 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.Q1 = [[NHTTipManager alloc]init];
+    [self.Q1 mytipsDidLoad];
     
-//    
-//    if(self.selectedTip){
-//        self.userProfile.image = self.selectedTip.userProfileImg;
-//    }
-//    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -44,42 +39,29 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    NSLog(@"the number of cell : %ld", (long)[self.Q1 countOfTipCollection] );
+    return [self.Q1 countOfTipCollection];
 }
 
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"MytipCell";
+    NHTMainTableCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
+    NSLog(@"FOR CELL%@",[self.Q1 objectAtIndex:indexPath.row]);
+    //if([[[self.Q1 objectAtIndex:indexPath.row] class] isKindOfClass: [NSDictionary class]]){
+    NSDictionary *tip = [self.Q1 objectAtIndex:indexPath.row];
+    
+    [cell setCellWithTip:tip];
+    //};
+    UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
+    
+    cell.gestureRecognizers = [[NSArray alloc] initWithObjects:tapCellForTipDetail, nil];
+    
+    return cell;
+}
 
-    
-//    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"List" forIndexPath:indexPath];
-//
-//    UIImageView * userImage = (UIImage *)[cell viewWithTag:200];
-//
-//    
-//    // Configure the cell...
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//    }
-    
-   // Recipe *recipe = [recipes objectAtIndex:indexPath.row];
-    
-//    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
-//    recipeImageView.image = [UIImage imageNamed:recipe.imageFile];
-//    
-//    UILabel *userNickNameLabel = (UILabel *)[cell viewWithTag:101];
-//    recipeNameLabel.text = recipe.name;
-//    
-//    UILabel *recipeDetailLabel = (UILabel *)[cell viewWithTag:102];
-//    recipeDetailLabel.text = recipe.detail;
-//    
-//    return cell;
-    
-    
-//}
 
 
 /*

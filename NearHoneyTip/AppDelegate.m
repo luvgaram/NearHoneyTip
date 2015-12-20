@@ -14,9 +14,13 @@
 
 @implementation AppDelegate
 
+NSUserDefaults *preferences;
+NSURLResponse *response;
+NSMutableData *data;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSLog(@"hi!!!!: " );
+    //NSLog(@"hi!!!!: " );
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [self setUserDefault];
     return YES;
 }
@@ -24,41 +28,29 @@
 - (void)setUserDefault{
     
     NSLog(@"start set uuid");
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    //[preferences removeObjectForKey:@"currentUser"];
-    NSString *currentUidIdentifier = @"currentUser";
+    preferences = [NSUserDefaults standardUserDefaults];
+    //[preferences removeObjectForKey:@"UserDefault"];
+    NSString *uidIdentifier = @"UserDefault";
     
-    if([preferences objectForKey:currentUidIdentifier] == nil) {
+    if([preferences objectForKey:uidIdentifier] == nil) {
         
         [self getAdvertisingIdentifier];
-        [preferences setObject:self.sUDID forKey:currentUidIdentifier];
-        
+        [preferences setObject:self.sUDID forKey: uidIdentifier];
         [self postUid: self.sUDID];
         const BOOL didSave = [preferences synchronize];
-        //get initialization
+        NSLog(@"save result : %hhd", didSave);
         
-        //{nickname, profilephoto }
-        //const NSString *userNickname = {'nickname'};
-        NSString *currentUserNicknameIdentifier = @"currentUserNickname";
-        [preferences setObject:@"userNickname" forKey:currentUserNicknameIdentifier];
-        
-        //const NSString *userProfileImage = {'profilephoto'};
-        NSString *currentUserProfileImageIdentifier = @"currentUserProfileImage";
-        [preferences setObject:@"userProfileImage" forKey:currentUserProfileImageIdentifier];
-        
-        
-    } else  {
-        const NSString *uid = [preferences objectForKey:currentUidIdentifier];
-        
-        //        get user info : nickname => defaualt
     }
     
-    
+    NSLog(@"the result of user: %@", preferences);
+    NSLog(@"uuid: %@", [preferences objectForKey:uidIdentifier]);
 }
+
+
 -(void) getAdvertisingIdentifier {
-    NSLog(@"log1 " );
+   // NSLog(@"log1 " );
     Class ASIdentifierManagerClass = NSClassFromString(@"ASIdentifierManager");
-    NSLog(@"log 1.25 : %@", ASIdentifierManagerClass);
+   // NSLog(@"log 1.25 : %@", ASIdentifierManagerClass);
     id identity = [[ASIdentifierManagerClass alloc] init];
     NSLog(@"log 1.5 : %@",identity);
     if (ASIdentifierManagerClass) {
@@ -78,24 +70,30 @@
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
     long code = [httpResponse statusCode];
     NSLog(@"connection response: %ld", code);
+    data = [[NSMutableData alloc] init];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)recievedData {
+    [data appendData:recievedData];
+    NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    NSLog(@"ej user: %d", loadedTipsArray.count);
+    
+    if (loadedTipsArray != NULL) {
+        NSDictionary* user = loadedTipsArray[0];
+
+        NSLog(@"ej usernickname: %@, profilephoto: %@", [user objectForKey:@"nickname"], [user objectForKey:@"profilephoto"]);
+        
+        [preferences setObject:[user objectForKey:@"nickname"] forKey:@"userNickname"];
+        [preferences setObject:[user objectForKey:@"profilephoto"] forKey:@"userProfileImagePath"];
+        [preferences synchronize];
+        
+    }
 }
 
 - (void)postUid:(NSString*)postUid {
     
     // modified by ej
-    
-    //    NSURL* postURL = [NSURL URLWithString:@"http://54.64.250.239:3000/users"];
-    
-    //    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:postURL];
-    //    request.HTTPMethod = @"POST";
-    //NSString* contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-    //[request addValue:contentType forHTTPHeaderField:@"Content-Type"];
-    
-    //    NSString *postUidString = @"{ \"uid\": \"";
-    //    postUidString = [postUidString stringByAppendingString:postUid];
-    //    postUidString = [postUidString stringByAppendingString:@"\" }"];
-    //    NSLog(@"%@", postUidString);
-    //    NSData *postUidData = [postUidString dataUsingEncoding:NSUTF8StringEncoding];
     
     NSDictionary* uidDictionary = @{@"uid" : postUid};
     
@@ -112,13 +110,14 @@
         [request setHTTPBody:jsondata];
         
         NSLog(@"start posting uid");
-        //        [request setHTTPBody:postUidData];
+        
         NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
                                                                       delegate:self];
         [connection start];
         
-        NSURLResponse* response;
         [self connection:connection didReceiveResponse:response];
+        [self connection:connection didReceiveData:data];
+        
         NSLog(@"connection end");
     }
 }

@@ -15,6 +15,8 @@
 
 -(id)init;
 -(void)tipsDidLoad;
+-(void)mytipsDidLoad;
+
 -(NSInteger)countOfTipCollection;
 -(NSObject*)objectAtIndex:(NSUInteger)index;
 //-(BOOL)containsTip:(NSDictionary*)newTip;

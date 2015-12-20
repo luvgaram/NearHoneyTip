@@ -10,4 +10,15 @@
 
 @interface NHTProfileController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *userProfile;
+@property (weak, nonatomic) IBOutlet UILabel *userNickname;
+
+
+
+- (IBAction)saveTip:(id)sender;
+- (IBAction)cancelWrite:(id)sender;
+
+
+- (IBAction)back:(id)sender;
+
 @end

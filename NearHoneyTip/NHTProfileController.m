@@ -7,6 +7,7 @@
 //
 
 #import "NHTProfileController.h"
+#import "NHTTip.h"
 
 @interface NHTProfileController ()
 
@@ -16,7 +17,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSString *urlString =@"http://54.64.250.239:3000/tip/uid=";
+    NSURL *url = [NSURL URLWithString:urlString];
+    urlString = [urlString stringByAppendingString:@"&include_rts=true"];
+    url = [NSURL URLWithString:urlString];
+    
+    
+    NSString *uidNumber = @"1";
+    NSString *includeRTs = @"true";
+    urlString = [NSString stringWithFormat:@"http://54.64.250.239:3000/tip/uid=%@&include_rts=%@", uidNumber, includeRTs];
+    url = [NSURL URLWithString:urlString];
+    
+    NSError *error = nil;
+    NSData *jsonData = [NSData dataWithContentsOfURL:url];
+    
+    NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    
+    NSDictionary *Dic = loadedTipsArray[0];
+    const NSString *userNickname = [Dic objectForKey: @"nickname"];
+    
+    _userNickname.text = userNickname;
 }
 
 - (void)didReceiveMemoryWarning {

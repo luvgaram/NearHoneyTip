@@ -24,6 +24,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *urlString =@"http://54.64.250.239:3000/tip/uid=";
+    NSURL *url = [NSURL URLWithString:urlString];
+    urlString = [urlString stringByAppendingString:@"&include_rts=true"];
+    url = [NSURL URLWithString:urlString];
+    
+    
+    NSString *uidNumber = @"1";
+    NSString *includeRTs = @"true";
+    urlString = [NSString stringWithFormat:@"http://54.64.250.239:3000/tip/uid=%@&include_rts=%@", uidNumber, includeRTs];
+    url = [NSURL URLWithString:urlString];
+    
+    
+    NSError *error = nil;
+    NSData *jsonData = [NSData dataWithContentsOfURL:url];
+    
+    //  1)
+    NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    
+    NSDictionary *Dic = loadedTipsArray[0];
+    
+    NSLog(@"###%@",Dic);
+    const NSString *userNickname = [Dic objectForKey: @"nickname"];
+    //    NSString *userNicknameIdentifier = @"userNickname";
+    //    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    //
+    //    [preferences setObject:@"userNickname" forKey:userNicknameIdentifier];
+    //
+    //    NSLog(@"##################@!!!!!!!!!!!!!%@",userNickname);
+    _userNickname.text = userNickname;
+
+    
     
     if(self.selectedTip){
         self.userProfile.image = self.selectedTip.userProfileImg;

@@ -22,7 +22,7 @@
     urlString = [urlString stringByAppendingString:@"&include_rts=true"];
     url = [NSURL URLWithString:urlString];
     
-    
+    //show mytip
     NSString *uidNumber = @"1";
     NSString *includeRTs = @"true";
     urlString = [NSString stringWithFormat:@"http://54.64.250.239:3000/tip/uid=%@&include_rts=%@", uidNumber, includeRTs];
@@ -34,39 +34,44 @@
     NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
     
     NSDictionary *Dic = loadedTipsArray[0];
-    const NSString *userNickname = [Dic objectForKey: @"nickname"];
     
+    
+    //nickname
+    const NSString *userNickname = [Dic objectForKey: @"nickname"];
     _userNickname.text = userNickname;
+    
+    
+    
+    // profile image
+    //1) one line code (sample)
+    //    _userProfile.image =[UIImage imageWithData: [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://54.64.250.239:3000/image/icon=profilephoto1.png"]]];
+    
+    // 2)
+    NSString *profileStringUrl =@"http://54.64.250.239:3000/image/icon=";
+    NSURL *userProfileUrl = [NSURL URLWithString:profileStringUrl];
+    profileStringUrl = [urlString stringByAppendingString:@"&include_rts=true"];
+    userProfileUrl = [NSURL URLWithString:urlString];
+    
+    NSString *profileImageName = @"profilephoto1.png";
+    NSString *includeRTs2 = @"true";
+    urlString = [NSString stringWithFormat:@"http://54.64.250.239:3000/image/icon=%@&include_rts=%@", profileImageName, includeRTs2];
+    userProfileUrl = [NSURL URLWithString:urlString];
+    
+    //    NSLog(@"url: %@",url); //http://54.64.250.239:3000/image/icon=profilephoto2.png&include_rts=true
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:userProfileUrl];
+    
+    //    NSLog(@"imageData: %@",imageData);
+    _userProfile.image = [UIImage imageWithData:imageData];
+    
+    
+    //3) editing....(NSData -> NS Array -> NSDic)
+    
+    //    NSArray *loadedTipsArray2 = [NSJSONSerialization JSONObjectWithData:imageData options:0 error:&error];
+    //    NSDictionary *Dic2 = loadedTipsArray2[0];
+    //    const NSString *profilephoto = [Dic2 objectForKey: @"profilephoto"]; //icon/profilephoto2.png
+    //    _userProfile.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",[profilephoto objectAtIndex:0]]]]];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-//deprecated -> ?
--(IBAction)back:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
-}
-
-//- (IBAction)saveTip:(id)sender {
-//    NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"ib_addphoto"], 1.0);
-//    
-//    if (_chosenImage) {
-//        data = UIImageJPEGRepresentation(_chosenImage, 1.0);
-//        NSDictionary *tipDictionary = @{ @"storeName":_storeName.text,
-//                                         @"detail":_detail.text,
-//                                         @"imageData":data
-//                                         };
-//        [self postTip:tipDictionary];
-//        NSLog(@"saving tip for %@", _storeName);
-//        [self.navigationController popToRootViewControllerAnimated:YES];
-//        
-//    } else {
-//        NSLog(@"no image");
-//    }
-//}
 
 - (IBAction)cancelWrite:(id)sender {
     NSLog(@"%@",self.navigationController.viewControllers);

@@ -56,17 +56,23 @@
 
     
     
-    if(self.selectedTip){
-        self.userProfile.image = self.selectedTip.userProfileImg;
-        self.userProfile.layer.cornerRadius = 25;
-        self.userNickname.text = self.selectedTip.userNickname;
- 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    NSString *profileStringUrl =@"http://54.64.250.239:3000/image/icon=";
+    NSURL *userProfileUrl = [NSURL URLWithString:profileStringUrl];
+    profileStringUrl = [urlString stringByAppendingString:@"&include_rts=true"];
+    userProfileUrl = [NSURL URLWithString:urlString];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    }
+    NSString *profileImageName = @"profilephoto1.png";
+    NSString *includeRTs2 = @"true";
+    urlString = [NSString stringWithFormat:@"http://54.64.250.239:3000/image/icon=%@&include_rts=%@", profileImageName, includeRTs2];
+    userProfileUrl = [NSURL URLWithString:urlString];
+    
+    //    NSLog(@"url: %@",url); //http://54.64.250.239:3000/image/icon=profilephoto2.png&include_rts=true
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:userProfileUrl];
+    
+    //    NSLog(@"imageData: %@",imageData);
+    _userProfile.image = [UIImage imageWithData:imageData];
+    
 }
 
 - (void)didReceiveMemoryWarning {

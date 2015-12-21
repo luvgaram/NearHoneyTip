@@ -19,8 +19,11 @@
 @property (strong, nonatomic) NSString *userNickname;
 @property (strong, nonatomic) NSString *tipDate;
 @property (strong, nonatomic) UIImage *userBadge;
-@property (strong, nonatomic) UIButton *likeButton;
-@property (strong, nonatomic) UIButton *commentButton;
+@property (strong, nonatomic) NSArray *likes;
+@property (strong, nonatomic) NSArray *replies;
+@property (readwrite, nonatomic) BOOL isLiked;
+@property (readwrite, nonatomic) NSInteger likeInteger;
+@property (readwrite, nonatomic) NSInteger replyInteger;
 
 
 @end

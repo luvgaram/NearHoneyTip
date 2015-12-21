@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMS-a5-r9b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMS-a5-r9b">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -316,46 +316,61 @@ imgComment</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="137" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpE-hT-31l" userLabel="mainViewTable">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <button opaque="NO" tag="123" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-oo-zof">
+                                <rect key="frame" x="254" y="485" width="50" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fcN-oo-zof" secondAttribute="height" multiplier="1:1" id="dKF-18-tad"/>
+                                    <constraint firstAttribute="width" constant="50" id="jHh-i1-dIM"/>
+                                    <constraint firstAttribute="height" constant="50" id="oDK-Yy-w07"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="newPost" image="nht_icon_newPost"/>
+                                <connections>
+                                    <segue destination="jYt-6B-8sE" kind="show" id="a38-wz-DXX"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpE-hT-31l" userLabel="mainViewTable">
+                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="160" id="VIM-US-Nz2" userLabel="mainViewTableCell" customClass="NHTMainTableCell">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="160"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="152" id="VIM-US-Nz2" userLabel="mainViewTableCell" customClass="NHTMainTableCell">
+                                        <rect key="frame" x="0.0" y="28" width="328" height="152"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VIM-US-Nz2" id="9sJ-XQ-D3U">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="159"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="151"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="stt-VU-pMh">
-                                                    <rect key="frame" x="162" y="78" width="30" height="30"/>
+                                                    <rect key="frame" x="154" y="78" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="stt-VU-pMh" secondAttribute="height" multiplier="1:1" id="c6M-Y8-hbu"/>
                                                         <constraint firstAttribute="width" constant="30" id="fZj-1q-frG"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sadness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7f-Gz-AKs" userLabel="nickName">
-                                                    <rect key="frame" x="194" y="78" width="59" height="18"/>
+                                                    <rect key="frame" x="186" y="78" width="59" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11월 4일 오후 4시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vut-Sh-ZgB" userLabel="tipNewTime">
-                                                    <rect key="frame" x="194" y="97" width="82" height="14"/>
+                                                    <rect key="frame" x="186" y="97" width="82" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7L-Tc-tf5">
-                                                    <rect key="frame" x="223" y="131" width="52" height="26"/>
+                                                    <rect key="frame" x="223" y="123" width="52" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                                    <state key="normal" title="  댓글 1" image="commentTint.png">
+                                                    <state key="normal" title="  댓글 1" image="replyDefault">
                                                         <color key="titleColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starbucks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4J8-it-kJP" userLabel="storeName">
-                                                    <rect key="frame" x="162" y="4" width="156" height="26"/>
+                                                    <rect key="frame" x="154" y="4" width="172" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="26" id="WP5-Rf-kUO"/>
                                                     </constraints>
@@ -363,8 +378,8 @@ imgComment</string>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FZe-01-zWu">
-                                                    <rect key="frame" x="0.0" y="2" width="155" height="155"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FZe-01-zWu">
+                                                    <rect key="frame" x="2" y="2" width="147" height="147"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="FZe-01-zWu" secondAttribute="height" multiplier="1:1" id="oG4-o6-c6P"/>
@@ -377,7 +392,7 @@ imgComment</string>
                                                     </variation>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium a " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ww-HT-Pvt" userLabel="tipDetails">
-                                                    <rect key="frame" x="162" y="32" width="154" height="30"/>
+                                                    <rect key="frame" x="154" y="32" width="170" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -389,15 +404,15 @@ imgComment</string>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05E-xi-cRz">
-                                                    <rect key="frame" x="162" y="132" width="59" height="25"/>
+                                                    <rect key="frame" x="154" y="124" width="59" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                                    <state key="normal" title="  좋아요 2" image="likeTint.png">
+                                                    <state key="normal" title="  좋아요 2" image="likeDefault">
                                                         <color key="titleColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="badge1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ulf-OD-9ri">
-                                                    <rect key="frame" x="296" y="78" width="24" height="24"/>
+                                                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ulf-OD-9ri">
+                                                    <rect key="frame" x="302" y="78" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="5EB-1y-PJ7"/>
                                                         <constraint firstAttribute="width" secondItem="Ulf-OD-9ri" secondAttribute="height" multiplier="1:1" id="Ptt-8U-Pge"/>
@@ -417,7 +432,7 @@ imgComment</string>
                                                 <constraint firstItem="t7f-Gz-AKs" firstAttribute="leading" secondItem="stt-VU-pMh" secondAttribute="trailing" constant="2" id="Gcn-Ln-XMm"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Ulf-OD-9ri" secondAttribute="trailing" constant="-6" id="SkT-2E-Cfb"/>
                                                 <constraint firstItem="Ulf-OD-9ri" firstAttribute="top" secondItem="4Ww-HT-Pvt" secondAttribute="bottom" constant="16" id="UJi-e9-yw7"/>
-                                                <constraint firstItem="d7L-Tc-tf5" firstAttribute="leading" secondItem="05E-xi-cRz" secondAttribute="trailing" constant="2" id="UPT-vF-A5c"/>
+                                                <constraint firstItem="d7L-Tc-tf5" firstAttribute="leading" secondItem="05E-xi-cRz" secondAttribute="trailing" constant="10" id="UPT-vF-A5c"/>
                                                 <constraint firstItem="stt-VU-pMh" firstAttribute="top" secondItem="4Ww-HT-Pvt" secondAttribute="bottom" constant="16" id="cUY-Jo-mxw"/>
                                                 <constraint firstItem="4J8-it-kJP" firstAttribute="top" secondItem="9sJ-XQ-D3U" secondAttribute="topMargin" constant="-4" id="d6V-0x-12f"/>
                                                 <constraint firstItem="4J8-it-kJP" firstAttribute="leading" secondItem="FZe-01-zWu" secondAttribute="trailing" constant="5" id="hgT-LL-6Hk"/>
@@ -449,35 +464,32 @@ imgComment</string>
                                     <outlet property="delegate" destination="Ldw-Tb-JUT" id="8OT-kR-XhK"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" tag="123" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-oo-zof">
-                                <rect key="frame" x="254" y="485" width="50" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="fcN-oo-zof" secondAttribute="height" multiplier="1:1" id="dKF-18-tad"/>
-                                    <constraint firstAttribute="width" constant="50" id="jHh-i1-dIM"/>
-                                    <constraint firstAttribute="height" constant="50" id="oDK-Yy-w07"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" title="newPost" image="nht_icon_newPost"/>
-                                <connections>
-                                    <segue destination="jYt-6B-8sE" kind="show" id="a38-wz-DXX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wpE-hT-31l" firstAttribute="top" secondItem="TMh-5T-qqI" secondAttribute="bottom" constant="-64" id="3iu-Mn-n3d"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wpE-hT-31l" secondAttribute="trailing" constant="-20" id="4dg-Ie-IRk"/>
                             <constraint firstItem="wpE-hT-31l" firstAttribute="centerX" secondItem="nd3-Ka-Wh2" secondAttribute="centerX" id="7km-Bm-e42"/>
+                            <constraint firstItem="wpE-hT-31l" firstAttribute="top" secondItem="nd3-Ka-Wh2" secondAttribute="topMargin" constant="64" id="8oy-bn-Jfp"/>
+                            <constraint firstItem="wpE-hT-31l" firstAttribute="top" secondItem="TMh-5T-qqI" secondAttribute="bottom" constant="-84" id="B9S-4E-GOx"/>
                             <constraint firstItem="fcN-oo-zof" firstAttribute="trailing" secondItem="nd3-Ka-Wh2" secondAttribute="trailingMargin" id="TWk-dp-CJJ"/>
                             <constraint firstItem="wpE-hT-31l" firstAttribute="leading" secondItem="nd3-Ka-Wh2" secondAttribute="leadingMargin" constant="-20" id="XV3-T8-KR4"/>
                             <constraint firstItem="Ubm-el-eLI" firstAttribute="top" secondItem="wpE-hT-31l" secondAttribute="bottom" id="Y13-fd-vGC"/>
                             <constraint firstItem="Ubm-el-eLI" firstAttribute="top" secondItem="fcN-oo-zof" secondAttribute="bottom" constant="33" id="ZAY-MK-fov"/>
                             <constraint firstItem="wpE-hT-31l" firstAttribute="centerY" secondItem="nd3-Ka-Wh2" secondAttribute="centerY" id="cqg-PG-GDV"/>
+                            <constraint firstItem="wpE-hT-31l" firstAttribute="top" secondItem="TMh-5T-qqI" secondAttribute="bottom" constant="-84" id="jN8-w4-9Sz"/>
+                            <constraint firstItem="wpE-hT-31l" firstAttribute="bottom" secondItem="Ubm-el-eLI" secondAttribute="top" id="m6X-bm-hy7"/>
+                            <constraint firstItem="wpE-hT-31l" firstAttribute="bottom" secondItem="Ubm-el-eLI" secondAttribute="top" id="qMb-yb-MYt"/>
+                            <constraint firstItem="wpE-hT-31l" firstAttribute="top" secondItem="TMh-5T-qqI" secondAttribute="bottom" constant="-64" id="vNv-ri-Lna"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="3iu-Mn-n3d"/>
+                                <exclude reference="B9S-4E-GOx"/>
+                                <exclude reference="cqg-PG-GDV"/>
+                                <exclude reference="jN8-w4-9Sz"/>
+                                <exclude reference="m6X-bm-hy7"/>
+                                <exclude reference="vNv-ri-Lna"/>
                                 <exclude reference="Y13-fd-vGC"/>
                             </mask>
                         </variation>
@@ -949,10 +961,12 @@ imgComment</string>
         <image name="badge1.png" width="50" height="50"/>
         <image name="commentTint.png" width="26" height="26"/>
         <image name="dump.jpeg" width="1080" height="1440"/>
+        <image name="likeDefault" width="25" height="25"/>
         <image name="likeTint.png" width="25" height="25"/>
         <image name="location.png" width="50" height="50"/>
         <image name="more.png" width="50" height="50"/>
         <image name="nht_icon_newPost" width="230" height="300"/>
+        <image name="replyDefault" width="26" height="26"/>
         <image name="setting.png" width="50" height="50"/>
     </resources>
     <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>

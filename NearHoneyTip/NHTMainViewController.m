@@ -48,6 +48,7 @@
     NSDictionary *tip = [self.Q1 objectAtIndex:indexPath.row];
     
     [cell setCellWithTip:tip];
+    
     //};
     UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
     
@@ -63,20 +64,14 @@
         NSLog(@"####sender target? %@",[sender view]);
         NHTMainTableCell *tipCell = [sender view];
         
-        /*
-         if([self.playlistImageViews containsObject:playlistImageView]){
-         NSUInteger index = [self.playlistImageViews indexOfObject:playlistImageView];
-         
-         playlistDetailController.playlist = [[Playlist alloc] initWithIndex:index];
-         }
-         */
+       
         
         if(tipCell){
             NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
             if(tipCell.tip){
                 
                 NSLog(@"this is tip %@", tipCell.tip);
-                tipDetailController.selectedTip = tipCell.tip;
+                tipDetailController.tip = tipCell.tip;
             }
         }
     }

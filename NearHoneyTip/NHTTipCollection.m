@@ -71,13 +71,13 @@
     tipNew.isLiked = NO;
     if(tipNew.likes){
         tipNew.likeInteger = [tipNew.likes count];
-    } else {
-        tipNew.likeInteger = 0;
+   // } else {
+    //    tipNew.likeInteger = 0;
     }
     if(tipNew.replies){
         tipNew.replyInteger = [tipNew.replies count];
-    } else {
-        tipNew.replyInteger = 0;
+   // } else {
+   //     tipNew.replyInteger = 0;
     }
     [self.tips addObject:tipNew];
 }

@@ -24,18 +24,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *urlString =@"http://54.64.250.239:3000/tip/uid=";
+    NSURL *url = [NSURL URLWithString:urlString];
+    urlString = [urlString stringByAppendingString:@"&include_rts=true"];
+    url = [NSURL URLWithString:urlString];
     
-    if(self.selectedTip){
-        self.userProfile.image = self.selectedTip.userProfileImg;
-        self.userProfile.layer.cornerRadius = 25;
-        self.userNickname.text = self.selectedTip.userNickname;
- 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    }
+    NSString *uidNumber = @"1";
+    NSString *includeRTs = @"true";
+    urlString = [NSString stringWithFormat:@"http://54.64.250.239:3000/tip/uid=%@&include_rts=%@", uidNumber, includeRTs];
+    url = [NSURL URLWithString:urlString];
+    
+    
+    NSError *error = nil;
+    NSData *jsonData = [NSData dataWithContentsOfURL:url];
+    
+    //  1)
+    NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    
+    NSDictionary *Dic = loadedTipsArray[0];
+    
+    NSLog(@"###%@",Dic);
+    const NSString *userNickname = [Dic objectForKey: @"nickname"];
+    //    NSString *userNicknameIdentifier = @"userNickname";
+    //    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    //
+    //    [preferences setObject:@"userNickname" forKey:userNicknameIdentifier];
+    //
+    //    NSLog(@"##################@!!!!!!!!!!!!!%@",userNickname);
+    _userNickname.text = userNickname;
+
+    
+    
+    NSString *profileStringUrl =@"http://54.64.250.239:3000/image/icon=";
+    NSURL *userProfileUrl = [NSURL URLWithString:profileStringUrl];
+    profileStringUrl = [urlString stringByAppendingString:@"&include_rts=true"];
+    userProfileUrl = [NSURL URLWithString:urlString];
+    
+    NSString *profileImageName = @"profilephoto1.png";
+    NSString *includeRTs2 = @"true";
+    urlString = [NSString stringWithFormat:@"http://54.64.250.239:3000/image/icon=%@&include_rts=%@", profileImageName, includeRTs2];
+    userProfileUrl = [NSURL URLWithString:urlString];
+    
+    //    NSLog(@"url: %@",url); //http://54.64.250.239:3000/image/icon=profilephoto2.png&include_rts=true
+    
+    NSData *imageData = [NSData dataWithContentsOfURL:userProfileUrl];
+    
+    //    NSLog(@"imageData: %@",imageData);
+    _userProfile.image = [UIImage imageWithData:imageData];
+    
 }
 
 - (void)didReceiveMemoryWarning {

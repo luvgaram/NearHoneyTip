@@ -23,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 
 
-
 - (void)setCellWithTip:(NSDictionary*)tip;
 
 @end

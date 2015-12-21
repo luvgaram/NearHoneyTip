@@ -39,10 +39,8 @@ NSMutableData *data;
         [self postUid: self.sUDID];
         const BOOL didSave = [preferences synchronize];
         NSLog(@"save result : %hhd", didSave);
-        
     }
     
-    NSLog(@"the result of user: %@", preferences);
     NSLog(@"uuid: %@", [preferences objectForKey:uidIdentifier]);
 }
 
@@ -75,14 +73,17 @@ NSMutableData *data;
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)recievedData {
     [data appendData:recievedData];
-    NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//    NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSDictionary *user = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
-    NSLog(@"ej user: %d", loadedTipsArray.count);
+//    NSLog(@"user: %lu", (unsigned long)loadedTipsArray.count);
+    NSLog(@"user: %@", user);
     
-    if (loadedTipsArray != NULL) {
-        NSDictionary* user = loadedTipsArray[0];
+//    if (loadedTipsArray != NULL) {
+    if (user != NULL) {
+//        NSDictionary* user = loadedTipsArray[0];
 
-        NSLog(@"ej usernickname: %@, profilephoto: %@", [user objectForKey:@"nickname"], [user objectForKey:@"profilephoto"]);
+        NSLog(@"usernickname: %@, profilephoto: %@", [user objectForKey:@"nickname"], [user objectForKey:@"profilephoto"]);
         
         [preferences setObject:[user objectForKey:@"nickname"] forKey:@"userNickname"];
         [preferences setObject:[user objectForKey:@"profilephoto"] forKey:@"userProfileImagePath"];

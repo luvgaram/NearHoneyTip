@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 @class NHTTip;
+@class NHTButtonTapPost;
 
 @interface NHTMainTableCell : UITableViewCell
 @property(strong, nonatomic) NHTTip* tip;
+@property(strong, nonatomic) NHTButtonTapPost *postManager;
 
 @property (weak, nonatomic) IBOutlet UIImageView *tipImage;
 @property (weak, nonatomic) IBOutlet UILabel *storeName;

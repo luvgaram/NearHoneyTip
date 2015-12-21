@@ -254,7 +254,9 @@ imgComment</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="commentButton" destination="ReF-mr-b76" id="UF8-nV-rMh"/>
+                        <outlet property="commentButtonImage" destination="8Va-Hh-1M4" id="ckj-MT-J75"/>
                         <outlet property="likeButton" destination="78k-lu-ZoQ" id="mab-14-Ww3"/>
+                        <outlet property="likeButtonImage" destination="m0k-4L-21a" id="lQ6-Mj-5bl"/>
                         <outlet property="searchDisplayController" destination="sQ9-SK-eXl" id="Ict-AY-ZRT"/>
                         <outlet property="storeName" destination="Oe4-MW-xzW" id="oCu-fc-Ap2"/>
                         <outlet property="tipDate" destination="JcF-KA-RC2" id="jcZ-88-ooA"/>

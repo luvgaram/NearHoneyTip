@@ -36,6 +36,7 @@
 		CE3355FE1BE9D45500B77DEC /* SLR Camera Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F51BE9D45500B77DEC /* SLR Camera Filled-50.png */; };
 		CE3355FF1BE9D45500B77DEC /* Speech Bubble Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F61BE9D45500B77DEC /* Speech Bubble Filled-50.png */; };
 		CE3356011BE9DF6D00B77DEC /* dump.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE3356001BE9DF6D00B77DEC /* dump.jpeg */; };
+		CE51A6CB1C284BA3004BE7B0 /* NHTButtonTapPost.m in Sources */ = {isa = PBXBuildFile; fileRef = CE51A6CA1C284BA3004BE7B0 /* NHTButtonTapPost.m */; };
 		CE64D5951C204DDB0058613C /* NHTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64D5941C204DDB0058613C /* NHTMainViewController.m */; };
 		CE69AAB71C05863400909DBD /* NHTTip.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69AAB61C05863400909DBD /* NHTTip.m */; };
 		CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */; };
@@ -116,6 +117,8 @@
 		CE3355F51BE9D45500B77DEC /* SLR Camera Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SLR Camera Filled-50.png"; sourceTree = "<group>"; };
 		CE3355F61BE9D45500B77DEC /* Speech Bubble Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble Filled-50.png"; sourceTree = "<group>"; };
 		CE3356001BE9DF6D00B77DEC /* dump.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dump.jpeg; sourceTree = "<group>"; };
+		CE51A6C91C284BA3004BE7B0 /* NHTButtonTapPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTButtonTapPost.h; sourceTree = "<group>"; };
+		CE51A6CA1C284BA3004BE7B0 /* NHTButtonTapPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTButtonTapPost.m; sourceTree = "<group>"; };
 		CE64D5931C204DDB0058613C /* NHTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMainViewController.h; sourceTree = "<group>"; };
 		CE64D5941C204DDB0058613C /* NHTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMainViewController.m; sourceTree = "<group>"; };
 		CE69AAB51C05863400909DBD /* NHTTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTTip.h; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				CE64D5941C204DDB0058613C /* NHTMainViewController.m */,
 				CE69AAB81C0586D600909DBD /* NHTDetailViewController.h */,
 				CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */,
+				CE51A6C91C284BA3004BE7B0 /* NHTButtonTapPost.h */,
+				CE51A6CA1C284BA3004BE7B0 /* NHTButtonTapPost.m */,
 			);
 			name = NHTMainDetailTipGroup;
 			sourceTree = "<group>";
@@ -534,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE51A6CB1C284BA3004BE7B0 /* NHTButtonTapPost.m in Sources */,
 				6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */,
 				A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */,
 				6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */,

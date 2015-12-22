@@ -19,12 +19,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
+    self.refreshManager = [[UIRefreshControl alloc] init];
+    self.refreshManager.backgroundColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
+    
+    //
+    [self.tableView addSubview: self.refreshManager];
+    [self.refreshManager addTarget:self action:@selector(getLatestTips)forControlEvents:UIControlEventValueChanged];
+    
     self.Q1 = [[NHTTipManager alloc]init];
     [self.Q1 tipsDidLoad];
+    
     UIButton *newPost = [[self view] viewWithTag:123];
     newPost.layer.cornerRadius = 25;
     
 }
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self refleshScrollViewDidEndDragging:scrollView];
+}
+- (void)refleshScrollViewDidEndDragging:(UIScrollView *)refreshManager
+{
+    CGFloat minOffsetToTriggerRefresh = 50.0f;
+    if (refreshManager.contentOffset.y <= -minOffsetToTriggerRefresh) {
+        [self.refreshManager sendActionsForControlEvents:UIControlEventValueChanged];
+    }
+}
+
+- (void)getLatestTips{
+    [self.Q1 removeAllTips];
+    [self.Q1 tipsDidLoad];
+    
+    [self.tableView reloadData];
+    
+    if (self.refreshManager) {
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        self.refreshManager.attributedTitle = attributedTitle;
+        
+        [self.refreshManager endRefreshing];
+    }
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -48,6 +92,7 @@
     NSDictionary *tip = [self.Q1 objectAtIndex:indexPath.row];
     
     [cell setCellWithTip:tip];
+    
     //};
     UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
     
@@ -63,20 +108,14 @@
         NSLog(@"####sender target? %@",[sender view]);
         NHTMainTableCell *tipCell = [sender view];
         
-        /*
-         if([self.playlistImageViews containsObject:playlistImageView]){
-         NSUInteger index = [self.playlistImageViews indexOfObject:playlistImageView];
-         
-         playlistDetailController.playlist = [[Playlist alloc] initWithIndex:index];
-         }
-         */
+       
         
         if(tipCell){
             NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
             if(tipCell.tip){
                 
                 NSLog(@"this is tip %@", tipCell.tip);
-                tipDetailController.selectedTip = tipCell.tip;
+                tipDetailController.tip = tipCell.tip;
             }
         }
     }

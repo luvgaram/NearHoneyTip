@@ -8,6 +8,7 @@
 
 #import "NHTTipCollection.h"
 #import "NHTTip.h"
+
 @implementation NHTTipCollection
 -(id) init{
     self = [super init];
@@ -63,7 +64,21 @@
     tipNew.tipDate = [tip valueForKey: @"date"];
     
    // NSLog(@"THE added tip: %@", tipNew);
+    tipNew.likes = [tip valueForKey:@"like"];
+   // NSLog(@"like array: %@", tipNew.likes);
+    tipNew.replies = [tip valueForKey:@"reply"];
     
+    tipNew.isLiked = NO;
+    if(tipNew.likes){
+        tipNew.likeInteger = [tipNew.likes count];
+   // } else {
+    //    tipNew.likeInteger = 0;
+    }
+    if(tipNew.replies){
+        tipNew.replyInteger = [tipNew.replies count];
+   // } else {
+   //     tipNew.replyInteger = 0;
+    }
     [self.tips addObject:tipNew];
 }
 
@@ -73,7 +88,7 @@
      //tips 안에 tip_id들과 비교합니다.
      
  
-    //return [self.tips containsObject:<#(nonnull id)#>]
+    //return [self.tips containsObject:]
     return YES;
 }
 */

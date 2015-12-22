@@ -21,4 +21,6 @@
 -(NSObject*)objectAtIndex:(NSUInteger)index;
 //-(BOOL)containsTip:(NSDictionary*)newTip;
 
+-(void)removeAllTips;
+
 @end

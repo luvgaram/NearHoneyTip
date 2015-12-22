@@ -66,7 +66,7 @@
        
     }else if(self.tip.likes){
         if([self.tip.likes containsObject:[preferences objectForKey:uidIdentifier]]){
-            NSLog(@"lala");
+            //NSLog(@"lala");
             [self didTapLike];
             self.tip.isLiked = YES;
         }
@@ -110,7 +110,7 @@
         [self.likeButton setImage:likeTintImage forState:UIControlStateNormal];
         [self willPlusLike];
         //post syn
-        [self.postManager postLikeChangeMethod:@"PUT" Tip:self.tip.tipId];
+        [self.postManager postLikeChangeMethod:@"POST" Tip:self.tip.tipId];
         
     } else {
         self.tip.isLiked = NO;
@@ -118,7 +118,7 @@
         [self.likeButton setImage:likeDefalut forState:UIControlStateNormal];
         [self willSubtractLike];
         //post syn
-        [self.postManager postLikeChangeMethod:@"DELETE" Tip:self.tip.tipId];
+        [self.postManager postLikeChangeMethod:@"PUT" Tip:self.tip.tipId];
     }
     
 }

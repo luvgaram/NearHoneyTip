@@ -17,10 +17,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    //Deligate
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *uidIdentifier = @"UserDefault";
+    NSLog(@"******* UserDefault: %@",uidIdentifier);
+
+//    if([preferences objectForKey:uidIdentifier] != nil) {
+//        uid = [preferences objectForKey:uidIdentifier];
+//        nickname = [preferences objectForKey:@"userNickname"];
+//        profilephoto = [preferences objectForKey:@"userProfileImagePath"];
+//        
+//        
+//        NSLog(@"******* userNickname: %@",nickname);
+//        NSLog(@"******* userProfileImagePath: %@",profilephoto);
+//    }
+    
+    
+    
     NSString *urlString =@"http://54.64.250.239:3000/tip/uid=";
     NSURL *url = [NSURL URLWithString:urlString];
     urlString = [urlString stringByAppendingString:@"&include_rts=true"];
     url = [NSURL URLWithString:urlString];
+    
+
     
     //show mytip
     NSString *uidNumber = @"1";
@@ -33,12 +54,16 @@
     
     NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
     
-    NSDictionary *Dic = loadedTipsArray[0];
     
+    if (loadedTipsArray.count > 0){
+        NSDictionary *Dic = loadedTipsArray[0];
+        //nickname
+        const NSString *userNickname = [Dic objectForKey: @"nickname"];
+        _userNickname.text = userNickname;
+   
+    }
     
-    //nickname
-    const NSString *userNickname = [Dic objectForKey: @"nickname"];
-    _userNickname.text = userNickname;
+  
     
     
     
@@ -61,7 +86,7 @@
     
     NSData *imageData = [NSData dataWithContentsOfURL:userProfileUrl];
     
-    //    NSLog(@"imageData: %@",imageData);
+        NSLog(@"imageData: %@",imageData);
     _userProfile.image = [UIImage imageWithData:imageData];
     
     
@@ -71,6 +96,11 @@
     //    NSDictionary *Dic2 = loadedTipsArray2[0];
     //    const NSString *profilephoto = [Dic2 objectForKey: @"profilephoto"]; //icon/profilephoto2.png
     //    _userProfile.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",[profilephoto objectAtIndex:0]]]]];
+    
+
+    
+    
+    
 }
 
 - (IBAction)cancelWrite:(id)sender {

@@ -24,15 +24,15 @@
     NSString *uidIdentifier = @"UserDefault";
     NSLog(@"******* UserDefault: %@",uidIdentifier);
 
-    if([preferences objectForKey:uidIdentifier] != nil) {
-        uid = [preferences objectForKey:uidIdentifier];
-        nickname = [preferences objectForKey:@"userNickname"];
-        profilephoto = [preferences objectForKey:@"userProfileImagePath"];
-        
-        
-        NSLog(@"******* userNickname: %@",nickname);
-        NSLog(@"******* userProfileImagePath: %@",profilephoto);
-    }
+//    if([preferences objectForKey:uidIdentifier] != nil) {
+//        uid = [preferences objectForKey:uidIdentifier];
+//        nickname = [preferences objectForKey:@"userNickname"];
+//        profilephoto = [preferences objectForKey:@"userProfileImagePath"];
+//        
+//        
+//        NSLog(@"******* userNickname: %@",nickname);
+//        NSLog(@"******* userProfileImagePath: %@",profilephoto);
+//    }
     
     
     

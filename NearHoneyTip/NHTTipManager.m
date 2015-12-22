@@ -99,14 +99,13 @@
     NSLog(@"world");
     NSURL *tipLoad = [NSURL URLWithString:@"http://54.64.250.239:3000/tip/all"];
 
-     
     
     NSData *jsonData = [NSData dataWithContentsOfURL:tipLoad];
     //NSLog(@"%@", jsonData);
     
     NSError *error = nil;
     NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
-    
+    NSLog(@"%@", loadedTipsArray);
     for(int i = 0; i < [loadedTipsArray count] ; i++){
         [self.tipCollection addTip: [loadedTipsArray objectAtIndex:[loadedTipsArray count] - (i + 1)]];
     }
@@ -114,6 +113,10 @@
     NSLog(@"load end");
    // NSLog(@"%@",self.tipCollection);
 };
+
+- (void)removeAllTips{
+    [self.tipCollection.tips removeAllObjects];
+}
 /* 
  //tipDidReload
  위와 같은 방식으로 loadedTipsArray를 만든다.

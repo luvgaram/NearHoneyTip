@@ -65,7 +65,7 @@
     
    // NSLog(@"THE added tip: %@", tipNew);
     tipNew.likes = [tip valueForKey:@"like"];
-    NSLog(@"like array: %@", tipNew.likes);
+   // NSLog(@"like array: %@", tipNew.likes);
     tipNew.replies = [tip valueForKey:@"reply"];
     
     tipNew.isLiked = NO;

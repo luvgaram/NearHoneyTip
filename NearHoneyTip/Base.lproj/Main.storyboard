@@ -318,27 +318,12 @@ imgComment</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="123" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-oo-zof">
-                                <rect key="frame" x="254" y="485" width="50" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="fcN-oo-zof" secondAttribute="height" multiplier="1:1" id="dKF-18-tad"/>
-                                    <constraint firstAttribute="width" constant="50" id="jHh-i1-dIM"/>
-                                    <constraint firstAttribute="height" constant="50" id="oDK-Yy-w07"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" title="newPost" image="nht_icon_newPost"/>
-                                <connections>
-                                    <segue destination="jYt-6B-8sE" kind="show" id="a38-wz-DXX"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpE-hT-31l" userLabel="mainViewTable">
-                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="152" id="VIM-US-Nz2" userLabel="mainViewTableCell" customClass="NHTMainTableCell">
-                                        <rect key="frame" x="0.0" y="28" width="328" height="152"/>
+                                        <rect key="frame" x="0.0" y="92" width="328" height="152"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VIM-US-Nz2" id="9sJ-XQ-D3U">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="151"/>
@@ -466,13 +451,28 @@ imgComment</string>
                                     <outlet property="delegate" destination="Ldw-Tb-JUT" id="8OT-kR-XhK"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" tag="123" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-oo-zof">
+                                <rect key="frame" x="254" y="485" width="50" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fcN-oo-zof" secondAttribute="height" multiplier="1:1" id="dKF-18-tad"/>
+                                    <constraint firstAttribute="width" constant="50" id="jHh-i1-dIM"/>
+                                    <constraint firstAttribute="height" constant="50" id="oDK-Yy-w07"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="newPost" image="nht_icon_newPost"/>
+                                <connections>
+                                    <segue destination="jYt-6B-8sE" kind="show" id="a38-wz-DXX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wpE-hT-31l" firstAttribute="top" secondItem="TMh-5T-qqI" secondAttribute="bottom" constant="-64" id="3iu-Mn-n3d"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wpE-hT-31l" secondAttribute="trailing" constant="-20" id="4dg-Ie-IRk"/>
                             <constraint firstItem="wpE-hT-31l" firstAttribute="centerX" secondItem="nd3-Ka-Wh2" secondAttribute="centerX" id="7km-Bm-e42"/>
-                            <constraint firstItem="wpE-hT-31l" firstAttribute="top" secondItem="nd3-Ka-Wh2" secondAttribute="topMargin" constant="64" id="8oy-bn-Jfp"/>
+                            <constraint firstItem="wpE-hT-31l" firstAttribute="top" secondItem="nd3-Ka-Wh2" secondAttribute="topMargin" id="8oy-bn-Jfp"/>
                             <constraint firstItem="wpE-hT-31l" firstAttribute="top" secondItem="TMh-5T-qqI" secondAttribute="bottom" constant="-84" id="B9S-4E-GOx"/>
                             <constraint firstItem="fcN-oo-zof" firstAttribute="trailing" secondItem="nd3-Ka-Wh2" secondAttribute="trailingMargin" id="TWk-dp-CJJ"/>
                             <constraint firstItem="wpE-hT-31l" firstAttribute="leading" secondItem="nd3-Ka-Wh2" secondAttribute="leadingMargin" constant="-20" id="XV3-T8-KR4"/>

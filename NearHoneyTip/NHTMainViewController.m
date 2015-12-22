@@ -19,12 +19,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
+    self.refreshManager = [[UIRefreshControl alloc] init];
+    self.refreshManager.backgroundColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
+    
+    //
+    [self.tableView addSubview: self.refreshManager];
+    [self.refreshManager addTarget:self action:@selector(getLatestTips)forControlEvents:UIControlEventValueChanged];
+    
     self.Q1 = [[NHTTipManager alloc]init];
     [self.Q1 tipsDidLoad];
+    
     UIButton *newPost = [[self view] viewWithTag:123];
     newPost.layer.cornerRadius = 25;
     
 }
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self refleshScrollViewDidEndDragging:scrollView];
+}
+- (void)refleshScrollViewDidEndDragging:(UIScrollView *)refreshManager
+{
+    CGFloat minOffsetToTriggerRefresh = 50.0f;
+    if (refreshManager.contentOffset.y <= -minOffsetToTriggerRefresh) {
+        [self.refreshManager sendActionsForControlEvents:UIControlEventValueChanged];
+    }
+}
+
+- (void)getLatestTips{
+    [self.Q1 removeAllTips];
+    [self.Q1 tipsDidLoad];
+    
+    [self.tableView reloadData];
+    
+    if (self.refreshManager) {
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        self.refreshManager.attributedTitle = attributedTitle;
+        
+        [self.refreshManager endRefreshing];
+    }
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

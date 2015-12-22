@@ -92,7 +92,7 @@
         self.likeButton.tintColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
         self.likeButtonImage.tintColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
         [self willPlusLike];
-        [self.postManager postLikeChangeMethod:@"POST" Tip:self.tip.tipId];
+        [self.postManager   postLikeChangeMethod:@"POST" Tip:self.tip.tipId];
 //        
     } else {
         self.tip.isLiked = NO;

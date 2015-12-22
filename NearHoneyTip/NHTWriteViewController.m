@@ -23,7 +23,8 @@ NSString *profilephoto;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setPhotoPicker];
+    [self setCustomImagePicker];
+    
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *uidIdentifier = @"UserDefault";
     
@@ -34,19 +35,44 @@ NSString *profilephoto;
     }
 }
 
-- (void)setPhotoPicker {
-    // TWPhotoPicker
-    TWPhotoPickerController *photoPicker = [[TWPhotoPickerController alloc] init];
+- (void)setCustomImagePicker {
+    CustomeImagePicker *cip = [[CustomeImagePicker alloc] init];
+    cip.delegate = self;
+    [cip setHideSkipButton:NO];
+    [cip setHideNextButton:NO];
+    [cip setMaxPhotos:MAX_ALLOWED_PICK];
+    [cip setShowOnlyPhotosWithGPS:NO];
     
-    photoPicker.cropBlock = ^(UIImage *image) {
-        self.imageView.image = image;
-        _chosenImage = image;
-    };
+    [self presentViewController:cip animated:YES completion:^{
+    }
+     ];
+}
+
+-(void) imageSelected:(NSArray *)arrayOfImages
+{
+    int count = 0;
+    for(NSString *imageURLString in arrayOfImages)
+    {
+        // Asset URLs
+        ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
+        [assetsLibrary assetForURL:[NSURL URLWithString:imageURLString] resultBlock:^(ALAsset *asset) {
+            ALAssetRepresentation *representation = [asset defaultRepresentation];
+            CGImageRef imageRef = [representation fullScreenImage];
+            UIImage *image = [UIImage imageWithCGImage:imageRef];
+            if (imageRef) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.imageView setImage:image];
+                    _chosenImage = image;
+                });
+            } // Valid Image URL
+        } failureBlock:^(NSError *error) {
+        }];
+        count++;
+    }
+}
+-(void) imageSelectionCancelled
+{
     
-    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:photoPicker];
-    [navCon setNavigationBarHidden:YES];
-    
-    [self presentViewController:navCon animated:YES completion:NULL];
 }
 
 - (IBAction)saveTip:(id)sender {

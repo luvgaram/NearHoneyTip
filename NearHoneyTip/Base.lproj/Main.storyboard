@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMS-a5-r9b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMS-a5-r9b">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -223,30 +223,86 @@ imgComment</string>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" red="0.90196078431372551" green="0.49411764705882355" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsC-9b-8c0">
+                                <rect key="frame" x="23" y="348" width="74" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Iqw-tl-eWw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="        네이버"/>
+                                <connections>
+                                    <segue destination="vAe-q0-EsF" kind="push" id="uKN-FO-JDA"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NaverMap.png" translatesAutoresizingMaskIntoConstraints="NO" id="qCq-9T-0vy">
+                                <rect key="frame" x="23" y="348" width="31" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="VbM-Oo-bkC"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goO-XS-fqx">
+                                <rect key="frame" x="124" y="348" width="72" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="        다음"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="daumMap.png" translatesAutoresizingMaskIntoConstraints="NO" id="SaR-9Q-W1j">
+                                <rect key="frame" x="125" y="347" width="31" height="31"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQm-aT-usk">
+                                <rect key="frame" x="225" y="350" width="59" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="     구글"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="googleMap.png" translatesAutoresizingMaskIntoConstraints="NO" id="duN-WF-bka">
+                                <rect key="frame" x="215" y="348" width="32" height="32"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="duN-WF-bka" firstAttribute="leading" secondItem="SaR-9Q-W1j" secondAttribute="trailing" constant="59" id="0tH-ny-SJD"/>
+                            <constraint firstItem="duN-WF-bka" firstAttribute="leading" secondItem="goO-XS-fqx" secondAttribute="trailing" constant="19" id="2An-6f-7mP"/>
+                            <constraint firstItem="KsC-9b-8c0" firstAttribute="centerY" secondItem="SaR-9Q-W1j" secondAttribute="centerY" id="3ra-PA-ubY"/>
                             <constraint firstItem="qNe-2v-3Du" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="5Xb-3e-cWd"/>
                             <constraint firstItem="qNe-2v-3Du" firstAttribute="top" secondItem="ol3-f4-ypg" secondAttribute="bottom" constant="2" id="6Vg-5y-SeJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A0k-AJ-niG" secondAttribute="trailing" constant="-24" id="6uR-Cs-cy6"/>
+                            <constraint firstItem="qCq-9T-0vy" firstAttribute="top" secondItem="goO-XS-fqx" secondAttribute="top" id="7t0-N7-eLx"/>
+                            <constraint firstItem="qCq-9T-0vy" firstAttribute="top" secondItem="Fw5-Ym-iwA" secondAttribute="bottom" constant="20" id="9yD-ov-LGF"/>
                             <constraint firstItem="7G9-P5-pMR" firstAttribute="leading" secondItem="qNe-2v-3Du" secondAttribute="trailing" id="B8W-RW-Cyx"/>
                             <constraint firstItem="7G9-P5-pMR" firstAttribute="top" secondItem="ol3-f4-ypg" secondAttribute="bottom" constant="2" id="Bxf-8t-otG"/>
+                            <constraint firstItem="KsC-9b-8c0" firstAttribute="bottom" secondItem="SaR-9Q-W1j" secondAttribute="bottom" id="E6b-qK-UC3"/>
                             <constraint firstItem="A0k-AJ-niG" firstAttribute="top" secondItem="2Lk-Q5-Q92" secondAttribute="bottom" id="FxX-9c-QPj"/>
                             <constraint firstItem="Fw5-Ym-iwA" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="INY-gI-nmL"/>
                             <constraint firstItem="2Lk-Q5-Q92" firstAttribute="top" secondItem="Fw5-Ym-iwA" secondAttribute="bottom" constant="1" id="Imy-Sd-sKz"/>
+                            <constraint firstItem="XQm-aT-usk" firstAttribute="leading" secondItem="goO-XS-fqx" secondAttribute="trailing" constant="29" id="OAp-XH-LD2"/>
+                            <constraint firstItem="KsC-9b-8c0" firstAttribute="leading" secondItem="BFH-EB-tAe" secondAttribute="leading" id="PhS-ZF-E3j"/>
                             <constraint firstItem="JcF-KA-RC2" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="PpD-Ld-Bfg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="duN-WF-bka" secondAttribute="trailing" constant="57" id="RAF-SO-IdN"/>
+                            <constraint firstItem="KsC-9b-8c0" firstAttribute="baseline" secondItem="goO-XS-fqx" secondAttribute="firstBaseline" id="SIM-Am-MUU"/>
+                            <constraint firstItem="KsC-9b-8c0" firstAttribute="top" secondItem="duN-WF-bka" secondAttribute="top" id="TiN-uh-MKz"/>
+                            <constraint firstItem="KsC-9b-8c0" firstAttribute="centerY" secondItem="qCq-9T-0vy" secondAttribute="centerY" id="TqR-Pf-1Z4"/>
+                            <constraint firstItem="goO-XS-fqx" firstAttribute="centerX" secondItem="Fw5-Ym-iwA" secondAttribute="centerX" id="Tu2-Lb-wa3"/>
                             <constraint firstItem="IX7-qS-pyM" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="V3k-wL-Zr4"/>
                             <constraint firstItem="JcF-KA-RC2" firstAttribute="top" secondItem="IX7-qS-pyM" secondAttribute="bottom" constant="1" id="VSb-qf-Yhu"/>
                             <constraint firstItem="A0k-AJ-niG" firstAttribute="top" secondItem="2Lk-Q5-Q92" secondAttribute="bottom" symbolic="YES" id="Wg5-zq-73h"/>
                             <constraint firstItem="2Lk-Q5-Q92" firstAttribute="leading" secondItem="SIk-PJ-YmG" secondAttribute="leadingMargin" constant="-28" id="XhF-Jk-RMS"/>
+                            <constraint firstItem="qCq-9T-0vy" firstAttribute="centerY" secondItem="duN-WF-bka" secondAttribute="centerY" id="asi-4r-cSU"/>
                             <constraint firstItem="lRW-0R-2h9" firstAttribute="top" secondItem="A0k-AJ-niG" secondAttribute="bottom" id="cfm-1K-G0K"/>
+                            <constraint firstItem="XQm-aT-usk" firstAttribute="bottom" secondItem="duN-WF-bka" secondAttribute="bottom" id="dWI-op-Upt"/>
                             <constraint firstItem="BFH-EB-tAe" firstAttribute="top" secondItem="JcF-KA-RC2" secondAttribute="bottom" constant="2" id="eAj-AE-1dF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Lk-Q5-Q92" secondAttribute="trailing" constant="-28" id="fB3-h2-tG3"/>
                             <constraint firstItem="IX7-qS-pyM" firstAttribute="top" secondItem="qNe-2v-3Du" secondAttribute="bottom" constant="1" id="gYu-ay-Ylk"/>
+                            <constraint firstItem="SaR-9Q-W1j" firstAttribute="leading" secondItem="KsC-9b-8c0" secondAttribute="trailing" constant="28" id="gwx-yZ-PsF"/>
                             <constraint firstItem="A0k-AJ-niG" firstAttribute="leading" secondItem="SIk-PJ-YmG" secondAttribute="leadingMargin" constant="-24" id="jsb-Mn-EA7"/>
+                            <constraint firstItem="KsC-9b-8c0" firstAttribute="firstBaseline" secondItem="goO-XS-fqx" secondAttribute="baseline" id="kG9-cL-uMQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XQm-aT-usk" secondAttribute="trailing" constant="20" id="lnb-bW-z7K"/>
+                            <constraint firstItem="goO-XS-fqx" firstAttribute="leading" secondItem="qCq-9T-0vy" secondAttribute="trailing" constant="70" id="o34-ND-E5z"/>
                             <constraint firstItem="Fw5-Ym-iwA" firstAttribute="top" secondItem="BFH-EB-tAe" secondAttribute="bottom" constant="1" id="o5j-dd-7f0"/>
                             <constraint firstItem="BFH-EB-tAe" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="p4L-2a-4Qe"/>
                             <constraint firstItem="lRW-0R-2h9" firstAttribute="top" secondItem="A0k-AJ-niG" secondAttribute="bottom" id="toN-tn-EOG"/>
+                            <constraint firstItem="XQm-aT-usk" firstAttribute="top" secondItem="Fw5-Ym-iwA" secondAttribute="bottom" constant="22" id="vll-Yb-zkb"/>
+                            <constraint firstItem="goO-XS-fqx" firstAttribute="leading" secondItem="KsC-9b-8c0" secondAttribute="trailing" constant="27" id="wPj-Zm-fEd"/>
+                            <constraint firstItem="qCq-9T-0vy" firstAttribute="leading" secondItem="KsC-9b-8c0" secondAttribute="leading" id="xyS-eP-Dsb"/>
+                            <constraint firstItem="qCq-9T-0vy" firstAttribute="top" secondItem="KsC-9b-8c0" secondAttribute="top" id="yfr-fq-8Bj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -298,6 +354,41 @@ imgComment</string>
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1865" y="-79"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="lpH-rg-r5e">
+            <objects>
+                <viewController id="vAe-q0-EsF" customClass="NHTWebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JE9-sX-HJc"/>
+                        <viewControllerLayoutGuide type="bottom" id="7nA-gQ-90H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="beN-hh-8F1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PdO-1Z-t8d">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PdO-1Z-t8d" firstAttribute="bottom" secondItem="7nA-gQ-90H" secondAttribute="top" id="K85-hh-wWV"/>
+                            <constraint firstItem="PdO-1Z-t8d" firstAttribute="leading" secondItem="beN-hh-8F1" secondAttribute="leading" id="MUN-Uk-TMq"/>
+                            <constraint firstAttribute="trailing" secondItem="PdO-1Z-t8d" secondAttribute="trailing" id="bW9-Yw-7qJ"/>
+                            <constraint firstItem="PdO-1Z-t8d" firstAttribute="top" secondItem="beN-hh-8F1" secondAttribute="top" id="kOq-Kq-oYH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="U9b-Zx-9TQ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="myPage" destination="PdO-1Z-t8d" id="YLc-ea-0Ly"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VGS-Db-ne3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2240" y="-72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yGx-lY-bro">
@@ -970,11 +1061,14 @@ imgComment</string>
     </scenes>
     <resources>
         <image name="Like Filled-50.png" width="50" height="50"/>
+        <image name="NaverMap.png" width="300" height="300"/>
         <image name="Speech Bubble Filled-50.png" width="50" height="50"/>
         <image name="anomy.png" width="50" height="50"/>
         <image name="badge1.png" width="50" height="50"/>
         <image name="commentTint.png" width="26" height="26"/>
+        <image name="daumMap.png" width="1024" height="1024"/>
         <image name="dump.jpeg" width="1080" height="1440"/>
+        <image name="googleMap.png" width="512" height="512"/>
         <image name="likeDefault" width="25" height="25"/>
         <image name="likeTint.png" width="25" height="25"/>
         <image name="location.png" width="50" height="50"/>

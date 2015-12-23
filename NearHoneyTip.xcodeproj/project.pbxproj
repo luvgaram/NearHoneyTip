@@ -13,6 +13,10 @@
 		6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C06D1C1711D80021FEB6 /* NHTAlarmsController.m */; };
 		6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0701C1712210021FEB6 /* NHTProfileController.m */; };
 		6FD0C0741C171B8F0021FEB6 /* NHTSideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */; };
+		6FF0DB1A1C2A2440000EA649 /* daumMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF0DB181C2A2440000EA649 /* daumMap.png */; };
+		6FF0DB1B1C2A2440000EA649 /* googleMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF0DB191C2A2440000EA649 /* googleMap.png */; };
+		6FF0DB1D1C2A2449000EA649 /* NaverMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF0DB1C1C2A2449000EA649 /* NaverMap.png */; };
+		6FF0DB201C2A2547000EA649 /* NHTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0DB1F1C2A2547000EA649 /* NHTWebViewController.m */; };
 		A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A82A3D531C088FDE0057F048 /* NHTBasicModel.m */; };
 		A8368B3F1C2140FE00B4D0F3 /* nht_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */; };
 		A86327261C2A05E5001B293B /* CameraCell_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86327251C2A05E5001B293B /* CameraCell_5.xib */; };
@@ -101,6 +105,11 @@
 		6FD0C0701C1712210021FEB6 /* NHTProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTProfileController.m; sourceTree = "<group>"; };
 		6FD0C0721C171B8F0021FEB6 /* NHTSideTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTSideTableViewController.h; sourceTree = "<group>"; };
 		6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTSideTableViewController.m; sourceTree = "<group>"; };
+		6FF0DB181C2A2440000EA649 /* daumMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daumMap.png; sourceTree = "<group>"; };
+		6FF0DB191C2A2440000EA649 /* googleMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = googleMap.png; sourceTree = "<group>"; };
+		6FF0DB1C1C2A2449000EA649 /* NaverMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NaverMap.png; sourceTree = "<group>"; };
+		6FF0DB1E1C2A2547000EA649 /* NHTWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTWebViewController.h; sourceTree = "<group>"; };
+		6FF0DB1F1C2A2547000EA649 /* NHTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTWebViewController.m; sourceTree = "<group>"; };
 		904A7464ED7B0C7A3B186D8E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A82A3D521C088F930057F048 /* NHTBasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTBasicModel.h; sourceTree = "<group>"; };
 		A82A3D531C088FDE0057F048 /* NHTBasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTBasicModel.m; sourceTree = "<group>"; };
@@ -299,6 +308,8 @@
 				A82A3D531C088FDE0057F048 /* NHTBasicModel.m */,
 				6FD0C06F1C1712210021FEB6 /* NHTProfileController.h */,
 				6FD0C0701C1712210021FEB6 /* NHTProfileController.m */,
+				6FF0DB1E1C2A2547000EA649 /* NHTWebViewController.h */,
+				6FF0DB1F1C2A2547000EA649 /* NHTWebViewController.m */,
 			);
 			path = NearHoneyTip;
 			sourceTree = "<group>";
@@ -332,6 +343,9 @@
 		CE3355ED1BE9D42100B77DEC /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6FF0DB1C1C2A2449000EA649 /* NaverMap.png */,
+				6FF0DB181C2A2440000EA649 /* daumMap.png */,
+				6FF0DB191C2A2440000EA649 /* googleMap.png */,
 				CEE4500E1C20FFCE00C0F821 /* nht_logo_icon_480.png */,
 				CEE450161C21151400C0F821 /* nht_logoBig.png */,
 				A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */,
@@ -530,11 +544,13 @@
 				CE3355FF1BE9D45500B77DEC /* Speech Bubble Filled-50.png in Resources */,
 				CE3355EC1BE9CD3600B77DEC /* loading.png in Resources */,
 				A8368B3F1C2140FE00B4D0F3 /* nht_logo.png in Resources */,
+				6FF0DB1D1C2A2449000EA649 /* NaverMap.png in Resources */,
 				CE3355F81BE9D45500B77DEC /* back.png in Resources */,
 				CE3355C81BE9CB9100B77DEC /* LaunchScreen.storyboard in Resources */,
 				CEC8E9B31BECA7CF00582083 /* commentTint.png in Resources */,
 				A86327451C2A06E3001B293B /* PhotoPickerCell.xib in Resources */,
 				CEE450111C21066900C0F821 /* nht_logo_eng@2x.png in Resources */,
+				6FF0DB1A1C2A2440000EA649 /* daumMap.png in Resources */,
 				A86327381C2A065B001B293B /* Images.xcassets in Resources */,
 				CEF05FFE1BF317FF0037E24A /* nht_icon_newPost.png in Resources */,
 				A86327361C2A0651001B293B /* CustomeImagePicker.xib in Resources */,
@@ -551,6 +567,7 @@
 				CEE450171C21151400C0F821 /* nht_logoBig.png in Resources */,
 				CE3355F91BE9D45500B77DEC /* badge1.png in Resources */,
 				CE3355C01BE9CB9100B77DEC /* Main.storyboard in Resources */,
+				6FF0DB1B1C2A2440000EA649 /* googleMap.png in Resources */,
 				CEC8E9B41BECA7CF00582083 /* likeTint.png in Resources */,
 				CEE450131C21067700C0F821 /* nht_icon@2x.png in Resources */,
 				A86327401C2A06CC001B293B /* PhotoPickerCell_5.xib in Resources */,
@@ -628,6 +645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A863273E1C2A06C6001B293B /* PhotoCell.m in Sources */,
+				6FF0DB201C2A2547000EA649 /* NHTWebViewController.m in Sources */,
 				CE51A6CB1C284BA3004BE7B0 /* NHTButtonTapPost.m in Sources */,
 				6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */,
 				A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */,

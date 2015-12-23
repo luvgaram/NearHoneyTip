@@ -8,6 +8,7 @@
 
 #import "NHTProfileController.h"
 #import "NHTTip.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface NHTProfileController ()
 
@@ -15,62 +16,35 @@
 
 @implementation NHTProfileController
 
+NSString *userId;
+NSString *userNickname;
+NSString *userProfilePhoto;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *urlString =@"http://54.64.250.239:3000/tip/uid=";
-    NSURL *url = [NSURL URLWithString:urlString];
-    urlString = [urlString stringByAppendingString:@"&include_rts=true"];
-    url = [NSURL URLWithString:urlString];
-    
-    //show mytip
-    NSString *uidNumber = @"1";
-    NSString *includeRTs = @"true";
-    urlString = [NSString stringWithFormat:@"http://54.64.250.239:3000/tip/uid=%@&include_rts=%@", uidNumber, includeRTs];
-    url = [NSURL URLWithString:urlString];
-    
-    NSError *error = nil;
-    NSData *jsonData = [NSData dataWithContentsOfURL:url];
-    
-    NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
-    
-    NSDictionary *Dic = loadedTipsArray[0];
     
     
-    //nickname
-    const NSString *userNickname = [Dic objectForKey: @"nickname"];
-    _userNickname.text = userNickname;
+    //Deligate
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *uidIdentifier = @"UserDefault";
+    NSLog(@"******* UserDefault: %@",uidIdentifier);
+
+
     
-    
-    
-    // profile image
-    //1) one line code (sample)
-    //    _userProfile.image =[UIImage imageWithData: [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://54.64.250.239:3000/image/icon=profilephoto1.png"]]];
-    
-    // 2)
-    NSString *profileStringUrl =@"http://54.64.250.239:3000/image/icon=";
-    NSURL *userProfileUrl = [NSURL URLWithString:profileStringUrl];
-    profileStringUrl = [urlString stringByAppendingString:@"&include_rts=true"];
-    userProfileUrl = [NSURL URLWithString:urlString];
-    
-    NSString *profileImageName = @"profilephoto1.png";
-    NSString *includeRTs2 = @"true";
-    urlString = [NSString stringWithFormat:@"http://54.64.250.239:3000/image/icon=%@&include_rts=%@", profileImageName, includeRTs2];
-    userProfileUrl = [NSURL URLWithString:urlString];
-    
-    //    NSLog(@"url: %@",url); //http://54.64.250.239:3000/image/icon=profilephoto2.png&include_rts=true
-    
-    NSData *imageData = [NSData dataWithContentsOfURL:userProfileUrl];
-    
-    //    NSLog(@"imageData: %@",imageData);
-    _userProfile.image = [UIImage imageWithData:imageData];
-    
-    
-    //3) editing....(NSData -> NS Array -> NSDic)
-    
-    //    NSArray *loadedTipsArray2 = [NSJSONSerialization JSONObjectWithData:imageData options:0 error:&error];
-    //    NSDictionary *Dic2 = loadedTipsArray2[0];
-    //    const NSString *profilephoto = [Dic2 objectForKey: @"profilephoto"]; //icon/profilephoto2.png
-    //    _userProfile.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",[profilephoto objectAtIndex:0]]]]];
+    if([preferences objectForKey:uidIdentifier] != nil) {
+        userId = [preferences objectForKey:uidIdentifier];
+        userNickname = [preferences objectForKey:@"userNickname"];
+        userProfilePhoto = [preferences objectForKey:@"userProfileImagePath"];
+        
+        NSLog(@"******* userNickname: %@", userNickname);
+        NSLog(@"******* userProfileImagePath: %@",userProfilePhoto);
+        
+        _userNickname.text = userNickname;
+        NSString *tipIconPathWhole = @"http://54.64.250.239:3000/image/icon=";
+        tipIconPathWhole = [tipIconPathWhole stringByAppendingString:userProfilePhoto];
+        [_userProfile sd_setImageWithURL:[NSURL URLWithString:tipIconPathWhole]
+                        placeholderImage:[UIImage imageNamed:@"nht_logo.png"]];
+    }
 }
 
 - (IBAction)cancelWrite:(id)sender {

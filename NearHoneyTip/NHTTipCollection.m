@@ -35,14 +35,6 @@
     // modified by ej
     tipNew.tipImage = tipImagePath;
     
-//    NSString *tipImagePathWhole = @"http://54.64.250.239:3000/image/photo=";
-//    tipImagePathWhole = [tipImagePathWhole stringByAppendingString:tipImagePath];
-//    NSURL *tipImageLoadURL = [NSURL URLWithString:tipImagePathWhole];
-//    NSError *errorTipImage = nil;
-//    NSData *tipImageLoadData = [NSData dataWithContentsOfURL:tipImageLoadURL options:0 error: &errorTipImage];
-//    UIImage     *tipimageLoad = [UIImage imageWithData:tipImageLoadData];
-//    tipNew.tipImage = tipimageLoad;
-    
     tipNew.storeName =  [tip valueForKey:@"storename"];
     tipNew.tipDetails = [tip valueForKey:@"tipdetail"];
     
@@ -51,14 +43,6 @@
     
     // modified by ej
     tipNew.userProfileImg = userProfileImagePath;
-    
-//    NSString *userProflieImagePathWhole = @"http://54.64.250.239:3000/image/icon=";
-//    userProflieImagePathWhole = [userProflieImagePathWhole stringByAppendingString:userProfileImagePath];
-//    NSURL *userProfileImageLoadURL = [NSURL URLWithString:userProflieImagePathWhole];
-//    NSError *errorUserProfileImage = nil;
-//    NSData *userProflieImageLoadData = [NSData dataWithContentsOfURL:userProfileImageLoadURL options:0 error: &errorUserProfileImage];
-//    UIImage *userProfileImageLoad = [UIImage imageWithData:userProflieImageLoadData];
-//    tipNew.userProfileImg = userProfileImageLoad;
     
     tipNew.userNickname = [tip valueForKey:@"nickname"];
     tipNew.tipDate = [tip valueForKey: @"date"];

@@ -10,10 +10,13 @@
 
 @class NHTTipManager;
 
-@interface NHTMainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate> 
+@interface NHTMainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
+
+@property (strong, nonatomic) UIRefreshControl *refreshManager;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NHTTipManager *Q1;
 
+- (void)refleshScrollViewDidEndDragging:(UIScrollView *)refreshManager;
 
 @end

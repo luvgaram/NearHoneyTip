@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 @class NHTTip;
+@class NHTButtonTapPost;
 
 @interface NHTDetailViewController : UIViewController
 
-@property (strong, nonatomic) NHTTip *selectedTip;
+@property (strong, nonatomic) NHTTip *tip;
+@property (strong, nonatomic) NHTButtonTapPost *postManager;
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *storeName;
 @property (weak, nonatomic) IBOutlet UIImageView *tipImage;
@@ -23,5 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *likeButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *commentButton;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *likeButtonImage;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *commentButtonImage;
 
 @end

@@ -15,6 +15,23 @@
 		6FD0C0741C171B8F0021FEB6 /* NHTSideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */; };
 		A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A82A3D531C088FDE0057F048 /* NHTBasicModel.m */; };
 		A8368B3F1C2140FE00B4D0F3 /* nht_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */; };
+		A86327261C2A05E5001B293B /* CameraCell_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86327251C2A05E5001B293B /* CameraCell_5.xib */; };
+		A86327291C2A060F001B293B /* CameraCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A86327281C2A060F001B293B /* CameraCell.m */; };
+		A863272B1C2A061A001B293B /* CameraCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A863272A1C2A061A001B293B /* CameraCell.xib */; };
+		A863272E1C2A0625001B293B /* CameraFocusSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = A863272D1C2A0625001B293B /* CameraFocusSquare.m */; };
+		A86327311C2A063C001B293B /* ColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A86327301C2A063C001B293B /* ColorUtil.m */; };
+		A86327341C2A064A001B293B /* CustomeImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A86327331C2A064A001B293B /* CustomeImagePicker.m */; };
+		A86327361C2A0651001B293B /* CustomeImagePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86327351C2A0651001B293B /* CustomeImagePicker.xib */; };
+		A86327381C2A065B001B293B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86327371C2A065B001B293B /* Images.xcassets */; };
+		A863273B1C2A06B3001B293B /* OLGhostAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A863273A1C2A06B3001B293B /* OLGhostAlertView.m */; };
+		A863273E1C2A06C6001B293B /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A863273D1C2A06C6001B293B /* PhotoCell.m */; };
+		A86327401C2A06CC001B293B /* PhotoPickerCell_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = A863273F1C2A06CC001B293B /* PhotoPickerCell_5.xib */; };
+		A86327431C2A06DE001B293B /* PhotoPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A86327421C2A06DE001B293B /* PhotoPickerCell.m */; };
+		A86327451C2A06E3001B293B /* PhotoPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86327441C2A06E3001B293B /* PhotoPickerCell.xib */; };
+		A86327481C2A06EF001B293B /* RNActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = A86327471C2A06EF001B293B /* RNActivityView.m */; };
+		A863274B1C2A06FA001B293B /* UIView+RNActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = A863274A1C2A06FA001B293B /* UIView+RNActivityView.m */; };
+		A863274E1C2A0704001B293B /* YCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A863274D1C2A0704001B293B /* YCameraViewController.m */; };
+		A86327501C2A070A001B293B /* YCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A863274F1C2A070A001B293B /* YCameraViewController.xib */; };
 		A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8935A701C01E48800E69F2F /* NHTWriteViewController.m */; };
 		BEB76CDE499F39F005B1B9C5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 382463056E0044DAA3DF9E33 /* libPods.a */; };
 		CE3355B71BE9CB9100B77DEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3355B61BE9CB9100B77DEC /* main.m */; };
@@ -36,6 +53,7 @@
 		CE3355FE1BE9D45500B77DEC /* SLR Camera Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F51BE9D45500B77DEC /* SLR Camera Filled-50.png */; };
 		CE3355FF1BE9D45500B77DEC /* Speech Bubble Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F61BE9D45500B77DEC /* Speech Bubble Filled-50.png */; };
 		CE3356011BE9DF6D00B77DEC /* dump.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE3356001BE9DF6D00B77DEC /* dump.jpeg */; };
+		CE51A6CB1C284BA3004BE7B0 /* NHTButtonTapPost.m in Sources */ = {isa = PBXBuildFile; fileRef = CE51A6CA1C284BA3004BE7B0 /* NHTButtonTapPost.m */; };
 		CE64D5951C204DDB0058613C /* NHTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64D5941C204DDB0058613C /* NHTMainViewController.m */; };
 		CE69AAB71C05863400909DBD /* NHTTip.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69AAB61C05863400909DBD /* NHTTip.m */; };
 		CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */; };
@@ -87,6 +105,34 @@
 		A82A3D521C088F930057F048 /* NHTBasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTBasicModel.h; sourceTree = "<group>"; };
 		A82A3D531C088FDE0057F048 /* NHTBasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTBasicModel.m; sourceTree = "<group>"; };
 		A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nht_logo.png; sourceTree = "<group>"; };
+		A86327231C2A0596001B293B /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		A86327251C2A05E5001B293B /* CameraCell_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraCell_5.xib; sourceTree = "<group>"; };
+		A86327271C2A0607001B293B /* CameraCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCell.h; sourceTree = "<group>"; };
+		A86327281C2A060F001B293B /* CameraCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCell.m; sourceTree = "<group>"; };
+		A863272A1C2A061A001B293B /* CameraCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraCell.xib; sourceTree = "<group>"; };
+		A863272C1C2A061F001B293B /* CameraFocusSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraFocusSquare.h; sourceTree = "<group>"; };
+		A863272D1C2A0625001B293B /* CameraFocusSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraFocusSquare.m; sourceTree = "<group>"; };
+		A863272F1C2A062A001B293B /* ColorUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorUtil.h; sourceTree = "<group>"; };
+		A86327301C2A063C001B293B /* ColorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtil.m; sourceTree = "<group>"; };
+		A86327321C2A0644001B293B /* CustomeImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomeImagePicker.h; sourceTree = "<group>"; };
+		A86327331C2A064A001B293B /* CustomeImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomeImagePicker.m; sourceTree = "<group>"; };
+		A86327351C2A0651001B293B /* CustomeImagePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomeImagePicker.xib; sourceTree = "<group>"; };
+		A86327371C2A065B001B293B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A86327391C2A06AE001B293B /* OLGhostAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLGhostAlertView.h; sourceTree = "<group>"; };
+		A863273A1C2A06B3001B293B /* OLGhostAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLGhostAlertView.m; sourceTree = "<group>"; };
+		A863273C1C2A06BF001B293B /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		A863273D1C2A06C6001B293B /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		A863273F1C2A06CC001B293B /* PhotoPickerCell_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoPickerCell_5.xib; sourceTree = "<group>"; };
+		A86327411C2A06D8001B293B /* PhotoPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPickerCell.h; sourceTree = "<group>"; };
+		A86327421C2A06DE001B293B /* PhotoPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPickerCell.m; sourceTree = "<group>"; };
+		A86327441C2A06E3001B293B /* PhotoPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoPickerCell.xib; sourceTree = "<group>"; };
+		A86327461C2A06EB001B293B /* RNActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNActivityView.h; sourceTree = "<group>"; };
+		A86327471C2A06EF001B293B /* RNActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNActivityView.m; sourceTree = "<group>"; };
+		A86327491C2A06F5001B293B /* UIView+RNActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RNActivityView.h"; sourceTree = "<group>"; };
+		A863274A1C2A06FA001B293B /* UIView+RNActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RNActivityView.m"; sourceTree = "<group>"; };
+		A863274C1C2A0700001B293B /* YCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCameraViewController.h; sourceTree = "<group>"; };
+		A863274D1C2A0704001B293B /* YCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCameraViewController.m; sourceTree = "<group>"; };
+		A863274F1C2A070A001B293B /* YCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YCameraViewController.xib; sourceTree = "<group>"; };
 		A8935A6F1C01E48800E69F2F /* NHTWriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTWriteViewController.h; sourceTree = "<group>"; };
 		A8935A701C01E48800E69F2F /* NHTWriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTWriteViewController.m; sourceTree = "<group>"; };
 		B25936F0EDCBDABE9ACBED38 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +162,8 @@
 		CE3355F51BE9D45500B77DEC /* SLR Camera Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SLR Camera Filled-50.png"; sourceTree = "<group>"; };
 		CE3355F61BE9D45500B77DEC /* Speech Bubble Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble Filled-50.png"; sourceTree = "<group>"; };
 		CE3356001BE9DF6D00B77DEC /* dump.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dump.jpeg; sourceTree = "<group>"; };
+		CE51A6C91C284BA3004BE7B0 /* NHTButtonTapPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTButtonTapPost.h; sourceTree = "<group>"; };
+		CE51A6CA1C284BA3004BE7B0 /* NHTButtonTapPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTButtonTapPost.m; sourceTree = "<group>"; };
 		CE64D5931C204DDB0058613C /* NHTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMainViewController.h; sourceTree = "<group>"; };
 		CE64D5941C204DDB0058613C /* NHTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMainViewController.m; sourceTree = "<group>"; };
 		CE69AAB51C05863400909DBD /* NHTTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTTip.h; sourceTree = "<group>"; };
@@ -173,6 +221,41 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A86327241C2A05D2001B293B /* CustomImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				A863272A1C2A061A001B293B /* CameraCell.xib */,
+				A863272C1C2A061F001B293B /* CameraFocusSquare.h */,
+				A863272F1C2A062A001B293B /* ColorUtil.h */,
+				A86327371C2A065B001B293B /* Images.xcassets */,
+				A86327331C2A064A001B293B /* CustomeImagePicker.m */,
+				A86327301C2A063C001B293B /* ColorUtil.m */,
+				A863273A1C2A06B3001B293B /* OLGhostAlertView.m */,
+				A86327321C2A0644001B293B /* CustomeImagePicker.h */,
+				A86327351C2A0651001B293B /* CustomeImagePicker.xib */,
+				A863272D1C2A0625001B293B /* CameraFocusSquare.m */,
+				A86327251C2A05E5001B293B /* CameraCell_5.xib */,
+				A86327281C2A060F001B293B /* CameraCell.m */,
+				A86327271C2A0607001B293B /* CameraCell.h */,
+				A86327231C2A0596001B293B /* Header.h */,
+				A863273C1C2A06BF001B293B /* PhotoCell.h */,
+				A86327391C2A06AE001B293B /* OLGhostAlertView.h */,
+				A863273D1C2A06C6001B293B /* PhotoCell.m */,
+				A863273F1C2A06CC001B293B /* PhotoPickerCell_5.xib */,
+				A86327411C2A06D8001B293B /* PhotoPickerCell.h */,
+				A86327421C2A06DE001B293B /* PhotoPickerCell.m */,
+				A86327441C2A06E3001B293B /* PhotoPickerCell.xib */,
+				A86327461C2A06EB001B293B /* RNActivityView.h */,
+				A86327471C2A06EF001B293B /* RNActivityView.m */,
+				A86327491C2A06F5001B293B /* UIView+RNActivityView.h */,
+				A863274A1C2A06FA001B293B /* UIView+RNActivityView.m */,
+				A863274C1C2A0700001B293B /* YCameraViewController.h */,
+				A863274D1C2A0704001B293B /* YCameraViewController.m */,
+				A863274F1C2A070A001B293B /* YCameraViewController.xib */,
+			);
+			name = CustomImagePicker;
+			sourceTree = "<group>";
+		};
 		CE3355A91BE9CB9100B77DEC = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +281,7 @@
 		CE3355B41BE9CB9100B77DEC /* NearHoneyTip */ = {
 			isa = PBXGroup;
 			children = (
+				A86327241C2A05D2001B293B /* CustomImagePicker */,
 				CE64D58F1C204C2A0058613C /* NHTTipGroup */,
 				CE64D5901C204C470058613C /* NHTMainDetailTipGroup */,
 				CE64D5921C204CAC0058613C /* NHTSideBarGroup */,
@@ -294,6 +378,8 @@
 				CE64D5941C204DDB0058613C /* NHTMainViewController.m */,
 				CE69AAB81C0586D600909DBD /* NHTDetailViewController.h */,
 				CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */,
+				CE51A6C91C284BA3004BE7B0 /* NHTButtonTapPost.h */,
+				CE51A6CA1C284BA3004BE7B0 /* NHTButtonTapPost.m */,
 			);
 			name = NHTMainDetailTipGroup;
 			sourceTree = "<group>";
@@ -440,19 +526,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3355F71BE9D45500B77DEC /* anomy.png in Resources */,
+				A863272B1C2A061A001B293B /* CameraCell.xib in Resources */,
 				CE3355FF1BE9D45500B77DEC /* Speech Bubble Filled-50.png in Resources */,
 				CE3355EC1BE9CD3600B77DEC /* loading.png in Resources */,
 				A8368B3F1C2140FE00B4D0F3 /* nht_logo.png in Resources */,
 				CE3355F81BE9D45500B77DEC /* back.png in Resources */,
 				CE3355C81BE9CB9100B77DEC /* LaunchScreen.storyboard in Resources */,
 				CEC8E9B31BECA7CF00582083 /* commentTint.png in Resources */,
+				A86327451C2A06E3001B293B /* PhotoPickerCell.xib in Resources */,
 				CEE450111C21066900C0F821 /* nht_logo_eng@2x.png in Resources */,
+				A86327381C2A065B001B293B /* Images.xcassets in Resources */,
 				CEF05FFE1BF317FF0037E24A /* nht_icon_newPost.png in Resources */,
+				A86327361C2A0651001B293B /* CustomeImagePicker.xib in Resources */,
 				CE3355FB1BE9D45500B77DEC /* location.png in Resources */,
 				CE3355FD1BE9D45500B77DEC /* setting.png in Resources */,
 				CE3356011BE9DF6D00B77DEC /* dump.jpeg in Resources */,
 				CE3355FA1BE9D45500B77DEC /* Like Filled-50.png in Resources */,
 				CEE450151C21067B00C0F821 /* nht_icon@3x.png in Resources */,
+				A86327261C2A05E5001B293B /* CameraCell_5.xib in Resources */,
+				A86327501C2A070A001B293B /* YCameraViewController.xib in Resources */,
 				CE3355FE1BE9D45500B77DEC /* SLR Camera Filled-50.png in Resources */,
 				CE3355FC1BE9D45500B77DEC /* more.png in Resources */,
 				CE3355C51BE9CB9100B77DEC /* Assets.xcassets in Resources */,
@@ -461,6 +553,7 @@
 				CE3355C01BE9CB9100B77DEC /* Main.storyboard in Resources */,
 				CEC8E9B41BECA7CF00582083 /* likeTint.png in Resources */,
 				CEE450131C21067700C0F821 /* nht_icon@2x.png in Resources */,
+				A86327401C2A06CC001B293B /* PhotoPickerCell_5.xib in Resources */,
 				CEE4500F1C20FFCE00C0F821 /* nht_logo_icon_480.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,9 +627,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A863273E1C2A06C6001B293B /* PhotoCell.m in Sources */,
+				CE51A6CB1C284BA3004BE7B0 /* NHTButtonTapPost.m in Sources */,
 				6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */,
 				A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */,
 				6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */,
+				A863272E1C2A0625001B293B /* CameraFocusSquare.m in Sources */,
+				A863274B1C2A06FA001B293B /* UIView+RNActivityView.m in Sources */,
+				A86327431C2A06DE001B293B /* PhotoPickerCell.m in Sources */,
 				CE3355BA1BE9CB9100B77DEC /* AppDelegate.m in Sources */,
 				6F5CA90C1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m in Sources */,
 				CE64D5951C204DDB0058613C /* NHTMainViewController.m in Sources */,
@@ -544,13 +642,19 @@
 				CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */,
 				6F4793851C17B9E7002686D3 /* NHTMytipsTableCell.m in Sources */,
 				CE3355B71BE9CB9100B77DEC /* main.m in Sources */,
+				A863274E1C2A0704001B293B /* YCameraViewController.m in Sources */,
 				6FD0C06B1C1711AB0021FEB6 /* NHTMyTipsController.m in Sources */,
+				A86327291C2A060F001B293B /* CameraCell.m in Sources */,
 				CE69AAB71C05863400909DBD /* NHTTip.m in Sources */,
 				CE8D538E1C0C37B4005F913E /* NHTTipCollection.m in Sources */,
 				CE3355C31BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld in Sources */,
 				6FD0C0741C171B8F0021FEB6 /* NHTSideTableViewController.m in Sources */,
+				A86327341C2A064A001B293B /* CustomeImagePicker.m in Sources */,
+				A86327481C2A06EF001B293B /* RNActivityView.m in Sources */,
 				A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */,
 				CE8D538D1C0C37B4005F913E /* NHTMainTableCell.m in Sources */,
+				A863273B1C2A06B3001B293B /* OLGhostAlertView.m in Sources */,
+				A86327311C2A063C001B293B /* ColorUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

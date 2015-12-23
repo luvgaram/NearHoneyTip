@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomeImagePicker.h"
 
 @interface NHTWriteViewController : UIViewController <UINavigationControllerDelegate,
-UIImagePickerControllerDelegate>
+UIImagePickerControllerDelegate, CustomeImagePickerDelegate>
+
 @property (strong, nonatomic) IBOutlet UITextField *storeName;
 @property (strong, nonatomic) IBOutlet UITextField *detail;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;

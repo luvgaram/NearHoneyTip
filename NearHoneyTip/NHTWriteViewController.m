@@ -33,6 +33,16 @@ NSString *profilephoto;
         nickname = [preferences objectForKey:@"userNickname"];
         profilephoto = [preferences objectForKey:@"userProfileImagePath"];
     }
+    
+    [self.imageView setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *singleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapping:)];
+    [singleTap setNumberOfTapsRequired:1];
+    [self.imageView addGestureRecognizer:singleTap];
+    }
+
+-(void)singleTapping:(UIGestureRecognizer *)recognizer
+{
+    [self setCustomImagePicker];
 }
 
 - (void)setCustomImagePicker {

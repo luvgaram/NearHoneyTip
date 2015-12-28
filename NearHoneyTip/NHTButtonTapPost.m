@@ -7,6 +7,8 @@
 //
 
 #import "NHTButtonTapPost.h"
+//#import "NHTMainViewController.h"
+
 
 @implementation NHTButtonTapPost{
     NSUserDefaults *preferences;
@@ -46,8 +48,14 @@
         [self connection:connection didReceiveResponse:response];
         //[self connection:connection didReceiveData:data];
         
+        
+        
         NSLog(@"connection end");
+        
+      
     }
+    
+    
     
 }
 
@@ -55,6 +63,10 @@
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
     long code = [httpResponse statusCode];
     NSLog(@"connection response: %ld", code);
+    
+    //NHTMainViewController *forRefresh = [[NHTMainViewController alloc]init];
+    //[forRefresh getLatestTips];
+   
     // data = [[NSMutableData alloc] init];
 }
 

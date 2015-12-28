@@ -18,5 +18,6 @@
 @property (strong, nonatomic) NHTTipManager *Q1;
 
 - (void)refleshScrollViewDidEndDragging:(UIScrollView *)refreshManager;
+- (void)getLatestTips;
 
 @end

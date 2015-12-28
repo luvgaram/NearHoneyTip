@@ -58,7 +58,7 @@
     
     NSError *error = nil;
     NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
-    NSLog(@"%@", loadedTipsArray);
+    //NSLog(@"%@", loadedTipsArray);
     for(int i = 0; i < [loadedTipsArray count] ; i++){
         [self.tipCollection addTip: [loadedTipsArray objectAtIndex:[loadedTipsArray count] - (i + 1)]];
     }

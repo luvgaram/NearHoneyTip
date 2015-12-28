@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		6F4793851C17B9E7002686D3 /* NHTMytipsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */; };
 		6F5CA90C1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5CA90B1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m */; };
+		6FA2C4331C30039F0014964D /* NHTGetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2C4321C30039F0014964D /* NHTGetLocationViewController.m */; };
+		6FA2C4351C3003BC0014964D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA2C4341C3003BC0014964D /* CoreLocation.framework */; };
+		6FA2C4371C3003C20014964D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA2C4361C3003C20014964D /* UIKit.framework */; };
+		6FA2C4391C3003D90014964D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA2C4381C3003D90014964D /* Foundation.framework */; };
+		6FA2C43B1C3003E20014964D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA2C43A1C3003E20014964D /* CoreGraphics.framework */; };
 		6FD0C06B1C1711AB0021FEB6 /* NHTMyTipsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */; };
 		6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C06D1C1711D80021FEB6 /* NHTAlarmsController.m */; };
 		6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0701C1712210021FEB6 /* NHTProfileController.m */; };
@@ -56,7 +61,6 @@
 		CE3355FD1BE9D45500B77DEC /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F41BE9D45500B77DEC /* setting.png */; };
 		CE3355FE1BE9D45500B77DEC /* SLR Camera Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F51BE9D45500B77DEC /* SLR Camera Filled-50.png */; };
 		CE3355FF1BE9D45500B77DEC /* Speech Bubble Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3355F61BE9D45500B77DEC /* Speech Bubble Filled-50.png */; };
-		CE3356011BE9DF6D00B77DEC /* dump.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE3356001BE9DF6D00B77DEC /* dump.jpeg */; };
 		CE51A6CB1C284BA3004BE7B0 /* NHTButtonTapPost.m in Sources */ = {isa = PBXBuildFile; fileRef = CE51A6CA1C284BA3004BE7B0 /* NHTButtonTapPost.m */; };
 		CE64D5951C204DDB0058613C /* NHTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE64D5941C204DDB0058613C /* NHTMainViewController.m */; };
 		CE69AAB71C05863400909DBD /* NHTTip.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69AAB61C05863400909DBD /* NHTTip.m */; };
@@ -97,6 +101,12 @@
 		6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMytipsTableCell.m; sourceTree = "<group>"; };
 		6F5CA90A1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTAlarmsTableCell.h; sourceTree = "<group>"; };
 		6F5CA90B1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTAlarmsTableCell.m; sourceTree = "<group>"; };
+		6FA2C4311C30039F0014964D /* NHTGetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTGetLocationViewController.h; sourceTree = "<group>"; };
+		6FA2C4321C30039F0014964D /* NHTGetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTGetLocationViewController.m; sourceTree = "<group>"; };
+		6FA2C4341C3003BC0014964D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6FA2C4361C3003C20014964D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6FA2C4381C3003D90014964D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6FA2C43A1C3003E20014964D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6FD0C0691C1711AB0021FEB6 /* NHTMyTipsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMyTipsController.h; sourceTree = "<group>"; };
 		6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMyTipsController.m; sourceTree = "<group>"; };
 		6FD0C06C1C1711D80021FEB6 /* NHTAlarmsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTAlarmsController.h; sourceTree = "<group>"; };
@@ -170,7 +180,6 @@
 		CE3355F41BE9D45500B77DEC /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		CE3355F51BE9D45500B77DEC /* SLR Camera Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SLR Camera Filled-50.png"; sourceTree = "<group>"; };
 		CE3355F61BE9D45500B77DEC /* Speech Bubble Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble Filled-50.png"; sourceTree = "<group>"; };
-		CE3356001BE9DF6D00B77DEC /* dump.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dump.jpeg; sourceTree = "<group>"; };
 		CE51A6C91C284BA3004BE7B0 /* NHTButtonTapPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTButtonTapPost.h; sourceTree = "<group>"; };
 		CE51A6CA1C284BA3004BE7B0 /* NHTButtonTapPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTButtonTapPost.m; sourceTree = "<group>"; };
 		CE64D5931C204DDB0058613C /* NHTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMainViewController.h; sourceTree = "<group>"; };
@@ -200,6 +209,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FA2C43B1C3003E20014964D /* CoreGraphics.framework in Frameworks */,
+				6FA2C4391C3003D90014964D /* Foundation.framework in Frameworks */,
+				6FA2C4371C3003C20014964D /* UIKit.framework in Frameworks */,
+				6FA2C4351C3003BC0014964D /* CoreLocation.framework in Frameworks */,
 				BEB76CDE499F39F005B1B9C5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +323,8 @@
 				6FD0C0701C1712210021FEB6 /* NHTProfileController.m */,
 				6FF0DB1E1C2A2547000EA649 /* NHTWebViewController.h */,
 				6FF0DB1F1C2A2547000EA649 /* NHTWebViewController.m */,
+				6FA2C4311C30039F0014964D /* NHTGetLocationViewController.h */,
+				6FA2C4321C30039F0014964D /* NHTGetLocationViewController.m */,
 			);
 			path = NearHoneyTip;
 			sourceTree = "<group>";
@@ -353,7 +368,6 @@
 				CEF05FFD1BF317FF0037E24A /* nht_icon_newPost.png */,
 				CEC8E9B11BECA7CF00582083 /* commentTint.png */,
 				CEC8E9B21BECA7CF00582083 /* likeTint.png */,
-				CE3356001BE9DF6D00B77DEC /* dump.jpeg */,
 				CE3355EB1BE9CD3600B77DEC /* loading.png */,
 				CE3355EE1BE9D45500B77DEC /* anomy.png */,
 				CEE450121C21067700C0F821 /* nht_icon@2x.png */,
@@ -427,6 +441,10 @@
 		D1CEACB0E5C78E8C21BB3785 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6FA2C43A1C3003E20014964D /* CoreGraphics.framework */,
+				6FA2C4381C3003D90014964D /* Foundation.framework */,
+				6FA2C4361C3003C20014964D /* UIKit.framework */,
+				6FA2C4341C3003BC0014964D /* CoreLocation.framework */,
 				382463056E0044DAA3DF9E33 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -556,7 +574,6 @@
 				A86327361C2A0651001B293B /* CustomeImagePicker.xib in Resources */,
 				CE3355FB1BE9D45500B77DEC /* location.png in Resources */,
 				CE3355FD1BE9D45500B77DEC /* setting.png in Resources */,
-				CE3356011BE9DF6D00B77DEC /* dump.jpeg in Resources */,
 				CE3355FA1BE9D45500B77DEC /* Like Filled-50.png in Resources */,
 				CEE450151C21067B00C0F821 /* nht_icon@3x.png in Resources */,
 				A86327261C2A05E5001B293B /* CameraCell_5.xib in Resources */,
@@ -665,6 +682,7 @@
 				A86327291C2A060F001B293B /* CameraCell.m in Sources */,
 				CE69AAB71C05863400909DBD /* NHTTip.m in Sources */,
 				CE8D538E1C0C37B4005F913E /* NHTTipCollection.m in Sources */,
+				6FA2C4331C30039F0014964D /* NHTGetLocationViewController.m in Sources */,
 				CE3355C31BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld in Sources */,
 				6FD0C0741C171B8F0021FEB6 /* NHTSideTableViewController.m in Sources */,
 				A86327341C2A064A001B293B /* CustomeImagePicker.m in Sources */,

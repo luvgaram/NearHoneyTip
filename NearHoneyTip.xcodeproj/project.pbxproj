@@ -308,6 +308,7 @@
 				CE64D5901C204C470058613C /* NHTMainDetailTipGroup */,
 				CE64D5921C204CAC0058613C /* NHTSideBarGroup */,
 				CE64D5911C204C840058613C /* NHTWriteGroup */,
+				CE64CF261C312ECF00AC9B91 /* NHTUserGroup */,
 				CE3355B81BE9CB9100B77DEC /* AppDelegate.h */,
 				CE3355B91BE9CB9100B77DEC /* AppDelegate.m */,
 				CE3355BE1BE9CB9100B77DEC /* Main.storyboard */,
@@ -319,12 +320,8 @@
 				CE3355B51BE9CB9100B77DEC /* Supporting Files */,
 				A82A3D521C088F930057F048 /* NHTBasicModel.h */,
 				A82A3D531C088FDE0057F048 /* NHTBasicModel.m */,
-				6FD0C06F1C1712210021FEB6 /* NHTProfileController.h */,
-				6FD0C0701C1712210021FEB6 /* NHTProfileController.m */,
 				6FF0DB1E1C2A2547000EA649 /* NHTWebViewController.h */,
 				6FF0DB1F1C2A2547000EA649 /* NHTWebViewController.m */,
-				6FA2C4311C30039F0014964D /* NHTGetLocationViewController.h */,
-				6FA2C4321C30039F0014964D /* NHTGetLocationViewController.m */,
 			);
 			path = NearHoneyTip;
 			sourceTree = "<group>";
@@ -382,6 +379,17 @@
 				CE3355F61BE9D45500B77DEC /* Speech Bubble Filled-50.png */,
 			);
 			name = img;
+			sourceTree = "<group>";
+		};
+		CE64CF261C312ECF00AC9B91 /* NHTUserGroup */ = {
+			isa = PBXGroup;
+			children = (
+				6FD0C06F1C1712210021FEB6 /* NHTProfileController.h */,
+				6FD0C0701C1712210021FEB6 /* NHTProfileController.m */,
+				6FA2C4311C30039F0014964D /* NHTGetLocationViewController.h */,
+				6FA2C4321C30039F0014964D /* NHTGetLocationViewController.m */,
+			);
+			name = NHTUserGroup;
 			sourceTree = "<group>";
 		};
 		CE64D58F1C204C2A0058613C /* NHTTipGroup */ = {

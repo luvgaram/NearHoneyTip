@@ -10,6 +10,7 @@
 
 @interface NHTButtonTapPost : NSObject
 
+
 -(void)postLikeChangeMethod:(NSString*)methodString Tip:(NSString*)tipId;
 - (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 

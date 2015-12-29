@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    NSLog(@"HEIGHT : %f",self.tableView.bounds.size.height);
     self.refreshManager = [[UIRefreshControl alloc] init];
     self.refreshManager.backgroundColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
     
@@ -36,6 +36,16 @@
     
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath){
+        return self.tableView.bounds.size.height / 4;
+    }
+    
+    return 150;
+}
+
+
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [self refleshScrollViewDidEndDragging:scrollView];
@@ -48,7 +58,10 @@
     }
 }
 
+
+
 - (void)getLatestTips{
+    NSLog(@"start to refresh");
     [self.Q1 removeAllTips];
     [self.Q1 tipsDidLoad];
     
@@ -66,6 +79,11 @@
         
         [self.refreshManager endRefreshing];
     }
+    
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refresh" object:self];
+     NSLog(@"end to refresh");
+    
 }
 
 
@@ -81,7 +99,30 @@
     return [self.Q1 countOfTipCollection];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    
+    if ([self.Q1 countOfTipCollection] > 0) {
+        
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        return 1;
+        
+    } else {
+        
+        // Display a message when the table is empty
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        
+        messageLabel.text = @"꿀팁 없다 '~'\n당신이 일빠로 꿀팁을 올려보는 건 어때요 ?0?";
+        messageLabel.textColor = [[UIColor alloc]initWithRed: 230.0/255.0 green:126.0/255.0 blue:35.0/255.0 alpha:1];
+        messageLabel.numberOfLines = 2;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:nil size:20];
+        [messageLabel sizeToFit];
+        
+        self.tableView.backgroundView = messageLabel;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+    }
+    
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -114,7 +155,9 @@
             NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
             if(tipCell.tip){
                 
+                
                 NSLog(@"this is tip %@", tipCell.tip);
+            
                 tipDetailController.tip = tipCell.tip;
             }
         }
@@ -122,6 +165,8 @@
 }
 
 - (void) didTapCell:(UITapGestureRecognizer *) recognizer{
+    
+
     NSLog(@"#####1%@", recognizer);
     [self showTipDetail:recognizer];
 }

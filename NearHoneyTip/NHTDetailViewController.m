@@ -72,11 +72,13 @@
         likeCount = @"";
         
     }else if(self.tip.likes){
+        
         if([self.tip.likes containsObject:[preferences objectForKey:uidIdentifier]]){
-          
+            NSLog(@"@@@@@@@@@@@@yes yes!");
             [self didTapLike];
             self.tip.isLiked = YES;
         }
+        
         likeCount = [NSString stringWithFormat:@"%ld", (long)self.tip.likeInteger];
     }
     

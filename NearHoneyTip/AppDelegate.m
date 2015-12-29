@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+@interface AppDelegate (){
+    CLGeocoder *geocoder;
+}
 
 @end
 
@@ -27,20 +29,47 @@ NSMutableData *data;
 
 - (void)setUserDefault{
     
-    NSLog(@"start set uuid");
+    NSLog(@"start to set uuid");
     preferences = [NSUserDefaults standardUserDefaults];
-    //[preferences removeObjectForKey:@"UserDefault"];
+   // [preferences removeObjectForKey:@"UserDefault"];
     NSString *uidIdentifier = @"UserDefault";
+    
+    
+    NSLog(@"start to get location");
+    geocoder = [[CLGeocoder alloc] init];
+    if (self.locationManager == nil)
+    {
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        self.locationManager.delegate = self;
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    
+    [self.locationManager startUpdatingLocation];
+    //NSLog(@"location: %@", self.locationManager.location);
+    NSString *userLatitudeIdentifier = @"UserLocationLatitude";
+    NSString *userLongitudeIdentifier = @"UserLocationLongitude";
     
     if([preferences objectForKey:uidIdentifier] == nil) {
         
         [self getAdvertisingIdentifier];
         [preferences setObject:self.sUDID forKey: uidIdentifier];
         [self postUid: self.sUDID];
-        const BOOL didSave = [preferences synchronize];
-        NSLog(@"save result : %hhd", didSave);
+    
+    
     }
     
+    if(self.locationManager.location){
+        float userLocationLatitude = self.locationManager.location.coordinate.latitude;
+        float userLocationLongitude = self.locationManager.location.coordinate.longitude;
+       
+        [preferences setFloat: userLocationLatitude forKey:userLatitudeIdentifier];
+        [preferences setFloat:userLocationLongitude forKey:userLongitudeIdentifier];
+    }
+    [preferences synchronize];
+
+    NSLog(@"saved latitude : :%f", [preferences floatForKey:userLatitudeIdentifier] );
+    NSLog(@"saved longitude : :%f", [preferences floatForKey:userLongitudeIdentifier] );
     NSLog(@"uuid: %@", [preferences objectForKey:uidIdentifier]);
 }
 

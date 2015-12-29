@@ -11,6 +11,7 @@
 #import "NHTButtonTapPost.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
+#import "NHTMainViewController.h"
 
 
 @implementation NHTMainTableCell{
@@ -18,6 +19,7 @@
 }
 
 - (void)setCellWithTip:(NHTTip*)tip{
+    
     self.postManager = [[NHTButtonTapPost alloc] init];
     self.tip = tip;
    
@@ -111,6 +113,7 @@
         [self willPlusLike];
         //post syn
         [self.postManager postLikeChangeMethod:@"POST" Tip:self.tip.tipId];
+        //  [NSNotification
         
     } else {
         self.tip.isLiked = NO;
@@ -121,6 +124,8 @@
         [self.postManager postLikeChangeMethod:@"PUT" Tip:self.tip.tipId];
     }
     
+   // NHTMainViewController *refresh = [[NHTMainViewController alloc]init];
+   // [refresh getLatestTips];
 }
 
 -(void)willPlusLike{
@@ -128,6 +133,7 @@
     NSString *likeString = @"좋아요 ";
     likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%ld", (long)self.tip.likeInteger]];
     [self.likeButton setTitle:likeString forState:UIControlStateNormal];
+    
     
 }
 -(void)willSubtractLike{

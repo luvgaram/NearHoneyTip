@@ -20,6 +20,8 @@ static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
 NSString *uid;
 NSString *nickname;
 NSString *profilephoto;
+float latitude;
+float longitude;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,11 +29,15 @@ NSString *profilephoto;
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *uidIdentifier = @"UserDefault";
+    NSString *userLatitudeIdentifier = @"UserLocationLatitude";
+    NSString *userLongitudeIdentifier = @"UserLocationLongitude";
     
     if([preferences objectForKey:uidIdentifier] != nil) {
         uid = [preferences objectForKey:uidIdentifier];
         nickname = [preferences objectForKey:@"userNickname"];
         profilephoto = [preferences objectForKey:@"userProfileImagePath"];
+        latitude = [preferences floatForKey:userLatitudeIdentifier];
+        longitude = [preferences floatForKey:userLongitudeIdentifier];
     }
     
     [self.imageView setUserInteractionEnabled:YES];
@@ -93,6 +99,8 @@ NSString *profilephoto;
         NSDictionary *tipDictionary = @{
                                         @"nickname":nickname,
                                         @"profilephoto":profilephoto,
+                                        @"longitude":[NSNumber numberWithFloat:longitude],
+                                        @"latitude":[NSNumber numberWithFloat:latitude],
                                         @"uid":uid,
                                         @"storename":_storeName.text,
                                         @"detail":_detail.text,
@@ -156,7 +164,13 @@ NSString *profilephoto;
     [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"profilephoto\"\r\n\r\n%@", tipDictionary[@"profilephoto"]] dataUsingEncoding:NSUTF8StringEncoding]];
     
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"longitude\"\r\n\r\n%@", tipDictionary[@"longitude"]] dataUsingEncoding:NSUTF8StringEncoding]];
     
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"latitude\"\r\n\r\n%@", tipDictionary[@"latitude"]] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+
     [self postFormDataAtURL:[NSURL URLWithString:@"http://54.64.250.239:3000/tip"]
                    postData:body];
 }

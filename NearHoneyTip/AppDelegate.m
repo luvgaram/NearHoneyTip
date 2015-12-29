@@ -63,15 +63,13 @@ NSMutableData *data;
         float userLocationLatitude = self.locationManager.location.coordinate.latitude;
         float userLocationLongitude = self.locationManager.location.coordinate.longitude;
        
-        NSNumber *userLocationLatitudeNumber = [NSNumber numberWithFloat:userLocationLatitude];
-        NSNumber *userLocationLongitudeNumber = [NSNumber numberWithFloat: userLocationLongitude];
-        [preferences setObject: userLocationLatitudeNumber forKey:userLatitudeIdentifier];
-        [preferences setObject:userLocationLongitudeNumber forKey:userLongitudeIdentifier];
+        [preferences setFloat: userLocationLatitude forKey:userLatitudeIdentifier];
+        [preferences setFloat:userLocationLongitude forKey:userLongitudeIdentifier];
     }
-    const BOOL didSave = [preferences synchronize];
+    [preferences synchronize];
 
-     NSLog(@"saved location : :%@", [preferences objectForKey:userLatitudeIdentifier] );
-      NSLog(@"saved location : :%@", [preferences objectForKey:userLongitudeIdentifier] );
+    NSLog(@"saved latitude : :%f", [preferences floatForKey:userLatitudeIdentifier] );
+    NSLog(@"saved longitude : :%f", [preferences floatForKey:userLongitudeIdentifier] );
     NSLog(@"uuid: %@", [preferences objectForKey:uidIdentifier]);
 }
 

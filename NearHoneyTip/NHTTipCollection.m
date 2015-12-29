@@ -24,9 +24,9 @@
     NHTTip* tipNew = [[NHTTip alloc] init];
     
     tipNew.tipId = [tip objectForKey:@"_id"];
-  //  NSLog(@"!String: %@",tipNew.tipId);
+    //NSLog(@"!String: %@",tipNew.tipId);
     NSArray *tipImageFile = [tip objectForKey:@"file"];
-   // NSLog(@"###STRing: %@",tipImageFile);
+    //NSLog(@"###STRing: %@",tipImageFile);
     NSDictionary *tipImagePathDictionary = tipImageFile[0];
     NSString *tipImagePathString = [tipImagePathDictionary objectForKey:@"path"];
     NSUInteger pointOfPathStart = 5;
@@ -48,20 +48,25 @@
     tipNew.tipDate = [tip valueForKey: @"date"];
     
    // NSLog(@"THE added tip: %@", tipNew);
-    tipNew.likes = [tip valueForKey:@"like"];
-   // NSLog(@"like array: %@", tipNew.likes);
+    tipNew.likeInteger = [tip valueForKey:@"like"];
+    NSLog(@"like array: %@", tipNew.likeInteger);
     tipNew.replies = [tip valueForKey:@"reply"];
+    tipNew.isLiked = [tip valueForKey:@"isliked"];
+    tipNew.distance = [tip valueForKey: @"dis"];
     
-    tipNew.isLiked = NO;
+    //NSLog(@"%@",tipNew.distance);
+    /* //legacy : likes array 받을 때
     if(tipNew.likes){
         tipNew.likeInteger = [tipNew.likes count];
-   // } else {
-    //    tipNew.likeInteger = 0;
+    } else {
+        tipNew.likeInteger = 0;
     }
+     */
+    
     if(tipNew.replies){
         tipNew.replyInteger = [tipNew.replies count];
-   // } else {
-   //     tipNew.replyInteger = 0;
+    } else { //방어용
+        tipNew.replyInteger = 0;
     }
     [self.tips addObject:tipNew];
 }

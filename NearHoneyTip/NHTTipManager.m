@@ -9,7 +9,9 @@
 #import "NHTTipManager.h"
 #import "NHTTipCollection.h"
 
-@implementation NHTTipManager
+@implementation NHTTipManager{
+    NSUserDefaults *preferences;
+}
 -(id)init{
     self = [super init];
     if(self){
@@ -42,7 +44,8 @@
         NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
         
         for(int i = 0; i < [loadedTipsArray count] ; i++){
-            [self.tipCollection addTip: [loadedTipsArray objectAtIndex:[loadedTipsArray count] - (i + 1)]];
+            [self.tipCollection addTip: [loadedTipsArray objectAtIndex: i]];
+            //for inverse : [loadedTipsArray count] - (i + 1)
         }
     }
     
@@ -50,19 +53,43 @@
 
 -(void)tipsDidLoad{
     NSLog(@"world");
-    NSURL *tipLoad = [NSURL URLWithString:@"http://54.64.250.239:3000/tip/all"];
+    preferences = [NSUserDefaults standardUserDefaults];
+    
+    NSString *uidIdentifier = @"UserDefault";
+    NSString *userLatitudeIdentifier = @"UserLocationLatitude";
+    NSString *userLongitudeIdentifier = @"UserLocationLongitude";
+    
+    NSString *baseURL = @"http://54.64.250.239:3000/tip/lat=";
+    
+    
+    NSString *latitude = [[NSString alloc] initWithFormat: @"%@" ,[[preferences objectForKey: userLatitudeIdentifier] stringValue]];
+    NSString *longitude = [[NSString alloc] initWithFormat:@"%@",[[preferences objectForKey:userLongitudeIdentifier] stringValue]] ;
+    baseURL = [baseURL stringByAppendingString:latitude];
+    baseURL = [baseURL stringByAppendingString:@"&long="];
+    baseURL = [baseURL stringByAppendingString:longitude];
+    baseURL = [baseURL stringByAppendingString:@"&sid="];
+    baseURL = [baseURL stringByAppendingString:[preferences objectForKey:uidIdentifier]];
+    baseURL = [baseURL stringByAppendingString:@"&dis=100000"];
+    
+    NSURL *tipLoad = [NSURL URLWithString: baseURL];
 
     
     NSData *jsonData = [NSData dataWithContentsOfURL:tipLoad];
     //NSLog(@"%@", jsonData);
     
-    NSError *error = nil;
-    NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
-    //NSLog(@"%@", loadedTipsArray);
-    for(int i = 0; i < [loadedTipsArray count] ; i++){
-        [self.tipCollection addTip: [loadedTipsArray objectAtIndex:[loadedTipsArray count] - (i + 1)]];
+    if(jsonData){
+        NSError *error = nil;
+        NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+        NSLog(@"count : %lu", loadedTipsArray.count);
+       // NSLog(@"%@", loadedTipsArray);
+        NSUInteger tipCount = loadedTipsArray.count;
+        //NSUInteger curreuntIndex = tipCount;
+        for(int i = 0; i < tipCount ; i++){
+            //curreuntIndex = tipCount - (i + 1);
+            //??서버에서 어떤 순서로 보내주지??
+            [self.tipCollection addTip: [loadedTipsArray objectAtIndex: i]];
+        }
     }
-    
     NSLog(@"load end");
    // NSLog(@"%@",self.tipCollection);
 };

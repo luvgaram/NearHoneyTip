@@ -70,8 +70,8 @@ NSMutableData *data;
     }
     const BOOL didSave = [preferences synchronize];
 
-     NSLog(@"saved location : :%@", [preferences objectForKey:userLatitudeIdentifier] );
-      NSLog(@"saved location : :%@", [preferences objectForKey:userLongitudeIdentifier] );
+     NSLog(@"saved location : %@", [preferences objectForKey:userLatitudeIdentifier] );
+      NSLog(@"saved location : %@", [preferences objectForKey:userLongitudeIdentifier] );
     NSLog(@"uuid: %@", [preferences objectForKey:uidIdentifier]);
 }
 

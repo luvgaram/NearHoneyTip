@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *userBadge;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
+@property (weak, nonatomic) IBOutlet UILabel *distance;
 
 
 - (void)setCellWithTip:(NSDictionary*)tip;

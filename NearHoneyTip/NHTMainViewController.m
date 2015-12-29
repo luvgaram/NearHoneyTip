@@ -32,7 +32,7 @@
     [self.Q1 tipsDidLoad];
     
     UIButton *newPost = [[self view] viewWithTag:123];
-    newPost.layer.cornerRadius = 25;
+    newPost.layer.cornerRadius = self.tableView.bounds.size.width / 10;
     
 }
 

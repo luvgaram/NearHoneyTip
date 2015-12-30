@@ -389,20 +389,20 @@ imgComment</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="stt-VU-pMh">
-                                                    <rect key="frame" x="154" y="85" width="30" height="30"/>
+                                                    <rect key="frame" x="154" y="82" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="stt-VU-pMh" secondAttribute="height" multiplier="1:1" id="c6M-Y8-hbu"/>
                                                         <constraint firstAttribute="width" constant="30" id="fZj-1q-frG"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sadness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7f-Gz-AKs" userLabel="nickName">
-                                                    <rect key="frame" x="186" y="85" width="59" height="18"/>
+                                                    <rect key="frame" x="186" y="82" width="59" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11월 4일 오후 4시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vut-Sh-ZgB" userLabel="tipNewTime">
-                                                    <rect key="frame" x="186" y="104" width="82" height="14"/>
+                                                    <rect key="frame" x="186" y="101" width="82" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -438,7 +438,7 @@ imgComment</string>
                                                     </variation>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium a " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ww-HT-Pvt" userLabel="tipDetails">
-                                                    <rect key="frame" x="154" y="35" width="170" height="44"/>
+                                                    <rect key="frame" x="154" y="32" width="170" height="44"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -464,7 +464,7 @@ imgComment</string>
                                                     </state>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ulf-OD-9ri">
-                                                    <rect key="frame" x="302" y="89" width="24" height="24"/>
+                                                    <rect key="frame" x="302" y="86" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="5EB-1y-PJ7"/>
                                                         <constraint firstAttribute="width" secondItem="Ulf-OD-9ri" secondAttribute="height" multiplier="1:1" id="Ptt-8U-Pge"/>
@@ -472,9 +472,11 @@ imgComment</string>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iT-gU-bva">
                                                     <rect key="frame" x="80" y="124" width="69" height="25"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="23"/>
                                                     <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -482,7 +484,7 @@ imgComment</string>
                                                 <constraint firstItem="4Ww-HT-Pvt" firstAttribute="height" secondItem="9sJ-XQ-D3U" secondAttribute="height" multiplier="4:1" id="05a-jB-VBq"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="05E-xi-cRz" secondAttribute="bottom" constant="-6" id="26l-XE-ZaQ"/>
                                                 <constraint firstItem="8iT-gU-bva" firstAttribute="trailing" secondItem="FZe-01-zWu" secondAttribute="trailing" id="36d-zU-RhX"/>
-                                                <constraint firstItem="4Ww-HT-Pvt" firstAttribute="top" secondItem="4J8-it-kJP" secondAttribute="bottom" constant="5" id="3CP-m5-lf1"/>
+                                                <constraint firstItem="4Ww-HT-Pvt" firstAttribute="top" secondItem="4J8-it-kJP" secondAttribute="bottom" constant="2" id="3CP-m5-lf1"/>
                                                 <constraint firstItem="vut-Sh-ZgB" firstAttribute="top" secondItem="t7f-Gz-AKs" secondAttribute="bottom" constant="1" id="5Ox-if-1Q5"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="FZe-01-zWu" secondAttribute="bottom" constant="-6" id="5QK-1F-DBn"/>
                                                 <constraint firstItem="stt-VU-pMh" firstAttribute="leading" secondItem="FZe-01-zWu" secondAttribute="trailing" constant="5" id="9Ex-Fw-v56"/>

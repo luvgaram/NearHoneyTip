@@ -44,7 +44,7 @@
     self.userNickname.text = self.tip.userNickname;
     self.tipDate.text = self.tip.tipDate;
     
-    NSString *distanceWithKm = [NSString stringWithFormat:@"%@", self.tip.distance];
+    NSString *distanceWithKm = [NSString stringWithFormat:@"%u", self.tip.distance];
     distanceWithKm = [distanceWithKm stringByAppendingString:@" m"];
     
     self.distance.text = distanceWithKm;
@@ -70,7 +70,7 @@
     if (self.tip.likeInteger <= 0){
         likeCount = @"";
     } else {
-        likeCount = [NSString stringWithFormat:@"%@", self.tip.likeInteger];
+        likeCount = [NSString stringWithFormat:@"%u", self.tip.likeInteger];
     }
     likeString = [likeString stringByAppendingString:likeCount];
     [self.likeButton setTitle:likeString forState:UIControlStateNormal];
@@ -131,7 +131,7 @@
 -(void)willPlusLike{
     self.tip.likeInteger = self.tip.likeInteger + 1 ;
     NSString *likeString = @"좋아요 ";
-    likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%@", self.tip.likeInteger]];
+    likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%u", self.tip.likeInteger]];
     [self.likeButton setTitle:likeString forState:UIControlStateNormal];
     
     
@@ -140,7 +140,7 @@
     self.tip.likeInteger = self.tip.likeInteger - 1;
     NSString *likeString = @"좋아요 ";
     if(self.tip.likeInteger > 0){
-        likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%@", self.tip.likeInteger]];
+        likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%u", self.tip.likeInteger]];
     }
     [self.likeButton setTitle:likeString forState:UIControlStateNormal];
     

@@ -62,8 +62,8 @@
     NSString *baseURL = @"http://54.64.250.239:3000/tip/lat=";
     
     
-    NSString *latitude = [[NSString alloc] initWithFormat: @"%@" ,[[preferences objectForKey: userLatitudeIdentifier] stringValue]];
-    NSString *longitude = [[NSString alloc] initWithFormat:@"%@",[[preferences objectForKey:userLongitudeIdentifier] stringValue]] ;
+    NSString *latitude = [[NSString alloc] initWithFormat: @"%@" ,[preferences objectForKey: userLatitudeIdentifier]];
+    NSString *longitude = [[NSString alloc] initWithFormat:@"%@",[preferences objectForKey:userLongitudeIdentifier] ] ;
     baseURL = [baseURL stringByAppendingString:latitude];
     baseURL = [baseURL stringByAppendingString:@"&long="];
     baseURL = [baseURL stringByAppendingString:longitude];

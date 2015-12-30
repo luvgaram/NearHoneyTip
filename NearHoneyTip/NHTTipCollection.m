@@ -48,11 +48,11 @@
     tipNew.tipDate = [tip valueForKey: @"date"];
     
    // NSLog(@"THE added tip: %@", tipNew);
-    tipNew.likeInteger = [tip valueForKey:@"like"];
-    NSLog(@"like array: %@", tipNew.likeInteger);
+    tipNew.likeInteger = ((NSNumber*)[tip valueForKey:@"like"]).integerValue;
+    //NSLog(@"like array: %@", tipNew.likeInteger);
     tipNew.replies = [tip valueForKey:@"reply"];
-    tipNew.isLiked = [tip valueForKey:@"isliked"];
-    tipNew.distance = [tip valueForKey: @"dis"];
+    tipNew.isLiked = ((NSNumber*)[tip valueForKey:@"isliked"]).boolValue;
+    tipNew.distance = ((NSNumber*)[tip valueForKey: @"dis"]).integerValue;
     
     //NSLog(@"%@",tipNew.distance);
     /* //legacy : likes array 받을 때

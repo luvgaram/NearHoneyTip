@@ -54,7 +54,7 @@
         self.likeButton.target = tapLikeButton;
         self.likeButton.action= @selector(didTapLike:);
        
-        NSString *distanceWithKm = [NSString stringWithFormat:@"%@", self.tip.distance];
+        NSString *distanceWithKm = [NSString stringWithFormat:@"%u", self.tip.distance];
         distanceWithKm = [distanceWithKm stringByAppendingString:@" m"];
         
         self.distance.text = distanceWithKm;
@@ -74,7 +74,7 @@
     if(self.tip.likeInteger <= 0){
         likeCount = @"";
     } else {
-        likeCount = [NSString stringWithFormat:@"%@", self.tip.likeInteger];
+        likeCount = [NSString stringWithFormat:@"%u", self.tip.likeInteger];
     }
     
     likeString = [likeString stringByAppendingString:likeCount];
@@ -110,19 +110,19 @@
 
 -(void)willPlusLike{
     self.tip.likeInteger++;
-    NSLog(@"%@ and %lu", self.tip.likeInteger, self.tip.likeInteger);
+   // NSLog(@"%@ and %lu", self.tip.likeInteger, self.tip.likeInteger);
     NSString *likeString = @"좋아요 ";
-    likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%@", self.tip.likeInteger]];
+    likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%u", self.tip.likeInteger]];
     self.likeButton.title = likeString;
     
 }
 -(void)willSubtractLike{
     self.tip.likeInteger = self.tip.likeInteger - 1;
-    NSUInteger temp = self.tip.likeInteger;
-    NSLog(@"%@ and %lu", temp-1, temp-1);
+   
+    //NSLog(@"%@ and %lu", temp-1, temp-1);
     NSString *likeString = @"좋아요 ";
     if(self.tip.likeInteger > 0){
-        likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%@", self.tip.likeInteger]];
+        likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%u", self.tip.likeInteger]];
     }
     self.likeButton.title = likeString;
 }

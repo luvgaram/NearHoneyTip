@@ -32,6 +32,8 @@
                      placeholderImage:[UIImage imageNamed:@"nht_logo.png"]];
     
     self.storeName.text = self.tip.storeName;
+    
+    //self.tipDetails.font = [UIFont fontWithName:@"Apple SD Gothic Neo SemiBold" size:100];//it doesn't work
     self.tipDetails.text = self.tip.tipDetails;
     self.userProfileImage.layer.cornerRadius = 16;
 //    self.userProfileImage.image = self.tip.userProfileImg;

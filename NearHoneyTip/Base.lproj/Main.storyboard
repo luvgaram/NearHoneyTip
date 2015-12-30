@@ -389,28 +389,31 @@ imgComment</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="stt-VU-pMh">
-                                                    <rect key="frame" x="154" y="82" width="30" height="30"/>
+                                                    <rect key="frame" x="157" y="88" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="stt-VU-pMh" secondAttribute="height" multiplier="1:1" id="c6M-Y8-hbu"/>
                                                         <constraint firstAttribute="width" constant="30" id="fZj-1q-frG"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sadness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7f-Gz-AKs" userLabel="nickName">
-                                                    <rect key="frame" x="186" y="82" width="59" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Sadness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7f-Gz-AKs" userLabel="nickName">
+                                                    <rect key="frame" x="189" y="88" width="45" height="16"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11월 4일 오후 4시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vut-Sh-ZgB" userLabel="tipNewTime">
-                                                    <rect key="frame" x="186" y="101" width="82" height="14"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <rect key="frame" x="189" y="105" width="88" height="13"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7L-Tc-tf5">
-                                                    <rect key="frame" x="223" y="123" width="52" height="26"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                                    <state key="normal" title="  댓글 1" image="replyDefault">
+                                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7L-Tc-tf5">
+                                                    <rect key="frame" x="247" y="124" width="70" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="nDa-BQ-EYk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                    <state key="normal" title="  댓글 1" image="nht_icon_reply">
                                                         <color key="titleColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -420,7 +423,7 @@ imgComment</string>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="26" id="WP5-Rf-kUO"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -437,7 +440,7 @@ imgComment</string>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium a " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ww-HT-Pvt" userLabel="tipDetails">
+                                                <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" scrollEnabled="NO" bouncesZoom="NO" keyboardDismissMode="interactive" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium a " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ww-HT-Pvt" userLabel="tipDetails">
                                                     <rect key="frame" x="154" y="32" width="170" height="44"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <accessibility key="accessibilityConfiguration">
@@ -447,7 +450,7 @@ imgComment</string>
                                                         <constraint firstAttribute="height" constant="50" id="GsT-ev-Y0B"/>
                                                         <constraint firstAttribute="height" constant="44" id="V58-f3-6VO"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -455,9 +458,12 @@ imgComment</string>
                                                         </mask>
                                                     </variation>
                                                 </textView>
-                                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05E-xi-cRz">
-                                                    <rect key="frame" x="154" y="124" width="59" height="25"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05E-xi-cRz">
+                                                    <rect key="frame" x="157" y="124" width="80" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="q9y-cR-jrS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
                                                     <state key="normal" title="  좋아요 2" image="likeDefault">
                                                         <color key="titleColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -470,8 +476,8 @@ imgComment</string>
                                                         <constraint firstAttribute="width" secondItem="Ulf-OD-9ri" secondAttribute="height" multiplier="1:1" id="Ptt-8U-Pge"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iT-gU-bva">
-                                                    <rect key="frame" x="80" y="124" width="69" height="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iT-gU-bva">
+                                                    <rect key="frame" x="96" y="125" width="53" height="29"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="23"/>
                                                     <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -487,20 +493,23 @@ imgComment</string>
                                                 <constraint firstItem="4Ww-HT-Pvt" firstAttribute="top" secondItem="4J8-it-kJP" secondAttribute="bottom" constant="2" id="3CP-m5-lf1"/>
                                                 <constraint firstItem="vut-Sh-ZgB" firstAttribute="top" secondItem="t7f-Gz-AKs" secondAttribute="bottom" constant="1" id="5Ox-if-1Q5"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="FZe-01-zWu" secondAttribute="bottom" constant="-6" id="5QK-1F-DBn"/>
-                                                <constraint firstItem="stt-VU-pMh" firstAttribute="leading" secondItem="FZe-01-zWu" secondAttribute="trailing" constant="5" id="9Ex-Fw-v56"/>
+                                                <constraint firstItem="stt-VU-pMh" firstAttribute="leading" secondItem="FZe-01-zWu" secondAttribute="trailing" constant="8" symbolic="YES" id="9Ex-Fw-v56"/>
                                                 <constraint firstItem="vut-Sh-ZgB" firstAttribute="leading" secondItem="stt-VU-pMh" secondAttribute="trailing" constant="2" id="9ym-rt-FV8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="4Ww-HT-Pvt" secondAttribute="trailing" constant="-4" id="9zE-hs-g54"/>
                                                 <constraint firstItem="FZe-01-zWu" firstAttribute="leading" secondItem="9sJ-XQ-D3U" secondAttribute="leadingMargin" constant="-6" id="Er1-Eg-xNl"/>
                                                 <constraint firstItem="t7f-Gz-AKs" firstAttribute="top" secondItem="stt-VU-pMh" secondAttribute="top" id="Fvx-Ql-NTv"/>
                                                 <constraint firstItem="t7f-Gz-AKs" firstAttribute="leading" secondItem="stt-VU-pMh" secondAttribute="trailing" constant="2" id="Gcn-Ln-XMm"/>
+                                                <constraint firstItem="05E-xi-cRz" firstAttribute="top" secondItem="vut-Sh-ZgB" secondAttribute="bottom" constant="6" id="NzJ-HN-Pmh"/>
                                                 <constraint firstItem="8iT-gU-bva" firstAttribute="top" secondItem="FZe-01-zWu" secondAttribute="bottom" constant="-24" id="P0m-jS-2FK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Ulf-OD-9ri" secondAttribute="trailing" constant="-6" id="SkT-2E-Cfb"/>
                                                 <constraint firstItem="4Ww-HT-Pvt" firstAttribute="height" secondItem="9sJ-XQ-D3U" secondAttribute="height" multiplier="3:1" id="TZR-rn-bsY"/>
                                                 <constraint firstItem="4J8-it-kJP" firstAttribute="leading" secondItem="FZe-01-zWu" secondAttribute="trailing" constant="5" id="Tic-yf-Z4S"/>
                                                 <constraint firstItem="Ulf-OD-9ri" firstAttribute="top" secondItem="4Ww-HT-Pvt" secondAttribute="bottom" constant="10" id="UJi-e9-yw7"/>
                                                 <constraint firstItem="d7L-Tc-tf5" firstAttribute="leading" secondItem="05E-xi-cRz" secondAttribute="trailing" constant="10" id="UPT-vF-A5c"/>
+                                                <constraint firstItem="05E-xi-cRz" firstAttribute="leading" secondItem="9sJ-XQ-D3U" secondAttribute="leadingMargin" constant="149" id="aOp-ue-Vqx"/>
                                                 <constraint firstItem="stt-VU-pMh" firstAttribute="top" secondItem="4Ww-HT-Pvt" secondAttribute="bottom" constant="6" id="cUY-Jo-mxw"/>
                                                 <constraint firstItem="FZe-01-zWu" firstAttribute="height" secondItem="9sJ-XQ-D3U" secondAttribute="height" multiplier="10:9" id="ccM-bi-NeJ"/>
+                                                <constraint firstItem="vut-Sh-ZgB" firstAttribute="top" secondItem="t7f-Gz-AKs" secondAttribute="bottom" constant="1" id="chs-k5-9N1"/>
                                                 <constraint firstItem="4J8-it-kJP" firstAttribute="top" secondItem="9sJ-XQ-D3U" secondAttribute="topMargin" constant="-4" id="d6V-0x-12f"/>
                                                 <constraint firstItem="4J8-it-kJP" firstAttribute="leading" secondItem="FZe-01-zWu" secondAttribute="trailing" constant="5" id="hgT-LL-6Hk"/>
                                                 <constraint firstItem="FZe-01-zWu" firstAttribute="top" secondItem="9sJ-XQ-D3U" secondAttribute="topMargin" constant="-6" id="kUQ-dS-2EV"/>
@@ -508,20 +517,28 @@ imgComment</string>
                                                 <constraint firstItem="4Ww-HT-Pvt" firstAttribute="leading" secondItem="FZe-01-zWu" secondAttribute="trailing" constant="5" id="l2a-KY-8YU"/>
                                                 <constraint firstItem="4J8-it-kJP" firstAttribute="top" secondItem="FZe-01-zWu" secondAttribute="top" id="mgd-X3-fl4"/>
                                                 <constraint firstItem="8iT-gU-bva" firstAttribute="leading" secondItem="FZe-01-zWu" secondAttribute="trailing" constant="-50" id="nhK-Rp-IDk"/>
-                                                <constraint firstItem="05E-xi-cRz" firstAttribute="leading" secondItem="FZe-01-zWu" secondAttribute="trailing" constant="5" id="qFt-Nm-EUm"/>
+                                                <constraint firstItem="05E-xi-cRz" firstAttribute="leading" secondItem="FZe-01-zWu" secondAttribute="trailing" constant="8" symbolic="YES" id="qFt-Nm-EUm"/>
                                                 <constraint firstItem="t7f-Gz-AKs" firstAttribute="top" secondItem="4Ww-HT-Pvt" secondAttribute="bottom" constant="6" id="qPl-XN-K3y"/>
+                                                <constraint firstItem="d7L-Tc-tf5" firstAttribute="top" secondItem="Ulf-OD-9ri" secondAttribute="bottom" constant="14" id="qdj-j4-pKs"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="4J8-it-kJP" secondAttribute="trailing" constant="-6" id="sF1-yF-OlI"/>
+                                                <constraint firstItem="05E-xi-cRz" firstAttribute="top" secondItem="stt-VU-pMh" secondAttribute="bottom" constant="6" id="wI3-da-Zdt"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="d7L-Tc-tf5" secondAttribute="bottom" constant="-6" id="wWx-Zf-4mo"/>
+                                                <constraint firstItem="d7L-Tc-tf5" firstAttribute="centerY" secondItem="05E-xi-cRz" secondAttribute="centerY" id="xpY-Yf-ASr"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="ccM-bi-NeJ"/>
-                                                    <exclude reference="nhK-Rp-IDk"/>
                                                     <exclude reference="hgT-LL-6Hk"/>
                                                     <exclude reference="mgd-X3-fl4"/>
                                                     <exclude reference="05a-jB-VBq"/>
                                                     <exclude reference="TZR-rn-bsY"/>
                                                     <exclude reference="kYd-Tn-AsU"/>
+                                                    <exclude reference="nhK-Rp-IDk"/>
+                                                    <exclude reference="cUY-Jo-mxw"/>
+                                                    <exclude reference="aOp-ue-Vqx"/>
+                                                    <exclude reference="qPl-XN-K3y"/>
+                                                    <exclude reference="chs-k5-9N1"/>
+                                                    <exclude reference="UJi-e9-yw7"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -554,17 +571,15 @@ imgComment</string>
                                     <outlet property="delegate" destination="Ldw-Tb-JUT" id="8OT-kR-XhK"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" tag="123" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-oo-zof">
+                            <button opaque="NO" clipsSubviews="YES" tag="123" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-oo-zof">
                                 <rect key="frame" x="254" y="485" width="50" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fcN-oo-zof" secondAttribute="height" multiplier="1:1" id="dKF-18-tad"/>
                                     <constraint firstAttribute="width" constant="50" id="jHh-i1-dIM"/>
                                     <constraint firstAttribute="height" constant="50" id="oDK-Yy-w07"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" title="newPost" image="nht_icon_newPost"/>
+                                <state key="normal" image="nht_logo_square"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="jHh-i1-dIM"/>
@@ -1153,9 +1168,9 @@ imgComment</string>
         <image name="likeTint.png" width="25" height="25"/>
         <image name="location.png" width="50" height="50"/>
         <image name="more.png" width="50" height="50"/>
-        <image name="nht_icon_newPost" width="230" height="300"/>
+        <image name="nht_icon_reply" width="25" height="25"/>
         <image name="nht_logoBig" width="250" height="250"/>
-        <image name="replyDefault" width="26" height="26"/>
+        <image name="nht_logo_square" width="185" height="185"/>
         <image name="setting.png" width="50" height="50"/>
     </resources>
     <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>

@@ -21,13 +21,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFf-AK-OXG" userLabel="topView">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzz-mZ-HZY">
-                            <rect key="frame" x="8" y="26" width="32" height="32"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzz-mZ-HZY">
+                            <rect key="frame" x="8" y="26" width="120" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="4aO-Ig-Ud3"/>
-                                <constraint firstAttribute="width" constant="32" id="5MJ-7N-M5T"/>
+                                <constraint firstAttribute="width" constant="120" id="5MJ-7N-M5T"/>
                             </constraints>
-                            <state key="normal" image="discard.png">
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -35,10 +36,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFl-zu-MkG">
-                            <rect key="frame" x="465" y="27" width="46" height="30"/>
+                            <rect key="frame" x="490" y="27" width="100" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="h9B-kU-ENU"/>
-                                <constraint firstAttribute="width" constant="46" id="xuw-8h-0d7"/>
+                                <constraint firstAttribute="width" constant="100" id="xuw-8h-0d7"/>
                             </constraints>
                             <state key="normal" title="Next">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,7 +52,7 @@
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.49803921568627452" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="UFl-zu-MkG" secondAttribute="trailing" constant="89" id="0q3-nv-egu"/>
+                        <constraint firstAttribute="trailing" secondItem="UFl-zu-MkG" secondAttribute="trailing" constant="10" id="0q3-nv-egu"/>
                         <constraint firstItem="UFl-zu-MkG" firstAttribute="top" secondItem="XFf-AK-OXG" secondAttribute="top" constant="27" id="6b4-A7-zWy"/>
                         <constraint firstItem="fzz-mZ-HZY" firstAttribute="top" secondItem="XFf-AK-OXG" secondAttribute="top" constant="16" id="Dfw-re-MRt"/>
                         <constraint firstAttribute="centerY" secondItem="fzz-mZ-HZY" secondAttribute="centerY" id="EZ2-3h-6Eb"/>
@@ -97,7 +98,4 @@
             <point key="canvasLocation" x="330" y="322"/>
         </view>
     </objects>
-    <resources>
-        <image name="discard.png" width="44" height="44"/>
-    </resources>
 </document>

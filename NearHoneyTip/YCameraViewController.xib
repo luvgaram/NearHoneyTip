@@ -185,17 +185,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pwj-uU-hz8" userLabel="photo tools view">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9k-Jo-QXH">
-                            <rect key="frame" x="557" y="3" width="40" height="37"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9k-Jo-QXH">
+                            <rect key="frame" x="477" y="0.0" width="120" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="b9k-Jo-QXH" secondAttribute="height" multiplier="40:37" id="MtG-vd-hmf"/>
-                                <constraint firstAttribute="width" secondItem="b9k-Jo-QXH" secondAttribute="height" multiplier="40:37" id="Nvf-Rq-MZT"/>
-                                <constraint firstAttribute="width" constant="40" id="T2A-Vh-mqW"/>
+                                <constraint firstAttribute="width" secondItem="b9k-Jo-QXH" secondAttribute="height" multiplier="3:1" id="Nvf-Rq-MZT"/>
+                                <constraint firstAttribute="width" constant="120" id="T2A-Vh-mqW"/>
                                 <constraint firstAttribute="width" constant="40" id="vvi-e2-R6I"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="X">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted">
@@ -220,18 +220,18 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdl-Iu-IKK">
-                            <rect key="frame" x="275" y="3" width="50" height="41"/>
+                            <rect key="frame" x="278" y="0.0" width="44" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="NZh-gq-OYO">
                                     <variation key="heightClass=compact" constant="44"/>
                                 </constraint>
-                                <constraint firstAttribute="width" constant="50" id="PhM-ub-NXH"/>
+                                <constraint firstAttribute="width" constant="44" id="PhM-ub-NXH"/>
                                 <constraint firstAttribute="width" secondItem="jdl-Iu-IKK" secondAttribute="height" multiplier="50:41" id="kSs-fj-YI7"/>
-                                <constraint firstAttribute="width" secondItem="jdl-Iu-IKK" secondAttribute="height" multiplier="50:41" id="oYC-Ik-57u"/>
+                                <constraint firstAttribute="width" secondItem="jdl-Iu-IKK" secondAttribute="height" multiplier="1:1" id="oYC-Ik-57u"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="front-camera.png">
-                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" backgroundImage="nht_switch_camera">
+                                <color key="titleColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="highlighted">
@@ -255,17 +255,17 @@
                                 <action selector="switchCamera:" destination="-1" eventType="touchUpInside" id="r67-BA-1il"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJj-5f-Bzl">
-                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJj-5f-Bzl">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="44" id="1dr-ep-eys"/>
                                 <constraint firstAttribute="width" secondItem="NJj-5f-Bzl" secondAttribute="height" multiplier="1:1" id="4L2-hS-Ey9"/>
-                                <constraint firstAttribute="width" constant="44" id="I7L-fX-ETh"/>
-                                <constraint firstAttribute="width" secondItem="NJj-5f-Bzl" secondAttribute="height" multiplier="1:1" id="pPC-51-XVe"/>
+                                <constraint firstAttribute="width" constant="120" id="I7L-fX-ETh"/>
+                                <constraint firstAttribute="width" secondItem="NJj-5f-Bzl" secondAttribute="height" multiplier="3:1" id="pPC-51-XVe"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="flash-off.png">
-                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Flash Off">
+                                <color key="titleColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="selected" image="flash.png"/>
@@ -294,14 +294,15 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="centerX" secondItem="b9k-Jo-QXH" secondAttribute="centerX" id="00w-Dz-rp8"/>
+                        <constraint firstItem="jdl-Iu-IKK" firstAttribute="centerY" secondItem="Pwj-uU-hz8" secondAttribute="centerY" id="E7p-u5-Jtq"/>
                         <constraint firstAttribute="width" constant="44" id="Kzf-CZ-GUo"/>
                         <constraint firstItem="NJj-5f-Bzl" firstAttribute="top" secondItem="Pwj-uU-hz8" secondAttribute="top" id="Mye-TT-XtO"/>
                         <constraint firstAttribute="centerX" secondItem="jdl-Iu-IKK" secondAttribute="centerX" id="NGS-Hv-GU3"/>
                         <constraint firstAttribute="bottom" secondItem="NJj-5f-Bzl" secondAttribute="bottom" id="QK4-Os-sah"/>
-                        <constraint firstItem="jdl-Iu-IKK" firstAttribute="top" secondItem="Pwj-uU-hz8" secondAttribute="top" constant="3" id="SFM-Yr-DeX"/>
+                        <constraint firstItem="jdl-Iu-IKK" firstAttribute="top" secondItem="Pwj-uU-hz8" secondAttribute="top" id="SFM-Yr-DeX"/>
                         <constraint firstAttribute="centerY" secondItem="jdl-Iu-IKK" secondAttribute="centerY" id="ZmX-cw-uYQ"/>
                         <constraint firstAttribute="height" constant="44" id="arS-Zx-dNI"/>
-                        <constraint firstItem="b9k-Jo-QXH" firstAttribute="top" secondItem="Pwj-uU-hz8" secondAttribute="top" constant="3" id="bY5-GB-eoW"/>
+                        <constraint firstItem="b9k-Jo-QXH" firstAttribute="top" secondItem="Pwj-uU-hz8" secondAttribute="top" id="bY5-GB-eoW"/>
                         <constraint firstItem="NJj-5f-Bzl" firstAttribute="leading" secondItem="Pwj-uU-hz8" secondAttribute="leading" id="dRj-OJ-XZH"/>
                         <constraint firstAttribute="centerX" secondItem="jdl-Iu-IKK" secondAttribute="centerX" id="dT6-Wj-5oU"/>
                         <constraint firstAttribute="trailing" secondItem="b9k-Jo-QXH" secondAttribute="trailing" constant="3" id="iXe-Jq-XdL"/>
@@ -316,6 +317,7 @@
                             <exclude reference="dRj-OJ-XZH"/>
                             <exclude reference="tut-w5-mu9"/>
                             <exclude reference="NGS-Hv-GU3"/>
+                            <exclude reference="SFM-Yr-DeX"/>
                             <exclude reference="ZmX-cw-uYQ"/>
                             <exclude reference="00w-Dz-rp8"/>
                             <exclude reference="yQb-h7-EzD"/>
@@ -353,7 +355,7 @@
                                 <constraint firstAttribute="width" secondItem="tHe-NZ-hyp" secondAttribute="height" multiplier="1:1" id="uaE-FK-CpD"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" size="button"/>
-                            <state key="normal" image="take-snap.png">
+                            <state key="normal" image="nht_logo_icon_480.png">
                                 <color key="titleColor" red="0.1375741332" green="0.13683280110000001" blue="0.1422217153" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -528,9 +530,8 @@
         </view>
     </objects>
     <resources>
-        <image name="flash-off.png" width="25" height="25"/>
         <image name="flash.png" width="25" height="25"/>
-        <image name="front-camera.png" width="47" height="23"/>
-        <image name="take-snap.png" width="100" height="100"/>
+        <image name="nht_logo_icon_480.png" width="480" height="480"/>
+        <image name="nht_switch_camera" width="12" height="12"/>
     </resources>
 </document>

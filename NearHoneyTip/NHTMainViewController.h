@@ -17,7 +17,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NHTTipManager *Q1;
 
+
 - (void)refleshScrollViewDidEndDragging:(UIScrollView *)refreshManager;
 - (void)getLatestTips;
-
+- (void)newTipReload;
 @end

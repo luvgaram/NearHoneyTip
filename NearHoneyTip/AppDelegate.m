@@ -43,9 +43,11 @@ NSMutableData *data;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         self.locationManager.delegate = self;
         [self.locationManager requestAlwaysAuthorization];
+        
     }
     
     [self.locationManager startUpdatingLocation];
+    //[self.locationManager requestLocation];
     //NSLog(@"location: %@", self.locationManager.location);
     NSString *userLatitudeIdentifier = @"UserLocationLatitude";
     NSString *userLongitudeIdentifier = @"UserLocationLongitude";
@@ -68,7 +70,7 @@ NSMutableData *data;
     }
     [preferences synchronize];
 
-
+    
     NSLog(@"saved latitude : :%f", [preferences floatForKey:userLatitudeIdentifier] );
     NSLog(@"saved longitude : :%f", [preferences floatForKey:userLongitudeIdentifier] );
 

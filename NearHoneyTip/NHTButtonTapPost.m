@@ -7,7 +7,7 @@
 //
 
 #import "NHTButtonTapPost.h"
-//#import "NHTMainViewController.h"
+#import "NHTMainViewController.h"
 
 
 @implementation NHTButtonTapPost{
@@ -64,10 +64,9 @@
     long code = [httpResponse statusCode];
     NSLog(@"connection response: %ld", code);
     
-    //NHTMainViewController *forRefresh = [[NHTMainViewController alloc]init];
-    //[forRefresh getLatestTips];
-   
-    // data = [[NSMutableData alloc] init];
+    NHTMainViewController *forRefresh = [[NHTMainViewController alloc]init];
+    
+          // data = [[NSMutableData alloc] init];
 }
 
 @end

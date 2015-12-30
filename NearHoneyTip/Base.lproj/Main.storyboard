@@ -596,7 +596,7 @@ imgComment</string>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="jYt-6B-8sE" kind="show" id="a38-wz-DXX"/>
+                                    <segue destination="jYt-6B-8sE" kind="show" identifier="newTip" id="a38-wz-DXX"/>
                                 </connections>
                             </button>
                         </subviews>

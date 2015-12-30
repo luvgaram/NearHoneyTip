@@ -12,6 +12,7 @@
 @class NHTTip;
 @class NHTButtonTapPost;
 
+
 @interface NHTDetailViewController : UIViewController
 
 @property (strong, nonatomic) NHTTip *tip;
@@ -31,5 +32,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *commentButtonImage;
 @property (weak, nonatomic) IBOutlet UILabel *distance;
 @property (weak, nonatomic) IBOutlet MKMapView *storeMapView;
+
+
+-(void)checkRefresh;
 
 @end

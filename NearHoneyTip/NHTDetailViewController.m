@@ -56,7 +56,7 @@
         self.likeButton.target = tapLikeButton;
         self.likeButton.action= @selector(didTapLike:);
        
-        NSString *distanceWithKm = [NSString stringWithFormat:@"%u", self.tip.distance];
+        NSString *distanceWithKm = [NSString stringWithFormat:@"%lu", (unsigned long)self.tip.distance];
         distanceWithKm = [distanceWithKm stringByAppendingString:@" m"];
         
         self.distance.text = distanceWithKm;
@@ -94,7 +94,7 @@
         [self.storeMapView addAnnotation:storeAnnotation];
     }
     
-    
+   
 }
 
 -(void)setLikeButtonProperty{
@@ -107,7 +107,7 @@
     if(self.tip.likeInteger <= 0){
         likeCount = @"";
     } else {
-        likeCount = [NSString stringWithFormat:@"%u", self.tip.likeInteger];
+        likeCount = [NSString stringWithFormat:@"%lu", (unsigned long)self.tip.likeInteger];
     }
     
     likeString = [likeString stringByAppendingString:likeCount];
@@ -135,7 +135,12 @@
         //post syn
         [self.postManager postLikeChangeMethod:@"PUT" Tip:self.tip.tipId];
     }
+    
+     [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromDetail" object:self];
+    
 }
+
+
 -(void)didTapLike{
     self.likeButton.tintColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
     self.likeButtonImage.tintColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
@@ -145,17 +150,16 @@
     self.tip.likeInteger++;
    // NSLog(@"%@ and %lu", self.tip.likeInteger, self.tip.likeInteger);
     NSString *likeString = @"좋아요 ";
-    likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%u", self.tip.likeInteger]];
+    likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%lu", (unsigned long)self.tip.likeInteger]];
     self.likeButton.title = likeString;
     
 }
 -(void)willSubtractLike{
     self.tip.likeInteger = self.tip.likeInteger - 1;
    
-    //NSLog(@"%@ and %lu", temp-1, temp-1);
     NSString *likeString = @"좋아요 ";
     if(self.tip.likeInteger > 0){
-        likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%u", self.tip.likeInteger]];
+        likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%lu", (unsigned long)self.tip.likeInteger]];
     }
     self.likeButton.title = likeString;
 }

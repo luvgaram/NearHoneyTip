@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMS-a5-r9b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMS-a5-r9b">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -232,6 +232,9 @@ imgComment</string>
                                     </mask>
                                 </variation>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h31-dt-v0W">
+                                <rect key="frame" x="20" y="396" width="285" height="79"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -240,19 +243,24 @@ imgComment</string>
                             <constraint firstAttribute="trailing" secondItem="6A0-zl-ljP" secondAttribute="trailing" id="6Uj-6O-gM6"/>
                             <constraint firstItem="qNe-2v-3Du" firstAttribute="top" secondItem="ol3-f4-ypg" secondAttribute="bottom" constant="2" id="6Vg-5y-SeJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A0k-AJ-niG" secondAttribute="trailing" constant="-24" id="6uR-Cs-cy6"/>
+                            <constraint firstItem="A0k-AJ-niG" firstAttribute="top" secondItem="h31-dt-v0W" secondAttribute="bottom" constant="5" id="AGJ-R3-iJu"/>
                             <constraint firstItem="7G9-P5-pMR" firstAttribute="leading" secondItem="qNe-2v-3Du" secondAttribute="trailing" id="B8W-RW-Cyx"/>
                             <constraint firstItem="7G9-P5-pMR" firstAttribute="top" secondItem="ol3-f4-ypg" secondAttribute="bottom" constant="2" id="Bxf-8t-otG"/>
                             <constraint firstItem="Fw5-Ym-iwA" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="INY-gI-nmL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h31-dt-v0W" secondAttribute="trailing" constant="-5" id="M5c-xA-rii"/>
                             <constraint firstItem="6A0-zl-ljP" firstAttribute="leading" secondItem="BFH-EB-tAe" secondAttribute="trailing" id="OdA-W6-SOJ"/>
+                            <constraint firstItem="h31-dt-v0W" firstAttribute="top" secondItem="Fw5-Ym-iwA" secondAttribute="bottom" constant="-4" id="P1A-Y5-5yv"/>
                             <constraint firstItem="JcF-KA-RC2" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="PpD-Ld-Bfg"/>
                             <constraint firstItem="IX7-qS-pyM" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="V3k-wL-Zr4"/>
                             <constraint firstItem="JcF-KA-RC2" firstAttribute="top" secondItem="IX7-qS-pyM" secondAttribute="bottom" constant="1" id="VSb-qf-Yhu"/>
                             <constraint firstItem="lRW-0R-2h9" firstAttribute="top" secondItem="A0k-AJ-niG" secondAttribute="bottom" id="cfm-1K-G0K"/>
                             <constraint firstItem="BFH-EB-tAe" firstAttribute="top" secondItem="JcF-KA-RC2" secondAttribute="bottom" constant="2" id="eAj-AE-1dF"/>
                             <constraint firstItem="IX7-qS-pyM" firstAttribute="top" secondItem="qNe-2v-3Du" secondAttribute="bottom" constant="1" id="gYu-ay-Ylk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h31-dt-v0W" secondAttribute="trailing" constant="-5" id="h8S-Yb-ygK"/>
                             <constraint firstItem="6A0-zl-ljP" firstAttribute="bottom" secondItem="BFH-EB-tAe" secondAttribute="bottom" id="ifM-WT-Gko"/>
                             <constraint firstItem="Fw5-Ym-iwA" firstAttribute="top" secondItem="6A0-zl-ljP" secondAttribute="bottom" constant="1" id="jpc-ti-ngb"/>
                             <constraint firstItem="A0k-AJ-niG" firstAttribute="leading" secondItem="SIk-PJ-YmG" secondAttribute="leadingMargin" constant="-24" id="jsb-Mn-EA7"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="h31-dt-v0W" secondAttribute="leading" id="mkw-9X-unL"/>
                             <constraint firstItem="Fw5-Ym-iwA" firstAttribute="top" secondItem="BFH-EB-tAe" secondAttribute="bottom" constant="1" id="o5j-dd-7f0"/>
                             <constraint firstItem="BFH-EB-tAe" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="p4L-2a-4Qe"/>
                             <constraint firstItem="qNe-2v-3Du" firstAttribute="width" secondItem="SIk-PJ-YmG" secondAttribute="width" multiplier="2:13" id="r2A-AT-VMO"/>
@@ -282,6 +290,7 @@ imgComment</string>
                         <outlet property="likeButton" destination="78k-lu-ZoQ" id="mab-14-Ww3"/>
                         <outlet property="likeButtonImage" destination="m0k-4L-21a" id="lQ6-Mj-5bl"/>
                         <outlet property="searchDisplayController" destination="sQ9-SK-eXl" id="Ict-AY-ZRT"/>
+                        <outlet property="storeMapView" destination="h31-dt-v0W" id="CU9-a0-Qby"/>
                         <outlet property="storeName" destination="Oe4-MW-xzW" id="oCu-fc-Ap2"/>
                         <outlet property="tipDate" destination="JcF-KA-RC2" id="jcZ-88-ooA"/>
                         <outlet property="tipDetails" destination="Fw5-Ym-iwA" id="uIC-JX-GrD"/>

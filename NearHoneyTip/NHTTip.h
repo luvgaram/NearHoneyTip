@@ -26,5 +26,7 @@
 //@property (readwrite, nonatomic) NSUInteger likeInteger;
 @property (readwrite, nonatomic) NSUInteger replyInteger;
 @property (readwrite, nonatomic) NSUInteger distance;
+@property (strong, nonatomic) NSNumber *latitude;
+@property (strong, nonatomic) NSNumber *longitude;
 
 @end

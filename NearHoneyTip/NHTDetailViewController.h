@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+
 @class NHTTip;
 @class NHTButtonTapPost;
 
@@ -28,5 +30,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *likeButtonImage;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *commentButtonImage;
 @property (weak, nonatomic) IBOutlet UILabel *distance;
+@property (weak, nonatomic) IBOutlet MKMapView *storeMapView;
 
 @end

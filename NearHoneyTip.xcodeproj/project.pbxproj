@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F4035A81C33C28000DA821C /* editPencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F4035A71C33C28000DA821C /* editPencil.png */; };
+		6F4035AB1C33C2DD00DA821C /* NHTProfileImgEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4035AA1C33C2DD00DA821C /* NHTProfileImgEditController.m */; };
+		6F4035AE1C33C2E500DA821C /* NHTProfileNicknameEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4035AD1C33C2E500DA821C /* NHTProfileNicknameEditController.m */; };
 		6F4793851C17B9E7002686D3 /* NHTMytipsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */; };
 		6F5CA90C1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5CA90B1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m */; };
 		6FA2C4331C30039F0014964D /* NHTGetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2C4321C30039F0014964D /* NHTGetLocationViewController.m */; };
@@ -95,6 +98,11 @@
 
 /* Begin PBXFileReference section */
 		382463056E0044DAA3DF9E33 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F4035A71C33C28000DA821C /* editPencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editPencil.png; sourceTree = "<group>"; };
+		6F4035A91C33C2DD00DA821C /* NHTProfileImgEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTProfileImgEditController.h; sourceTree = "<group>"; };
+		6F4035AA1C33C2DD00DA821C /* NHTProfileImgEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTProfileImgEditController.m; sourceTree = "<group>"; };
+		6F4035AC1C33C2E500DA821C /* NHTProfileNicknameEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTProfileNicknameEditController.h; sourceTree = "<group>"; };
+		6F4035AD1C33C2E500DA821C /* NHTProfileNicknameEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTProfileNicknameEditController.m; sourceTree = "<group>"; };
 		6F4793831C17B9E7002686D3 /* NHTMytipsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMytipsTableCell.h; sourceTree = "<group>"; };
 		6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMytipsTableCell.m; sourceTree = "<group>"; };
 		6F5CA90A1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTAlarmsTableCell.h; sourceTree = "<group>"; };
@@ -352,6 +360,7 @@
 		CE3355ED1BE9D42100B77DEC /* img */ = {
 			isa = PBXGroup;
 			children = (
+				6F4035A71C33C28000DA821C /* editPencil.png */,
 				CEE4500E1C20FFCE00C0F821 /* nht_logo_icon_480.png */,
 				CEE450161C21151400C0F821 /* nht_logoBig.png */,
 				A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */,
@@ -428,6 +437,10 @@
 		CE64D5921C204CAC0058613C /* NHTSideBarGroup */ = {
 			isa = PBXGroup;
 			children = (
+				6F4035AC1C33C2E500DA821C /* NHTProfileNicknameEditController.h */,
+				6F4035AD1C33C2E500DA821C /* NHTProfileNicknameEditController.m */,
+				6F4035A91C33C2DD00DA821C /* NHTProfileImgEditController.h */,
+				6F4035AA1C33C2DD00DA821C /* NHTProfileImgEditController.m */,
 				6FD0C0691C1711AB0021FEB6 /* NHTMyTipsController.h */,
 				6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */,
 				6F5CA90A1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.h */,
@@ -570,6 +583,7 @@
 				CE3355F81BE9D45500B77DEC /* back.png in Resources */,
 				CE3355C81BE9CB9100B77DEC /* LaunchScreen.storyboard in Resources */,
 				CEC8E9B31BECA7CF00582083 /* commentTint.png in Resources */,
+				6F4035A81C33C28000DA821C /* editPencil.png in Resources */,
 				A86327451C2A06E3001B293B /* PhotoPickerCell.xib in Resources */,
 				CEE450111C21066900C0F821 /* nht_logo_eng@2x.png in Resources */,
 				CEF05FFE1BF317FF0037E24A /* nht_icon_newPost.png in Resources */,
@@ -667,6 +681,7 @@
 				CE51A6CB1C284BA3004BE7B0 /* NHTButtonTapPost.m in Sources */,
 				6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */,
 				A8925E581C33B237008510FC /* NHTAnnotation.m in Sources */,
+				6F4035AE1C33C2E500DA821C /* NHTProfileNicknameEditController.m in Sources */,
 				A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */,
 				6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */,
 				A863272E1C2A0625001B293B /* CameraFocusSquare.m in Sources */,
@@ -688,6 +703,7 @@
 				CE3355C31BE9CB9100B77DEC /* NearHoneyTip.xcdatamodeld in Sources */,
 				6FD0C0741C171B8F0021FEB6 /* NHTSideTableViewController.m in Sources */,
 				A86327341C2A064A001B293B /* CustomeImagePicker.m in Sources */,
+				6F4035AB1C33C2DD00DA821C /* NHTProfileImgEditController.m in Sources */,
 				A86327481C2A06EF001B293B /* RNActivityView.m in Sources */,
 				A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */,
 				CE8D538D1C0C37B4005F913E /* NHTMainTableCell.m in Sources */,

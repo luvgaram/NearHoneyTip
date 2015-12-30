@@ -44,7 +44,7 @@
     self.userNickname.text = self.tip.userNickname;
     self.tipDate.text = self.tip.tipDate;
     
-    NSString *distanceWithKm = [NSString stringWithFormat:@"%u", self.tip.distance];
+    NSString *distanceWithKm = [NSString stringWithFormat:@"%@", self.tip.distance];
     distanceWithKm = [distanceWithKm stringByAppendingString:@" m"];
     
     self.distance.text = distanceWithKm;
@@ -62,8 +62,6 @@
     NSString *likeString = @"좋아요 ";
     NSString *likeCount;
    
-    NSString *uidIdentifier = @"UserDefault";
-    preferences = [NSUserDefaults standardUserDefaults];
     
     UIImage *likeTintImage = [UIImage imageNamed:@"likeDefault"];
     [self.likeButton setImage:likeTintImage forState:UIControlStateNormal];
@@ -71,9 +69,8 @@
     
     if (self.tip.likeInteger <= 0){
         likeCount = @"";
-       
     } else {
-        likeCount = [NSString stringWithFormat:@"%u", self.tip.likeInteger];
+        likeCount = [NSString stringWithFormat:@"%@", self.tip.likeInteger];
     }
     likeString = [likeString stringByAppendingString:likeCount];
     [self.likeButton setTitle:likeString forState:UIControlStateNormal];

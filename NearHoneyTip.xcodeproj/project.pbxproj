@@ -37,6 +37,8 @@
 		A863274B1C2A06FA001B293B /* UIView+RNActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = A863274A1C2A06FA001B293B /* UIView+RNActivityView.m */; };
 		A863274E1C2A0704001B293B /* YCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A863274D1C2A0704001B293B /* YCameraViewController.m */; };
 		A86327501C2A070A001B293B /* YCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A863274F1C2A070A001B293B /* YCameraViewController.xib */; };
+		A8925E521C33AE04008510FC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8925E511C33AE04008510FC /* MapKit.framework */; };
+		A8925E581C33B237008510FC /* NHTAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A8925E571C33B237008510FC /* NHTAnnotation.m */; };
 		A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8935A701C01E48800E69F2F /* NHTWriteViewController.m */; };
 		BEB76CDE499F39F005B1B9C5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 382463056E0044DAA3DF9E33 /* libPods.a */; };
 		CE3355B71BE9CB9100B77DEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3355B61BE9CB9100B77DEC /* main.m */; };
@@ -144,6 +146,9 @@
 		A863274C1C2A0700001B293B /* YCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCameraViewController.h; sourceTree = "<group>"; };
 		A863274D1C2A0704001B293B /* YCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCameraViewController.m; sourceTree = "<group>"; };
 		A863274F1C2A070A001B293B /* YCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YCameraViewController.xib; sourceTree = "<group>"; };
+		A8925E511C33AE04008510FC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A8925E561C33B237008510FC /* NHTAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTAnnotation.h; sourceTree = "<group>"; };
+		A8925E571C33B237008510FC /* NHTAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTAnnotation.m; sourceTree = "<group>"; };
 		A8935A6F1C01E48800E69F2F /* NHTWriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTWriteViewController.h; sourceTree = "<group>"; };
 		A8935A701C01E48800E69F2F /* NHTWriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTWriteViewController.m; sourceTree = "<group>"; };
 		B25936F0EDCBDABE9ACBED38 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8925E521C33AE04008510FC /* MapKit.framework in Frameworks */,
 				6FA2C43B1C3003E20014964D /* CoreGraphics.framework in Frameworks */,
 				6FA2C4391C3003D90014964D /* Foundation.framework in Frameworks */,
 				6FA2C4371C3003C20014964D /* UIKit.framework in Frameworks */,
@@ -404,6 +410,8 @@
 				CE69AAB91C0586D600909DBD /* NHTDetailViewController.m */,
 				CE51A6C91C284BA3004BE7B0 /* NHTButtonTapPost.h */,
 				CE51A6CA1C284BA3004BE7B0 /* NHTButtonTapPost.m */,
+				A8925E561C33B237008510FC /* NHTAnnotation.h */,
+				A8925E571C33B237008510FC /* NHTAnnotation.m */,
 			);
 			name = NHTMainDetailTipGroup;
 			sourceTree = "<group>";
@@ -437,6 +445,7 @@
 		D1CEACB0E5C78E8C21BB3785 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8925E511C33AE04008510FC /* MapKit.framework */,
 				6FA2C43A1C3003E20014964D /* CoreGraphics.framework */,
 				6FA2C4381C3003D90014964D /* Foundation.framework */,
 				6FA2C4361C3003C20014964D /* UIKit.framework */,
@@ -657,6 +666,7 @@
 				6FF0DB201C2A2547000EA649 /* NHTWebViewController.m in Sources */,
 				CE51A6CB1C284BA3004BE7B0 /* NHTButtonTapPost.m in Sources */,
 				6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */,
+				A8925E581C33B237008510FC /* NHTAnnotation.m in Sources */,
 				A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */,
 				6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */,
 				A863272E1C2A0625001B293B /* CameraFocusSquare.m in Sources */,

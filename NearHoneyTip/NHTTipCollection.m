@@ -32,7 +32,6 @@
     NSUInteger pointOfPathStart = 5;
     NSString *tipImagePath = [tipImagePathString substringFromIndex: pointOfPathStart];
     
-    // modified by ej
     tipNew.tipImage = tipImagePath;
     
     tipNew.storeName =  [tip valueForKey:@"storename"];
@@ -41,9 +40,7 @@
     NSString *userProfileImageString = [tip objectForKey:@"profilephoto"];
     NSString *userProfileImagePath = [userProfileImageString substringFromIndex:pointOfPathStart];
     
-    // modified by ej
     tipNew.userProfileImg = userProfileImagePath;
-    
     tipNew.userNickname = [tip valueForKey:@"nickname"];
     tipNew.tipDate = [tip valueForKey: @"date"];
     
@@ -68,6 +65,13 @@
     } else { //방어용
         tipNew.replyInteger = 0;
     }
+
+    // loc info
+    NSDictionary *tipLocationDictionary = [tip objectForKey:@"loc"];
+    NSArray *tipCoordinates = [tipLocationDictionary objectForKey:@"coordinates"];
+    tipNew.longitude = tipCoordinates[0];
+    tipNew.latitude = tipCoordinates[1];
+    
     [self.tips addObject:tipNew];
 }
 

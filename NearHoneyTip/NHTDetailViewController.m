@@ -10,6 +10,7 @@
 #import "NHTTip.h"
 #import "NHTButtonTapPost.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "NHTAnnotation.h"
 
 @interface NHTDetailViewController (){
     NSUserDefaults *preferences;
@@ -17,6 +18,7 @@
 @end
 
 @implementation NHTDetailViewController
+@synthesize storeMapView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,6 +61,37 @@
         
         self.distance.text = distanceWithKm;
         //commentButton
+        
+        //mapView
+        float latitude = [self.tip.latitude floatValue];
+        float longitude = [self.tip.longitude floatValue];
+        float delta = 0.0011f;
+        
+        MKCoordinateRegion tipRegion;
+        CLLocationCoordinate2D center;
+        center.latitude = latitude;
+        center.longitude = longitude;
+        
+        MKCoordinateSpan span;
+        span.latitudeDelta = delta;
+        span.longitudeDelta = delta;
+        
+        tipRegion.center = center;
+        tipRegion.span = span;
+        
+        [self.storeMapView setRegion:tipRegion animated:YES];
+        
+        //mpaView annotation
+        CLLocationCoordinate2D storeLocation;
+        storeLocation.latitude = latitude;
+        storeLocation.longitude = longitude;
+        
+        NHTAnnotation *storeAnnotation = [NHTAnnotation alloc];
+        storeAnnotation.coordinate = storeLocation;
+        storeAnnotation.title = self.tip.storeName;
+        storeAnnotation.subtitle = distanceWithKm;
+        
+        [self.storeMapView addAnnotation:storeAnnotation];
     }
     
     

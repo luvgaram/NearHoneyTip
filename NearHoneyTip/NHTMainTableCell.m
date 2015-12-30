@@ -44,6 +44,11 @@
     self.userNickname.text = self.tip.userNickname;
     self.tipDate.text = self.tip.tipDate;
     
+    NSString *distanceWithKm = [NSString stringWithFormat:@"%u", self.tip.distance];
+    distanceWithKm = [distanceWithKm stringByAppendingString:@" m"];
+    
+    self.distance.text = distanceWithKm;
+    
     [self setLikeButtonProperty];
     
     UITapGestureRecognizer *tapLikeButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLike:)];
@@ -57,27 +62,22 @@
     NSString *likeString = @"좋아요 ";
     NSString *likeCount;
    
-    NSString *uidIdentifier = @"UserDefault";
-    preferences = [NSUserDefaults standardUserDefaults];
     
     UIImage *likeTintImage = [UIImage imageNamed:@"likeDefault"];
     [self.likeButton setImage:likeTintImage forState:UIControlStateNormal];
     
-    if(self.tip.likeInteger <= 0){
-        likeCount = @"";
-       
-    }else if(self.tip.likes){
-        if([self.tip.likes containsObject:[preferences objectForKey:uidIdentifier]]){
-            //NSLog(@"lala");
-            [self didTapLike];
-            self.tip.isLiked = YES;
-        }
-         likeCount = [NSString stringWithFormat:@"%ld", (long)self.tip.likeInteger];
-    }
     
-
+    if (self.tip.likeInteger <= 0){
+        likeCount = @"";
+    } else {
+        likeCount = [NSString stringWithFormat:@"%u", self.tip.likeInteger];
+    }
     likeString = [likeString stringByAppendingString:likeCount];
     [self.likeButton setTitle:likeString forState:UIControlStateNormal];
+    
+    if (self.tip.isLiked){
+        [self didTapLike];
+    }
     
 }
 
@@ -129,18 +129,18 @@
 }
 
 -(void)willPlusLike{
-    self.tip.likeInteger++;
+    self.tip.likeInteger = self.tip.likeInteger + 1 ;
     NSString *likeString = @"좋아요 ";
-    likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%ld", (long)self.tip.likeInteger]];
+    likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%u", self.tip.likeInteger]];
     [self.likeButton setTitle:likeString forState:UIControlStateNormal];
     
     
 }
 -(void)willSubtractLike{
-    self.tip.likeInteger--;
+    self.tip.likeInteger = self.tip.likeInteger - 1;
     NSString *likeString = @"좋아요 ";
     if(self.tip.likeInteger > 0){
-        likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%ld", (long)self.tip.likeInteger]];
+        likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%u", self.tip.likeInteger]];
     }
     [self.likeButton setTitle:likeString forState:UIControlStateNormal];
     

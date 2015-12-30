@@ -31,7 +31,6 @@
 		A86327311C2A063C001B293B /* ColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A86327301C2A063C001B293B /* ColorUtil.m */; };
 		A86327341C2A064A001B293B /* CustomeImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A86327331C2A064A001B293B /* CustomeImagePicker.m */; };
 		A86327361C2A0651001B293B /* CustomeImagePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86327351C2A0651001B293B /* CustomeImagePicker.xib */; };
-		A86327381C2A065B001B293B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86327371C2A065B001B293B /* Images.xcassets */; };
 		A863273B1C2A06B3001B293B /* OLGhostAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A863273A1C2A06B3001B293B /* OLGhostAlertView.m */; };
 		A863273E1C2A06C6001B293B /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A863273D1C2A06C6001B293B /* PhotoCell.m */; };
 		A86327401C2A06CC001B293B /* PhotoPickerCell_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = A863273F1C2A06CC001B293B /* PhotoPickerCell_5.xib */; };
@@ -136,7 +135,6 @@
 		A86327321C2A0644001B293B /* CustomeImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomeImagePicker.h; sourceTree = "<group>"; };
 		A86327331C2A064A001B293B /* CustomeImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomeImagePicker.m; sourceTree = "<group>"; };
 		A86327351C2A0651001B293B /* CustomeImagePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomeImagePicker.xib; sourceTree = "<group>"; };
-		A86327371C2A065B001B293B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A86327391C2A06AE001B293B /* OLGhostAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLGhostAlertView.h; sourceTree = "<group>"; };
 		A863273A1C2A06B3001B293B /* OLGhostAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLGhostAlertView.m; sourceTree = "<group>"; };
 		A863273C1C2A06BF001B293B /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 				A863272A1C2A061A001B293B /* CameraCell.xib */,
 				A863272C1C2A061F001B293B /* CameraFocusSquare.h */,
 				A863272F1C2A062A001B293B /* ColorUtil.h */,
-				A86327371C2A065B001B293B /* Images.xcassets */,
 				A86327331C2A064A001B293B /* CustomeImagePicker.m */,
 				A86327301C2A063C001B293B /* ColorUtil.m */,
 				A863273A1C2A06B3001B293B /* OLGhostAlertView.m */,
@@ -577,7 +574,6 @@
 				A86327451C2A06E3001B293B /* PhotoPickerCell.xib in Resources */,
 				CEE450111C21066900C0F821 /* nht_logo_eng@2x.png in Resources */,
 				6FF0DB1A1C2A2440000EA649 /* daumMap.png in Resources */,
-				A86327381C2A065B001B293B /* Images.xcassets in Resources */,
 				CEF05FFE1BF317FF0037E24A /* nht_icon_newPost.png in Resources */,
 				A86327361C2A0651001B293B /* CustomeImagePicker.xib in Resources */,
 				CE3355FB1BE9D45500B77DEC /* location.png in Resources */,
@@ -838,6 +834,7 @@
 			baseConfigurationReference = B25936F0EDCBDABE9ACBED38 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NearHoneyTip/Info.plist;
@@ -869,6 +866,7 @@
 			baseConfigurationReference = 904A7464ED7B0C7A3B186D8E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NearHoneyTip/Info.plist;

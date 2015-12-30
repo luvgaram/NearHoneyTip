@@ -27,5 +27,6 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *likeButtonImage;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *commentButtonImage;
+@property (weak, nonatomic) IBOutlet UILabel *distance;
 
 @end

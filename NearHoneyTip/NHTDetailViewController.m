@@ -10,6 +10,7 @@
 #import "NHTTip.h"
 #import "NHTButtonTapPost.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "NHTAnnotation.h"
 
 @interface NHTDetailViewController (){
     NSUserDefaults *preferences;
@@ -17,6 +18,7 @@
 @end
 
 @implementation NHTDetailViewController
+@synthesize storeMapView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,10 +55,46 @@
         UITapGestureRecognizer *tapLikeButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLike:)];
         self.likeButton.target = tapLikeButton;
         self.likeButton.action= @selector(didTapLike:);
+       
+        NSString *distanceWithKm = [NSString stringWithFormat:@"%lu", (unsigned long)self.tip.distance];
+        distanceWithKm = [distanceWithKm stringByAppendingString:@" m"];
+        
+        self.distance.text = distanceWithKm;
         //commentButton
+        
+        //mapView
+        float latitude = [self.tip.latitude floatValue];
+        float longitude = [self.tip.longitude floatValue];
+        float delta = 0.0011f;
+        
+        MKCoordinateRegion tipRegion;
+        CLLocationCoordinate2D center;
+        center.latitude = latitude;
+        center.longitude = longitude;
+        
+        MKCoordinateSpan span;
+        span.latitudeDelta = delta;
+        span.longitudeDelta = delta;
+        
+        tipRegion.center = center;
+        tipRegion.span = span;
+        
+        [self.storeMapView setRegion:tipRegion animated:YES];
+        
+        //mpaView annotation
+        CLLocationCoordinate2D storeLocation;
+        storeLocation.latitude = latitude;
+        storeLocation.longitude = longitude;
+        
+        NHTAnnotation *storeAnnotation = [NHTAnnotation alloc];
+        storeAnnotation.coordinate = storeLocation;
+        storeAnnotation.title = self.tip.storeName;
+        storeAnnotation.subtitle = distanceWithKm;
+        
+        [self.storeMapView addAnnotation:storeAnnotation];
     }
     
-    
+   
 }
 
 -(void)setLikeButtonProperty{
@@ -64,32 +102,25 @@
     NSString *likeString = @"좋아요 ";
     NSString *likeCount;
     
-    NSString *uidIdentifier = @"UserDefault";
     preferences = [NSUserDefaults standardUserDefaults];
 
-    
     if(self.tip.likeInteger <= 0){
         likeCount = @"";
-        
-    }else if(self.tip.likes){
-        
-        if([self.tip.likes containsObject:[preferences objectForKey:uidIdentifier]]){
-            NSLog(@"@@@@@@@@@@@@yes yes!");
-            [self didTapLike];
-            self.tip.isLiked = YES;
-        }
-        
-        likeCount = [NSString stringWithFormat:@"%ld", (long)self.tip.likeInteger];
+    } else {
+        likeCount = [NSString stringWithFormat:@"%lu", (unsigned long)self.tip.likeInteger];
     }
-    
     
     likeString = [likeString stringByAppendingString:likeCount];
     self.likeButton.title = likeString;
+    
+    if(self.tip.isLiked){
+        [self didTapLike];
+    }
 
 }
 -(void)didTapLike:(UITapGestureRecognizer *)recognizer{
     NSLog(@"#####Tap like recog: %@", recognizer);
-    if( self.tip.isLiked == NO){
+    if( self.tip.isLiked == NO ){
         self.tip.isLiked = YES;
         self.likeButton.tintColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
         self.likeButtonImage.tintColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
@@ -104,25 +135,31 @@
         //post syn
         [self.postManager postLikeChangeMethod:@"PUT" Tip:self.tip.tipId];
     }
-}
--(void)didTapLike{
     
+     [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromDetail" object:self];
+    
+}
+
+
+-(void)didTapLike{
     self.likeButton.tintColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
     self.likeButtonImage.tintColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
-    
 }
+
 -(void)willPlusLike{
     self.tip.likeInteger++;
+   // NSLog(@"%@ and %lu", self.tip.likeInteger, self.tip.likeInteger);
     NSString *likeString = @"좋아요 ";
-    likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%ld", (long)self.tip.likeInteger]];
+    likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%lu", (unsigned long)self.tip.likeInteger]];
     self.likeButton.title = likeString;
     
 }
 -(void)willSubtractLike{
-    self.tip.likeInteger--;
+    self.tip.likeInteger = self.tip.likeInteger - 1;
+   
     NSString *likeString = @"좋아요 ";
     if(self.tip.likeInteger > 0){
-        likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%ld", (long)self.tip.likeInteger]];
+        likeString = [likeString stringByAppendingString: [NSString stringWithFormat:@"%lu", (unsigned long)self.tip.likeInteger]];
     }
     self.likeButton.title = likeString;
 }

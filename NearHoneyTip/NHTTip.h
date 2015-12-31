@@ -11,6 +11,7 @@
 
 @interface NHTTip : NSObject
 
+@property NSUInteger likeInteger;
 @property (strong, nonatomic) NSString *tipId;
 @property (strong, nonatomic) NSString *tipImage;
 @property (strong, nonatomic) NSString *storeName;
@@ -19,11 +20,13 @@
 @property (strong, nonatomic) NSString *userNickname;
 @property (strong, nonatomic) NSString *tipDate;
 @property (strong, nonatomic) UIImage *userBadge;
-@property (strong, nonatomic) NSArray *likes;
+//@property (strong, nonatomic) NSArray *likes;
 @property (strong, nonatomic) NSArray *replies;
 @property (readwrite, nonatomic) BOOL isLiked;
-@property (readwrite, nonatomic) NSInteger likeInteger;
-@property (readwrite, nonatomic) NSInteger replyInteger;
-
+//@property (readwrite, nonatomic) NSUInteger likeInteger;
+@property (readwrite, nonatomic) NSUInteger replyInteger;
+@property (readwrite, nonatomic) NSUInteger distance;
+@property (strong, nonatomic) NSNumber *latitude;
+@property (strong, nonatomic) NSNumber *longitude;
 
 @end

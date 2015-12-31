@@ -20,11 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"HEIGHT : %f",self.tableView.bounds.size.height);
+    //NSLog(@"HEIGHT : %f",self.tableView.bounds.size.height);
     self.refreshManager = [[UIRefreshControl alloc] init];
     self.refreshManager.backgroundColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
     
-    //
     [self.tableView addSubview: self.refreshManager];
     [self.refreshManager addTarget:self action:@selector(getLatestTips)forControlEvents:UIControlEventValueChanged];
     
@@ -32,9 +31,13 @@
     [self.Q1 tipsDidLoad];
     
     UIButton *newPost = [[self view] viewWithTag:123];
-    newPost.layer.cornerRadius = 25;
+    newPost.layer.cornerRadius = (newPost.layer.bounds.size.width / 1.75) ;
     
+    //UITapGestureRecognizer *tapButtonForNewTip = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
+    
+    //newPost.gestureRecognizers = [[NSArray alloc] initWithObjects:tapButtonForNewTip, nil];
 }
+
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -54,6 +57,7 @@
 {
     CGFloat minOffsetToTriggerRefresh = 50.0f;
     if (refreshManager.contentOffset.y <= -minOffsetToTriggerRefresh) {
+        NSLog(@"USER refresh");
         [self.refreshManager sendActionsForControlEvents:UIControlEventValueChanged];
     }
 }
@@ -68,7 +72,7 @@
     [self.tableView reloadData];
     
     if (self.refreshManager) {
-        
+        NSLog(@"@yes");
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"MMM d, h:mm a"];
         NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
@@ -81,7 +85,6 @@
     }
     
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"refresh" object:self];
      NSLog(@"end to refresh");
     
 }
@@ -114,7 +117,7 @@
         messageLabel.textColor = [[UIColor alloc]initWithRed: 230.0/255.0 green:126.0/255.0 blue:35.0/255.0 alpha:1];
         messageLabel.numberOfLines = 2;
         messageLabel.textAlignment = NSTextAlignmentCenter;
-        messageLabel.font = [UIFont fontWithName:nil size:20];
+        messageLabel.font = [UIFont fontWithName:nil size:17];
         [messageLabel sizeToFit];
         
         self.tableView.backgroundView = messageLabel;
@@ -153,17 +156,35 @@
         
         if(tipCell){
             NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
+           
             if(tipCell.tip){
-                
                 
                 NSLog(@"this is tip %@", tipCell.tip);
             
                 tipDetailController.tip = tipCell.tip;
             }
+            
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getLatestTips) name:@"backFromDetail" object:tipDetailController];
         }
+    }
+    
+    if([segue.identifier isEqualToString:@"newTip"]){
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newTipReload) name:@"backFromWrite" object:nil];
     }
 }
 
+-(void) newTipReload{
+    //sleep(2);
+    
+    //[self refleshScrollViewDidEndDragging:self.refreshManager];
+    NSLog(@"start to refresh");
+    [self.Q1 removeAllTips];
+    [self.Q1 tipsDidLoad];
+    
+    [self.tableView reloadData];
+    NSLog(@"end of refresh");
+
+}
 - (void) didTapCell:(UITapGestureRecognizer *) recognizer{
     
 

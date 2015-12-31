@@ -24,15 +24,14 @@
     NHTTip* tipNew = [[NHTTip alloc] init];
     
     tipNew.tipId = [tip objectForKey:@"_id"];
-  //  NSLog(@"!String: %@",tipNew.tipId);
+    //NSLog(@"!String: %@",tipNew.tipId);
     NSArray *tipImageFile = [tip objectForKey:@"file"];
-   // NSLog(@"###STRing: %@",tipImageFile);
+    //NSLog(@"###STRing: %@",tipImageFile);
     NSDictionary *tipImagePathDictionary = tipImageFile[0];
     NSString *tipImagePathString = [tipImagePathDictionary objectForKey:@"path"];
     NSUInteger pointOfPathStart = 5;
     NSString *tipImagePath = [tipImagePathString substringFromIndex: pointOfPathStart];
     
-    // modified by ej
     tipNew.tipImage = tipImagePath;
     
     tipNew.storeName =  [tip valueForKey:@"storename"];
@@ -41,28 +40,38 @@
     NSString *userProfileImageString = [tip objectForKey:@"profilephoto"];
     NSString *userProfileImagePath = [userProfileImageString substringFromIndex:pointOfPathStart];
     
-    // modified by ej
     tipNew.userProfileImg = userProfileImagePath;
-    
     tipNew.userNickname = [tip valueForKey:@"nickname"];
     tipNew.tipDate = [tip valueForKey: @"date"];
     
    // NSLog(@"THE added tip: %@", tipNew);
-    tipNew.likes = [tip valueForKey:@"like"];
-   // NSLog(@"like array: %@", tipNew.likes);
+    tipNew.likeInteger = ((NSNumber*)[tip valueForKey:@"like"]).integerValue;
+    //NSLog(@"like array: %@", tipNew.likeInteger);
     tipNew.replies = [tip valueForKey:@"reply"];
+    tipNew.isLiked = ((NSNumber*)[tip valueForKey:@"isliked"]).boolValue;
+    tipNew.distance = ((NSNumber*)[tip valueForKey: @"dis"]).integerValue;
     
-    tipNew.isLiked = NO;
+    //NSLog(@"%@",tipNew.distance);
+    /* //legacy : likes array 받을 때
     if(tipNew.likes){
         tipNew.likeInteger = [tipNew.likes count];
-   // } else {
-    //    tipNew.likeInteger = 0;
+    } else {
+        tipNew.likeInteger = 0;
     }
+     */
+    
     if(tipNew.replies){
         tipNew.replyInteger = [tipNew.replies count];
-   // } else {
-   //     tipNew.replyInteger = 0;
+    } else { //방어용
+        tipNew.replyInteger = 0;
     }
+
+    // loc info
+    NSDictionary *tipLocationDictionary = [tip objectForKey:@"loc"];
+    NSArray *tipCoordinates = [tipLocationDictionary objectForKey:@"coordinates"];
+    tipNew.longitude = tipCoordinates[0];
+    tipNew.latitude = tipCoordinates[1];
+    
     [self.tips addObject:tipNew];
 }
 

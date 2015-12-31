@@ -113,11 +113,15 @@ float longitude;
     } else {
         NSLog(@"no image");
     }
+    
+    
 }
 
 - (IBAction)cancelWrite:(id)sender {
     NSLog(@"%@",self.navigationController.viewControllers);
     [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
 }
 
 
@@ -173,6 +177,8 @@ float longitude;
 
     [self postFormDataAtURL:[NSURL URLWithString:@"http://54.64.250.239:3000/tip"]
                    postData:body];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
 }
 
 @end

@@ -19,10 +19,6 @@
     [super viewDidLoad];
     
     //mapView
-//    float latitude = [self.tip.latitude floatValue];
-//    float longitude = [self.tip.longitude floatValue];
-//    float latitude = 51.434783;
-//    float longitude = -0.213428;
 
     float delta = 0.005f;
     //get currentLocation
@@ -46,15 +42,7 @@
     CLLocationCoordinate2D storeLocation;
     storeLocation.latitude = curLocation.latitude;
     storeLocation.longitude = curLocation.longitude;
-    
-//    NHTAnnotation *storeAnnotation = [NHTAnnotation alloc];
-//    storeAnnotation.coordinate = storeLocation;
-////    storeAnnotation.title = self.tip.storeName;
-////    storeAnnotation.subtitle = distanceWithKm;
-//    storeAnnotation.title = @"현재 위치";
-//    storeAnnotation.subtitle = @"0m";
-//     [self.nearMapView addAnnotation:storeAnnotation];
-    
+
     self.nearMapView.delegate = self;
     
     NHTAnnotation *myLocation = [[NHTAnnotation alloc] initWithTitle:@"현재 위치" subTitle:@"" Location:curLocation];

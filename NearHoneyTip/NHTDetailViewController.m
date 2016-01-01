@@ -63,38 +63,27 @@
         //commentButton
         
         //mapView
-        float latitude = [self.tip.latitude floatValue];
-        float longitude = [self.tip.longitude floatValue];
+        CLLocationCoordinate2D tipLocation;
+        tipLocation.latitude = [self.tip.latitude floatValue];
+        tipLocation.longitude = [self.tip.longitude floatValue];
+        
         float delta = 0.0011f;
         
         MKCoordinateRegion tipRegion;
-        CLLocationCoordinate2D center;
-        center.latitude = latitude;
-        center.longitude = longitude;
         
         MKCoordinateSpan span;
         span.latitudeDelta = delta;
         span.longitudeDelta = delta;
-        
-        tipRegion.center = center;
+
+        tipRegion.center = tipLocation;
         tipRegion.span = span;
         
         [self.storeMapView setRegion:tipRegion animated:YES];
         
-        //mpaView annotation
-        CLLocationCoordinate2D storeLocation;
-        storeLocation.latitude = latitude;
-        storeLocation.longitude = longitude;
-        
-        NHTAnnotation *storeAnnotation = [NHTAnnotation alloc];
-        storeAnnotation.coordinate = storeLocation;
-        storeAnnotation.title = self.tip.storeName;
-        storeAnnotation.subtitle = distanceWithKm;
-        
+        //mapView annotation
+        NHTAnnotation *storeAnnotation = [[NHTAnnotation alloc] initWithTitle:self.tip.storeName subTitle:distanceWithKm Location:tipLocation];
         [self.storeMapView addAnnotation:storeAnnotation];
     }
-    
-   
 }
 
 -(void)setLikeButtonProperty{

@@ -10,6 +10,7 @@
 #import "NHTDetailViewController.h"
 #import "NHTTipManager.h"
 #import "NHTMainTableCell.h"
+#import "NHTMapViewController.h"
 
 @interface NHTMainViewController ()
 
@@ -146,7 +147,7 @@
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"#####3-1%@", sender);
-    if([segue.identifier isEqual:@"showTipDetail"]){
+    if ([segue.identifier isEqual:@"showTipDetail"]) {
         
         NSLog(@"#####3-2%@", sender);
         NSLog(@"####sender target? %@",[sender view]);
@@ -166,10 +167,11 @@
             
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getLatestTips) name:@"backFromDetail" object:tipDetailController];
         }
-    }
-    
-    if([segue.identifier isEqualToString:@"newTip"]){
+    } else if ([segue.identifier isEqualToString:@"newTip"]) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newTipReload) name:@"backFromWrite" object:nil];
+    } else if ([segue.identifier isEqualToString:@"showNearMap"]) {
+        NHTMapViewController *mapViewController = (NHTMapViewController *)segue.destinationViewController;
+        mapViewController.tipCollection = self.Q1.tipCollection;
     }
 }
 

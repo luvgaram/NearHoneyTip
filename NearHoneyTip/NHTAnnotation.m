@@ -27,10 +27,10 @@
     
     annotationView.enabled = YES;
     annotationView.canShowCallout = YES;
-//    annotationView.image = self.image;
-    UIImage *myimage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"userlocation" ofType:@"png"]];
-    annotationView.image = myimage;
-    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+
+    NSLog(@"%@", self.title);
+    annotationView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"userlocation" ofType:@"png"]];
+//    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     
     return annotationView;
 }

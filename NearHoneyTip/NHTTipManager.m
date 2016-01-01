@@ -120,7 +120,7 @@
 };
 
 
--(NSObject*)objectAtIndex:(NSUInteger)index{
+    -(NSObject*)objectAtIndex:(NSUInteger)index{
     return [self.tipCollection objectAtIndex:index];
 }
 

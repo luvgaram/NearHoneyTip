@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "NHTTipCollection.h"
 
 @interface NHTMapViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *nearMapView;
 @property (nonatomic, retain) CLLocationManager *locationManager;
+@property (strong, nonatomic) NHTTipCollection *tipCollection;
+
 @end

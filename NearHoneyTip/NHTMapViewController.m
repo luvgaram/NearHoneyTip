@@ -8,6 +8,7 @@
 
 #import "NHTMapViewController.h"
 #import "NHTAnnotation.h"
+#import "NHTTip.h"
 
 @interface NHTMapViewController ()
 
@@ -15,23 +16,39 @@
 
 @implementation NHTMapViewController
 
+CLLocationCoordinate2D curLocation;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //mapView
-//    float latitude = [self.tip.latitude floatValue];
-//    float longitude = [self.tip.longitude floatValue];
-//    float latitude = 51.434783;
-//    float longitude = -0.213428;
 
-    float delta = 0.005f;
-    //get currentLocation
-    CLLocationCoordinate2D curLocation = [self setCurrentLocation];
+    //show currentLocation
+    curLocation = [self getCurrentLocation];
+    [self setCurrentLocaton];
+    [self setNearTips];
+}
+
+- (void) setNearTips {
+    NSLog(@"the number of tips: %d", (int)[self.tipCollection countOfTips]);
     
+    for (int i = 0; i < (int)[self.tipCollection countOfTips]; i++) {
+        NHTTip *tip = [self.tipCollection objectAtIndex:i];
+        CLLocationCoordinate2D tipLoc;
+        tipLoc.longitude = [tip.longitude floatValue];
+        tipLoc.latitude = [tip.latitude floatValue];
+
+        NHTAnnotation *tipLocation = [[NHTAnnotation alloc]
+                                      initWithTitle:tip.storeName
+                                      subTitle:[NSString stringWithFormat: @"%d m", tip.distance]
+                                      Location:tipLoc];
+        [self.nearMapView addAnnotation:tipLocation];
+    }
+}
+
+- (void) setCurrentLocaton {
+    float delta = 0.005f;
     MKCoordinateRegion tipRegion;
     CLLocationCoordinate2D center;
-    center.latitude = curLocation.latitude;
-    center.longitude = curLocation.longitude;
+    center = curLocation;
     
     MKCoordinateSpan span;
     span.latitudeDelta = delta;
@@ -43,36 +60,10 @@
     [self.nearMapView setRegion:tipRegion animated:YES];
     
     //mapView annotation
-    CLLocationCoordinate2D storeLocation;
-    storeLocation.latitude = curLocation.latitude;
-    storeLocation.longitude = curLocation.longitude;
-    
-//    NHTAnnotation *storeAnnotation = [NHTAnnotation alloc];
-//    storeAnnotation.coordinate = storeLocation;
-////    storeAnnotation.title = self.tip.storeName;
-////    storeAnnotation.subtitle = distanceWithKm;
-//    storeAnnotation.title = @"현재 위치";
-//    storeAnnotation.subtitle = @"0m";
-//     [self.nearMapView addAnnotation:storeAnnotation];
-    
     self.nearMapView.delegate = self;
     
     NHTAnnotation *myLocation = [[NHTAnnotation alloc] initWithTitle:@"현재 위치" subTitle:@"" Location:curLocation];
     [self.nearMapView addAnnotation:myLocation];
-}
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    NHTAnnotation *customAnnotation = (NHTAnnotation *)annotation;
-    
-    MKAnnotationView *annotationView =
-    [self.nearMapView dequeueReusableAnnotationViewWithIdentifier:@"customAnnotation"];
-    
-    if (annotationView == nil)
-        annotationView = customAnnotation.annotationView;
-    else
-        annotationView.annotation = annotation;
-    
-    return annotationView;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,7 +71,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (CLLocationCoordinate2D)setCurrentLocation {
+- (CLLocationCoordinate2D)getCurrentLocation {
     CLGeocoder *geocoder;
     
     NSLog(@"start to get location");
@@ -105,6 +96,25 @@
         return CLLocationCoordinate2DMake([preferences floatForKey:@"UserLocationLatitude"], [preferences floatForKey:@"UserLocationLongitude"]);
     }
 }
+
+#pragma mark annotation delegate
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    
+    if ([annotation.title isEqualToString:@"현재 위치"]) {
+        NHTAnnotation *customAnnotation = (NHTAnnotation *)annotation;
+        
+        MKAnnotationView *annotationView =
+        [self.nearMapView dequeueReusableAnnotationViewWithIdentifier:@"customAnnotation"];
+        
+        if (annotationView == nil)
+            annotationView = customAnnotation.annotationView;
+        else
+            annotationView.annotation = annotation;
+        
+        return annotationView;
+    } else return nil;
+}
+
 /*
 #pragma mark - Navigation
 

@@ -45,6 +45,7 @@
 		A8925E621C33C362008510FC /* NHTMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8925E611C33C362008510FC /* NHTMapViewController.m */; };
 		A8925E6A1C34EF44008510FC /* userlocation.png in Resources */ = {isa = PBXBuildFile; fileRef = A8925E691C34EF44008510FC /* userlocation.png */; };
 		A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8935A701C01E48800E69F2F /* NHTWriteViewController.m */; };
+		A8C60A471C37746200E6DE3C /* NHTMapSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C60A461C37746200E6DE3C /* NHTMapSelectViewController.m */; };
 		BEB76CDE499F39F005B1B9C5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 382463056E0044DAA3DF9E33 /* libPods.a */; };
 		CE3355B71BE9CB9100B77DEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3355B61BE9CB9100B77DEC /* main.m */; };
 		CE3355BA1BE9CB9100B77DEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3355B91BE9CB9100B77DEC /* AppDelegate.m */; };
@@ -164,6 +165,8 @@
 		A8925E691C34EF44008510FC /* userlocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userlocation.png; sourceTree = "<group>"; };
 		A8935A6F1C01E48800E69F2F /* NHTWriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTWriteViewController.h; sourceTree = "<group>"; };
 		A8935A701C01E48800E69F2F /* NHTWriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTWriteViewController.m; sourceTree = "<group>"; };
+		A8C60A451C37746200E6DE3C /* NHTMapSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMapSelectViewController.h; sourceTree = "<group>"; };
+		A8C60A461C37746200E6DE3C /* NHTMapSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMapSelectViewController.m; sourceTree = "<group>"; };
 		B25936F0EDCBDABE9ACBED38 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CE3355B21BE9CB9100B77DEC /* NearHoneyTip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearHoneyTip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3355B61BE9CB9100B77DEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -446,6 +449,8 @@
 			children = (
 				A8935A6F1C01E48800E69F2F /* NHTWriteViewController.h */,
 				A8935A701C01E48800E69F2F /* NHTWriteViewController.m */,
+				A8C60A451C37746200E6DE3C /* NHTMapSelectViewController.h */,
+				A8C60A461C37746200E6DE3C /* NHTMapSelectViewController.m */,
 			);
 			name = NHTWriteGroup;
 			sourceTree = "<group>";
@@ -710,6 +715,7 @@
 				CE8D538F1C0C37B4005F913E /* NHTTipManager.m in Sources */,
 				CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */,
 				6F4793851C17B9E7002686D3 /* NHTMytipsTableCell.m in Sources */,
+				A8C60A471C37746200E6DE3C /* NHTMapSelectViewController.m in Sources */,
 				CE3355B71BE9CB9100B77DEC /* main.m in Sources */,
 				A863274E1C2A0704001B293B /* YCameraViewController.m in Sources */,
 				6FD0C06B1C1711AB0021FEB6 /* NHTMyTipsController.m in Sources */,

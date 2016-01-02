@@ -8,6 +8,7 @@
 
 #import "NHTWriteViewController.h"
 #import "TWPhotoPickerController.h"
+#import "NHTMapSelectViewController.h"
 
 @interface NHTWriteViewController ()
 
@@ -64,11 +65,9 @@ float longitude;
      ];
 }
 
--(void) imageSelected:(NSArray *)arrayOfImages
-{
+-(void) imageSelected:(NSArray *)arrayOfImages {
     int count = 0;
-    for(NSString *imageURLString in arrayOfImages)
-    {
+    for(NSString *imageURLString in arrayOfImages) {
         // Asset URLs
         ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
         [assetsLibrary assetForURL:[NSURL URLWithString:imageURLString] resultBlock:^(ALAsset *asset) {
@@ -86,9 +85,27 @@ float longitude;
         count++;
     }
 }
--(void) imageSelectionCancelled
-{
-    
+-(void) imageSelectionCancelled {
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"showTipMap"]) {
+        NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"ib_addphoto"], 1.0);
+        data = UIImageJPEGRepresentation(_chosenImage, 1.0);
+        NSDictionary *tipDictionary = @{
+                                        @"nickname":nickname,
+                                        @"profilephoto":profilephoto,
+                                        @"longitude":[NSNumber numberWithFloat:longitude],
+                                        @"latitude":[NSNumber numberWithFloat:latitude],
+                                        @"uid":uid,
+                                        @"storename":_storeName.text,
+                                        @"detail":_detail.text,
+                                        @"imageData":data
+                                        };
+        
+        NHTMapSelectViewController *mapViewController = (NHTMapSelectViewController *)segue.destinationViewController;
+        mapViewController.tip = tipDictionary;
+    }
 }
 
 - (IBAction)saveTip:(id)sender {
@@ -113,8 +130,6 @@ float longitude;
     } else {
         NSLog(@"no image");
     }
-    
-    
 }
 
 - (IBAction)cancelWrite:(id)sender {

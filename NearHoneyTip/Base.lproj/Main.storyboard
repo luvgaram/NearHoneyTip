@@ -1300,14 +1300,37 @@ imgComment</string>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nZJ-kK-82a">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPb-RZ-InZ">
+                                <rect key="frame" x="41" y="77" width="239" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="GZe-Se-c15"/>
+                                </constraints>
+                                <string key="text">현재 위치가 맞다면 바로 Save를, 
+틀리면 상점 위치를 길게 클릭하고 Save해주세요.</string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" constant="13" id="6e7-i6-WyD"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="centerY" secondItem="nZJ-kK-82a" secondAttribute="centerY" id="97s-AW-oSg"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" constant="13" id="EcE-9C-3N3"/>
                             <constraint firstItem="nZJ-kK-82a" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" id="K9g-YV-Ygo"/>
                             <constraint firstItem="hny-9c-ejD" firstAttribute="top" secondItem="nZJ-kK-82a" secondAttribute="bottom" constant="-44" id="RhY-m7-B1S"/>
                             <constraint firstItem="nZJ-kK-82a" firstAttribute="leading" secondItem="lwI-H8-1cM" secondAttribute="leadingMargin" constant="-20" id="S8J-yq-RrO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nZJ-kK-82a" secondAttribute="trailing" constant="-20" id="Vrk-L2-OPi"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" constant="13" id="WQc-s5-WuR"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="trailing" secondItem="nZJ-kK-82a" secondAttribute="trailing" id="eop-fa-0nX"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="width" secondItem="nZJ-kK-82a" secondAttribute="width" id="hcE-eQ-ilz"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" constant="13" id="p7f-f2-U7p"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="97s-AW-oSg"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="NewHoneyTip" id="18e-dL-cd1">

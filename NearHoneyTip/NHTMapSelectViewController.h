@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface NHTMapSelectViewController : UIViewController
 
 @property (strong, nonatomic) NSDictionary *tip;
 - (IBAction)cancelMap:(id)sender;
 - (IBAction)saveTip:(id)sender;
+@property (weak, nonatomic) IBOutlet MKMapView *tipMapView;
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
 @end

@@ -1326,6 +1326,9 @@ imgComment</string>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tipMapView" destination="nZJ-kK-82a" id="gs0-8Y-sMK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRd-St-UNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

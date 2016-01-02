@@ -88,7 +88,7 @@
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="saveTip:" destination="jYt-6B-8sE" id="287-Ct-SVo"/>
-                                <segue destination="03W-CH-jSa" kind="show" id="HVN-de-s5Y"/>
+                                <segue destination="03W-CH-jSa" kind="show" identifier="showTipMap" id="HVN-de-s5Y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

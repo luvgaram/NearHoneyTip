@@ -11,7 +11,7 @@
 
 @interface NHTMapSelectViewController : UIViewController
 
-@property (strong, nonatomic) NSDictionary *tip;
+@property (strong, nonatomic) NSMutableDictionary *tip;
 - (IBAction)cancelMap:(id)sender;
 - (IBAction)saveTip:(id)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *tipMapView;

@@ -9,7 +9,9 @@
 #import "NHTWriteViewController.h"
 #import "TWPhotoPickerController.h"
 
-@interface NHTWriteViewController ()
+@interface NHTWriteViewController (){
+    NSURLResponse *response;
+}
 
 @end
 
@@ -135,9 +137,24 @@ float longitude;
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
                                                                   delegate:self];
     [connection start];
-
+    [self connection:connection didReceiveResponse:response];
     NSLog(@"connection end");
+    //temp
+    
 }
+
+- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    long code = [httpResponse statusCode];
+    NSLog(@"connection response: %ld", code);
+    
+    if(code == 200){
+        
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
+    }
+    
+}
+
 
 - (void) postTip:(NSDictionary *)tipDictionary {
     
@@ -178,7 +195,7 @@ float longitude;
     [self postFormDataAtURL:[NSURL URLWithString:@"http://54.64.250.239:3000/tip"]
                    postData:body];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
+   
 }
 
 @end

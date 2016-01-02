@@ -55,11 +55,15 @@
         UITapGestureRecognizer *tapLikeButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLike:)];
         self.likeButton.target = tapLikeButton;
         self.likeButton.action= @selector(didTapLike:);
+        self.likeButtonImage.target = tapLikeButton;
+        self.likeButtonImage.action = @selector(didTapLike);
        
         NSString *distanceWithKm = [NSString stringWithFormat:@"%lu", (unsigned long)self.tip.distance];
         distanceWithKm = [distanceWithKm stringByAppendingString:@" m"];
         
+        /* //상세화면에서 거리 삭제.
         self.distance.text = distanceWithKm;
+         */
         //commentButton
         
         //mapView
@@ -125,7 +129,7 @@
         [self.postManager postLikeChangeMethod:@"PUT" Tip:self.tip.tipId];
     }
     
-     [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromDetail" object:self];
+   
     
 }
 

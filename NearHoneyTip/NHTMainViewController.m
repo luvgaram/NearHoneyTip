@@ -28,16 +28,17 @@
     [self.tableView addSubview: self.refreshManager];
     [self.refreshManager addTarget:self action:@selector(getLatestTips)forControlEvents:UIControlEventValueChanged];
     
+
     self.Q1 = [[NHTTipManager alloc]init];
     [self.Q1 tipsDidLoad];
-    
+
     UIButton *newPost = [[self view] viewWithTag:123];
-    newPost.layer.cornerRadius = (newPost.layer.bounds.size.width / 1.75) ;
+    newPost.layer.cornerRadius = (newPost.layer.bounds.size.width / 1.75);
     
-    //UITapGestureRecognizer *tapButtonForNewTip = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
-    
-    //newPost.gestureRecognizers = [[NSArray alloc] initWithObjects:tapButtonForNewTip, nil];
+    self.tipLoadingProgressBar.hidden = YES;
 }
+
+
 
 
 
@@ -165,31 +166,39 @@
                 tipDetailController.tip = tipCell.tip;
             }
             
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getLatestTips) name:@"backFromDetail" object:tipDetailController];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getLatestTips) name:@"backFromDetail" object:nil];
         }
     } else if ([segue.identifier isEqualToString:@"newTip"]) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newTipReload) name:@"backFromWrite" object:nil];
+       
+        self.tipLoadingProgressBar.hidden = NO;
+      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldNewTipReload) name:@"backFromWrite" object:nil];
+        
     } else if ([segue.identifier isEqualToString:@"showNearMap"]) {
         NHTMapViewController *mapViewController = (NHTMapViewController *)segue.destinationViewController;
         mapViewController.tipCollection = self.Q1.tipCollection;
     }
 }
 
--(void) newTipReload{
-    //sleep(2);
+-(void) shouldNewTipReload{
     
-    //[self refleshScrollViewDidEndDragging:self.refreshManager];
+    [self.tipLoadingProgressBar setProgress:0.4 animated:YES];
     NSLog(@"start to refresh");
     [self.Q1 removeAllTips];
+     [self.tipLoadingProgressBar setProgress:0.6 animated:YES];
     [self.Q1 tipsDidLoad];
-    
+    [self.tipLoadingProgressBar setProgress:0.8 animated:YES];
     [self.tableView reloadData];
+    
+    [self.tipLoadingProgressBar setProgress:1.0 animated:YES];
+    
     NSLog(@"end of refresh");
-
+    if(self.tipLoadingProgressBar.progress == 1.0){
+        self.tipLoadingProgressBar.hidden = YES;
+    }
+    
 }
 - (void) didTapCell:(UITapGestureRecognizer *) recognizer{
     
-
     NSLog(@"#####1%@", recognizer);
     [self showTipDetail:recognizer];
 }

@@ -8,14 +8,13 @@
 
 #import "NHTWriteViewController.h"
 #import "TWPhotoPickerController.h"
+#import "NHTMapSelectViewController.h"
 
 @interface NHTWriteViewController (){
     NSURLResponse *response;
 }
 
 @end
-
-static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
 
 @implementation NHTWriteViewController
 
@@ -66,11 +65,9 @@ float longitude;
      ];
 }
 
--(void) imageSelected:(NSArray *)arrayOfImages
-{
+-(void) imageSelected:(NSArray *)arrayOfImages {
     int count = 0;
-    for(NSString *imageURLString in arrayOfImages)
-    {
+    for(NSString *imageURLString in arrayOfImages) {
         // Asset URLs
         ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
         [assetsLibrary assetForURL:[NSURL URLWithString:imageURLString] resultBlock:^(ALAsset *asset) {
@@ -88,35 +85,25 @@ float longitude;
         count++;
     }
 }
--(void) imageSelectionCancelled
-{
-    
+-(void) imageSelectionCancelled {
 }
 
-- (IBAction)saveTip:(id)sender {
-    NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"ib_addphoto"], 1.0);
-    
-    if (_chosenImage) {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"showTipMap"]) {
+        NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"ib_addphoto"], 1.0);
         data = UIImageJPEGRepresentation(_chosenImage, 1.0);
-        NSDictionary *tipDictionary = @{
-                                        @"nickname":nickname,
-                                        @"profilephoto":profilephoto,
-                                        @"longitude":[NSNumber numberWithFloat:longitude],
-                                        @"latitude":[NSNumber numberWithFloat:latitude],
-                                        @"uid":uid,
-                                        @"storename":_storeName.text,
-                                        @"detail":_detail.text,
-                                        @"imageData":data
-                                        };
-        [self postTip:tipDictionary];
-        NSLog(@"saving tip for %@, uid: %@", _storeName.text, [tipDictionary objectForKey:(@"uid")]);
-        [self.navigationController popToRootViewControllerAnimated:YES];
         
-    } else {
-        NSLog(@"no image");
+        NSMutableDictionary *newTip = [[NSMutableDictionary alloc] init];
+        [newTip setObject:nickname forKey:@"nickname"];
+        [newTip setObject:profilephoto forKey:@"profilephoto"];
+        [newTip setObject:uid forKey:@"uid"];
+        [newTip setObject:_storeName.text forKey:@"storename"];
+        [newTip setObject:_detail.text forKey:@"detail"];
+        [newTip setObject:data forKey:@"imageData"];
+
+        NHTMapSelectViewController *mapViewController = (NHTMapSelectViewController *)segue.destinationViewController;
+        mapViewController.tip = newTip;
     }
-    
-    
 }
 
 - (IBAction)cancelWrite:(id)sender {
@@ -125,7 +112,6 @@ float longitude;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
 }
-
 
 - (void)postFormDataAtURL :(NSURL *)url postData:(NSData*)postData {
     
@@ -150,7 +136,7 @@ float longitude;
     
     if(code == 200){
         
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
     }
     
 }

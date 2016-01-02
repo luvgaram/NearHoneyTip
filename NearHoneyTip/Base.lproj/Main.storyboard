@@ -84,10 +84,11 @@
                                 <action selector="cancelWrite:" destination="jYt-6B-8sE" id="Szr-Bd-hD6"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="NP2-kI-glt">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="NP2-kI-glt">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="saveTip:" destination="jYt-6B-8sE" id="287-Ct-SVo"/>
+                                <segue destination="03W-CH-jSa" kind="show" identifier="showTipMap" id="HVN-de-s5Y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1232,6 +1233,78 @@ imgComment</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9K-78-aPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2235" y="1467"/>
+        </scene>
+        <!--NewHoneyTip-->
+        <scene sceneID="zEo-da-ak9">
+            <objects>
+                <viewController id="03W-CH-jSa" customClass="NHTMapSelectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hfy-Im-VwD"/>
+                        <viewControllerLayoutGuide type="bottom" id="hny-9c-ejD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lwI-H8-1cM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nZJ-kK-82a">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPb-RZ-InZ">
+                                <rect key="frame" x="41" y="77" width="239" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="GZe-Se-c15"/>
+                                </constraints>
+                                <string key="text">현재 위치가 맞다면 바로 Save를, 
+틀리면 상점 위치를 길게 클릭하고 Save해주세요.</string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" constant="13" id="6e7-i6-WyD"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="centerY" secondItem="nZJ-kK-82a" secondAttribute="centerY" id="97s-AW-oSg"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" constant="13" id="EcE-9C-3N3"/>
+                            <constraint firstItem="nZJ-kK-82a" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" id="K9g-YV-Ygo"/>
+                            <constraint firstItem="hny-9c-ejD" firstAttribute="top" secondItem="nZJ-kK-82a" secondAttribute="bottom" constant="-44" id="RhY-m7-B1S"/>
+                            <constraint firstItem="nZJ-kK-82a" firstAttribute="leading" secondItem="lwI-H8-1cM" secondAttribute="leadingMargin" constant="-20" id="S8J-yq-RrO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nZJ-kK-82a" secondAttribute="trailing" constant="-20" id="Vrk-L2-OPi"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" constant="13" id="WQc-s5-WuR"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="trailing" secondItem="nZJ-kK-82a" secondAttribute="trailing" id="eop-fa-0nX"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="width" secondItem="nZJ-kK-82a" secondAttribute="width" id="hcE-eQ-ilz"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" constant="13" id="p7f-f2-U7p"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="97s-AW-oSg"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="NewHoneyTip" id="18e-dL-cd1">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="e0B-2i-bRr">
+                            <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelMap:" destination="03W-CH-jSa" id="gpq-CW-heb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="jd9-9b-urY">
+                            <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveTip:" destination="03W-CH-jSa" id="I8J-tm-1cg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tipMapView" destination="nZJ-kK-82a" id="gs0-8Y-sMK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oRd-St-UNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2199" y="659"/>
         </scene>
     </scenes>
     <resources>

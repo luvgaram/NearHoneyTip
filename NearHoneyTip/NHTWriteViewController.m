@@ -18,11 +18,13 @@
 
 @implementation NHTWriteViewController
 
+
 NSString *uid;
 NSString *nickname;
 NSString *profilephoto;
 float latitude;
 float longitude;
+static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
 
 - (void)viewDidLoad {
     [super viewDidLoad];

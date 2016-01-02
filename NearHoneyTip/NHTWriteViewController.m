@@ -8,12 +8,11 @@
 
 #import "NHTWriteViewController.h"
 #import "TWPhotoPickerController.h"
+#import "NHTMapSelectViewController.h"
 
 @interface NHTWriteViewController ()
 
 @end
-
-static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
 
 @implementation NHTWriteViewController
 
@@ -64,11 +63,9 @@ float longitude;
      ];
 }
 
--(void) imageSelected:(NSArray *)arrayOfImages
-{
+-(void) imageSelected:(NSArray *)arrayOfImages {
     int count = 0;
-    for(NSString *imageURLString in arrayOfImages)
-    {
+    for(NSString *imageURLString in arrayOfImages) {
         // Asset URLs
         ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
         [assetsLibrary assetForURL:[NSURL URLWithString:imageURLString] resultBlock:^(ALAsset *asset) {
@@ -86,97 +83,30 @@ float longitude;
         count++;
     }
 }
--(void) imageSelectionCancelled
-{
-    
+-(void) imageSelectionCancelled {
 }
 
-- (IBAction)saveTip:(id)sender {
-    NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"ib_addphoto"], 1.0);
-    
-    if (_chosenImage) {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"showTipMap"]) {
+        NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"ib_addphoto"], 1.0);
         data = UIImageJPEGRepresentation(_chosenImage, 1.0);
-        NSDictionary *tipDictionary = @{
-                                        @"nickname":nickname,
-                                        @"profilephoto":profilephoto,
-                                        @"longitude":[NSNumber numberWithFloat:longitude],
-                                        @"latitude":[NSNumber numberWithFloat:latitude],
-                                        @"uid":uid,
-                                        @"storename":_storeName.text,
-                                        @"detail":_detail.text,
-                                        @"imageData":data
-                                        };
-        [self postTip:tipDictionary];
-        NSLog(@"saving tip for %@, uid: %@", _storeName.text, [tipDictionary objectForKey:(@"uid")]);
-        [self.navigationController popToRootViewControllerAnimated:YES];
         
-    } else {
-        NSLog(@"no image");
+        NSMutableDictionary *newTip = [[NSMutableDictionary alloc] init];
+        [newTip setObject:nickname forKey:@"nickname"];
+        [newTip setObject:profilephoto forKey:@"profilephoto"];
+        [newTip setObject:uid forKey:@"uid"];
+        [newTip setObject:_storeName.text forKey:@"storename"];
+        [newTip setObject:_detail.text forKey:@"detail"];
+        [newTip setObject:data forKey:@"imageData"];
+
+        NHTMapSelectViewController *mapViewController = (NHTMapSelectViewController *)segue.destinationViewController;
+        mapViewController.tip = newTip;
     }
-    
-    
 }
 
 - (IBAction)cancelWrite:(id)sender {
     NSLog(@"%@",self.navigationController.viewControllers);
     [self.navigationController popToRootViewControllerAnimated:YES];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
-}
-
-
-- (void)postFormDataAtURL :(NSURL *)url postData:(NSData*)postData {
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    request.HTTPMethod = @"POST";
-    NSString* contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
-                                                                  delegate:self];
-    [connection start];
-
-    NSLog(@"connection end");
-}
-
-- (void) postTip:(NSDictionary *)tipDictionary {
-    
-    NSLog(@"start post");
-    
-    NSMutableData* body = [NSMutableData data];
-    NSData *data = tipDictionary[@"imageData"];
-    if (data) {
-        [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"upload\"; filename=\"%@.jpg\"\r\n", tipDictionary[@"storename"]] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[NSData dataWithData:data]];
-        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-    }
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"storename\"\r\n\r\n%@", tipDictionary[@"storename"]] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"tipdetail\"\r\n\r\n%@", tipDictionary[@"detail"]] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"uid\"\r\n\r\n%@", tipDictionary[@"uid"]] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"nickname\"\r\n\r\n%@", tipDictionary[@"nickname"]] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"profilephoto\"\r\n\r\n%@", tipDictionary[@"profilephoto"]] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"longitude\"\r\n\r\n%@", tipDictionary[@"longitude"]] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"latitude\"\r\n\r\n%@", tipDictionary[@"latitude"]] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-
-    [self postFormDataAtURL:[NSURL URLWithString:@"http://54.64.250.239:3000/tip"]
-                   postData:body];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
 }

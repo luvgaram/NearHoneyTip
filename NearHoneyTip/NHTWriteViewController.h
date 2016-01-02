@@ -21,4 +21,5 @@ UIImagePickerControllerDelegate, CustomeImagePickerDelegate>
 //- (IBAction) pickImage:(id)sender;
 
 
+- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 @end

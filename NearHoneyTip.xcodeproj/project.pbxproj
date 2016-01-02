@@ -21,7 +21,6 @@
 		6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C06D1C1711D80021FEB6 /* NHTAlarmsController.m */; };
 		6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0701C1712210021FEB6 /* NHTProfileController.m */; };
 		6FD0C0741C171B8F0021FEB6 /* NHTSideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */; };
-		6FF0DB201C2A2547000EA649 /* NHTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0DB1F1C2A2547000EA649 /* NHTWebViewController.m */; };
 		A82A3D541C088FDE0057F048 /* NHTBasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A82A3D531C088FDE0057F048 /* NHTBasicModel.m */; };
 		A8368B3F1C2140FE00B4D0F3 /* nht_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */; };
 		A86327261C2A05E5001B293B /* CameraCell_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86327251C2A05E5001B293B /* CameraCell_5.xib */; };
@@ -124,8 +123,6 @@
 		6FD0C0701C1712210021FEB6 /* NHTProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTProfileController.m; sourceTree = "<group>"; };
 		6FD0C0721C171B8F0021FEB6 /* NHTSideTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTSideTableViewController.h; sourceTree = "<group>"; };
 		6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTSideTableViewController.m; sourceTree = "<group>"; };
-		6FF0DB1E1C2A2547000EA649 /* NHTWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTWebViewController.h; sourceTree = "<group>"; };
-		6FF0DB1F1C2A2547000EA649 /* NHTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTWebViewController.m; sourceTree = "<group>"; };
 		904A7464ED7B0C7A3B186D8E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A82A3D521C088F930057F048 /* NHTBasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTBasicModel.h; sourceTree = "<group>"; };
 		A82A3D531C088FDE0057F048 /* NHTBasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTBasicModel.m; sourceTree = "<group>"; };
@@ -263,10 +260,10 @@
 				A863272A1C2A061A001B293B /* CameraCell.xib */,
 				A863272C1C2A061F001B293B /* CameraFocusSquare.h */,
 				A863272F1C2A062A001B293B /* ColorUtil.h */,
-				A86327331C2A064A001B293B /* CustomeImagePicker.m */,
 				A86327301C2A063C001B293B /* ColorUtil.m */,
 				A863273A1C2A06B3001B293B /* OLGhostAlertView.m */,
 				A86327321C2A0644001B293B /* CustomeImagePicker.h */,
+				A86327331C2A064A001B293B /* CustomeImagePicker.m */,
 				A86327351C2A0651001B293B /* CustomeImagePicker.xib */,
 				A863272D1C2A0625001B293B /* CameraFocusSquare.m */,
 				A86327251C2A05E5001B293B /* CameraCell_5.xib */,
@@ -345,8 +342,6 @@
 				CE3355B51BE9CB9100B77DEC /* Supporting Files */,
 				A82A3D521C088F930057F048 /* NHTBasicModel.h */,
 				A82A3D531C088FDE0057F048 /* NHTBasicModel.m */,
-				6FF0DB1E1C2A2547000EA649 /* NHTWebViewController.h */,
-				6FF0DB1F1C2A2547000EA649 /* NHTWebViewController.m */,
 			);
 			path = NearHoneyTip;
 			sourceTree = "<group>";
@@ -699,7 +694,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A863273E1C2A06C6001B293B /* PhotoCell.m in Sources */,
-				6FF0DB201C2A2547000EA649 /* NHTWebViewController.m in Sources */,
 				CE51A6CB1C284BA3004BE7B0 /* NHTButtonTapPost.m in Sources */,
 				6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */,
 				A8925E581C33B237008510FC /* NHTAnnotation.m in Sources */,

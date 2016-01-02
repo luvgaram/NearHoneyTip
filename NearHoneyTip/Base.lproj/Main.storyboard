@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMS-a5-r9b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMS-a5-r9b">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -217,22 +217,6 @@ imgComment</string>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" red="0.90196078431372551" green="0.49411764705882355" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6A0-zl-ljP">
-                                <rect key="frame" x="251" y="309" width="69" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="jtW-bv-Ua8"/>
-                                    <constraint firstAttribute="width" constant="69" id="z2O-Zx-P00"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
-                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="jtW-bv-Ua8"/>
-                                        <exclude reference="z2O-Zx-P00"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h31-dt-v0W">
                                 <rect key="frame" x="20" y="396" width="285" height="79"/>
                             </mapView>
@@ -241,7 +225,6 @@ imgComment</string>
                         <constraints>
                             <constraint firstItem="Fw5-Ym-iwA" firstAttribute="width" secondItem="SIk-PJ-YmG" secondAttribute="width" multiplier="4:5" id="3WM-Pq-wvJ"/>
                             <constraint firstItem="qNe-2v-3Du" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="5Xb-3e-cWd"/>
-                            <constraint firstAttribute="trailing" secondItem="6A0-zl-ljP" secondAttribute="trailing" id="6Uj-6O-gM6"/>
                             <constraint firstItem="qNe-2v-3Du" firstAttribute="top" secondItem="ol3-f4-ypg" secondAttribute="bottom" constant="2" id="6Vg-5y-SeJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A0k-AJ-niG" secondAttribute="trailing" constant="-24" id="6uR-Cs-cy6"/>
                             <constraint firstItem="A0k-AJ-niG" firstAttribute="top" secondItem="h31-dt-v0W" secondAttribute="bottom" constant="5" id="AGJ-R3-iJu"/>
@@ -249,7 +232,6 @@ imgComment</string>
                             <constraint firstItem="7G9-P5-pMR" firstAttribute="top" secondItem="ol3-f4-ypg" secondAttribute="bottom" constant="2" id="Bxf-8t-otG"/>
                             <constraint firstItem="Fw5-Ym-iwA" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="INY-gI-nmL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h31-dt-v0W" secondAttribute="trailing" constant="-5" id="M5c-xA-rii"/>
-                            <constraint firstItem="6A0-zl-ljP" firstAttribute="leading" secondItem="BFH-EB-tAe" secondAttribute="trailing" id="OdA-W6-SOJ"/>
                             <constraint firstItem="h31-dt-v0W" firstAttribute="top" secondItem="Fw5-Ym-iwA" secondAttribute="bottom" constant="-4" id="P1A-Y5-5yv"/>
                             <constraint firstItem="JcF-KA-RC2" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="PpD-Ld-Bfg"/>
                             <constraint firstItem="IX7-qS-pyM" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="V3k-wL-Zr4"/>
@@ -258,8 +240,6 @@ imgComment</string>
                             <constraint firstItem="BFH-EB-tAe" firstAttribute="top" secondItem="JcF-KA-RC2" secondAttribute="bottom" constant="2" id="eAj-AE-1dF"/>
                             <constraint firstItem="IX7-qS-pyM" firstAttribute="top" secondItem="qNe-2v-3Du" secondAttribute="bottom" constant="1" id="gYu-ay-Ylk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h31-dt-v0W" secondAttribute="trailing" constant="-5" id="h8S-Yb-ygK"/>
-                            <constraint firstItem="6A0-zl-ljP" firstAttribute="bottom" secondItem="BFH-EB-tAe" secondAttribute="bottom" id="ifM-WT-Gko"/>
-                            <constraint firstItem="Fw5-Ym-iwA" firstAttribute="top" secondItem="6A0-zl-ljP" secondAttribute="bottom" constant="1" id="jpc-ti-ngb"/>
                             <constraint firstItem="A0k-AJ-niG" firstAttribute="leading" secondItem="SIk-PJ-YmG" secondAttribute="leadingMargin" constant="-24" id="jsb-Mn-EA7"/>
                             <constraint firstAttribute="leadingMargin" secondItem="h31-dt-v0W" secondAttribute="leading" id="mkw-9X-unL"/>
                             <constraint firstItem="Fw5-Ym-iwA" firstAttribute="top" secondItem="BFH-EB-tAe" secondAttribute="bottom" constant="1" id="o5j-dd-7f0"/>
@@ -270,7 +250,6 @@ imgComment</string>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="6Uj-6O-gM6"/>
                                 <exclude reference="toN-tn-EOG"/>
                             </mask>
                         </variation>
@@ -287,7 +266,6 @@ imgComment</string>
                     <connections>
                         <outlet property="commentButton" destination="ReF-mr-b76" id="UF8-nV-rMh"/>
                         <outlet property="commentButtonImage" destination="8Va-Hh-1M4" id="ckj-MT-J75"/>
-                        <outlet property="distance" destination="6A0-zl-ljP" id="3ci-IU-MJb"/>
                         <outlet property="likeButton" destination="78k-lu-ZoQ" id="mab-14-Ww3"/>
                         <outlet property="likeButtonImage" destination="m0k-4L-21a" id="lQ6-Mj-5bl"/>
                         <outlet property="searchDisplayController" destination="sQ9-SK-eXl" id="Ict-AY-ZRT"/>
@@ -320,41 +298,6 @@ imgComment</string>
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1865" y="-79"/>
-        </scene>
-        <!--Web View Controller-->
-        <scene sceneID="lpH-rg-r5e">
-            <objects>
-                <viewController id="vAe-q0-EsF" customClass="NHTWebViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JE9-sX-HJc"/>
-                        <viewControllerLayoutGuide type="bottom" id="7nA-gQ-90H"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="beN-hh-8F1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PdO-1Z-t8d">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="PdO-1Z-t8d" firstAttribute="bottom" secondItem="7nA-gQ-90H" secondAttribute="top" id="K85-hh-wWV"/>
-                            <constraint firstItem="PdO-1Z-t8d" firstAttribute="leading" secondItem="beN-hh-8F1" secondAttribute="leading" id="MUN-Uk-TMq"/>
-                            <constraint firstAttribute="trailing" secondItem="PdO-1Z-t8d" secondAttribute="trailing" id="bW9-Yw-7qJ"/>
-                            <constraint firstItem="PdO-1Z-t8d" firstAttribute="top" secondItem="beN-hh-8F1" secondAttribute="top" id="kOq-Kq-oYH"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="U9b-Zx-9TQ"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="myPage" destination="PdO-1Z-t8d" id="YLc-ea-0Ly"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VGS-Db-ne3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2240" y="-72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yGx-lY-bro">
@@ -390,9 +333,14 @@ imgComment</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpE-hT-31l" userLabel="mainViewTable">
                                 <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <progressView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.20000000000000001" id="JH3-ti-v6o" userLabel="tipLoading">
+                                    <rect key="frame" x="0.0" y="64" width="328" height="3"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="progressTintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </progressView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="152" id="VIM-US-Nz2" userLabel="mainViewTableCell" customClass="NHTMainTableCell">
-                                        <rect key="frame" x="0.0" y="92" width="328" height="152"/>
+                                        <rect key="frame" x="0.0" y="95" width="328" height="152"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VIM-US-Nz2" id="9sJ-XQ-D3U">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="151"/>
@@ -672,6 +620,7 @@ imgComment</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="wpE-hT-31l" id="lLz-mF-Zhl"/>
+                        <outlet property="tipLoadingProgressBar" destination="JH3-ti-v6o" id="Dqz-44-DBW"/>
                         <segue destination="FRF-8D-a5C" kind="push" identifier="showTipDetail" id="dD3-sg-Vhc"/>
                     </connections>
                 </viewController>

@@ -29,6 +29,7 @@
 #import "CameraFocusSquare.h"
 #import "OLGhostAlertView.h"
 #import <MapKit/MapKit.h>
+
 @protocol YCameraViewControllerDelegate;
 
 @interface YCameraViewController : UIViewController <UINavigationControllerDelegate,UIGestureRecognizerDelegate>{

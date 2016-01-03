@@ -84,10 +84,11 @@
                                 <action selector="cancelWrite:" destination="jYt-6B-8sE" id="Szr-Bd-hD6"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="NP2-kI-glt">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="NP2-kI-glt">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="saveTip:" destination="jYt-6B-8sE" id="287-Ct-SVo"/>
+                                <segue destination="03W-CH-jSa" kind="show" identifier="showTipMap" id="HVN-de-s5Y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -216,22 +217,6 @@ imgComment</string>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" red="0.90196078431372551" green="0.49411764705882355" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6A0-zl-ljP">
-                                <rect key="frame" x="251" y="309" width="69" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="jtW-bv-Ua8"/>
-                                    <constraint firstAttribute="width" constant="69" id="z2O-Zx-P00"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
-                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="jtW-bv-Ua8"/>
-                                        <exclude reference="z2O-Zx-P00"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h31-dt-v0W">
                                 <rect key="frame" x="20" y="396" width="285" height="79"/>
                             </mapView>
@@ -240,7 +225,6 @@ imgComment</string>
                         <constraints>
                             <constraint firstItem="Fw5-Ym-iwA" firstAttribute="width" secondItem="SIk-PJ-YmG" secondAttribute="width" multiplier="4:5" id="3WM-Pq-wvJ"/>
                             <constraint firstItem="qNe-2v-3Du" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="5Xb-3e-cWd"/>
-                            <constraint firstAttribute="trailing" secondItem="6A0-zl-ljP" secondAttribute="trailing" id="6Uj-6O-gM6"/>
                             <constraint firstItem="qNe-2v-3Du" firstAttribute="top" secondItem="ol3-f4-ypg" secondAttribute="bottom" constant="2" id="6Vg-5y-SeJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A0k-AJ-niG" secondAttribute="trailing" constant="-24" id="6uR-Cs-cy6"/>
                             <constraint firstItem="A0k-AJ-niG" firstAttribute="top" secondItem="h31-dt-v0W" secondAttribute="bottom" constant="5" id="AGJ-R3-iJu"/>
@@ -248,7 +232,6 @@ imgComment</string>
                             <constraint firstItem="7G9-P5-pMR" firstAttribute="top" secondItem="ol3-f4-ypg" secondAttribute="bottom" constant="2" id="Bxf-8t-otG"/>
                             <constraint firstItem="Fw5-Ym-iwA" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="INY-gI-nmL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h31-dt-v0W" secondAttribute="trailing" constant="-5" id="M5c-xA-rii"/>
-                            <constraint firstItem="6A0-zl-ljP" firstAttribute="leading" secondItem="BFH-EB-tAe" secondAttribute="trailing" id="OdA-W6-SOJ"/>
                             <constraint firstItem="h31-dt-v0W" firstAttribute="top" secondItem="Fw5-Ym-iwA" secondAttribute="bottom" constant="-4" id="P1A-Y5-5yv"/>
                             <constraint firstItem="JcF-KA-RC2" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="PpD-Ld-Bfg"/>
                             <constraint firstItem="IX7-qS-pyM" firstAttribute="centerX" secondItem="SIk-PJ-YmG" secondAttribute="centerX" id="V3k-wL-Zr4"/>
@@ -257,8 +240,6 @@ imgComment</string>
                             <constraint firstItem="BFH-EB-tAe" firstAttribute="top" secondItem="JcF-KA-RC2" secondAttribute="bottom" constant="2" id="eAj-AE-1dF"/>
                             <constraint firstItem="IX7-qS-pyM" firstAttribute="top" secondItem="qNe-2v-3Du" secondAttribute="bottom" constant="1" id="gYu-ay-Ylk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h31-dt-v0W" secondAttribute="trailing" constant="-5" id="h8S-Yb-ygK"/>
-                            <constraint firstItem="6A0-zl-ljP" firstAttribute="bottom" secondItem="BFH-EB-tAe" secondAttribute="bottom" id="ifM-WT-Gko"/>
-                            <constraint firstItem="Fw5-Ym-iwA" firstAttribute="top" secondItem="6A0-zl-ljP" secondAttribute="bottom" constant="1" id="jpc-ti-ngb"/>
                             <constraint firstItem="A0k-AJ-niG" firstAttribute="leading" secondItem="SIk-PJ-YmG" secondAttribute="leadingMargin" constant="-24" id="jsb-Mn-EA7"/>
                             <constraint firstAttribute="leadingMargin" secondItem="h31-dt-v0W" secondAttribute="leading" id="mkw-9X-unL"/>
                             <constraint firstItem="Fw5-Ym-iwA" firstAttribute="top" secondItem="BFH-EB-tAe" secondAttribute="bottom" constant="1" id="o5j-dd-7f0"/>
@@ -269,7 +250,6 @@ imgComment</string>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="6Uj-6O-gM6"/>
                                 <exclude reference="toN-tn-EOG"/>
                             </mask>
                         </variation>
@@ -286,7 +266,6 @@ imgComment</string>
                     <connections>
                         <outlet property="commentButton" destination="ReF-mr-b76" id="UF8-nV-rMh"/>
                         <outlet property="commentButtonImage" destination="8Va-Hh-1M4" id="ckj-MT-J75"/>
-                        <outlet property="distance" destination="6A0-zl-ljP" id="3ci-IU-MJb"/>
                         <outlet property="likeButton" destination="78k-lu-ZoQ" id="mab-14-Ww3"/>
                         <outlet property="likeButtonImage" destination="m0k-4L-21a" id="lQ6-Mj-5bl"/>
                         <outlet property="searchDisplayController" destination="sQ9-SK-eXl" id="Ict-AY-ZRT"/>
@@ -319,41 +298,6 @@ imgComment</string>
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1865" y="-79"/>
-        </scene>
-        <!--Web View Controller-->
-        <scene sceneID="lpH-rg-r5e">
-            <objects>
-                <viewController id="vAe-q0-EsF" customClass="NHTWebViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JE9-sX-HJc"/>
-                        <viewControllerLayoutGuide type="bottom" id="7nA-gQ-90H"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="beN-hh-8F1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PdO-1Z-t8d">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="PdO-1Z-t8d" firstAttribute="bottom" secondItem="7nA-gQ-90H" secondAttribute="top" id="K85-hh-wWV"/>
-                            <constraint firstItem="PdO-1Z-t8d" firstAttribute="leading" secondItem="beN-hh-8F1" secondAttribute="leading" id="MUN-Uk-TMq"/>
-                            <constraint firstAttribute="trailing" secondItem="PdO-1Z-t8d" secondAttribute="trailing" id="bW9-Yw-7qJ"/>
-                            <constraint firstItem="PdO-1Z-t8d" firstAttribute="top" secondItem="beN-hh-8F1" secondAttribute="top" id="kOq-Kq-oYH"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="U9b-Zx-9TQ"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="myPage" destination="PdO-1Z-t8d" id="YLc-ea-0Ly"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VGS-Db-ne3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2240" y="-72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yGx-lY-bro">
@@ -389,9 +333,14 @@ imgComment</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpE-hT-31l" userLabel="mainViewTable">
                                 <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <progressView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.20000000000000001" id="JH3-ti-v6o" userLabel="tipLoading">
+                                    <rect key="frame" x="0.0" y="64" width="328" height="3"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="progressTintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </progressView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="152" id="VIM-US-Nz2" userLabel="mainViewTableCell" customClass="NHTMainTableCell">
-                                        <rect key="frame" x="0.0" y="92" width="328" height="152"/>
+                                        <rect key="frame" x="0.0" y="95" width="328" height="152"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VIM-US-Nz2" id="9sJ-XQ-D3U">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="151"/>
@@ -671,6 +620,7 @@ imgComment</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="wpE-hT-31l" id="lLz-mF-Zhl"/>
+                        <outlet property="tipLoadingProgressBar" destination="JH3-ti-v6o" id="Dqz-44-DBW"/>
                         <segue destination="FRF-8D-a5C" kind="push" identifier="showTipDetail" id="dD3-sg-Vhc"/>
                     </connections>
                 </viewController>
@@ -1283,6 +1233,78 @@ imgComment</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9K-78-aPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2235" y="1467"/>
+        </scene>
+        <!--NewHoneyTip-->
+        <scene sceneID="zEo-da-ak9">
+            <objects>
+                <viewController id="03W-CH-jSa" customClass="NHTMapSelectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hfy-Im-VwD"/>
+                        <viewControllerLayoutGuide type="bottom" id="hny-9c-ejD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lwI-H8-1cM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nZJ-kK-82a">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPb-RZ-InZ">
+                                <rect key="frame" x="41" y="77" width="239" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="GZe-Se-c15"/>
+                                </constraints>
+                                <string key="text">현재 위치가 맞다면 바로 Save를, 
+틀리면 상점 위치를 길게 클릭하고 Save해주세요.</string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" constant="13" id="6e7-i6-WyD"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="centerY" secondItem="nZJ-kK-82a" secondAttribute="centerY" id="97s-AW-oSg"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" constant="13" id="EcE-9C-3N3"/>
+                            <constraint firstItem="nZJ-kK-82a" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" id="K9g-YV-Ygo"/>
+                            <constraint firstItem="hny-9c-ejD" firstAttribute="top" secondItem="nZJ-kK-82a" secondAttribute="bottom" constant="-44" id="RhY-m7-B1S"/>
+                            <constraint firstItem="nZJ-kK-82a" firstAttribute="leading" secondItem="lwI-H8-1cM" secondAttribute="leadingMargin" constant="-20" id="S8J-yq-RrO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nZJ-kK-82a" secondAttribute="trailing" constant="-20" id="Vrk-L2-OPi"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" constant="13" id="WQc-s5-WuR"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="trailing" secondItem="nZJ-kK-82a" secondAttribute="trailing" id="eop-fa-0nX"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="width" secondItem="nZJ-kK-82a" secondAttribute="width" id="hcE-eQ-ilz"/>
+                            <constraint firstItem="QPb-RZ-InZ" firstAttribute="top" secondItem="Hfy-Im-VwD" secondAttribute="bottom" constant="13" id="p7f-f2-U7p"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="97s-AW-oSg"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="NewHoneyTip" id="18e-dL-cd1">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="e0B-2i-bRr">
+                            <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelMap:" destination="03W-CH-jSa" id="gpq-CW-heb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="jd9-9b-urY">
+                            <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveTip:" destination="03W-CH-jSa" id="I8J-tm-1cg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tipMapView" destination="nZJ-kK-82a" id="gs0-8Y-sMK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oRd-St-UNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2199" y="659"/>
         </scene>
     </scenes>
     <resources>

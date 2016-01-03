@@ -17,9 +17,9 @@ UIImagePickerControllerDelegate, CustomeImagePickerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) UIImage *chosenImage;
 
-- (IBAction)saveTip:(id)sender;
 - (IBAction)cancelWrite:(id)sender;
 //- (IBAction) pickImage:(id)sender;
 
 
+- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 @end

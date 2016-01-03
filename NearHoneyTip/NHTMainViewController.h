@@ -12,6 +12,7 @@
 
 @interface NHTMainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIProgressView *tipLoadingProgressBar;
 
 @property (strong, nonatomic) UIRefreshControl *refreshManager;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -20,5 +21,6 @@
 
 - (void)refleshScrollViewDidEndDragging:(UIScrollView *)refreshManager;
 - (void)getLatestTips;
-- (void)newTipReload;
+- (void)shouldNewTipReload;
+
 @end

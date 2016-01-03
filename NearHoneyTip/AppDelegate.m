@@ -37,8 +37,7 @@ NSMutableData *data;
     
     NSLog(@"start to get location");
     geocoder = [[CLGeocoder alloc] init];
-    if (self.locationManager == nil)
-    {
+    if (self.locationManager == nil) {
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         self.locationManager.delegate = self;

@@ -27,5 +27,7 @@
 
 
 - (void)setCellWithTip:(NSDictionary*)tip;
+- (void)setCellWithUserTip:(NHTTip*)tip;
+
 @end
 

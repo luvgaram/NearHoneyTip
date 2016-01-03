@@ -31,7 +31,7 @@
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *uidIdentifier = @"UserDefault";
-    
+
     if ([preferences objectForKey:uidIdentifier] != nil) {
         NSString *uid = [preferences objectForKey:uidIdentifier];
         NSString *includeRTs = @"true";
@@ -43,9 +43,13 @@
         NSData *jsonData = [NSData dataWithContentsOfURL:url];
         NSArray *loadedTipsArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
         
+        NSLog(@"my tip numbers: %d", [loadedTipsArray count]);
+        
         for(int i = 0; i < [loadedTipsArray count] ; i++){
-            [self.tipCollection addTip: [loadedTipsArray objectAtIndex: i]];
+            [self.tipCollection addMyTip: [loadedTipsArray objectAtIndex: i]];
             //for inverse : [loadedTipsArray count] - (i + 1)
+            
+            NSLog(@"mytipsDidload: %@", [loadedTipsArray objectAtIndex: i]);
         }
     }
     
@@ -111,7 +115,7 @@
 }
  */
 
--(NSInteger)countOfTipCollection{
+- (NSInteger)countOfTipCollection{
     if(self.tipCollection){
         return [self.tipCollection countOfTips];
     }
@@ -120,8 +124,12 @@
 };
 
 
-    -(NSObject*)objectAtIndex:(NSUInteger)index{
+- (NSObject*)objectAtIndex:(NSUInteger)index{
     return [self.tipCollection objectAtIndex:index];
+}
+
+- (NSDictionary*)dictionaryAtIndex:(NSUInteger)index{
+    return (NSDictionary*) [self.tipCollection objectAtIndex:index];
 }
 
 @end

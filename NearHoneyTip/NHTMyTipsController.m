@@ -10,8 +10,7 @@
 #import "NHTTip.h"
 #import "NHTDetailViewController.h"
 #import "NHTTipManager.h"
-#import "NHTMainTableCell.h"
-#import "NHTMytipstableCell.h"
+#import "NHTMytipsTableCell.h"
 
 @interface NHTMyTipsController ()
 
@@ -19,12 +18,23 @@
 @end
 
 @implementation NHTMyTipsController
+NSString *prefUid;
+NSString *prefNickname;
+NSString *prefProfilephoto;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.Q1 = [[NHTTipManager alloc]init];
     [self.Q1 mytipsDidLoad];
     
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    prefUid = [preferences objectForKey:@"UserDefault"];
+    prefNickname = [preferences objectForKey:@"userNickname"];
+    prefProfilephoto = [preferences objectForKey:@"userProfileImagePath"];
+    NSLog(@"userViewDidLoad: %@", prefUid);
+    NSLog(@"userViewDidLoad: %@", prefNickname);
+    NSLog(@"my tip Q1: %@", self.Q1);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,13 +44,10 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-#warning Incomplete implementation, return the number of rows
     NSLog(@"the number of cell : %ld", (long)[self.Q1 countOfTipCollection] );
     return [self.Q1 countOfTipCollection];
 }
@@ -48,12 +55,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"MytipCell";
-    NHTMainTableCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
+    NHTMytipsTableCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
     NSLog(@"FOR CELL%@",[self.Q1 objectAtIndex:indexPath.row]);
     //if([[[self.Q1 objectAtIndex:indexPath.row] class] isKindOfClass: [NSDictionary class]]){
-    NSDictionary *tip = [self.Q1 objectAtIndex:indexPath.row];
     
-    [cell setCellWithTip:tip];
+    NSLog(@"myTip indexPath.row: %d", indexPath.row);
+    
+    NHTTip *tip = [self.Q1 objectAtIndex:indexPath.row];
+
+    NHTTip *newTip = tip;
+    newTip.userNickname = prefNickname;
+    newTip.userProfileImg = prefProfilephoto;
+    
+    NSLog(@"my newTip: %@", newTip.storeName);
+    NSLog(@"my newTip: %@", newTip.userNickname);
+    
+    [cell setCellWithUserTip:newTip];
     //};
     UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
     
@@ -61,8 +78,6 @@
     
     return cell;
 }
-
-
 
 /*
 // Override to support conditional editing of the table view.

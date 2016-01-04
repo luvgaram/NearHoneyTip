@@ -115,13 +115,16 @@
     if(self.tipCollection){
         return [self.tipCollection countOfTips];
     }
-    
     return -1;
 };
 
 
-    -(NSObject*)objectAtIndex:(NSUInteger)index{
+-(NSObject*)objectAtIndex:(NSUInteger)index{
     return [self.tipCollection objectAtIndex:index];
+}
+
+- (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate{
+    return [self.tipCollection filteredArrayUsingPredicate:predicate];
 }
 
 @end

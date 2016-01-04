@@ -12,7 +12,9 @@
 #import "NHTMainTableCell.h"
 #import "NHTMapViewController.h"
 
-@interface NHTMainViewController ()
+@interface NHTMainViewController (){
+     NSArray *searchResults;
+}
 
 @end
 
@@ -27,7 +29,6 @@
     
     [self.tableView addSubview: self.refreshManager];
     [self.refreshManager addTarget:self action:@selector(getLatestTips)forControlEvents:UIControlEventValueChanged];
-    
 
     self.Q1 = [[NHTTipManager alloc]init];
     [self.Q1 tipsDidLoad];
@@ -36,13 +37,24 @@
     newPost.layer.cornerRadius = (newPost.layer.bounds.size.width / 1.75);
     
     self.tipLoadingProgressBar.hidden = YES;
+    
+    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:self];
+    // Use the current view controller to update the search results.
+    searchController.searchResultsUpdater = self;
+    // Install the search bar as the table header.
+    self.navigationItem.titleView = searchController.searchBar;
+    // It is usually good to set the presentation context.
+    self.definesPresentationContext = YES;
+   
+    
 }
 
-
-
-
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+   
     if(indexPath){
         return self.tableView.bounds.size.height / 4;
     }
@@ -100,8 +112,14 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"the number of cell : %ld", (long)[self.Q1 countOfTipCollection] );
-    return [self.Q1 countOfTipCollection];
+    //NSLog(@"the number of cell : %ld", (long)[self.Q1 countOfTipCollection] );
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [searchResults count];
+        
+    } else {
+        return [self.Q1 countOfTipCollection];
+    }
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -135,9 +153,15 @@
     NHTMainTableCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
     NSLog(@"FOR CELL%@",[self.Q1 objectAtIndex:indexPath.row]);
     //if([[[self.Q1 objectAtIndex:indexPath.row] class] isKindOfClass: [NSDictionary class]]){
-    NSDictionary *tip = [self.Q1 objectAtIndex:indexPath.row];
     
-    [cell setCellWithTip:tip];
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+       [cell setCellWithTip:[searchResults objectAtIndex:indexPath.row]];
+    } else {
+        NSDictionary *tip = [self.Q1 objectAtIndex:indexPath.row];
+        [cell setCellWithTip:tip];
+    }
+   
     
     //};
     UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
@@ -150,24 +174,35 @@
     NSLog(@"#####3-1%@", sender);
     if ([segue.identifier isEqual:@"showTipDetail"]) {
         
-        NSLog(@"#####3-2%@", sender);
-        NSLog(@"####sender target? %@",[sender view]);
-        NHTMainTableCell *tipCell = [sender view];
+        NSIndexPath *indexPath = nil;
+        NHTMainTableCell *tipCell = nil;
+        NSObject *targetCell = nil;
         
-       
-        
-        if(tipCell){
-            NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
-           
-            if(tipCell.tip){
-                
-                NSLog(@"this is tip %@", tipCell.tip);
-            
-                tipDetailController.tip = tipCell.tip;
-            }
-            
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getLatestTips) name:@"backFromDetail" object:nil];
+        if (self.searchDisplayController.active) {
+            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            targetCell = [searchResults objectAtIndex:indexPath.row];
+        } else {
+            tipCell = [sender view];
         }
+        
+       // NSLog(@"#####3-2%@", sender);
+        //NSLog(@"####sender target? %@",[sender view]);
+        
+        NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
+        if(tipCell){
+            if(tipCell.tip){
+                NSLog(@"this is tip %@", tipCell.tip);
+                tipDetailController.tip = tipCell.tip;
+            }           
+        } else if (targetCell){
+            NHTMainTableCell * cell = (NHTMainTableCell*)targetCell;
+            if(cell.tip){
+                NSLog(@"this is tip %@", cell.tip);
+                tipDetailController.tip = cell.tip;
+            }
+        }
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getLatestTips) name:@"backFromDetail" object:nil];
+        
     } else if ([segue.identifier isEqualToString:@"newTip"]) {
        
         self.tipLoadingProgressBar.hidden = NO;
@@ -207,6 +242,22 @@
     [self performSegueWithIdentifier:@"showTipDetail" sender:sender];
 }
 
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+    searchResults = [self.Q1 filteredArrayUsingPredicate:resultPredicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
+}
 
 /*
 #pragma mark - Navigation

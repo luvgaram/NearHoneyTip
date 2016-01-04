@@ -581,7 +581,7 @@ imgComment</string>
                     </view>
                     <navigationItem key="navigationItem" id="5fB-2K-ivL">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="setting.png" id="Yuu-rL-RC1">
+                        <barButtonItem key="leftBarButtonItem" image="setting.png" style="plain" id="Yuu-rL-RC1">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="9WG-o3-XrT" kind="show" id="XWv-A6-odj"/>
@@ -591,26 +591,25 @@ imgComment</string>
                             <rect key="frame" x="83" y="0.0" width="154" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <searchBar clipsSubviews="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yU2-dB-ZPB">
+                                <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SB5-1d-nX6">
                                     <rect key="frame" x="0.0" y="0.0" width="154" height="44"/>
-                                    <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="barTintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
-                                        <outlet property="delegate" destination="FRF-8D-a5C" id="2Tc-pl-uqo"/>
+                                        <outlet property="delegate" destination="Ldw-Tb-JUT" id="UIO-DV-2lG"/>
                                     </connections>
                                 </searchBar>
                             </subviews>
                             <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="yU2-dB-ZPB" firstAttribute="leading" secondItem="LWA-Za-aTB" secondAttribute="leading" id="Qdb-01-HYT"/>
-                                <constraint firstAttribute="bottom" secondItem="yU2-dB-ZPB" secondAttribute="bottom" id="VVl-XR-t7l"/>
-                                <constraint firstAttribute="trailing" secondItem="yU2-dB-ZPB" secondAttribute="trailing" id="W0j-4y-qNc"/>
-                                <constraint firstItem="yU2-dB-ZPB" firstAttribute="top" secondItem="LWA-Za-aTB" secondAttribute="top" id="qjc-tE-V2z"/>
+                                <constraint firstItem="SB5-1d-nX6" firstAttribute="centerX" secondItem="LWA-Za-aTB" secondAttribute="centerX" id="0Cc-dn-cTL"/>
+                                <constraint firstItem="SB5-1d-nX6" firstAttribute="leading" secondItem="LWA-Za-aTB" secondAttribute="leading" id="5uA-qa-nyd"/>
+                                <constraint firstItem="SB5-1d-nX6" firstAttribute="centerY" secondItem="LWA-Za-aTB" secondAttribute="centerY" id="jb6-q7-YSa"/>
                             </constraints>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" image="location.png" id="UQ2-Vg-u0j">
+                        <barButtonItem key="rightBarButtonItem" image="location.png" style="plain" id="UQ2-Vg-u0j">
                             <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="wAQ-QX-hKR" kind="push" identifier="showNearMap" id="8iX-Ww-2VK"/>

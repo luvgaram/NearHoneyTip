@@ -97,4 +97,8 @@
     return [self.tips objectAtIndex:index];
 }
 
+-(NSArray*)filteredArrayUsingPredicate:(NSPredicate *)predicat{
+    return [self.tips filteredArrayUsingPredicate:predicat];
+}
+
 @end

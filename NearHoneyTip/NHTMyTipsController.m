@@ -11,6 +11,7 @@
 #import "NHTDetailViewController.h"
 #import "NHTTipManager.h"
 #import "NHTMytipsTableCell.h"
+#import "NHTMainTableCell.h"
 
 @interface NHTMyTipsController ()
 
@@ -66,17 +67,27 @@ NSString *prefProfilephoto;
     NHTTip *newTip = tip;
     newTip.userNickname = prefNickname;
     newTip.userProfileImg = prefProfilephoto;
+    newTip.isLiked = false;
     
     NSLog(@"my newTip: %@", newTip.storeName);
     NSLog(@"my newTip: %@", newTip.userNickname);
     
     [cell setCellWithUserTip:newTip];
-    //};
-    UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
     
-    cell.gestureRecognizers = [[NSArray alloc] initWithObjects:tapCellForTipDetail, nil];
+//    UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];   
+//    cell.gestureRecognizers = [[NSArray alloc] initWithObjects:tapCellForTipDetail, nil];
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqual:@"showMyTipDetail"]) {
+        NHTMytipsTableCell *tipCell = sender;
+        if (tipCell.tip) {
+            NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
+            tipDetailController.tip = tipCell.tip;
+        }
+    }
 }
 
 /*

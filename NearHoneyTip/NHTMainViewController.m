@@ -38,11 +38,7 @@
     self.tipLoadingProgressBar.hidden = YES;
 }
 
-
-
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath){
         return self.tableView.bounds.size.height / 4;
     }
@@ -51,12 +47,10 @@
 }
 
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     [self refleshScrollViewDidEndDragging:scrollView];
 }
-- (void)refleshScrollViewDidEndDragging:(UIScrollView *)refreshManager
-{
+- (void)refleshScrollViewDidEndDragging:(UIScrollView *)refreshManager {
     CGFloat minOffsetToTriggerRefresh = 50.0f;
     if (refreshManager.contentOffset.y <= -minOffsetToTriggerRefresh) {
         NSLog(@"USER refresh");
@@ -64,9 +58,7 @@
     }
 }
 
-
-
-- (void)getLatestTips{
+- (void)getLatestTips {
     NSLog(@"start to refresh");
     [self.Q1 removeAllTips];
     [self.Q1 tipsDidLoad];
@@ -85,13 +77,8 @@
         
         [self.refreshManager endRefreshing];
     }
-    
-    
-     NSLog(@"end to refresh");
-    
+    NSLog(@"end to refresh");
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -146,6 +133,7 @@
     
     return cell;
 }
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"#####3-1%@", sender);
     if ([segue.identifier isEqual:@"showTipDetail"]) {
@@ -153,9 +141,7 @@
         NSLog(@"#####3-2%@", sender);
         NSLog(@"####sender target? %@",[sender view]);
         NHTMainTableCell *tipCell = [sender view];
-        
-       
-        
+
         if(tipCell){
             NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
            

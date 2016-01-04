@@ -25,8 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 
-
-- (void)setCellWithTip:(NSDictionary*)tip;
 - (void)setCellWithUserTip:(NHTTip*)tip;
 
 @end

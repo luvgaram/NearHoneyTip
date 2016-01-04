@@ -9,7 +9,9 @@
 #import "NHTMapSelectViewController.h"
 #import "NHTAnnotation.h"
 
-@interface NHTMapSelectViewController ()
+@interface NHTMapSelectViewController () {
+    NSURLResponse *response;
+}
 
 @end
 
@@ -118,6 +120,32 @@ static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
     }
 }
 
+//- (void)postFormDataAtURL :(NSURL *)url postData:(NSData*)postData {
+//    
+//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+//    request.HTTPMethod = @"POST";
+//    NSString* contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+//    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+//    [request setHTTPBody:postData];
+//    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
+//                                                                  delegate:self];
+//    [connection start];
+//    
+//    NSLog(@"connection end");
+//}
+
+- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    long code = [httpResponse statusCode];
+    NSLog(@"connection response: %ld", code);
+    
+    if(code == 200){
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
+    }
+    
+}
+
 - (void)postFormDataAtURL :(NSURL *)url postData:(NSData*)postData {
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
@@ -128,9 +156,14 @@ static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
                                                                   delegate:self];
     [connection start];
+    [self connection:connection didReceiveResponse:response];
     
     NSLog(@"connection end");
+    //temp
+    
 }
+
+
 
 - (void) postTip:(NSDictionary *)tipDictionary {
     NSLog(@"start post");
@@ -170,7 +203,7 @@ static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
     [self postFormDataAtURL:[NSURL URLWithString:@"http://54.64.250.239:3000/tip"]
                    postData:body];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
 }
 
 /*

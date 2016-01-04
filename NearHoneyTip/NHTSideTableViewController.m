@@ -57,7 +57,7 @@
 }
 
 - (IBAction)cancelWrite:(id)sender {
-    NSLog(@"%@",self.navigationController.viewControllers);
+    NSLog(@"%@", self.navigationController.viewControllers);
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

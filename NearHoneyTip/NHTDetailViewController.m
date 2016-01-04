@@ -25,12 +25,10 @@
     
     self.postManager = [[NHTButtonTapPost alloc] init];
     if(self.tip){
-        
-        
+    
         self.storeName.title = self.tip.storeName;
         
         // modified by ej
-//        self.tipImage.image = self.tip.tipImage;
         
         NSString *tipImagePathWhole = @"http://54.64.250.239:3000/image/photo=";
         tipImagePathWhole = [tipImagePathWhole stringByAppendingString:self.tip.tipImage];
@@ -38,8 +36,6 @@
                          placeholderImage:[UIImage imageNamed:@"nht_logo.png"]];
         
         self.tipDetails.text = self.tip.tipDetails;
-        
-//        self.userProfileImage.image = self.tip.userProfileImg;
         
         self.userProfileImage.layer.cornerRadius = 25;
         NSString *tipIconPathWhole = @"http://54.64.250.239:3000/image/icon=";

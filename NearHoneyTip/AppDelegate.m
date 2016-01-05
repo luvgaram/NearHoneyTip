@@ -32,6 +32,7 @@ NSMutableData *data;
     preferences = [NSUserDefaults standardUserDefaults];
 
     NSString *uidIdentifier = @"UserDefault";
+
     [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
     
     NSLog(@"start to get location");

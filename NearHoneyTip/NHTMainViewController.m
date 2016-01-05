@@ -84,25 +84,7 @@
    
 }
 
--(void) setupSearchBar {
-    
-    // Set search bar position and dimensions
-    CGRect searchBarFrame =  self.searchController.searchBar.frame;
-    CGRect viewFrame = self.view.frame;
-    self.searchController.searchBar.frame = CGRectMake(searchBarFrame.origin.x, searchBarFrame.origin.y + 64,viewFrame.size.width, 44);
-    
-    
-    // Add search controller's search bar to our view and bring it to forefront
-    [self.view addSubview: self.searchController.searchBar];
-}
-/*
--(void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
-{
-    [searchBar resignFirstResponder];
-    [self updateSearchResultsForSearchController:self.searchController];
-    [self presentViewController:self.searchController animated:YES completion:nil];
-}
- */
+
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
@@ -110,7 +92,7 @@
     NSLog(@"LOG 1 :%@", searchString);
     
     [self.Q1 updateFilteredContentForTipStoreName:searchString];
-    // If searchResultsController
+   
     if (self.searchController.searchResultsController) {
       
         
@@ -121,27 +103,27 @@
        NHTSearchResultsTableViewController *vc = (NHTSearchResultsTableViewController *)navController.visibleViewController;
 
         
-//        vc.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x,
-//                                                           self.searchController.searchBar.frame.origin.y,
-//                                                           self.searchController.searchBar.frame.size.width, 44.0);
-//        
-        
+    
         [vc.Q1 tipsDidLoadWithSearchResults: self.Q1.searchResults];
         
         
         // And reload the tableView with the new data
         [vc.tableView reloadData];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getLatestTips) name:@"backfromSearch" object:nil];
+      
     }
     
     
-    //[self.tableView reloadData];
 }
 
-//
-//- (void)searchBar:(UISearchBar *)searchBar
-//    textDidChange:(NSString *)searchText{
-//    self.tableView.tableHeaderView = self.searchController.searchBar;
-//}
+
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self.navigationController popViewControllerAnimated:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"backFromSearch" object:nil];
+    
+}
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

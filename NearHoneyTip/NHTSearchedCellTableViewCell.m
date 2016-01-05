@@ -16,7 +16,7 @@
 
 - (void)setCellWithTip:(NHTTip*)tip{
     
-    //self.postManager = [[NHTButtonTapPost alloc] init];
+    self.postManager = [[NHTButtonTapPost alloc] init];
     self.tip = tip;
     
     // modified by ej
@@ -45,15 +45,8 @@
     NSString *distanceWithKm = [NSString stringWithFormat:@"%lu", (unsigned long)self.tip.distance];
     distanceWithKm = [distanceWithKm stringByAppendingString:@" m"];
     
-    //self.distance.text = distanceWithKm;
-    
-    //[self setLikeButtonProperty];
-    
-   // UITapGestureRecognizer *tapLikeButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLike:)];
-   // self.likeButton.gestureRecognizers = [[NSArray alloc] initWithObjects: tapLikeButton, nil];
-    
-    
-   // [self setReplyButtonProperty];
 }
+
+
 
 @end

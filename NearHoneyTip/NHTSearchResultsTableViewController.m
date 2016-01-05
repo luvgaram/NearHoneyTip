@@ -22,7 +22,7 @@
     
     self.Q1 = [[NHTTipManager alloc]init];
     
-    [self.Q1 tipsDidLoad];
+    //[self.Q1 tipsDidLoad];
     
    
 }
@@ -98,6 +98,54 @@
     cell.gestureRecognizers = [[NSArray alloc] initWithObjects:tapCellForTipDetail, nil];
     
     return cell;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    NSLog(@"Cancle - backFromSearch");
+    [self.navigationController popViewControllerAnimated:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"backFromSearch" object:nil];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"#####3-1%@", sender);
+    if ([segue.identifier isEqual:@"showSearchTipDetail"]) {
+        
+        NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
+        
+               
+        NSLog(@"#####3-2%@", sender);
+        NSLog(@"####sender target? %@",[sender view]);
+        NHTSearchedCellTableViewCell *tipCell = [sender view];
+        [self.navigationController setNavigationBarHidden:NO animated:nil];
+        [tipDetailController.navigationController setNavigationBarHidden:NO animated:nil];
+        
+
+        if(tipCell){
+            if(tipCell.tip){
+                NSLog(@"this is tip %@", tipCell.tip);
+                tipDetailController.tip = tipCell.tip;
+                
+            }
+        }
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postNofiticationToMainView) name:@"backFromDetail" object:nil];
+        
+    }
+}
+
+
+-(void) postNofiticationToMainView{
+      [[NSNotificationCenter defaultCenter] postNotificationName: @"backFromSearch" object:nil];
+}
+
+- (void) didTapCell:(UITapGestureRecognizer *) recognizer{
+    
+    NSLog(@"#####1%@", recognizer);
+    [self showTipDetail:recognizer];
+}
+- (IBAction)showTipDetail:(id)sender {
+    NSLog(@"#####2%@", sender);
+    [self performSegueWithIdentifier:@"showSearchTipDetail" sender:sender];
 }
 
 

@@ -23,5 +23,6 @@
 - (void)getLatestTips;
 - (void)shouldNewTipReload;
 
--(void) setupSearchBar;
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar;
+
 @end

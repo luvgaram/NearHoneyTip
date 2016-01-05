@@ -11,10 +11,9 @@
 
 @class NHTTipManager;
 
-@interface NHTSearchResultsTableViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@interface NHTSearchResultsTableViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 
 @property (strong, nonatomic) NHTTipManager *Q1;
-@property(strong, nonatomic) UISearchBar* searchBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 

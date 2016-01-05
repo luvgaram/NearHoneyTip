@@ -39,7 +39,7 @@
             newReply.replyProfilephoto = [rawReply objectForKey:@"profilephoto"];
             newReply.replytime = [rawReply objectForKey:@"time"];
             
-            [repliesArray insertObject:newReply atIndex:0];
+            [repliesArray addObject:newReply];
         }
     }
     NSLog(@"load end");

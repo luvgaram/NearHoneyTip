@@ -22,6 +22,7 @@
 		6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0701C1712210021FEB6 /* NHTProfileController.m */; };
 		6FD0C0741C171B8F0021FEB6 /* NHTSideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */; };
 		A8368B3F1C2140FE00B4D0F3 /* nht_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */; };
+		A8553A0B1C3BEDBA00395ADD /* NHTReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8553A0A1C3BEDBA00395ADD /* NHTReplyViewController.m */; };
 		A86327261C2A05E5001B293B /* CameraCell_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86327251C2A05E5001B293B /* CameraCell_5.xib */; };
 		A86327291C2A060F001B293B /* CameraCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A86327281C2A060F001B293B /* CameraCell.m */; };
 		A863272B1C2A061A001B293B /* CameraCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A863272A1C2A061A001B293B /* CameraCell.xib */; };
@@ -128,6 +129,8 @@
 		6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTSideTableViewController.m; sourceTree = "<group>"; };
 		904A7464ED7B0C7A3B186D8E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nht_logo.png; sourceTree = "<group>"; };
+		A8553A091C3BEDBA00395ADD /* NHTReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTReplyViewController.h; sourceTree = "<group>"; };
+		A8553A0A1C3BEDBA00395ADD /* NHTReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTReplyViewController.m; sourceTree = "<group>"; };
 		A86327231C2A0596001B293B /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		A86327251C2A05E5001B293B /* CameraCell_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraCell_5.xib; sourceTree = "<group>"; };
 		A86327271C2A0607001B293B /* CameraCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCell.h; sourceTree = "<group>"; };
@@ -450,6 +453,8 @@
 				A886B0251C3B8EE300A23B62 /* NHTReplyTableCell.m */,
 				A8C761F81C3B970B0030AA85 /* NHTReplyTableViewController.h */,
 				A8C761F91C3B970B0030AA85 /* NHTReplyTableViewController.m */,
+				A8553A091C3BEDBA00395ADD /* NHTReplyViewController.h */,
+				A8553A0A1C3BEDBA00395ADD /* NHTReplyViewController.m */,
 			);
 			name = NHTMainDetailTipGroup;
 			sourceTree = "<group>";
@@ -720,6 +725,7 @@
 				A863274B1C2A06FA001B293B /* UIView+RNActivityView.m in Sources */,
 				A86327431C2A06DE001B293B /* PhotoPickerCell.m in Sources */,
 				CE3355BA1BE9CB9100B77DEC /* AppDelegate.m in Sources */,
+				A8553A0B1C3BEDBA00395ADD /* NHTReplyViewController.m in Sources */,
 				6F5CA90C1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m in Sources */,
 				CE64D5951C204DDB0058613C /* NHTMainViewController.m in Sources */,
 				CE8D538F1C0C37B4005F913E /* NHTTipManager.m in Sources */,

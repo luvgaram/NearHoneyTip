@@ -7,7 +7,7 @@
 //
 
 #import "NHTDetailViewController.h"
-#import "NHTReplyTableViewController.h"
+#import "NHTReplyViewController.h"
 #import "NHTTip.h"
 #import "NHTReply.h"
 #import "NHTButtonTapPost.h"
@@ -160,9 +160,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"showReplies"]) {
         [self loadReply:self.tip.tipId];
-        NHTReplyTableViewController *replyController = (NHTReplyTableViewController *)segue.destinationViewController;
+        NHTReplyViewController *replyController = (NHTReplyViewController *)segue.destinationViewController;
         
-        replyController.NHTReplies = self.replies;
+        replyController.NHTRepliesArray = self.replies;
     }
 }
 

@@ -8,7 +8,8 @@
 
 #import "NHTMainViewController.h"
 #import "NHTDetailViewController.h"
-#import "NHTReplyTableViewController.h"
+//#import "NHTReplyTableViewController.h"
+#import "NHTReplyViewController.h"
 #import "NHTTipManager.h"
 #import "NHTMainTableCell.h"
 #import "NHTMapViewController.h"
@@ -203,10 +204,18 @@
         NSString *tipID = [sender valueForKey:@"stringTag"];
         [self loadReply:tipID];
         
-        NHTReplyTableViewController *replyController = (NHTReplyTableViewController *)segue.destinationViewController;
-        replyController.NHTReplies = [self loadReply:tipID];
+        NHTReplyViewController *replyController = (NHTReplyViewController *)segue.destinationViewController;
+        replyController.NHTRepliesArray = [self loadReply:tipID];
         
     }
+//    else if ([segue.identifier isEqualToString:@"showRepliesFromMain"]) {
+//        NSString *tipID = [sender valueForKey:@"stringTag"];
+//        [self loadReply:tipID];
+//        
+//        NHTReplyTableViewController *replyController = (NHTReplyTableViewController *)segue.destinationViewController;
+//        replyController.NHTReplies = [self loadReply:tipID];
+//        
+//    }
 }
 
 - (NSArray *)loadReply:(NSString *)tid{

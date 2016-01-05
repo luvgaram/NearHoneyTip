@@ -20,4 +20,6 @@
 -(NSObject*)objectAtIndex:(NSUInteger)index;
 //-(BOOL)containsTip:(NSDictionary*)newTip;
 
+
+-(NSArray*)filteredArrayUsingPredicate:(NSPredicate *)predicate;
 @end

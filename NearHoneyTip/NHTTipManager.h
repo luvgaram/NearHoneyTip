@@ -22,5 +22,6 @@
 //-(BOOL)containsTip:(NSDictionary*)newTip;
 
 -(void)removeAllTips;
+-(NSArray*)filteredArrayUsingPredicate:(NSPredicate *)predicate;
 
 @end

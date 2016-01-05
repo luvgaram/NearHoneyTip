@@ -93,15 +93,10 @@
     tipNew.tipDetails = [tip valueForKey:@"tipdetail"];
     tipNew.tipDate = [tip valueForKey: @"date"];
     
-    NSArray *likes = [tip valueForKey:@"like"];
-    
-    if(likes){
-        tipNew.likeInteger = [likes count];
-    } else { //방어용
-        tipNew.likeInteger = 0;
-    }
-    
+    tipNew.likeInteger = ((NSNumber*)[tip valueForKey:@"like"]).integerValue;
+    //NSLog(@"like array: %@", tipNew.likeInteger);
     tipNew.replies = [tip valueForKey:@"reply"];
+    tipNew.isLiked = ((NSNumber*)[tip valueForKey:@"isliked"]).boolValue;
     
     if(tipNew.replies){
         tipNew.replyInteger = [tipNew.replies count];
@@ -140,6 +135,10 @@
 
 -(NSObject*)objectAtIndex:(NSUInteger)index{
     return [self.tips objectAtIndex:index];
+}
+
+-(NSArray*)filteredArrayUsingPredicate:(NSPredicate *)predicat{
+    return [self.tips filteredArrayUsingPredicate:predicat];
 }
 
 @end

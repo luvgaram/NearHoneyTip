@@ -7,10 +7,13 @@
 //
 
 #import "NHTDetailViewController.h"
+#import "NHTReplyViewController.h"
 #import "NHTTip.h"
+#import "NHTReply.h"
 #import "NHTButtonTapPost.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NHTAnnotation.h"
+#import "NHTReplyManager.h"
 
 @interface NHTDetailViewController (){
     NSUserDefaults *preferences;
@@ -52,8 +55,9 @@
         self.likeButton.target = tapLikeButton;
         self.likeButton.action= @selector(didTapLike:);
         self.likeButtonImage.target = tapLikeButton;
-        self.likeButtonImage.action = @selector(didTapLike);
-       
+        self.likeButtonImage.action = @selector(didTapLike:);
+        [self setReplyButtonProperty];
+        
         NSString *distanceWithKm = [NSString stringWithFormat:@"%lu", (unsigned long)self.tip.distance];
         distanceWithKm = [distanceWithKm stringByAppendingString:@" m"];
         
@@ -124,11 +128,28 @@
         //post syn
         [self.postManager postLikeChangeMethod:@"PUT" Tip:self.tip.tipId];
     }
-    
-   
-    
 }
 
+-(void)setReplyButtonProperty{
+    
+    NSString *replyString = @"댓글";
+    NSString *replyCount;
+    
+    if(self.tip.replyInteger){
+        
+        if(self.tip.replyInteger > 0){
+            replyCount = [NSString stringWithFormat:@"%ld", (long)self.tip.replyInteger];
+        } else {
+            replyCount = @"";
+        }
+        
+    } else {
+        replyCount = @"";
+    }
+    
+    replyString = [replyString stringByAppendingString:replyCount];
+    [self.commentButton setTitle:replyString];
+}
 
 -(void)didTapLike{
     self.likeButton.tintColor = [[UIColor alloc]initWithRed: 253.0/255.0 green:204.0/255.0 blue:1.0/255.0 alpha:1];
@@ -155,6 +176,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"showReplies"]) {
+
+        
+        NHTReplyViewController *replyController = (NHTReplyViewController *)segue.destinationViewController;
+        
+        NHTReplyManager* replyManager = [[NHTReplyManager alloc] init];
+        replyController.NHTRepliesArray = [replyManager replyDidLoad:self.tip.tipId];
+        replyController.NHTReplyTipId = self.tip.tipId;
+    }
 }
 
 /*

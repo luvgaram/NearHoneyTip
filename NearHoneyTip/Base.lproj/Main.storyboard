@@ -334,13 +334,13 @@ imgComment</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUi-Oa-UAH">
                                                     <rect key="frame" x="56" y="8" width="83" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzd-sK-Ij4">
                                                     <rect key="frame" x="187" y="8" width="113" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="j6w-Xz-TGg">
@@ -354,7 +354,7 @@ imgComment</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="wearasdfafdsaklfj sladf lafsdl aasdf asl dlskfj lsajdf l lsadfl dsal lsdsfj lasjl sdaf jl las " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ril-hS-Npi">
                                                     <rect key="frame" x="56" y="19" width="264" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -952,21 +952,21 @@ imgComment</string>
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="anomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="vbe-Yb-hMQ">
-                                            <rect key="frame" x="158" y="71" width="30" height="30"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="vbe-Yb-hMQ">
+                                            <rect key="frame" x="158" y="70" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="vbe-Yb-hMQ" secondAttribute="height" multiplier="1:1" id="4cs-NQ-2fL"/>
                                                 <constraint firstAttribute="height" constant="30" id="hQV-8Q-ipz"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="badge1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wb4-Lk-ybs">
-                                            <rect key="frame" x="263" y="62" width="24" height="24"/>
+                                            <rect key="frame" x="263" y="61" width="24" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="24" id="aGc-FH-qMs"/>
                                             </constraints>
                                         </imageView>
-                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium a " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J38-3X-4My" userLabel="tipDetails">
-                                            <rect key="frame" x="158" y="27" width="154" height="30"/>
+                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium a " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J38-3X-4My" userLabel="tipDetails">
+                                            <rect key="frame" x="158" y="26" width="154" height="30"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -977,8 +977,8 @@ imgComment</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Starbucks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-xF-grL" userLabel="storeName">
-                                            <rect key="frame" x="160" y="0.0" width="156" height="26"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starbucks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-xF-grL" userLabel="storeName">
+                                            <rect key="frame" x="158" y="0.0" width="158" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="26" id="SW4-Qr-WaX"/>
                                             </constraints>
@@ -986,8 +986,8 @@ imgComment</string>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sadness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkm-UE-2zL" userLabel="nickName">
-                                            <rect key="frame" x="196" y="65" width="59" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sadness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkm-UE-2zL" userLabel="nickName">
+                                            <rect key="frame" x="196" y="64" width="59" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="7jH-2i-owi"/>
                                             </constraints>
@@ -996,11 +996,11 @@ imgComment</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9X2-Tr-nCb">
-                                            <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="153" height="155"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
-                                        <button opaque="NO" tag="8" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byS-Xy-wKC">
-                                            <rect key="frame" x="240" y="116" width="52" height="26"/>
+                                        <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byS-Xy-wKC">
+                                            <rect key="frame" x="240" y="116" width="52" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="52" id="w2a-NA-Tnq"/>
                                             </constraints>
@@ -1011,7 +1011,7 @@ imgComment</string>
                                             </state>
                                         </button>
                                         <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUm-V3-7Me">
-                                            <rect key="frame" x="173" y="116" width="59" height="25"/>
+                                            <rect key="frame" x="171" y="116" width="61" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="WJD-ML-bVK"/>
                                             </constraints>
@@ -1021,14 +1021,14 @@ imgComment</string>
                                                 <color key="titleShadowColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11월 4일 오후 4시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ia-BT-0uU" userLabel="tipNewTime">
-                                            <rect key="frame" x="194" y="84" width="82" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11월 4일 오후 4시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ia-BT-0uU" userLabel="tipNewTime">
+                                            <rect key="frame" x="194" y="83" width="82" height="25"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9X2-Tr-nCa">
-                                            <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="153" height="155"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
                                     </subviews>
@@ -1036,6 +1036,9 @@ imgComment</string>
                                         <constraint firstItem="4Ia-BT-0uU" firstAttribute="centerX" secondItem="J38-3X-4My" secondAttribute="centerX" id="08r-K9-Coq"/>
                                         <constraint firstItem="TUm-V3-7Me" firstAttribute="leading" secondItem="9X2-Tr-nCa" secondAttribute="trailing" constant="18" id="0fR-Dj-AxX"/>
                                         <constraint firstItem="byS-Xy-wKC" firstAttribute="firstBaseline" secondItem="TUm-V3-7Me" secondAttribute="baseline" id="6dJ-ya-WmV"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Wb4-Lk-ybs" secondAttribute="trailing" constant="25" id="6sv-jv-bmr"/>
+                                        <constraint firstItem="8Wr-xF-grL" firstAttribute="leading" secondItem="9X2-Tr-nCa" secondAttribute="trailing" constant="5" id="7RK-ke-kqJ"/>
+                                        <constraint firstItem="J38-3X-4My" firstAttribute="leading" secondItem="8Wr-xF-grL" secondAttribute="leading" id="CO2-Np-h7M"/>
                                         <constraint firstItem="Jkm-UE-2zL" firstAttribute="top" secondItem="J38-3X-4My" secondAttribute="bottom" constant="8" symbolic="YES" id="CZ2-ln-5pm"/>
                                         <constraint firstItem="J38-3X-4My" firstAttribute="top" secondItem="8Wr-xF-grL" secondAttribute="bottom" id="Ci0-sw-m5I"/>
                                         <constraint firstItem="J38-3X-4My" firstAttribute="leading" secondItem="vbe-Yb-hMQ" secondAttribute="leading" id="DdP-Av-wwT"/>
@@ -1064,12 +1067,19 @@ imgComment</string>
                                         <constraint firstItem="9X2-Tr-nCa" firstAttribute="centerY" secondItem="LCq-rm-g35" secondAttribute="centerY" id="w2P-63-K8f"/>
                                         <constraint firstItem="4Ia-BT-0uU" firstAttribute="leading" secondItem="vbe-Yb-hMQ" secondAttribute="trailing" constant="6" id="yIt-Pr-G2I"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="UEd-w2-c0h"/>
+                                            <exclude reference="hqn-Zu-8Jq"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentButton" destination="byS-Xy-wKC" id="VeD-V3-ePG"/>
                                     <outlet property="likeButton" destination="TUm-V3-7Me" id="wQO-gr-9Vd"/>
                                     <outlet property="storeName" destination="8Wr-xF-grL" id="EPe-3a-xK8"/>
                                     <outlet property="tipDetails" destination="J38-3X-4My" id="IuA-95-adz"/>
+                                    <outlet property="tipImage" destination="9X2-Tr-nCa" id="Dii-oZ-4dO"/>
                                     <outlet property="tipNewTime" destination="4Ia-BT-0uU" id="N3B-dW-72B"/>
                                     <outlet property="userBadge" destination="Wb4-Lk-ybs" id="Wz2-qc-Ey7"/>
                                     <outlet property="userNickname" destination="Jkm-UE-2zL" id="HgH-lc-GnL"/>
@@ -1484,7 +1494,7 @@ imgComment</string>
                                                         <constraint firstAttribute="height" constant="26" id="NG1-jC-vyx"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="r3J-bM-y6f">
@@ -1504,7 +1514,7 @@ imgComment</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bE-mi-JDN">
                                                     <rect key="frame" x="189" y="105" width="27" height="15"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge1.png" translatesAutoresizingMaskIntoConstraints="NO" id="5bf-GV-J3H">

@@ -14,6 +14,7 @@
     self = [super init];
     if(self){
         self.tips = [[NSMutableArray alloc] init];
+        self.tipsForSearch = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -21,7 +22,11 @@
 
 -(void) addTip: (NSDictionary*) tip{
     
+    
+    NSDictionary *tipNewDictionary = [[NSDictionary alloc] init];
+    
     NHTTip* tipNew = [[NHTTip alloc] init];
+  
     
     tipNew.tipId = [tip objectForKey:@"_id"];
     //NSLog(@"!String: %@",tipNew.tipId);
@@ -35,6 +40,8 @@
     tipNew.tipImage = tipImagePath;
     
     tipNew.storeName =  [tip valueForKey:@"storename"];
+   // tipNew.name = [tip valueForKey:@"storename"];
+   // [tipNewDictionary setValue:tipNew.storeName forKey:@"name"];
     tipNew.tipDetails = [tip valueForKey:@"tipdetail"];
     
     NSString *userProfileImageString = [tip objectForKey:@"profilephoto"];
@@ -73,11 +80,14 @@
     tipNew.latitude = tipCoordinates[1];
     
     [self.tips addObject:tipNew];
-}
+    
+    
+    }
 
 -(void) addMyTip: (NSDictionary*) tip{
     
     NHTTip* tipNew = [[NHTTip alloc] init];
+    
     
     tipNew.tipId = [tip objectForKey:@"_id"];
     //NSLog(@"!String: %@",tipNew.tipId);
@@ -90,6 +100,9 @@
     
     tipNew.tipImage = tipImagePath;
     tipNew.storeName =  [tip valueForKey:@"storename"];
+    //[tipNew setValue:tipNew.storeName forKey:@"storeName"];
+   
+    
     tipNew.tipDetails = [tip valueForKey:@"tipdetail"];
     tipNew.tipDate = [tip valueForKey: @"date"];
     

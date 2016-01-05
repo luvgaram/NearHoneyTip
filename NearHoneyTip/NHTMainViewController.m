@@ -10,10 +10,11 @@
 #import "NHTDetailViewController.h"
 #import "NHTTipManager.h"
 #import "NHTMainTableCell.h"
+#import "NHTSearchResultsTableViewController.h"
 #import "NHTMapViewController.h"
 
 @interface NHTMainViewController (){
-     NSArray *searchResults;
+   
 }
 
 @end
@@ -31,29 +32,99 @@
     [self.refreshManager addTarget:self action:@selector(getLatestTips)forControlEvents:UIControlEventValueChanged];
 
     self.Q1 = [[NHTTipManager alloc]init];
-    [self.Q1 tipsDidLoad];
-
+   [self.Q1 tipsDidLoad];
+    
     UIButton *newPost = [[self view] viewWithTag:123];
     newPost.layer.cornerRadius = (newPost.layer.bounds.size.width / 1.75);
     
     self.tipLoadingProgressBar.hidden = YES;
     
-    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:self];
-    // Use the current view controller to update the search results.
-    searchController.searchResultsUpdater = self;
-    // Install the search bar as the table header.
-    self.navigationItem.titleView = searchController.searchBar;
+    
+    
+    
+    
+    //self.searchController.delegate = self;
+    
+     UINavigationController *searchResultsController = [[self storyboard] instantiateViewControllerWithIdentifier:@"NHTSearch"];
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultsController];
+    
+    /* //let it be
+    self.searchbarContainer = [[UIView alloc] initWithFrame:self.searchController.searchBar.frame];
+   [self.searchbarContainer addSubview:self.searchController.searchBar];
+    */
+    
+    
+    //Use the current view controller to update the search results.
+    self.searchController.searchResultsUpdater = self;
+    
+    
+    
+    /*
+    self.navigationItem.titleView =  self.searchController.searchBar;
+    searchResultsController.navigationItem.titleView = self.searchController.searchBar;
+   */
+    
+    self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x,
+                                                       self.searchController.searchBar.frame.origin.y,
+                                                       self.searchController.searchBar.frame.size.width, 44.0);
+    
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    
+    
+    /*
     // It is usually good to set the presentation context.
-    self.definesPresentationContext = YES;
-   
+    self.searchController.definesPresentationContext = YES;
+    self.searchController.dimsBackgroundDuringPresentation = YES;
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
+    self.searchController.obscuresBackgroundDuringPresentation = NO;
+    //self.searchController.searchBar.delegate = self;
+    
+    */
     
 }
 
+
 /*
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    
+-(void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
+{
+    [searchBar resignFirstResponder];
+    [self updateSearchResultsForSearchController:self.searchController];
+    [self presentViewController:self.searchController animated:YES completion:nil];
 }
-*/
+ */
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+    NSString *searchString = self.searchController.searchBar.text;
+    NSLog(@"LOG 1 :%@", searchString);
+    
+    [self.Q1 updateFilteredContentForTipStoreName:searchString];
+    // If searchResultsController
+    if (self.searchController.searchResultsController) {
+      
+        
+         NSLog(@"LOG 3 ");
+        UINavigationController *navController = (UINavigationController *)self.searchController.searchResultsController;
+        
+        // Present SearchResultsTableViewController as the topViewController
+        NHTSearchResultsTableViewController *vc = (NHTSearchResultsTableViewController *)navController.visibleViewController;
+        
+        // Update searchResults
+        
+        [vc.Q1 tipsDidLoadWithSearchResults: self.Q1.searchResults];
+        
+        
+        // And reload the tableView with the new data
+        [vc.tableView reloadData];
+    }
+    
+    
+    //[self.tableView reloadData];
+}
+
+
+ 
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath){
@@ -106,12 +177,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //NSLog(@"the number of cell : %ld", (long)[self.Q1 countOfTipCollection] );
     
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return [searchResults count];
-        
-    } else {
         return [self.Q1 countOfTipCollection];
-    }
+    
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -147,14 +214,11 @@
     //if([[[self.Q1 objectAtIndex:indexPath.row] class] isKindOfClass: [NSDictionary class]]){
     
     
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-       [cell setCellWithTip:[searchResults objectAtIndex:indexPath.row]];
-    } else {
-        NSDictionary *tip = [self.Q1 objectAtIndex:indexPath.row];
-        [cell setCellWithTip:tip];
-    }
    
+    NSDictionary *tip = [self.Q1 objectAtIndex:indexPath.row];
+    [cell setCellWithTip:tip];
     
+
     //};
     UITapGestureRecognizer *tapCellForTipDetail = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(didTapCell:)];
     
@@ -166,22 +230,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"#####3-1%@", sender);
     if ([segue.identifier isEqual:@"showTipDetail"]) {
-    /* //wil be deleted
-<<<<<<< HEAD
-        NSIndexPath *indexPath = nil;
-        NHTMainTableCell *tipCell = nil;
-        NSObject *targetCell = nil;
-        
-        if (self.searchDisplayController.active) {
-            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
-            targetCell = [searchResults objectAtIndex:indexPath.row];
-        } else {
-            tipCell = [sender view];
-        }
-        
-       // NSLog(@"#####3-2%@", sender);
-        //NSLog(@"####sender target? %@",[sender view]);
- */
+
         NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
 
         NSLog(@"#####3-2%@", sender);
@@ -194,15 +243,7 @@
                 NSLog(@"this is tip %@", tipCell.tip);
                 tipDetailController.tip = tipCell.tip;
             }           
-        } /* //wil be deleted
-           else if (targetCell){
-            NHTMainTableCell * cell = (NHTMainTableCell*)targetCell;
-            if(cell.tip){
-                NSLog(@"this is tip %@", cell.tip);
-                tipDetailController.tip = cell.tip;
-            }
         }
-         */
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getLatestTips) name:@"backFromDetail" object:nil];
         
     } else if ([segue.identifier isEqualToString:@"newTip"]) {
@@ -244,22 +285,6 @@
     [self performSegueWithIdentifier:@"showTipDetail" sender:sender];
 }
 
-
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
-{
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
-    searchResults = [self.Q1 filteredArrayUsingPredicate:resultPredicate];
-}
-
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self filterContentForSearchText:searchString
-                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
-                                      objectAtIndex:[self.searchDisplayController.searchBar
-                                                     selectedScopeButtonIndex]]];
-    
-    return YES;
-}
 
 /*
 #pragma mark - Navigation

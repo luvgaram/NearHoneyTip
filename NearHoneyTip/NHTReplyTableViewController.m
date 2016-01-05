@@ -1,27 +1,24 @@
 //
-//  NHTAlarmsController.m
+//  NHTReplyTableViewController.m
 //  NearHoneyTip
 //
-//  Created by yunseo shin on 2015. 12. 8..
-//  Copyright © 2015년 Mamamoo. All rights reserved.
+//  Created by Eunjoo Im on 2016. 1. 5..
+//  Copyright © 2016년 Mamamoo. All rights reserved.
 //
 
-#import "NHTAlarmsController.h"
+#import "NHTReplyTableViewController.h"
+#import "NHTReply.h"
+#import "NHTReplyTableCell.h"
 
-@interface NHTAlarmsController ()
+@interface NHTReplyTableViewController ()
 
 @end
 
-@implementation NHTAlarmsController
+@implementation NHTReplyTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSLog(@"replytableview");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,24 +29,29 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    NSLog(@"count: %d", [self.NHTReplies count]);
+    return [self.NHTReplies count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *cellIdentifier = @"replyCell";
+    NHTReplyTableCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[NHTReplyTableCell alloc] init];
+    }
+    [cell setCellWithReply:self.NHTReplies[indexPath.row]];
+    
+    NSLog(@"cell: %@", cell);
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

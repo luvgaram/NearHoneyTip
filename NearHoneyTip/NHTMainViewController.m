@@ -8,10 +8,14 @@
 
 #import "NHTMainViewController.h"
 #import "NHTDetailViewController.h"
+#import "NHTReplyViewController.h"
 #import "NHTTipManager.h"
 #import "NHTMainTableCell.h"
 #import "NHTSearchResultsTableViewController.h"
 #import "NHTMapViewController.h"
+#import "NHTReply.h"
+#import "NHTTip.h"
+#import "NHTReplyManager.h"
 
 @interface NHTMainViewController (){
     NHTSearchResultsTableViewController *vc;
@@ -230,13 +234,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"#####3-1%@", sender);
     if ([segue.identifier isEqual:@"showTipDetail"]) {
-
         NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
 
         NSLog(@"#####3-2%@", sender);
         NSLog(@"####sender target? %@",[sender view]);
         NHTMainTableCell *tipCell = [sender view];
-
 
         if(tipCell){
             if(tipCell.tip){
@@ -254,6 +256,14 @@
     } else if ([segue.identifier isEqualToString:@"showNearMap"]) {
         NHTMapViewController *mapViewController = (NHTMapViewController *)segue.destinationViewController;
         mapViewController.tipCollection = self.Q1.tipCollection;
+    } else if ([segue.identifier isEqualToString:@"showRepliesFromMain"]) {
+        NSString *tipID = [sender valueForKey:@"stringTag"];
+        
+        NHTReplyViewController *replyController = (NHTReplyViewController *)segue.destinationViewController;
+        
+        NHTReplyManager* replyManager = [[NHTReplyManager alloc] init];
+        replyController.NHTRepliesArray = [replyManager replyDidLoad:tipID];
+        replyController.NHTReplyTipId = tipID;
     }
 }
 

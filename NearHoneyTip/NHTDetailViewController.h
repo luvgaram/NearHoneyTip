@@ -16,7 +16,9 @@
 @interface NHTDetailViewController : UIViewController
 
 @property (strong, nonatomic) NHTTip *tip;
+@property (strong, nonatomic) NSMutableArray *replies;
 @property (strong, nonatomic) NHTButtonTapPost *postManager;
+
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *storeName;
 @property (weak, nonatomic) IBOutlet UIImageView *tipImage;

@@ -12,7 +12,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import "NHTMainViewController.h"
-
+#import "CustomReplyButton.h"
 
 @implementation NHTMainTableCell{
     NSUserDefaults *preferences;
@@ -55,7 +55,6 @@
     
     UITapGestureRecognizer *tapLikeButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLike:)];
     self.likeButton.gestureRecognizers = [[NSArray alloc] initWithObjects: tapLikeButton, nil];
-    
   
     [self setReplyButtonProperty];
 }
@@ -103,6 +102,8 @@
     
     replyString = [replyString stringByAppendingString:replyCount];
     [self.commentButton setTitle:replyString forState:UIControlStateNormal];
+
+    ((CustomReplyButton *)self.commentButton).stringTag = self.tip.tipId;
 }
 
 

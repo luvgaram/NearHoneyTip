@@ -9,7 +9,6 @@
 #import "NHTSideTableViewController.h"
 #import "NHTTip.h"
 #import "NHTMyTipsController.h"
-#import "NHTAlarmsController.h"
 #import "NHTProfileController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 

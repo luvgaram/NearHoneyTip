@@ -30,6 +30,7 @@ NSMutableData *data;
     
     NSLog(@"start to set uuid");
     preferences = [NSUserDefaults standardUserDefaults];
+
     NSString *uidIdentifier = @"UserDefault";
     [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
     

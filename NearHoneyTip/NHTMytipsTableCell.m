@@ -28,8 +28,11 @@
     self.userProfileImage.layer.cornerRadius = 16;
     //    self.userProfileImage.image = self.tip.userProfileImg;
     
+    NSUInteger pointOfPathStart = 5;
+    NSString *tipIconImagePath = [self.tip.userProfileImg substringFromIndex: pointOfPathStart];
+    
     NSString *tipIconPathWhole = @"http://54.64.250.239:3000/image/icon=";
-    tipIconPathWhole = [tipIconPathWhole stringByAppendingString:self.tip.userProfileImg];
+    tipIconPathWhole = [tipIconPathWhole stringByAppendingString:tipIconImagePath];
     [self.userProfileImage sd_setImageWithURL:[NSURL URLWithString:tipIconPathWhole]
                              placeholderImage:[UIImage imageNamed:@"nht_logo.png"]];
     

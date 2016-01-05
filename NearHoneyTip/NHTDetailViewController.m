@@ -7,7 +7,9 @@
 //
 
 #import "NHTDetailViewController.h"
+#import "NHTReplyTableViewController.h"
 #import "NHTTip.h"
+#import "NHTReply.h"
 #import "NHTButtonTapPost.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NHTAnnotation.h"
@@ -124,9 +126,6 @@
         //post syn
         [self.postManager postLikeChangeMethod:@"PUT" Tip:self.tip.tipId];
     }
-    
-   
-    
 }
 
 
@@ -156,6 +155,49 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"showReplies"]) {
+        [self loadReply:self.tip.tipId];
+        NHTReplyTableViewController *replyController = (NHTReplyTableViewController *)segue.destinationViewController;
+        
+        replyController.NHTReplies = self.replies;
+    }
+}
+
+- (void)loadReply:(NSString *)tid{
+    NSString *baseURL = @"http://54.64.250.239:3000/reply/_id=";
+    baseURL = [baseURL stringByAppendingString:tid];
+    
+    NSURL *replyURL = [NSURL URLWithString: baseURL];
+    
+    NSData *jsonData = [NSData dataWithContentsOfURL:replyURL];
+    
+    if (jsonData) {
+        NSError *error = nil;
+        NSArray *loadedRepliesArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+        NSUInteger replyCount = loadedRepliesArray.count;
+        
+        NSLog(@"replyCount: %d", replyCount);
+        self.replies = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i < replyCount; i++){
+            NSDictionary *rawReply = loadedRepliesArray[i];
+            NHTReply *newReply = [[NHTReply alloc] init];
+            newReply.replyId = [rawReply objectForKey:@"_id"];
+            newReply.replyTipId = [rawReply objectForKey:@"tid"];
+            newReply.replyUserId = [rawReply objectForKey:@"uid"];
+            newReply.replyDetail = [rawReply objectForKey:@"detail"];
+            newReply.replyNickname = [rawReply objectForKey:@"nickname"];
+            newReply.replyProfilephoto = [rawReply objectForKey:@"profilephoto"];
+            newReply.replytime = [rawReply objectForKey:@"time"];
+            
+            [self.replies addObject:newReply];
+        }
+    }
+    NSLog(@"load end");
+};
 
 /*
 #pragma mark - Navigation

@@ -21,7 +21,6 @@ NSURLResponse *response;
 NSMutableData *data;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //NSLog(@"hi!!!!: " );
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [self setUserDefault];
     return YES;
@@ -33,9 +32,8 @@ NSMutableData *data;
     preferences = [NSUserDefaults standardUserDefaults];
 
     NSString *uidIdentifier = @"UserDefault";
-//    [preferences removeObjectForKey:uidIdentifier];
+
     [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
-    
     
     NSLog(@"start to get location");
     geocoder = [[CLGeocoder alloc] init];

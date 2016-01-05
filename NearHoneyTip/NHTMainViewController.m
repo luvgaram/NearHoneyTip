@@ -8,9 +8,12 @@
 
 #import "NHTMainViewController.h"
 #import "NHTDetailViewController.h"
+#import "NHTReplyTableViewController.h"
 #import "NHTTipManager.h"
 #import "NHTMainTableCell.h"
 #import "NHTMapViewController.h"
+#import "NHTReply.h"
+#import "NHTTip.h"
 
 @interface NHTMainViewController (){
      NSArray *searchResults;
@@ -166,28 +169,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"#####3-1%@", sender);
     if ([segue.identifier isEqual:@"showTipDetail"]) {
-    /* //wil be deleted
-<<<<<<< HEAD
-        NSIndexPath *indexPath = nil;
-        NHTMainTableCell *tipCell = nil;
-        NSObject *targetCell = nil;
-        
-        if (self.searchDisplayController.active) {
-            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
-            targetCell = [searchResults objectAtIndex:indexPath.row];
-        } else {
-            tipCell = [sender view];
-        }
-        
-       // NSLog(@"#####3-2%@", sender);
-        //NSLog(@"####sender target? %@",[sender view]);
- */
         NHTDetailViewController *tipDetailController = (NHTDetailViewController *)segue.destinationViewController;
 
         NSLog(@"#####3-2%@", sender);
         NSLog(@"####sender target? %@",[sender view]);
         NHTMainTableCell *tipCell = [sender view];
-
 
         if(tipCell){
             if(tipCell.tip){
@@ -213,8 +199,51 @@
     } else if ([segue.identifier isEqualToString:@"showNearMap"]) {
         NHTMapViewController *mapViewController = (NHTMapViewController *)segue.destinationViewController;
         mapViewController.tipCollection = self.Q1.tipCollection;
+    } else if ([segue.identifier isEqualToString:@"showRepliesFromMain"]) {
+        NSString *tipID = [sender valueForKey:@"stringTag"];
+        [self loadReply:tipID];
+        
+        NHTReplyTableViewController *replyController = (NHTReplyTableViewController *)segue.destinationViewController;
+        replyController.NHTReplies = [self loadReply:tipID];
+        
     }
 }
+
+- (NSArray *)loadReply:(NSString *)tid{
+    NSMutableArray *repliesArray = [[NSMutableArray alloc] init];
+    
+    NSString *baseURL = @"http://54.64.250.239:3000/reply/_id=";
+    baseURL = [baseURL stringByAppendingString:tid];
+    
+    NSURL *replyURL = [NSURL URLWithString: baseURL];
+    
+    NSData *jsonData = [NSData dataWithContentsOfURL:replyURL];
+    
+    if (jsonData) {
+        NSError *error = nil;
+        NSArray *loadedRepliesArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+        NSUInteger replyCount = loadedRepliesArray.count;
+        
+        NSLog(@"replyCount: %d", replyCount);
+        
+        for (int i = 0; i < replyCount; i++){
+            NSDictionary *rawReply = loadedRepliesArray[i];
+            NHTReply *newReply = [[NHTReply alloc] init];
+            newReply.replyId = [rawReply objectForKey:@"_id"];
+            newReply.replyTipId = [rawReply objectForKey:@"tid"];
+            newReply.replyUserId = [rawReply objectForKey:@"uid"];
+            newReply.replyDetail = [rawReply objectForKey:@"detail"];
+            newReply.replyNickname = [rawReply objectForKey:@"nickname"];
+            newReply.replyProfilephoto = [rawReply objectForKey:@"profilephoto"];
+            newReply.replytime = [rawReply objectForKey:@"time"];
+            
+            [repliesArray addObject:newReply];
+        }
+    }
+    NSLog(@"load end");
+    return repliesArray;
+};
+
 
 -(void) shouldNewTipReload{
     

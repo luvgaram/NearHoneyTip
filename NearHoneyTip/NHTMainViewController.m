@@ -264,6 +264,8 @@
         NHTReplyManager* replyManager = [[NHTReplyManager alloc] init];
         replyController.NHTRepliesArray = [replyManager replyDidLoad:tipID];
         replyController.NHTReplyTipId = tipID;
+        
+         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getLatestTips) name:@"backFromReply" object:nil];
     }
 }
 

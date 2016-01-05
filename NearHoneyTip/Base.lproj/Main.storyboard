@@ -274,6 +274,7 @@ imgComment</string>
                         <outlet property="likeButtonImage" destination="m0k-4L-21a" id="lQ6-Mj-5bl"/>
                         <outlet property="searchDisplayController" destination="sQ9-SK-eXl" id="Ict-AY-ZRT"/>
                         <outlet property="storeMapView" destination="h31-dt-v0W" id="CU9-a0-Qby"/>
+                        <outlet property="storeName" destination="zXm-5i-uH5" id="bix-Qv-6jR"/>
                         <outlet property="tipDate" destination="JcF-KA-RC2" id="jcZ-88-ooA"/>
                         <outlet property="tipDetails" destination="Fw5-Ym-iwA" id="uIC-JX-GrD"/>
                         <outlet property="tipImage" destination="BFH-EB-tAe" id="9Q1-so-lxT"/>
@@ -314,7 +315,7 @@ imgComment</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z4O-rJ-i4h">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="댓글을 입력해주세요." textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="z4O-rJ-i4h">
                                 <rect key="frame" x="8" y="72" width="305" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -323,11 +324,11 @@ imgComment</string>
                                 <rect key="frame" x="0.0" y="109" width="320" height="459"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="replyCell" rowHeight="80" id="Lgl-zI-SWN" customClass="NHTReplyTableCell">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="replyCell" rowHeight="68" id="Lgl-zI-SWN" customClass="NHTReplyTableCell">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="68"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lgl-zI-SWN" id="WC1-IR-Rvd">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUi-Oa-UAH">
@@ -431,6 +432,9 @@ imgComment</string>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOa-wg-jjg">
                                 <rect key="frame" x="267" y="72" width="46" height="30"/>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendReply:" destination="S5f-Kn-yS4" eventType="touchUpInside" id="MVK-Cc-NDg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -451,12 +455,13 @@ imgComment</string>
                     <navigationItem key="navigationItem" id="PBM-9R-0KH"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="replyText" destination="z4O-rJ-i4h" id="7ke-Pj-2nn"/>
                         <outlet property="tableView" destination="3ol-DZ-Qi0" id="Wgc-Xp-iD9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfS-Y3-Psu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2249" y="-732"/>
+            <point key="canvasLocation" x="1865" y="-732"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yGx-lY-bro">

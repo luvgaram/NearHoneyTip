@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSMutableArray *replies;
 @property (strong, nonatomic) NHTButtonTapPost *postManager;
 
+
 @property (weak, nonatomic) IBOutlet UINavigationItem *storeName;
 @property (weak, nonatomic) IBOutlet UIImageView *tipImage;
 @property (weak, nonatomic) IBOutlet UITextView *tipDetails;

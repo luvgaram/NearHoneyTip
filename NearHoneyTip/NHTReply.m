@@ -10,6 +10,4 @@
 
 @implementation NHTReply
 
-@synthesize replyNickname;
-
 @end

@@ -10,7 +10,7 @@
 
 @class NHTTipManager;
 
-@interface NHTMainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate, UISearchResultsUpdating,UISearchBarDelegate>
+@interface NHTMainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate, UISearchResultsUpdating,UISearchBarDelegate, UISearchControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIProgressView *tipLoadingProgressBar;
 @property (strong,nonatomic) UISearchController *searchController;

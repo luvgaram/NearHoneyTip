@@ -8,6 +8,7 @@
 
 #import "NHTTipManager.h"
 #import "NHTTipCollection.h"
+#import "NHTTip.h"
 
 @implementation NHTTipManager{
     NSUserDefaults *preferences;
@@ -17,6 +18,8 @@
     if(self){
         NSLog(@"i want to go");
         self.tipCollection = [[NHTTipCollection alloc] init];
+        self.searchResults = [[NSMutableArray alloc] init];
+        self.loadedTips = [[NSArray alloc] init];
     }
     return self;
 }
@@ -93,27 +96,34 @@
             //??서버에서 어떤 순서로 보내주지??
             [self.tipCollection addTip: [loadedTipsArray objectAtIndex: i]];
         }
+        
+        self.loadedTips = loadedTipsArray;
     }
     NSLog(@"load end");
    // NSLog(@"%@",self.tipCollection);
+
 };
+
+-(void)tipsDidLoadWithSearchResults:(NSArray*)searchedArray{
+    
+    [self removeAllTips];
+    NSUInteger tipCount = searchedArray.count;
+    //NSUInteger curreuntIndex = tipCount;
+    
+    NSLog(@"count: %u",tipCount);
+    for(int i = 0; i < tipCount ; i++){
+        //curreuntIndex = tipCount - (i + 1);
+        //??서버에서 어떤 순서로 보내주지??
+        [self.tipCollection addTip: [searchedArray objectAtIndex: i]];
+    }
+}
+
+
 
 - (void)removeAllTips{
     [self.tipCollection.tips removeAllObjects];
 }
-/* 
- //tipDidReload
- 위와 같은 방식으로 loadedTipsArray를 만든다.
- loadedTipsArray.count > tipcollection.count 일 경우 addtip
-*/
 
-/*
--(BOOL)containsTip:(NSDictionary*)newTip{
-    NSString *newTipId = [newTip objectForKey:@"_id"];
-    return [self.tipCollection containsTip:newTipId];
-    
-}
- */
 
 - (NSInteger)countOfTipCollection{
     if(self.tipCollection){
@@ -128,8 +138,31 @@
     return [self.tipCollection objectAtIndex:index];
 }
 
-- (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate{
-    return [self.tipCollection filteredArrayUsingPredicate:predicate];
+- (void)updateFilteredContentForTipStoreName:(NSString *)tipStoreName
+{
+    NSLog(@"LOG 2 :%@", tipStoreName);
+
+    if (tipStoreName == nil) {
+        
+        // If empty the search results are the same as the original data
+        self.searchResults = [self.tipCollection.tips mutableCopy];
+        NSLog(@"LOG !!!!!");
+
+    } else {
+        
+        NSMutableArray *searchResults = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *tip in self.loadedTips) {
+            if ([tip[@"storename"] containsString:tipStoreName]) {
+                
+                
+                [searchResults addObject:tip];
+            }
+            
+            self.searchResults = searchResults;
+        }
+        
+    }
 }
 
 - (NSDictionary*)dictionaryAtIndex:(NSUInteger)index{

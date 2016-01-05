@@ -12,9 +12,12 @@
 @interface NHTTipManager : NSObject
 
 @property(strong, nonatomic) NHTTipCollection *tipCollection;
+@property (nonatomic, strong) NSMutableArray *searchResults;
+@property(nonatomic, strong) NSArray *loadedTips;
 
 -(id)init;
 -(void)tipsDidLoad;
+-(void)tipsDidLoadWithSearchResults:(NSArray*)searchedArray;
 -(void)mytipsDidLoad;
 
 -(NSInteger)countOfTipCollection;
@@ -22,6 +25,9 @@
 //-(BOOL)containsTip:(NSDictionary*)newTip;
 
 -(void)removeAllTips;
--(NSArray*)filteredArrayUsingPredicate:(NSPredicate *)predicate;
+- (void)updateFilteredContentForTipStoreName:(NSString *)tipStoreName;
+
+
+
 
 @end

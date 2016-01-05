@@ -23,12 +23,21 @@
 @implementation NHTDetailViewController
 @synthesize storeMapView;
 
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    NSLog(@"%%%%%%%%%%%%???????");
+    [self.navigationController popViewControllerAnimated:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"backFromDetail" object:nil];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:NO animated:nil];
     
     self.postManager = [[NHTButtonTapPost alloc] init];
     if(self.tip){
-    
+        
+        self.navigationController.title = self.tip.storeName;
         self.storeName.title = self.tip.storeName;
         
         // modified by ej

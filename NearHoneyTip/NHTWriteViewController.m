@@ -125,7 +125,7 @@ static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
                                                                   delegate:self];
     [connection start];
-    [self connection:connection didReceiveResponse:response];
+    //[self connection:connection didReceiveResponse:response];
     NSLog(@"connection end");
     //temp
     

@@ -11,6 +11,8 @@
 
 @interface NHTTip : NSObject
 
+
+//@property(strong,nonatomic) NSString *name;
 @property NSUInteger likeInteger;
 @property (strong, nonatomic) NSString *tipId;
 @property (strong, nonatomic) NSString *tipImage;
@@ -28,5 +30,9 @@
 @property (readwrite, nonatomic) NSUInteger distance;
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
+
+- (void)setValue:(id)value
+ forUndefinedKey:(NSString *)key;
+- (id)valueForKey:(NSString *)key;
 
 @end

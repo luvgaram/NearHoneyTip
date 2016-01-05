@@ -451,6 +451,11 @@ imgComment</string>
                             <constraint firstItem="yTt-1E-oPh" firstAttribute="top" secondItem="3ol-DZ-Qi0" secondAttribute="bottom" id="r0H-7R-Qqf"/>
                             <constraint firstItem="3ol-DZ-Qi0" firstAttribute="top" secondItem="bzH-Rn-tbs" secondAttribute="bottom" constant="38" id="spS-uH-IAN"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="eQX-tN-oCq"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="PBM-9R-0KH"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -656,10 +661,10 @@ imgComment</string>
                                                     <exclude reference="ccM-bi-NeJ"/>
                                                     <exclude reference="hgT-LL-6Hk"/>
                                                     <exclude reference="mgd-X3-fl4"/>
+                                                    <exclude reference="nhK-Rp-IDk"/>
                                                     <exclude reference="05a-jB-VBq"/>
                                                     <exclude reference="TZR-rn-bsY"/>
                                                     <exclude reference="kYd-Tn-AsU"/>
-                                                    <exclude reference="nhK-Rp-IDk"/>
                                                     <exclude reference="cUY-Jo-mxw"/>
                                                     <exclude reference="aOp-ue-Vqx"/>
                                                     <exclude reference="qPl-XN-K3y"/>
@@ -972,7 +977,7 @@ imgComment</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starbucks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-xF-grL" userLabel="storeName">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Starbucks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-xF-grL" userLabel="storeName">
                                             <rect key="frame" x="160" y="0.0" width="156" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="26" id="SW4-Qr-WaX"/>
@@ -990,21 +995,15 @@ imgComment</string>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9X2-Tr-nCc">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9X2-Tr-nCb">
                                             <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="9X2-Tr-nCc" secondAttribute="height" multiplier="1:1" id="fN5-D1-Rj3"/>
-                                                <constraint firstAttribute="width" secondItem="9X2-Tr-nCc" secondAttribute="height" multiplier="1:1" id="rLZ-Gw-pUr"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="rLZ-Gw-pUr"/>
-                                                </mask>
-                                            </variation>
                                         </imageView>
                                         <button opaque="NO" tag="8" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byS-Xy-wKC">
                                             <rect key="frame" x="240" y="116" width="52" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="52" id="w2a-NA-Tnq"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                             <state key="normal" title="  댓글 1" image="nht_icon_reply">
                                                 <color key="titleColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1028,29 +1027,21 @@ imgComment</string>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9X2-Tr-nCc">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9X2-Tr-nCa">
                                             <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="9X2-Tr-nCc" secondAttribute="height" multiplier="1:1" id="fN5-D1-Rj3"/>
-                                                <constraint firstAttribute="width" secondItem="9X2-Tr-nCc" secondAttribute="height" multiplier="1:1" id="rLZ-Gw-pUr"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="rLZ-Gw-pUr"/>
-                                                </mask>
-                                            </variation>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="4Ia-BT-0uU" firstAttribute="centerX" secondItem="J38-3X-4My" secondAttribute="centerX" id="08r-K9-Coq"/>
+                                        <constraint firstItem="TUm-V3-7Me" firstAttribute="leading" secondItem="9X2-Tr-nCa" secondAttribute="trailing" constant="18" id="0fR-Dj-AxX"/>
                                         <constraint firstItem="byS-Xy-wKC" firstAttribute="firstBaseline" secondItem="TUm-V3-7Me" secondAttribute="baseline" id="6dJ-ya-WmV"/>
                                         <constraint firstItem="Jkm-UE-2zL" firstAttribute="top" secondItem="J38-3X-4My" secondAttribute="bottom" constant="8" symbolic="YES" id="CZ2-ln-5pm"/>
                                         <constraint firstItem="J38-3X-4My" firstAttribute="top" secondItem="8Wr-xF-grL" secondAttribute="bottom" id="Ci0-sw-m5I"/>
                                         <constraint firstItem="J38-3X-4My" firstAttribute="leading" secondItem="vbe-Yb-hMQ" secondAttribute="leading" id="DdP-Av-wwT"/>
                                         <constraint firstItem="byS-Xy-wKC" firstAttribute="leading" secondItem="TUm-V3-7Me" secondAttribute="trailing" constant="8" symbolic="YES" id="EDj-zh-7pq"/>
-                                        <constraint firstItem="8Wr-xF-grL" firstAttribute="leading" secondItem="9X2-Tr-nCc" secondAttribute="trailing" constant="5" id="G87-2W-faS"/>
-                                        <constraint firstItem="J38-3X-4My" firstAttribute="leading" secondItem="9X2-Tr-nCc" secondAttribute="trailing" constant="3" id="KH7-sy-OWr"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="byS-Xy-wKC" secondAttribute="trailing" constant="20" id="FOE-Ts-7Ji"/>
+                                        <constraint firstItem="9X2-Tr-nCa" firstAttribute="top" secondItem="8Wr-xF-grL" secondAttribute="top" id="MCw-R1-07P"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="8Wr-xF-grL" secondAttribute="trailing" constant="-4" id="MIx-L6-bga"/>
                                         <constraint firstItem="8Wr-xF-grL" firstAttribute="top" secondItem="LCq-rm-g35" secondAttribute="top" id="Mer-O1-nQT"/>
                                         <constraint firstItem="byS-Xy-wKC" firstAttribute="baseline" secondItem="TUm-V3-7Me" secondAttribute="firstBaseline" id="NRO-3k-UpT"/>
@@ -1058,18 +1049,19 @@ imgComment</string>
                                         <constraint firstItem="4Ia-BT-0uU" firstAttribute="top" secondItem="Jkm-UE-2zL" secondAttribute="bottom" constant="1" id="OOZ-mQ-Y9Z"/>
                                         <constraint firstItem="Wb4-Lk-ybs" firstAttribute="top" secondItem="J38-3X-4My" secondAttribute="bottom" constant="5" id="TAK-hp-8Uv"/>
                                         <constraint firstItem="Wb4-Lk-ybs" firstAttribute="leading" secondItem="Jkm-UE-2zL" secondAttribute="trailing" constant="8" symbolic="YES" id="UEd-w2-c0h"/>
-                                        <constraint firstItem="TUm-V3-7Me" firstAttribute="leading" secondItem="9X2-Tr-nCc" secondAttribute="trailing" constant="18" id="XNe-kB-3Qu"/>
+                                        <constraint firstItem="9X2-Tr-nCa" firstAttribute="leading" secondItem="LCq-rm-g35" secondAttribute="leading" id="UWC-Ig-tjm"/>
                                         <constraint firstItem="vbe-Yb-hMQ" firstAttribute="top" secondItem="J38-3X-4My" secondAttribute="bottom" constant="14" id="bey-cd-86I"/>
                                         <constraint firstItem="byS-Xy-wKC" firstAttribute="top" secondItem="TUm-V3-7Me" secondAttribute="top" id="c31-xa-gg2"/>
-                                        <constraint firstItem="8Wr-xF-grL" firstAttribute="top" secondItem="9X2-Tr-nCc" secondAttribute="top" id="cPf-DW-uwz"/>
-                                        <constraint firstItem="9X2-Tr-nCc" firstAttribute="leading" secondItem="LCq-rm-g35" secondAttribute="leading" id="gz8-eQ-WS5"/>
+                                        <constraint firstItem="9X2-Tr-nCa" firstAttribute="top" secondItem="9X2-Tr-nCb" secondAttribute="top" id="cuh-JN-xyT"/>
+                                        <constraint firstItem="9X2-Tr-nCa" firstAttribute="leading" secondItem="9X2-Tr-nCb" secondAttribute="leading" id="etx-0P-0LV"/>
+                                        <constraint firstItem="9X2-Tr-nCa" firstAttribute="trailing" secondItem="9X2-Tr-nCb" secondAttribute="trailing" id="gI6-cC-iZu"/>
                                         <constraint firstItem="Wb4-Lk-ybs" firstAttribute="centerY" secondItem="Jkm-UE-2zL" secondAttribute="centerY" id="hqn-Zu-8Jq"/>
-                                        <constraint firstItem="9X2-Tr-nCc" firstAttribute="width" secondItem="LCq-rm-g35" secondAttribute="height" multiplier="155:156" id="ik2-gW-xwh"/>
                                         <constraint firstItem="Jkm-UE-2zL" firstAttribute="leading" secondItem="vbe-Yb-hMQ" secondAttribute="trailing" constant="8" symbolic="YES" id="nZd-I1-389"/>
                                         <constraint firstItem="byS-Xy-wKC" firstAttribute="centerY" secondItem="TUm-V3-7Me" secondAttribute="centerY" id="qVg-Si-MwW"/>
+                                        <constraint firstItem="9X2-Tr-nCa" firstAttribute="bottom" secondItem="9X2-Tr-nCb" secondAttribute="bottom" id="tXZ-d8-Qpv"/>
                                         <constraint firstItem="J38-3X-4My" firstAttribute="trailing" secondItem="LCq-rm-g35" secondAttribute="trailingMargin" id="uld-LV-QyB"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="TUm-V3-7Me" secondAttribute="bottom" constant="7" id="v87-cd-mZ4"/>
-                                        <constraint firstItem="9X2-Tr-nCc" firstAttribute="centerY" secondItem="LCq-rm-g35" secondAttribute="centerY" id="vCA-7B-aRK"/>
+                                        <constraint firstItem="9X2-Tr-nCa" firstAttribute="centerY" secondItem="LCq-rm-g35" secondAttribute="centerY" id="w2P-63-K8f"/>
                                         <constraint firstItem="4Ia-BT-0uU" firstAttribute="leading" secondItem="vbe-Yb-hMQ" secondAttribute="trailing" constant="6" id="yIt-Pr-G2I"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -1078,7 +1070,6 @@ imgComment</string>
                                     <outlet property="likeButton" destination="TUm-V3-7Me" id="wQO-gr-9Vd"/>
                                     <outlet property="storeName" destination="8Wr-xF-grL" id="EPe-3a-xK8"/>
                                     <outlet property="tipDetails" destination="J38-3X-4My" id="IuA-95-adz"/>
-                                    <outlet property="tipImage" destination="9X2-Tr-nCc" id="WNr-M2-FY4"/>
                                     <outlet property="tipNewTime" destination="4Ia-BT-0uU" id="N3B-dW-72B"/>
                                     <outlet property="userBadge" destination="Wb4-Lk-ybs" id="Wz2-qc-Ey7"/>
                                     <outlet property="userNickname" destination="Jkm-UE-2zL" id="HgH-lc-GnL"/>
@@ -1678,7 +1669,8 @@ imgComment</string>
         <image name="setting.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H2p-hW-DwF"/>
+        <segue reference="jUa-bM-Dl1"/>
+        <segue reference="dD3-sg-Vhc"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

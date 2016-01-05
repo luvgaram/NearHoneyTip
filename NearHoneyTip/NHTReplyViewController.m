@@ -9,17 +9,23 @@
 #import "NHTReplyViewController.h"
 #import "NHTReply.h"
 #import "NHTReplyTableCell.h"
+#import "NHTReplyManager.h"
 
 @interface NHTReplyViewController ()
 
 @end
 
 @implementation NHTReplyViewController
+NSURLResponse *replResponse;
+NSString *replId;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"replyView: %d", [self.NHTRepliesArray count]);
-    // Do any additional setup after loading the view.
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *uidIdentifier = @"UserDefault";
+    replId = [preferences objectForKey:uidIdentifier];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,6 +36,60 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 68;
 }
+
+
+- (IBAction)sendReply:(id)sender {
+    if (self.replyText.text != nil) {
+        NHTReply *newReply = [[NHTReply alloc] init];
+        newReply.replyTipId = self.NHTReplyTipId;
+        newReply.replyUserId = replId;
+        newReply.replyDetail = self.replyText.text;
+        
+        [self postReply:newReply];
+    }
+}
+
+- (void)postReply: (NHTReply *)reply {
+    NSLog(@"start post reply");
+    
+    NSDictionary* replyDictionary = @{@"tid" : reply.replyTipId, @"uid" : reply.replyUserId, @"detail" : reply.replyDetail};
+
+    NSData* jsondata = [NSJSONSerialization dataWithJSONObject:replyDictionary
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:nil];
+    
+    if (jsondata){
+        NSString* URLForReply = @"http://54.64.250.239:3000/reply";
+        NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLForReply] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:120.0];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[jsondata length]] forHTTPHeaderField:@"Content-Length"];
+        [request setHTTPBody:jsondata];
+        
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
+                                                                      delegate:self];
+        [connection start];
+        
+        [self connection:connection didReceiveResponse:replResponse];
+        NSLog(@"connection end");
+    }
+}
+
+- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)replResponse {
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*) replResponse;
+    long code = [httpResponse statusCode];
+    NSLog(@"connection response: %ld", code);
+    
+    if (code == 200) {
+        self.replyText.text = nil;
+        NHTReplyManager *replyManager = [[NHTReplyManager alloc] init];
+        self.NHTRepliesArray = nil;
+        self.NHTRepliesArray = [replyManager replyDidLoad:self.NHTReplyTipId];
+        [self.tableView reloadData];
+    }
+}
+
 
 #pragma mark - Table view data source
 

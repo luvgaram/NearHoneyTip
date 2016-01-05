@@ -22,7 +22,7 @@
     self.replyUserNickname.text = reply.replyNickname;
     self.replyDate.text = reply.replytime;
     self.replyDetail.text = reply.replyDetail;
-    self.replyImage.layer.cornerRadius = 16;
+    self.replyImage.layer.cornerRadius = 20;
     
     NSUInteger pointOfPathStart = 5;
     NSString *replyImagePath = [reply.replyProfilephoto substringFromIndex: pointOfPathStart];

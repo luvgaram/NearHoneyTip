@@ -11,8 +11,11 @@
 @interface NHTReplyViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextField *replyText;
+- (IBAction)sendReply:(id)sender;
 
 @property (nonatomic, strong) NSArray *NHTRepliesArray;
+@property (nonatomic, strong) NSString *NHTReplyTipId;
 
 
 @end

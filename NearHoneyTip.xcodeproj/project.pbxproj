@@ -11,14 +11,12 @@
 		6F4035AB1C33C2DD00DA821C /* NHTProfileImgEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4035AA1C33C2DD00DA821C /* NHTProfileImgEditController.m */; };
 		6F4035AE1C33C2E500DA821C /* NHTProfileNicknameEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4035AD1C33C2E500DA821C /* NHTProfileNicknameEditController.m */; };
 		6F4793851C17B9E7002686D3 /* NHTMytipsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */; };
-		6F5CA90C1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5CA90B1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m */; };
 		6FA2C4331C30039F0014964D /* NHTGetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA2C4321C30039F0014964D /* NHTGetLocationViewController.m */; };
 		6FA2C4351C3003BC0014964D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA2C4341C3003BC0014964D /* CoreLocation.framework */; };
 		6FA2C4371C3003C20014964D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA2C4361C3003C20014964D /* UIKit.framework */; };
 		6FA2C4391C3003D90014964D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA2C4381C3003D90014964D /* Foundation.framework */; };
 		6FA2C43B1C3003E20014964D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA2C43A1C3003E20014964D /* CoreGraphics.framework */; };
 		6FD0C06B1C1711AB0021FEB6 /* NHTMyTipsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */; };
-		6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C06D1C1711D80021FEB6 /* NHTAlarmsController.m */; };
 		6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0701C1712210021FEB6 /* NHTProfileController.m */; };
 		6FD0C0741C171B8F0021FEB6 /* NHTSideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */; };
 		A8368B3F1C2140FE00B4D0F3 /* nht_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */; };
@@ -110,8 +108,6 @@
 		6F4035AD1C33C2E500DA821C /* NHTProfileNicknameEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTProfileNicknameEditController.m; sourceTree = "<group>"; };
 		6F4793831C17B9E7002686D3 /* NHTMytipsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMytipsTableCell.h; sourceTree = "<group>"; };
 		6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMytipsTableCell.m; sourceTree = "<group>"; };
-		6F5CA90A1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTAlarmsTableCell.h; sourceTree = "<group>"; };
-		6F5CA90B1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTAlarmsTableCell.m; sourceTree = "<group>"; };
 		6FA2C4311C30039F0014964D /* NHTGetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTGetLocationViewController.h; sourceTree = "<group>"; };
 		6FA2C4321C30039F0014964D /* NHTGetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTGetLocationViewController.m; sourceTree = "<group>"; };
 		6FA2C4341C3003BC0014964D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -120,8 +116,6 @@
 		6FA2C43A1C3003E20014964D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6FD0C0691C1711AB0021FEB6 /* NHTMyTipsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTMyTipsController.h; sourceTree = "<group>"; };
 		6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTMyTipsController.m; sourceTree = "<group>"; };
-		6FD0C06C1C1711D80021FEB6 /* NHTAlarmsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTAlarmsController.h; sourceTree = "<group>"; };
-		6FD0C06D1C1711D80021FEB6 /* NHTAlarmsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTAlarmsController.m; sourceTree = "<group>"; };
 		6FD0C06F1C1712210021FEB6 /* NHTProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTProfileController.h; sourceTree = "<group>"; };
 		6FD0C0701C1712210021FEB6 /* NHTProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTProfileController.m; sourceTree = "<group>"; };
 		6FD0C0721C171B8F0021FEB6 /* NHTSideTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTSideTableViewController.h; sourceTree = "<group>"; };
@@ -474,10 +468,6 @@
 				6F4035AA1C33C2DD00DA821C /* NHTProfileImgEditController.m */,
 				6FD0C0691C1711AB0021FEB6 /* NHTMyTipsController.h */,
 				6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */,
-				6F5CA90A1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.h */,
-				6F5CA90B1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m */,
-				6FD0C06C1C1711D80021FEB6 /* NHTAlarmsController.h */,
-				6FD0C06D1C1711D80021FEB6 /* NHTAlarmsController.m */,
 				6F4793831C17B9E7002686D3 /* NHTMytipsTableCell.h */,
 				6F4793841C17B9E7002686D3 /* NHTMytipsTableCell.m */,
 				6FD0C0721C171B8F0021FEB6 /* NHTSideTableViewController.h */,
@@ -715,12 +705,10 @@
 				A8925E581C33B237008510FC /* NHTAnnotation.m in Sources */,
 				6F4035AE1C33C2E500DA821C /* NHTProfileNicknameEditController.m in Sources */,
 				A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */,
-				6FD0C06E1C1711D80021FEB6 /* NHTAlarmsController.m in Sources */,
 				A863272E1C2A0625001B293B /* CameraFocusSquare.m in Sources */,
 				A863274B1C2A06FA001B293B /* UIView+RNActivityView.m in Sources */,
 				A86327431C2A06DE001B293B /* PhotoPickerCell.m in Sources */,
 				CE3355BA1BE9CB9100B77DEC /* AppDelegate.m in Sources */,
-				6F5CA90C1C1DCBF500BCCDF4 /* NHTAlarmsTableCell.m in Sources */,
 				CE64D5951C204DDB0058613C /* NHTMainViewController.m in Sources */,
 				CE8D538F1C0C37B4005F913E /* NHTTipManager.m in Sources */,
 				CE69AABA1C0586D600909DBD /* NHTDetailViewController.m in Sources */,

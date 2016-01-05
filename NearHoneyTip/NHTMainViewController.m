@@ -14,7 +14,7 @@
 #import "NHTMapViewController.h"
 
 @interface NHTMainViewController (){
-   
+    NHTSearchResultsTableViewController *vc;
 }
 
 @end
@@ -56,34 +56,45 @@
     
     //Use the current view controller to update the search results.
     self.searchController.searchResultsUpdater = self;
+    self.searchController.searchBar.delegate = self;
     
     
-    
-    /*
-    self.navigationItem.titleView =  self.searchController.searchBar;
-    searchResultsController.navigationItem.titleView = self.searchController.searchBar;
-   */
+    //self.searchController.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    //self.navigationItem.titleView =  self.searchController.searchBar;
+    //searchResultsController.navigationItem.titleView = self.searchController.searchBar;
+   
     
     self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x,
                                                        self.searchController.searchBar.frame.origin.y,
                                                        self.searchController.searchBar.frame.size.width, 44.0);
+    self.searchController.searchBar.tintColor = [[UIColor alloc]initWithRed: 230.0/255.0 green:126.0/255.0 blue:35.0/255.0 alpha:1];
+    //[self.view addSubview: self.searchController.searchBar];
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
     
     
-    /*
+    
     // It is usually good to set the presentation context.
     self.searchController.definesPresentationContext = YES;
     self.searchController.dimsBackgroundDuringPresentation = YES;
-    self.searchController.hidesNavigationBarDuringPresentation = NO;
-    self.searchController.obscuresBackgroundDuringPresentation = NO;
-    //self.searchController.searchBar.delegate = self;
+    self.searchController.hidesNavigationBarDuringPresentation = YES;
+   self.searchController.obscuresBackgroundDuringPresentation = NO;
     
-    */
-    
+  
+   
 }
 
-
+-(void) setupSearchBar {
+    
+    // Set search bar position and dimensions
+    CGRect searchBarFrame =  self.searchController.searchBar.frame;
+    CGRect viewFrame = self.view.frame;
+    self.searchController.searchBar.frame = CGRectMake(searchBarFrame.origin.x, searchBarFrame.origin.y + 64,viewFrame.size.width, 44);
+    
+    
+    // Add search controller's search bar to our view and bring it to forefront
+    [self.view addSubview: self.searchController.searchBar];
+}
 /*
 -(void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
 {
@@ -107,9 +118,13 @@
         UINavigationController *navController = (UINavigationController *)self.searchController.searchResultsController;
         
         // Present SearchResultsTableViewController as the topViewController
-        NHTSearchResultsTableViewController *vc = (NHTSearchResultsTableViewController *)navController.visibleViewController;
+       NHTSearchResultsTableViewController *vc = (NHTSearchResultsTableViewController *)navController.visibleViewController;
+
         
-        // Update searchResults
+//        vc.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x,
+//                                                           self.searchController.searchBar.frame.origin.y,
+//                                                           self.searchController.searchBar.frame.size.width, 44.0);
+//        
         
         [vc.Q1 tipsDidLoadWithSearchResults: self.Q1.searchResults];
         
@@ -122,8 +137,11 @@
     //[self.tableView reloadData];
 }
 
-
- 
+//
+//- (void)searchBar:(UISearchBar *)searchBar
+//    textDidChange:(NSString *)searchText{
+//    self.tableView.tableHeaderView = self.searchController.searchBar;
+//}
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

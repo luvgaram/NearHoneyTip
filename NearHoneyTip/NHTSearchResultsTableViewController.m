@@ -21,11 +21,10 @@
     [super viewDidLoad];
     
     self.Q1 = [[NHTTipManager alloc]init];
-    [self.tableView registerClass:[NHTSearchedCellTableViewCell class] forCellReuseIdentifier:@"searchCell"];
-   //[self.tableView registerNib:[UINib nibWithNibName:@"Cell" bundle:nil]
-      //   forCellReuseIdentifier:@"searchCell"];
+    
     [self.Q1 tipsDidLoad];
     
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +48,7 @@
         // Display a message when the table is empty
         UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
         
-        messageLabel.text = @"찾는 꿀팁이 없네용 = 3=";
+        messageLabel.text = @"찾는 꿀팁이 이것밖에 없네용 = 3=";
         messageLabel.textColor = [[UIColor alloc]initWithRed: 230.0/255.0 green:126.0/255.0 blue:35.0/255.0 alpha:1];
         messageLabel.numberOfLines = 2;
         messageLabel.textAlignment = NSTextAlignmentCenter;

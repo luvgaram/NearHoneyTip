@@ -10,11 +10,9 @@
 
 @class NHTTipManager;
 
-@interface NHTMainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate, UISearchResultsUpdating>
+@interface NHTMainViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate, UISearchResultsUpdating,UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIProgressView *tipLoadingProgressBar;
-@property (weak, nonatomic) IBOutlet UIView *searchbarContainer;
-
 @property (strong,nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) UIRefreshControl *refreshManager;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -25,5 +23,5 @@
 - (void)getLatestTips;
 - (void)shouldNewTipReload;
 
-
+-(void) setupSearchBar;
 @end

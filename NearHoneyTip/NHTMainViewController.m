@@ -82,7 +82,7 @@
     self.searchController.definesPresentationContext = YES;
     self.searchController.dimsBackgroundDuringPresentation = YES;
     self.searchController.hidesNavigationBarDuringPresentation = YES;
-   self.searchController.obscuresBackgroundDuringPresentation = NO;
+//   self.searchController.obscuresBackgroundDuringPresentation = YES;
     
   
    

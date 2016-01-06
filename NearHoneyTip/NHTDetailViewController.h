@@ -35,6 +35,9 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *storeMapView;
 
+- (IBAction)deleteButton:(id)sender;
+
+- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 
 
 @end

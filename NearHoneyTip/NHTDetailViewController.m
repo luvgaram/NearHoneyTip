@@ -210,4 +210,30 @@
 }
 */
 
+
+- (IBAction)deleteButton:(id)sender {
+    //    NSLog(@"asdfasdfasdfasdfasdf");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete" message: @"Tip을 삭제하시겠습니까? " delegate:self cancelButtonTitle:nil otherButtonTitles:@"삭제",@"취소", nil];
+    
+    [alert show];
+    
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    // the user clicked OK
+    if (buttonIndex == 0) {
+        NSLog(@"팁 삭제버튼 누름");
+        [self deleteTip:self.tip];
+        
+    }else if (buttonIndex == 1){
+        NSLog(@"팁 삭제 취소");
+    }
+}
+
+- (void) deleteTip:(NSDictionary *)tipDictionary {
+    NSLog(@"deleteTip");
+    
+    
+}
 @end

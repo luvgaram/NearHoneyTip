@@ -14,75 +14,65 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface NHTProfileController (){
-    NSURLResponse *response2;
+    NSURLResponse *profileResponse;
 }
 @end
 
 @implementation NHTProfileController
 @synthesize userNickname,inputText;
+NSString *profileUserId;
+NSString *profileUserNickname;
+NSString *profileUserPhoto;
 
-static NSString *boundary2 = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
+static NSString *profileBoundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    NSString *userId;
-    NSString *userNickname2;
-    NSString *userProfilePhoto;
-    
-    
+
     //Deligate
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *uidIdentifier = @"UserDefault";
     NSLog(@"******* UserDefault: %@",uidIdentifier);
     
     if([preferences objectForKey:uidIdentifier] != nil) {
-        userId = [preferences objectForKey:uidIdentifier];
-        userNickname2 = [preferences objectForKey:@"userNickname"];
-        userProfilePhoto = [preferences objectForKey:@"userProfileImagePath"];
+        profileUserId = [preferences objectForKey:uidIdentifier];
+        profileUserNickname = [preferences objectForKey:@"userNickname"];
+        profileUserPhoto = [preferences objectForKey:@"userProfileImagePath"];
         
         NSLog(@"******* userNickname: %@", userNickname);
-        NSLog(@"******* userProfileImagePath: %@",userProfilePhoto);
+        NSLog(@"******* userProfileImagePath: %@",profileUserPhoto);
         
-        userNickname.text = userNickname2;
+        userNickname.text = profileUserNickname;
         
         
         NSString *tipIconPathWhole = @"http://54.64.250.239:3000/image/icon=";
         NSUInteger pointOfPathStart = 5;
-        NSString *tipImagePath = [userProfilePhoto substringFromIndex: pointOfPathStart];
+        NSString *tipImagePath = [profileUserPhoto substringFromIndex: pointOfPathStart];
         
         tipIconPathWhole = [tipIconPathWhole stringByAppendingString:tipImagePath];
         [self.userProfile sd_setImageWithURL:[NSURL URLWithString:tipIconPathWhole]
                             placeholderImage:[UIImage imageNamed:@"nht_logo.png"]];
         
-        NSLog(@"userProfilePhoto : %@", 	userProfilePhoto);
-        
+        NSLog(@"userProfilePhoto : %@", profileUserPhoto);
         
         //imgView
         [self.userProfile setUserInteractionEnabled:YES];
         UITapGestureRecognizer *singleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapping:)];
         [singleTap setNumberOfTapsRequired:1];
         [self.userProfile addGestureRecognizer:singleTap];
-        
-        
-        
     }
 }
 
--(void)singleTapping:(UIGestureRecognizer *)recognizer
-{
-    [self setCustomImagePicker2];
+-(void)singleTapping:(UIGestureRecognizer *)recognizer {
+    [self setCustomImagePicker];
 }
 
 - (IBAction)profilePhotoEditButton:(id)sender {
-    [self setCustomImagePicker2];
+    [self setCustomImagePicker];
     
 }
 
-
-- (void)setCustomImagePicker2 {
-    
+- (void)setCustomImagePicker {
     CustomeImagePicker *cip = [[CustomeImagePicker alloc] init];
     cip.delegate = self;
     [cip setHideSkipButton:NO];
@@ -119,27 +109,6 @@ static NSString *boundary2 = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
 -(void) imageSelectionCancelled {
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"showTipMap"]) {
-        NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"ib_addphoto"], 1.0);
-        data = UIImageJPEGRepresentation(_chosenImg, 1.0);
-        
-        NSMutableDictionary *newTip = [[NSMutableDictionary alloc] init];
-        [newTip setObject:userNickname forKey:@"nickname"];
-        [newTip setObject:_userProfile forKey:@"profilephoto"];
-        //        [newTip setObject:_userId forKey:@"uid"];
-        //        [newTip setObject:data forKey:@"imageData"];
-        
-        NHTMapSelectViewController *mapViewController = (NHTMapSelectViewController *)segue.destinationViewController;
-        mapViewController.tip = newTip;
-    }
-}
-
-//- (IBAction)cancelWrite:(id)sender {
-//    NSLog(@"%@",self.navigationController.viewControllers);
-//    [self.navigationController popToRootViewControllerAnimated:YES];
-//}
-
 - (IBAction)cancelEdit:(id)sender{
     NSLog(@"%@",self.navigationController.viewControllers);
     [self.navigationController popToRootViewControllerAnimated:YES];
@@ -147,60 +116,48 @@ static NSString *boundary2 = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
 }
 
 - (IBAction)saveEdit:(id)sender{
-    [self editProfile:nil];
+    NSMutableDictionary *newUserProfile = [[NSMutableDictionary alloc] init];
+    [newUserProfile setObject:userNickname.text forKey:@"nickname"];
     
-    
+    NSLog(@"nickname: %@", [newUserProfile objectForKey:@"nickname"]);
+    [self editProfile:newUserProfile];
 }
 
 - (void) editProfile:(NSDictionary *)tipDictionary {
     NSLog(@"< start profile Edit >");
-    NSMutableData* body = [NSMutableData data];
-    NSData *data2 = tipDictionary[@"imageData"];
+    NSString *baseURL = @"http://54.64.250.239:3000/users/_id=";
+    baseURL = [baseURL stringByAppendingString:profileUserId];
     
-    if (data2) {
-        [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary2] dataUsingEncoding:NSUTF8StringEncoding]];
+    NSMutableData* body = [NSMutableData data];
+    NSData *data = UIImageJPEGRepresentation(_chosenImg, 1.0);
+    
+    if (data) {
+        [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", profileBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"upload\"; filename=\"%@.jpg\"\r\n", tipDictionary[@"storename"]] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[NSData dataWithData:data2]];
+        [body appendData:[NSData dataWithData:data]];
         [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
     }
-    //    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary2] dataUsingEncoding:NSUTF8StringEncoding]];
-    //    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"storename\"\r\n\r\n%@", tipDictionary[@"storename"]] dataUsingEncoding:NSUTF8StringEncoding]];
-    //
-    //    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary2] dataUsingEncoding:NSUTF8StringEncoding]];
-    //    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"tipdetail\"\r\n\r\n%@", tipDictionary[@"detail"]] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary2] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"uid\"\r\n\r\n%@", tipDictionary[@"uid"]] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSLog(@"< stipDictionary uid >: %@", tipDictionary[@"uid"]);
-    
-    
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary2] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", profileBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"nickname\"\r\n\r\n%@", tipDictionary[@"nickname"]] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary2] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"profilephoto\"\r\n\r\n%@", tipDictionary[@"profilephoto"]] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary2] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [self putFormDataAtURL:[NSURL URLWithString:@"http://54.64.250.239:3000/users/_id=9ABC1F3F-886F-4D0A-A307-1F75A49BA2BC"] putData:body];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", profileBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [self putFormDataAtURL:[NSURL URLWithString:baseURL] putData:body];
 }
 
 
 
 - (void)putFormDataAtURL :(NSURL *)url putData:(NSData*)putData {
-    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     request.HTTPMethod = @"PUT";
-    NSString* contentType2 = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary2];
-    [request addValue:contentType2 forHTTPHeaderField:@"Content-Type"];
+    NSString* contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", profileBoundary];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:putData];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
                                                                   delegate:self];
     [connection start];
-    [self connection:connection didReceiveResponse:response2];
+    [self connection:connection didReceiveResponse:profileResponse];
     NSLog(@"connection end");
 }
 
@@ -210,7 +167,9 @@ static NSString *boundary2 = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
     NSLog(@"connection response: %ld", code);
     
     if(code == 200){
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromWrite" object:self];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromEdit" object:self];
+        
     }
 }
 
@@ -222,8 +181,8 @@ static NSString *boundary2 = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
 }
 
 - (IBAction)NicknameEditButton:(id)sender {
-    NSString * input=inputText.text;
-    userNickname.text=input;
+    NSString *input = inputText.text;
+    userNickname.text = input;
     
 }
 

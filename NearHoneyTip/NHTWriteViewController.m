@@ -49,8 +49,7 @@ static NSString *boundary = @"!@#$@#!$@#!$1234567890982123456789!@#$#@$%#@";
     [self.imageView addGestureRecognizer:singleTap];
     }
 
--(void)singleTapping:(UIGestureRecognizer *)recognizer
-{
+-(void)singleTapping:(UIGestureRecognizer *)recognizer {
     [self setCustomImagePicker];
 }
 

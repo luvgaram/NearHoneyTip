@@ -301,7 +301,7 @@ imgComment</string>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2609" y="-791"/>
+            <point key="canvasLocation" x="3561" y="-951"/>
         </scene>
         <!--Reply View Controller-->
         <scene sceneID="3IL-4g-YVe">
@@ -486,7 +486,7 @@ imgComment</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zax-1v-ajy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="58"/>
+            <point key="canvasLocation" x="445" y="66"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="AVm-tt-SWl">
@@ -792,7 +792,7 @@ imgComment</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ns-yS-nAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="-90"/>
+            <point key="canvasLocation" x="952" y="-8"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="y7q-QB-pAo">
@@ -1500,7 +1500,7 @@ imgComment</string>
         <!--Search Results Table View Controller-->
         <scene sceneID="eRY-tN-rxg">
             <objects>
-                <viewController id="iQY-sl-vM0" customClass="NHTSearchResultsTableViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NHTSearchTVC" id="iQY-sl-vM0" customClass="NHTSearchResultsTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AAz-kP-fDo"/>
                         <viewControllerLayoutGuide type="bottom" id="wNE-cI-gRf"/>
@@ -1509,7 +1509,7 @@ imgComment</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V8E-iS-0FO" userLabel="searchTable">
+                            <tableView clipsSubviews="YES" tag="123" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V8E-iS-0FO" userLabel="searchTable">
                                 <rect key="frame" x="-8" y="0.0" width="336" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1655,6 +1655,7 @@ imgComment</string>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="V8E-iS-0FO" firstAttribute="centerX" secondItem="2Zf-DK-Xel" secondAttribute="centerX" id="2ms-5X-jGB"/>
                             <constraint firstItem="V8E-iS-0FO" firstAttribute="leading" secondItem="2Zf-DK-Xel" secondAttribute="leadingMargin" constant="-24" id="BlV-V0-4by"/>
@@ -1664,16 +1665,39 @@ imgComment</string>
                     </view>
                     <navigationItem key="navigationItem" id="egt-CX-FYj">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="back.png" id="HJB-H1-4mo">
+                            <connections>
+                                <action selector="goBackToMain:" destination="iQY-sl-vM0" id="nY4-lZ-gyX"/>
+                            </connections>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="dKR-J0-sxB">
+                            <rect key="frame" x="96" y="6" width="128" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fem-CB-NJe">
+                                    <rect key="frame" x="43" y="6" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Fem-CB-NJe" firstAttribute="centerX" secondItem="dKR-J0-sxB" secondAttribute="centerX" id="GRO-1S-Rdh"/>
+                                <constraint firstItem="Fem-CB-NJe" firstAttribute="centerY" secondItem="dKR-J0-sxB" secondAttribute="centerY" id="ZhK-Lj-1av"/>
+                            </constraints>
+                        </view>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="searchString" destination="Fem-CB-NJe" id="Sqn-2e-i5h"/>
                         <outlet property="tableView" destination="V8E-iS-0FO" id="65M-gB-J7g"/>
                         <segue destination="FRF-8D-a5C" kind="show" identifier="showSearchTipDetail" id="55A-LW-SGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZv-zm-Iso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1989" y="-1096"/>
+            <point key="canvasLocation" x="893" y="-1422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0G1-wz-ZGo">
@@ -1692,13 +1716,14 @@ imgComment</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8D-S3-Sdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1552" y="-1096"/>
+            <point key="canvasLocation" x="425" y="-1395"/>
         </scene>
     </scenes>
     <resources>
         <image name="Like Filled-50.png" width="50" height="50"/>
         <image name="Speech Bubble Filled-50.png" width="50" height="50"/>
         <image name="anomy.png" width="50" height="50"/>
+        <image name="back.png" width="50" height="50"/>
         <image name="badge1.png" width="50" height="50"/>
         <image name="editPencil.png" width="512" height="512"/>
         <image name="likeDefault" width="25" height="25"/>
@@ -1712,7 +1737,7 @@ imgComment</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jUa-bM-Dl1"/>
-        <segue reference="dD3-sg-Vhc"/>
+        <segue reference="55A-LW-SGC"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.90196078430000004" green="0.4941176471" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

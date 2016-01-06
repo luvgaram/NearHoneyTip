@@ -12,6 +12,7 @@
 @interface NHTProfileController : UIViewController<UINavigationControllerDelegate,
 UIImagePickerControllerDelegate, UITextFieldDelegate, CustomeImagePickerDelegate>
 
+
 @property (weak, nonatomic) IBOutlet UIImageView *userProfile;
 @property (weak, nonatomic) IBOutlet UILabel *userNickname; //outputLabel
 @property (strong, nonatomic) UIImage *chosenImg;
@@ -20,11 +21,10 @@ UIImagePickerControllerDelegate, UITextFieldDelegate, CustomeImagePickerDelegate
 
 - (IBAction)profilePhotoEditButton:(id)sender;
 - (IBAction)NicknameEditButton:(id)sender;
-- (IBAction)back:(id)sender;
 - (IBAction)cancelEdit:(id)sender;
 - (IBAction)saveEdit:(id)sender;
 
-- (void) connection:(NSURLConnection *) connection didReceiveResponse:(nonnull NSURLResponse *)response2;
+- (void) connection:(NSURLConnection *) connection didReceiveResponse:(nonnull NSURLResponse *)profileResponse;
 
 
 @end

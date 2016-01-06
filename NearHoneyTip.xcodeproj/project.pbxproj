@@ -18,10 +18,8 @@
 		6FD0C06B1C1711AB0021FEB6 /* NHTMyTipsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C06A1C1711AB0021FEB6 /* NHTMyTipsController.m */; };
 		6FD0C0711C1712210021FEB6 /* NHTProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0701C1712210021FEB6 /* NHTProfileController.m */; };
 		6FD0C0741C171B8F0021FEB6 /* NHTSideTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */; };
-		A8368B3F1C2140FE00B4D0F3 /* nht_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */; };
 		A8553A0B1C3BEDBA00395ADD /* NHTReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8553A0A1C3BEDBA00395ADD /* NHTReplyViewController.m */; };
 		A8553A0E1C3C21B000395ADD /* NHTReplyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8553A0D1C3C21B000395ADD /* NHTReplyManager.m */; };
-
 		A86327261C2A05E5001B293B /* CameraCell_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = A86327251C2A05E5001B293B /* CameraCell_5.xib */; };
 		A86327291C2A060F001B293B /* CameraCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A86327281C2A060F001B293B /* CameraCell.m */; };
 		A863272B1C2A061A001B293B /* CameraCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A863272A1C2A061A001B293B /* CameraCell.xib */; };
@@ -125,7 +123,6 @@
 		6FD0C0721C171B8F0021FEB6 /* NHTSideTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTSideTableViewController.h; sourceTree = "<group>"; };
 		6FD0C0731C171B8F0021FEB6 /* NHTSideTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTSideTableViewController.m; sourceTree = "<group>"; };
 		904A7464ED7B0C7A3B186D8E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		A8368B3E1C2140FE00B4D0F3 /* nht_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nht_logo.png; sourceTree = "<group>"; };
 		A8553A091C3BEDBA00395ADD /* NHTReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTReplyViewController.h; sourceTree = "<group>"; };
 		A8553A0A1C3BEDBA00395ADD /* NHTReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHTReplyViewController.m; sourceTree = "<group>"; };
 		A8553A0C1C3C21B000395ADD /* NHTReplyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHTReplyManager.h; sourceTree = "<group>"; };
@@ -431,14 +428,12 @@
 				CE0012721C3B8BD5007536D4 /* NHTSearchResultsTableViewController.m */,
 				CE0012741C3BF9DB007536D4 /* NHTSearchedCellTableViewCell.h */,
 				CE0012751C3BF9DB007536D4 /* NHTSearchedCellTableViewCell.m */,
-
 				A886B0241C3B8EE300A23B62 /* NHTReplyTableCell.h */,
 				A886B0251C3B8EE300A23B62 /* NHTReplyTableCell.m */,
 				A8C761F81C3B970B0030AA85 /* NHTReplyTableViewController.h */,
 				A8C761F91C3B970B0030AA85 /* NHTReplyTableViewController.m */,
 				A8553A091C3BEDBA00395ADD /* NHTReplyViewController.h */,
 				A8553A0A1C3BEDBA00395ADD /* NHTReplyViewController.m */,
-
 			);
 			name = NHTMainDetailTipGroup;
 			sourceTree = "<group>";
@@ -726,10 +721,8 @@
 				A8925E581C33B237008510FC /* NHTAnnotation.m in Sources */,
 				6F4035AE1C33C2E500DA821C /* NHTProfileNicknameEditController.m in Sources */,
 				A8935A711C01E48800E69F2F /* NHTWriteViewController.m in Sources */,
-
 				CE0012731C3B8BD5007536D4 /* NHTSearchResultsTableViewController.m in Sources */,
 				A8553A0E1C3C21B000395ADD /* NHTReplyManager.m in Sources */,
-
 				A863272E1C2A0625001B293B /* CameraFocusSquare.m in Sources */,
 				A863274B1C2A06FA001B293B /* UIView+RNActivityView.m in Sources */,
 				A86327431C2A06DE001B293B /* PhotoPickerCell.m in Sources */,

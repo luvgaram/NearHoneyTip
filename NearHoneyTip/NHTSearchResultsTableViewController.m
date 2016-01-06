@@ -21,10 +21,30 @@
     [super viewDidLoad];
     
     self.Q1 = [[NHTTipManager alloc]init];
+    UITableView *myTableView = [self.view viewWithTag:123];
     
-    //[self.Q1 tipsDidLoad];
+    UITapGestureRecognizer *resignKeyBoard = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(resignKeyboard)];
     
-   
+    [myTableView addGestureRecognizer: resignKeyBoard];
+    
+    
+}
+-(void) resignKeyboard{
+    [self.tableView resignFirstResponder];
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    NSLog(@"log2222");
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"backFromSearch" object:nil];
+}
+
+- (IBAction)goBackToMain:(id)sender {
+    NSLog(@"log111111");
+    [self viewWillDisappear:YES];
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

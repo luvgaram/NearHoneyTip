@@ -60,10 +60,10 @@
         //userBadge
         //likeButton
         [self setLikeButtonProperty];
-        UITapGestureRecognizer *tapLikeButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLike:)];
-        self.likeButton.target = tapLikeButton;
+//        UITapGestureRecognizer *tapLikeButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLike:)];
+        self.likeButton.target = self;
         self.likeButton.action= @selector(didTapLike:);
-        self.likeButtonImage.target = tapLikeButton;
+        self.likeButtonImage.target = self;
         self.likeButtonImage.action = @selector(didTapLike:);
         [self setReplyButtonProperty];
         

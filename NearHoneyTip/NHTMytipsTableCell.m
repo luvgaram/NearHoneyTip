@@ -11,7 +11,10 @@
 #import "NHTButtonTapPost.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@implementation NHTMytipsTableCell
+@implementation NHTMytipsTableCell{
+    NSUserDefaults *preferences;
+}
+
 
 - (void)setCellWithUserTip:(NHTTip*)tip{
     NSLog(@"mytip: %@", tip.tipDetails);
@@ -39,6 +42,13 @@
     
     self.userNickname.text = self.tip.userNickname;
     self.tipNewTime.text = self.tip.tipDate;
+    
+    [self setLikeButtonProperty];
+    
+    UITapGestureRecognizer *tapLikeButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLike:)];
+    self.likeButton.gestureRecognizers = [[NSArray alloc] initWithObjects: tapLikeButton, nil];
+    
+    [self setReplyButtonProperty];
 }
 
 - (void)awakeFromNib {

@@ -25,6 +25,7 @@
 
 @implementation NHTMainViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -44,13 +45,14 @@
     self.tipLoadingProgressBar.hidden = YES;
     
     
-    
-    
-    
     //self.searchController.delegate = self;
-    
+    /*
      UINavigationController *searchResultsController = [[self storyboard] instantiateViewControllerWithIdentifier:@"NHTSearch"];
+     */
+   UINavigationController *searchResultsController = [[self storyboard] instantiateViewControllerWithIdentifier:@"NHTSearch"];
+    //searchResultsController.hidesBarsOnTap = YES;
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultsController];
+    
     
     /* //let it be
     self.searchbarContainer = [[UIView alloc] initWithFrame:self.searchController.searchBar.frame];
@@ -74,24 +76,29 @@
     self.searchController.searchBar.tintColor = [[UIColor alloc]initWithRed: 230.0/255.0 green:126.0/255.0 blue:35.0/255.0 alpha:1];
     //[self.view addSubview: self.searchController.searchBar];
     
-    self.tableView.tableHeaderView = self.searchController.searchBar;
+    //self.tableView.tableHeaderView = self.searchController.searchBar;
     
     
     
     // It is usually good to set the presentation context.
     self.searchController.definesPresentationContext = YES;
     self.searchController.dimsBackgroundDuringPresentation = YES;
-    self.searchController.hidesNavigationBarDuringPresentation = YES;
-//   self.searchController.obscuresBackgroundDuringPresentation = YES;
-    
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
+   self.searchController.obscuresBackgroundDuringPresentation = NO;
   
-   
+    
+ 
+    self.navigationItem.titleView =  self.searchController.searchBar;
+ 
+    vc = (NHTSearchResultsTableViewController *)searchResultsController.visibleViewController;
+    
 }
 
 
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
+    vc.searchString.text = searchController.searchBar.text;
     NSString *searchString = self.searchController.searchBar.text;
     NSLog(@"LOG 1 :%@", searchString);
     
@@ -104,7 +111,7 @@
         UINavigationController *navController = (UINavigationController *)self.searchController.searchResultsController;
         
         // Present SearchResultsTableViewController as the topViewController
-       NHTSearchResultsTableViewController *vc = (NHTSearchResultsTableViewController *)navController.visibleViewController;
+//       NHTSearchResultsTableViewController *vc = (NHTSearchResultsTableViewController *)navController.visibleViewController;
 
         
     
@@ -114,7 +121,7 @@
         // And reload the tableView with the new data
         [vc.tableView reloadData];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getLatestTips) name:@"backfromSearch" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getLatestTips) name:@"backFromSearch" object:nil];
       
     }
     
@@ -122,12 +129,6 @@
 }
 
 
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    [self.navigationController popViewControllerAnimated:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName: @"backFromSearch" object:nil];
-    
-}
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

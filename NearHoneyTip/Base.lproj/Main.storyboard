@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMS-a5-r9b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WMS-a5-r9b">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -1155,14 +1155,6 @@ imgComment</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="editPencil.png" translatesAutoresizingMaskIntoConstraints="NO" id="oFf-hL-gPu">
-                                <rect key="frame" x="240" y="166" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="FdQ-0m-foO"/>
-                                    <constraint firstAttribute="width" constant="30" id="LMk-Ko-4Fs"/>
-                                    <constraint firstAttribute="height" constant="30" id="mqh-hp-Vif"/>
-                                </constraints>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="NEg-ZH-5Tx">
                                 <rect key="frame" x="100" y="121" width="120" height="120"/>
                                 <constraints>
@@ -1171,13 +1163,6 @@ imgComment</string>
                                     <constraint firstAttribute="width" secondItem="NEg-ZH-5Tx" secondAttribute="height" multiplier="1:1" id="wyq-LW-nl5"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfI-8b-FlM">
-                                <rect key="frame" x="228" y="197" width="50" height="44"/>
-                                <state key="normal" title="Edit"/>
-                                <connections>
-                                    <action selector="profilePhotoEditButton:" destination="s0S-Ks-MFh" eventType="touchUpInside" id="VNi-5d-CdG"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YK4-V4-3aT">
                                 <rect key="frame" x="238" y="293" width="30" height="30"/>
                                 <state key="normal" title="확인"/>
@@ -1185,22 +1170,30 @@ imgComment</string>
                                     <action selector="NicknameEditButton:" destination="s0S-Ks-MFh" eventType="touchUpInside" id="xWh-TC-wCI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiy-qK-siZ">
+                                <rect key="frame" x="0.0" y="80" width="320" height="43"/>
+                                <string key="text">사진을 수정하려면 프로필 사진을, 
+닉네임을 수정하려면 입력 후 확인을 누르시고 Save해주세요.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VUp-SB-2P5" firstAttribute="top" secondItem="3p6-ja-onY" secondAttribute="bottom" constant="8" id="99f-SG-r4s"/>
+                            <constraint firstItem="NEg-ZH-5Tx" firstAttribute="top" secondItem="jiy-qK-siZ" secondAttribute="bottom" constant="-2" id="D4n-67-zkA"/>
                             <constraint firstItem="3p6-ja-onY" firstAttribute="centerX" secondItem="NEg-ZH-5Tx" secondAttribute="centerX" id="GKs-fJ-I1R"/>
-                            <constraint firstItem="oFf-hL-gPu" firstAttribute="leading" secondItem="NEg-ZH-5Tx" secondAttribute="trailing" constant="-4" id="I6k-KX-Ixk"/>
-                            <constraint firstItem="cfI-8b-FlM" firstAttribute="centerX" secondItem="oFf-hL-gPu" secondAttribute="centerX" id="KtP-Ys-bGl"/>
                             <constraint firstItem="YK4-V4-3aT" firstAttribute="leading" secondItem="VUp-SB-2P5" secondAttribute="trailing" constant="8" id="ORj-Ue-sOx"/>
-                            <constraint firstItem="cfI-8b-FlM" firstAttribute="leading" secondItem="NEg-ZH-5Tx" secondAttribute="trailing" constant="-14" id="Pnz-iM-CBB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jiy-qK-siZ" secondAttribute="trailing" constant="-20" id="ZQd-gp-4EA"/>
                             <constraint firstItem="VUp-SB-2P5" firstAttribute="centerX" secondItem="3p6-ja-onY" secondAttribute="centerX" id="cuA-IK-Jrx"/>
                             <constraint firstItem="3p6-ja-onY" firstAttribute="top" secondItem="NEg-ZH-5Tx" secondAttribute="bottom" constant="23" id="fGA-VD-Dka"/>
+                            <constraint firstItem="dGu-TQ-7be" firstAttribute="top" secondItem="jiy-qK-siZ" secondAttribute="bottom" constant="445" id="kvn-G4-UuG"/>
                             <constraint firstItem="NEg-ZH-5Tx" firstAttribute="centerX" secondItem="V7Z-Nd-oaU" secondAttribute="centerX" id="nIh-uY-iLI"/>
-                            <constraint firstItem="oFf-hL-gPu" firstAttribute="centerY" secondItem="NEg-ZH-5Tx" secondAttribute="centerY" id="pjb-Bj-Nch"/>
                             <constraint firstItem="YK4-V4-3aT" firstAttribute="centerY" secondItem="VUp-SB-2P5" secondAttribute="centerY" id="uJJ-8c-NcH"/>
-                            <constraint firstItem="cfI-8b-FlM" firstAttribute="top" secondItem="oFf-hL-gPu" secondAttribute="bottom" constant="1" id="vWk-uX-ZIN"/>
+                            <constraint firstItem="jiy-qK-siZ" firstAttribute="leading" secondItem="V7Z-Nd-oaU" secondAttribute="leadingMargin" constant="-20" id="v4q-hO-Rdg"/>
                             <constraint firstItem="NEg-ZH-5Tx" firstAttribute="top" secondItem="mXU-Nj-j5S" secondAttribute="bottom" constant="57" id="wBU-NV-eTy"/>
+                            <constraint firstItem="jiy-qK-siZ" firstAttribute="top" secondItem="mXU-Nj-j5S" secondAttribute="bottom" constant="16" id="ycI-AW-5TG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="NewHoneyTip" id="qI6-XE-7bG">
@@ -1723,7 +1716,6 @@ imgComment</string>
         <image name="anomy.png" width="50" height="50"/>
         <image name="back.png" width="50" height="50"/>
         <image name="badge1.png" width="50" height="50"/>
-        <image name="editPencil.png" width="512" height="512"/>
         <image name="likeDefault" width="25" height="25"/>
         <image name="location.png" width="50" height="50"/>
         <image name="more.png" width="50" height="50"/>

@@ -23,12 +23,21 @@
 @implementation NHTDetailViewController
 @synthesize storeMapView;
 
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    NSLog(@"%%%%%%%%%%%%???????");
+    [self.navigationController popViewControllerAnimated:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"backFromDetail" object:nil];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:NO animated:nil];
     
     self.postManager = [[NHTButtonTapPost alloc] init];
     if(self.tip){
-    
+        
+        self.navigationController.title = self.tip.storeName;
         self.storeName.title = self.tip.storeName;
         
         // modified by ej
@@ -51,10 +60,10 @@
         //userBadge
         //likeButton
         [self setLikeButtonProperty];
-        UITapGestureRecognizer *tapLikeButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLike:)];
-        self.likeButton.target = tapLikeButton;
+//        UITapGestureRecognizer *tapLikeButton = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapLike:)];
+        self.likeButton.target = self;
         self.likeButton.action= @selector(didTapLike:);
-        self.likeButtonImage.target = tapLikeButton;
+        self.likeButtonImage.target = self;
         self.likeButtonImage.action = @selector(didTapLike:);
         [self setReplyButtonProperty];
         
@@ -201,4 +210,30 @@
 }
 */
 
+
+- (IBAction)deleteButton:(id)sender {
+    //    NSLog(@"asdfasdfasdfasdfasdf");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete" message: @"Tip을 삭제하시겠습니까? " delegate:self cancelButtonTitle:nil otherButtonTitles:@"삭제",@"취소", nil];
+    
+    [alert show];
+    
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    // the user clicked OK
+    if (buttonIndex == 0) {
+        NSLog(@"팁 삭제버튼 누름");
+        [self deleteTip:self.tip];
+        
+    }else if (buttonIndex == 1){
+        NSLog(@"팁 삭제 취소");
+    }
+}
+
+- (void) deleteTip:(NSDictionary *)tipDictionary {
+    NSLog(@"deleteTip");
+    
+    
+}
 @end
